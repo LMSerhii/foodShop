@@ -1,0 +1,23 @@
+@font-face {
+  font-family: 'Quincy CF';
+  src: local('Quincy CF Regular'), local('Quincy-CF-Regular'),
+    url('../fonts/QuincyCF-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Neue Montreal';
+  src: local('Neue Montreal Regular'), local('Neue-Montreal-Regular'),
+    url('../fonts/NeueMontreal-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Neue Montreal';
+  src: local('Neue Montreal Medium'), local('Neue-Montreal-Medium'),
+    url('../fonts/NeueMontreal-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+}
