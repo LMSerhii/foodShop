@@ -1,42 +1,17 @@
 <h2>Filters:</h2>
 
 <form id="filterForm" class="filters-from">
-
-  <input 
-    type="text"
-    id="wordInput"
-    placeholder="Search for anything"
-  />
-
-  <button 
-  id="searchButton"
-  name="submitBtn"
-  class="filterButton"
-  type="submit" 
-  aria-label="Search">
-  Search
-  </button>
- 
-  <!-- aria-haspopup="menu"  - открывает выпадающее меню
-       aria-expanded="false" - выпадающее меню не открыто -->
-  <button
-  id="categorySelect"
-  name="categoryBtn"
-  class="filterButton"
-  type="button"
-  aria-haspopup="menu" 
-  aria-expanded="false">
-  Categories
-  </button>
+  <input type="text" id="wordInput" placeholder="Search for anything" />
 
   <button
-  id="sortProducts"
-  name="sortCategoryBtn"
-  class="filterButton"
-  type="button"
-  aria-haspopup="menu"
-  aria-expanded="false">
-  A to Z
-</button>
+    id="searchButton"
+    name="submitBtn"
+    class="filterButton"
+    type="submit"
+    aria-label="Search"
+  >
+    Search
+  </button>
 
+  <div id="categoriesSelectContainer"></div>
 </form>
