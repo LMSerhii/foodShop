@@ -1,0 +1,54 @@
+.container {
+  min-width: 260px;
+  max-width: 375px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+.cart-logo-icon {
+  border-radius: 30px;
+  background: #6d8434;
+  display: inline-flex;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.title-container {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+.delete-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.button-delete {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  background: none;
+}
+
+.product-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    overflow-y: auto; /* Додаємо вертикальний скролл, якщо кількість продуктів більше 3 */
+    max-height: 600px; /* Задаємо максимальну висоту контейнера для вертикального скроллу */
+    margin: 0 auto;
+  }
+
+  .product-card {
+    flex: 0 0 auto;
+    width: 200px;
+    margin: 0 1rem;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    text-align: center;
+  }
+
