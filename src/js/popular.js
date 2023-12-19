@@ -20,7 +20,6 @@ const queryParams = {
 };
 
 const divPopular = document.querySelector('.popular-products');
-
 console.dir(divPopular);
 const popularProductList = document.querySelector('.popular_products_list');
 console.log(popularProductList);
@@ -31,7 +30,7 @@ console.log(popularProductList);
 //   totalPages: 0,
 // };
 
-// render(queryParams);
+render(queryParams);
 
 async function fetchData() {
   try {
@@ -44,7 +43,7 @@ async function fetchData() {
     // },
 
     // );
-    console.log(response.data);
+    return response.data;
   } catch (error) {
     console.error('Error:', error);
     throw error;
@@ -53,7 +52,6 @@ async function fetchData() {
 
 fetchData();
 
-<<<<<<< Updated upstream
 async function getData(params) {
   try {
     const data = await fetchData(params);
@@ -64,7 +62,7 @@ async function getData(params) {
 
     return data.results;
   } catch (error) {
-    errorMarkup(error.response.status);
+    errorMarkup(error.status);
   }
 }
 
@@ -76,7 +74,7 @@ async function render(params) {
   }
 
   const markup = createMarkup(results);
-  // popularProductList.innerHTML = '';
+  popularProductList.innerHTML = '';
   popularProductList.insertAdjacentHTML('beforeend', markup);
 }
 
@@ -118,8 +116,3 @@ function createMarkup(arrey) {
 function errorMarkup(status) {
   popularProductList.innerHTML = `<p class="error_status error">${status}</p><p class="error_text error">Ой, щось пішло не так ...</p>`;
 }
-=======
-// async function getData() {
-//     const data = await
-// }
->>>>>>> Stashed changes
