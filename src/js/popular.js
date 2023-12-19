@@ -75,7 +75,7 @@ async function render(params) {
   }
 
   const markup = createMarkup(results);
-  popularProductList.innerHTML = '';
+  // popularProductList.innerHTML = '';
   popularProductList.insertAdjacentHTML('beforeend', markup);
 }
 
