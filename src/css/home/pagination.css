@@ -1,0 +1,57 @@
+.pagination-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 4px;
+  margin-bottom: 40px;
+}
+
+.pag_btn {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 60px;
+  background-color: #fafafa;
+  border: none;
+  color: #a3a3a3;
+
+  font-family: Neue Montreal;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.42; /* 142.857% */
+}
+
+.pag_icon {
+  stroke: #a3a3a3;
+  fill: transparent;
+}
+
+.to_start {
+}
+
+.to_start_icon {
+}
+.previous {
+}
+.previous_icon {
+}
+.number {
+  margin-left: 4px;
+  background-color: transparent;
+}
+.number.current {
+  color: #e8e8e2;
+  background-color: #6d8434;
+}
+
+.next {
+}
+.next_icon {
+}
+.to_end {
+}
+.to_end_icon {
+}

@@ -1,17 +1,37 @@
-<h2>Filters:</h2>
+<section class="filters">
+  <div class="container">
+    <form class="form" name="filters">
+      <label class="form-label" for="textInput">Filters:</label>
+      <input
+        class="filters-input"
+        type="text"
+        id="textInput"
+        name="search"
+        placeholder="Search for anything"
+      />
+      <select
+        class="filters-select"
+        id="categoryFild"
+        name="categories"
+        aria-placeholder="Categories"
+      >
+        <option data-placeholder="true"></option>
 
-<form id="filterForm" class="filters-from">
-  <input type="text" id="wordInput" placeholder="Search for anything" />
-
-  <button
-    id="searchButton"
-    name="submitBtn"
-    class="filterButton"
-    type="submit"
-    aria-label="Search"
-  >
-    Search
-  </button>
-
-  <div id="categoriesSelectContainer"></div>
-</form>
+        <option value="vegetable">vegetable</option>
+        <option value="fruit">fruit</option>
+      </select>
+      <select
+        class="filters-select"
+        id="alpabetFild"
+        name="alpabetSearch"
+        aria-placeholder="A to Z"
+      >
+        <option data-placeholder="true"></option>
+        <option value="option 1">option 1</option>
+        <option value="option 2">option 2</option>
+      </select>
+    </form>
+    <div class="temp__box"></div>
+    <button class="temp__btn" type="button">Click</button>
+  </div>
+</section>

@@ -1,0 +1,107 @@
+@import url('./pagination.css');
+
+.product-list {
+  margin-bottom: 40px;
+}
+
+.card {
+  padding: 20px;
+  border-radius: 20px;
+  background: #fafafa;
+}
+.card:not(:last-child) {
+  margin-bottom: 20px;
+}
+.card-top {
+  margin-bottom: 40px;
+}
+.card-img-link {
+  display: block;
+  padding: 18px 78px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  background: #e8e8e2;
+}
+.card-name-link {
+  display: block;
+  margin-bottom: 10px;
+}
+.card-product-name {
+  color: #010101;
+  font-family: Neue Montreal;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.11;
+}
+.card-prodcuts-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+.card-prodcuts-item {
+  color: rgba(1, 1, 1, 0.3);
+  font-family: Neue Montreal;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.16;
+}
+
+.card-prodcuts-item span {
+  color: #010101;
+  font-family: Neue Montreal;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.16;
+  margin-left: 4px;
+}
+.card-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.card-producs-price {
+  color: #010101;
+  font-family: Neue Montreal;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.11;
+}
+.card-btn {
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 30px;
+  background-color: #6d8434;
+  border: none;
+}
+.card-btn-icon {
+  fill: #e8e8e2;
+}
+
+/* error style */
+
+.error {
+  color: rgba(1, 1, 1, 0.3);
+  font-family: Neue Montreal;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.16;
+  text-align: center;
+}
+
+.error_status {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.error_text {
+  font-size: 16px;
+}

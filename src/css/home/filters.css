@@ -1,0 +1,36 @@
+.filters {
+  padding-top: 36px;
+  padding-bottom: 20px;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+}
+.form-label {
+  margin-bottom: 8px;
+}
+.filters-input {
+  height: 48px;
+  margin-bottom: 12px;
+  border-radius: 30px;
+  border: 1px solid rgba(1, 1, 1, 0.3);
+}
+
+.filters-select {
+  height: 48px;
+  border-radius: 30px;
+}
+
+.filters-select:not(:last-child) {
+  margin-bottom: 12px;
+  border: 1px solid rgba(1, 1, 1, 0.3);
+}
+
+.filters-select:last-child {
+  background-color: #fafafa;
+}
+
+.temp__box {
+  width: 336px;
+  height: 480px;
+}

@@ -1,0 +1,48 @@
+.hero {
+  padding: 36px 0;
+}
+.hero-container {
+}
+.hero-title {
+  color: #010101;
+  text-align: center;
+  font-family: Neue Montreal;
+  font-size: 44px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.09;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+}
+.title-accent {
+  color: #6d8434;
+}
+.hero-text {
+  max-width: 292px;
+  margin: 0 auto;
+  color: rgba(1, 1, 1, 0.8);
+  text-align: center;
+  font-family: Neue Montreal;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.28;
+  margin-bottom: 32px;
+}
+
+.hero-image-box {
+  position: relative;
+}
+
+.hero-image-wrapper {
+  border-radius: 20px;
+  overflow: hidden;
+}
+.hero-img {
+  overflow: hidden;
+}
+.hero-img-label {
+  position: absolute;
+  top: -7px;
+  right: 8px;
+}
