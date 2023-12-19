@@ -30,8 +30,6 @@ console.log(popularProductList);
 //   totalPages: 0,
 // };
 
-render(queryParams);
-
 async function fetchData() {
   try {
     const response = await axios.get(BASE_URL, {
@@ -66,6 +64,7 @@ async function getData(params) {
   }
 }
 
+render(params);
 async function render(params) {
   const results = await getData(params);
 
