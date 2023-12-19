@@ -1,3 +1,7 @@
+body {
+  
+background-color: #E8E8E2;
+}
 .container {
   min-width: 260px;
   max-width: 375px;
@@ -39,7 +43,7 @@
     flex-direction: column;
     flex-wrap: nowrap;
     overflow-y: auto; /* Додаємо вертикальний скролл, якщо кількість продуктів більше 3 */
-    max-height: 600px; /* Задаємо максимальну висоту контейнера для вертикального скроллу */
+    max-height: 430px; /* Задаємо максимальну висоту контейнера для вертикального скроллу */
     margin: 0 auto;
   }
 
@@ -52,3 +56,13 @@
     text-align: center;
   }
 
+.empty-cart {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+}
+
+.span {
+  background-color: red;
+}
