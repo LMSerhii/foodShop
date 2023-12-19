@@ -1,17 +1,18 @@
-const BASE_URL = 'https://food-boutique.b.goit.study/api/products';
-const END_POINT = '/popular';
+import axios from 'axios';
+import { common } from './common';
+
+const BASE_URL = 'https://food-boutique.b.goit.study/api';
+const END_POINT = '/products/popular';
+let page = 1;
 
 const queryParam = {
-  page: page,
+  page: `${page}`,
   limit: 6,
 };
 
-async function render() {}
+// async function render() {}
 
-// <!-- import axios from 'axios';
-// import { common } from './common';
-
-// const productList = document.querySelector('.product-list');
+const popularProductList = document.querySelector('.popular_products_list');
 
 // const pages = {
 //   page: 0,
@@ -26,31 +27,30 @@ async function render() {}
 
 // render(queryParams);
 
-// async function fetchData(params) {
-//   const response = await axios({
-//     url: `${common.BASE_URL}/products`,
-//     method: 'GET',
-//     header: {
-//       'Content-Type': 'aplication/json',
-//     },
-//     params,
-//   });
-//   return response.data;
-// }
+async function fetchData(params) {
+  const response = await axios.get({
+    url: `${BASE_URL}${END_POINT}`,
+    // header: {
+    //   'Content-Type': 'aplication/json',
+    // },
+    queryParam,
+  });
+  return response.data;
+}
 
-// async function getData(params) {
-//   try {
-//     const data = await fetchData(params);
+async function getData(params) {
+  try {
+    const data = await fetchData(params);
 
-//     pages.page = data.page;
-//     pages.perPage = data.perPage;
-//     pages.totalPages = data.totalPages;
+    // pages.page = data.page;
+    // pages.perPage = data.perPage;
+    // pages.totalPages = data.totalPages;
 
-//     return data.results;
-//   } catch (error) {
-//     errorMarkup(error.response.status);
-//   }
-// }
+    console.log(data);
+  } catch (error) {
+    errorMarkup(error.response.status);
+  }
+}
 
 // async function render(params) {
 //   const results = await getData(params);
