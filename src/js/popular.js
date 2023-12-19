@@ -53,6 +53,7 @@ async function fetchData() {
 
 fetchData();
 
+<<<<<<< Updated upstream
 async function getData(params) {
   try {
     const data = await fetchData(params);
@@ -117,3 +118,8 @@ function createMarkup(arrey) {
 function errorMarkup(status) {
   popularProductList.innerHTML = `<p class="error_status error">${status}</p><p class="error_text error">Ой, щось пішло не так ...</p>`;
 }
+=======
+// async function getData() {
+//     const data = await
+// }
+>>>>>>> Stashed changes
