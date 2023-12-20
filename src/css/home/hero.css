@@ -1,5 +1,5 @@
 .hero {
-    max-width: 428px; 
+    max-width: 768px; 
     background-color: #E8E8E2;
     padding: 128px 20px;
     margin: 0 auto;
@@ -7,9 +7,35 @@
 
 }
 
+@media screen and (min-width: 768px) {
+    .hero {
+        max-width: 1150px ; 
+        padding: 188px 55px;
+    }
+}
+
+@media screen and (min-width: 1150px) {
+     .hero {
+        max-width: 1440px; 
+        padding: 149px 199px;
+    }
+}
+
 .container-hero {
  max-width: 335px;
  
+}
+
+@media screen and (min-width: 768px) {
+    .container-hero {
+        max-width: 658px;
+    }
+}
+
+@media screen and (min-width: 1150px) {
+    .container-hero {
+        max-width: 1042px;
+    }
 }
 
 .h-one-hero {
@@ -21,18 +47,33 @@
     margin: 0 auto 16px;
 }
 
+@media screen and (min-width: 768px) {
+    .h-one-hero {
+        font-size: 80px;
+        line-height: 1.80em;
+        max-width: 658px; 
+    }
+}
+
+@media screen and (min-width: 1150px) {
+    .h-one-hero {
+        max-width: 1042px; 
+    }
+}
+
 .hero-green-food {
     color: #6D8434;
 }
 
 .h-two-hero {
-    font-family: "NeueMontreal", 'Regular';
+    font-family: "Neue Montreal", 'Regular';
     font-size: 14px;
+    font-weight: 200;
     line-height: 1.18em;
     max-width: 292px;
     color: #010101;
     margin: 0 auto;
-
+    
 }
 
 .hero-content {
@@ -42,4 +83,13 @@
 
 .hero-picture {
     border-radius: 20px;
+}
+
+.hero-organic-food {
+    border-radius: 50px;
+    position: absolute;
+    max-width: 100px;
+    max-height: 100px;
+    margin-left: 230px;
+    margin-top: -8px;
 }
