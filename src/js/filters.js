@@ -4,59 +4,81 @@ import './api_service';
 import { getData, fetchData, render, createMarkup, queryParams } from './products';
 const filterForm = document.getElementById('filterForm');
 
-
-
-
 document.getElementById('sortProducts').addEventListener('click', () => {
     document.getElementById('sortBProductsList').classList.toggle('show');
 });
+
 document.getElementById('categorySelect').addEventListener('click', () => {
     document.getElementById('categoryBProductsList').classList.toggle('show');
 });
 
-
-
-
 document.addEventListener('DOMContentLoaded', function () {
-
-    // Функция для получения элемента по его ID
     const getById = (id) => document.getElementById(id);
 
-    // Функция для скрытия списка при клике вне элемента списка или триггера
     const hideList = (listElement, triggerElement) => (event) => {
         if (!listElement.contains(event.target) && event.target !== triggerElement) {
             listElement.classList.remove('show');
         }
     };
 
-    // Функция для обработки клика по категории или сортировке
+    const createQueryParams = (selectedCategory, sortingValue, inputValue) => {
+        const queryParams = {
+            category: selectedCategory,
+        };
+
+        // Add sorting parameter if sortingValue is present
+        if (sortingValue) {
+            queryParams.sort = sortingValue;
+        }
+
+        // Add keyword parameter if inputValue is present
+        if (inputValue) {
+            queryParams.keyword = inputValue;
+        }
+
+        return queryParams;
+    };
+
     const handleCategoryClick = (event, listElement, triggerElement) => {
         if (event.target.classList.contains('category-item')) {
             let selectedCategory = event.target.getAttribute('data-value');
 
-            console.log('Выбранная категория:', selectedCategory);
+            console.log('Selected category:', selectedCategory);
 
-            // Обновление текста кнопки
             triggerElement.textContent = event.target.textContent;
-
-            // Присвоение выбранной категории сортировки к элементу
             triggerElement.setAttribute('data-selected-category', selectedCategory);
 
-            // Закрытие списка после выбора категории
             listElement.classList.remove('show');
 
-            // Получаем значение ключевого слова
+            const sortingValue = getById('sortProducts').getAttribute('data-selected-sort');
+            const keywordInput = getById('keywordInput');
+            const inputValue = keywordInput.value;
+            
+            const queryParams = createQueryParams(selectedCategory, sortingValue, inputValue);
+
+            // Call the render function with the query parameters
+            render(queryParams);
+        }
+    };
+
+    const handleSortClick = (event, listElement, triggerElement) => {
+        if (event.target.classList.contains('category-item')) {
+            let selectedSort = event.target.getAttribute('data-value');
+
+            console.log('Selected sort:', selectedSort);
+
+            triggerElement.textContent = event.target.textContent;
+            triggerElement.setAttribute('data-selected-sort', selectedSort);
+
+            listElement.classList.remove('show');
+
+            const selectedCategory = getById('categorySelect').getAttribute('data-selected-category');
             const keywordInput = getById('keywordInput');
             const inputValue = keywordInput.value;
 
-            // Создаем объект с параметрами запроса
-            const queryParams = {
-                category: selectedCategory,
-                keyword: inputValue, 
-               
-            };
+            const queryParams = createQueryParams(selectedCategory, selectedSort, inputValue);
 
-            // Вызываем функцию render с параметрами запроса
+            // Call the render function with the query parameters
             render(queryParams);
         }
     };
@@ -66,15 +88,12 @@ document.addEventListener('DOMContentLoaded', function () {
     const categoryTriggerElement = getById('categorySelect');
     const categoryList = getById('categoryBProductsList');
 
-    // Добавление слушателей событий
     document.addEventListener('click', hideList(sortList, sortTriggerElement));
     document.addEventListener('click', hideList(categoryList, categoryTriggerElement));
 
-    // Передача параметров в функцию обработки клика
     categoryList.addEventListener('click', (event) => handleCategoryClick(event, categoryList, categoryTriggerElement));
-    sortList.addEventListener('click', (event) => handleCategoryClick(event, sortList, sortTriggerElement));
+    sortList.addEventListener('click', (event) => handleSortClick(event, sortList, sortTriggerElement));
 
-    // Добавление слушателя для формы фильтрации
     const filterForm = getById('filterForm');
     filterForm.addEventListener('submit', async function (event) {
         event.preventDefault();
@@ -82,23 +101,17 @@ document.addEventListener('DOMContentLoaded', function () {
         const inputValue = keywordInput.value;
 
         if (!inputValue.trim()) {
-            console.log('Пожалуйста, введите ключевое слово перед отправкой.');
+            console.log('Please enter a keyword before submitting.');
             return;
         }
 
         try {
-            // Получаем выбранную категорию сортировки
             const selectedCategory = categoryTriggerElement.getAttribute('data-selected-category');
+            const selectedSort = sortTriggerElement.getAttribute('data-selected-sort');
 
-            // Создаем объект с параметрами запроса
-            const queryParams = {
-                category: selectedCategory,
-                keyword: inputValue, // Добавляем ключевое слово в запрос
+            const queryParams = createQueryParams(selectedCategory, selectedSort, inputValue);
 
-                // Другие параметры запроса, если необходимо
-            };
-
-            // Вызываем функцию render с параметрами запроса
+            // Call the render function with the query parameters
             render(queryParams);
         } catch (error) {
             console.error(error);
@@ -106,10 +119,30 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+// byABC=false
+// byABC=false
+// byPrice=false
+// byPrice=false
+// Popularity=false
+// Popularity=false
+
+
+// alphabetical = (byABC=false)
+// reverse-alphabetical  = (byABC=false)
+// cheap  = (byPrice=false)
+// expensive  = (byPrice=false)
+// popular  = (Popularity=false)
+// not-popular  = (Popularity=false)
+
+
 // https://food-boutique.b.goit.study/api/products?page=1&limit=6&byABC=false
 // https://food-boutique.b.goit.study/api/products?page=1&limit=6&byABC=true
 // https://food-boutique.b.goit.study/api/products?page=1&limit=6&byPrice=true
 // https://food-boutique.b.goit.study/api/products?page=1&limit=6&byPrice=false
 // https://food-boutique.b.goit.study/api/products?page=1&limit=6&byPopularity=false
 // https://food-boutique.b.goit.study/api/products?page=1&limit=6&byPopularity=true
+
+// https://food-boutique.b.goit.study/api/products?page=1&limit=6&category=Deli&byABC=false
+
+
 

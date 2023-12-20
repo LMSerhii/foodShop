@@ -15,8 +15,9 @@ const pages = {
 let queryParams = {
   page: '1',
   limit: '6',
-  keyword: "", 
-  category: "", 
+  keyword: null, 
+  category: null, 
+  
 };
 
 render(queryParams);
