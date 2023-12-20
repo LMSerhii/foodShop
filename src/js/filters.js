@@ -35,6 +35,7 @@ document.getElementById('categorySelect').addEventListener('click', () => {
 
 
 // получение значения списка
+
 document.addEventListener('DOMContentLoaded', function() {
     const s = (e) => document.getElementById(e);
     const hideList = (l, t) => (event) => {
@@ -42,10 +43,22 @@ document.addEventListener('DOMContentLoaded', function() {
             l.classList.remove('show');
         }
     };
-    const handleCategoryClick = (event) => {
+    
+    // Функция для обработки клика по категории или сортировке
+    const handleCategoryClick = (event, listElement, triggerElement) => {
         if (event.target.classList.contains('category-item')) {
             const selectedCategory = event.target.getAttribute('data-value');
+            
+            // Обновление текста кнопки
+            triggerElement.textContent = event.target.textContent;
+    
+            // Присвоение выбранной категории сортировки к элементу
+            triggerElement.setAttribute('data-selected-category', selectedCategory);
+    
             console.log('Selected category:', selectedCategory);
+
+            // Закрытие списка после выбора категории
+            listElement.classList.remove('show');
         }
     };
 
@@ -54,11 +67,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const categoryTriggerElement = s('categorySelect');
     const categoryList = s('categoryBProductsList');
 
+    // Добавление слушателей событий
     document.addEventListener('click', hideList(sortList, sortTriggerElement));
     document.addEventListener('click', hideList(categoryList, categoryTriggerElement));
 
-    categoryList.addEventListener('click', handleCategoryClick);
-    sortList.addEventListener('click', handleCategoryClick);
+    // Передача параметров в функцию обработки клика
+    categoryList.addEventListener('click', (event) => handleCategoryClick(event, categoryList, categoryTriggerElement));
+    sortList.addEventListener('click', (event) => handleCategoryClick(event, sortList, sortTriggerElement));
 });
-
-  
