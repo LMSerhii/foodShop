@@ -59,5 +59,8 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                 d="M13.333 21.333 18.666 16l-5.333-5.333" />
         </symbol>
+        <symbol id="down-vector" viewBox="0 0 48 32">
+<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="8" d="M4 6l20 20 20-20"></path>
+</symbol>
     </defs>
 </svg>

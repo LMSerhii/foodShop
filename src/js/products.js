@@ -1,6 +1,9 @@
 import axios from 'axios';
 import { common } from './common';
 
+
+
+
 const productList = document.querySelector('.product-list');
 
 const pages = {
@@ -9,14 +12,18 @@ const pages = {
   totalPages: 0,
 };
 
-const queryParams = {
+let queryParams = {
   page: '1',
   limit: '6',
+  keyword: "", 
+  category: "", 
 };
 
 render(queryParams);
 
 async function fetchData(params) {
+
+  
   const response = await axios({
     url: `${common.BASE_URL}/products`,
     method: 'GET',
@@ -27,6 +34,7 @@ async function fetchData(params) {
   });
   return response.data;
 }
+// console.log(fetchData());
 
 async function getData(params) {
   try {
@@ -42,6 +50,8 @@ async function getData(params) {
   }
 }
 
+
+
 async function render(params) {
   const results = await getData(params);
 
@@ -53,6 +63,8 @@ async function render(params) {
   productList.innerHTML = '';
   productList.insertAdjacentHTML('beforeend', markup);
 }
+// console.log(render());
+
 
 function createMarkup(arrey) {
   if (!arrey.length) {
@@ -103,3 +115,6 @@ function createMarkup(arrey) {
 function errorMarkup(status) {
   productList.innerHTML = `<p class="error_status error">${status}</p><p class="error_text error">Ой, щось пішло не так ...</p>`;
 }
+
+export {getData, fetchData, render, createMarkup, queryParams}
+export default queryParams;
