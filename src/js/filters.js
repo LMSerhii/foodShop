@@ -19,7 +19,9 @@ filterForm.addEventListener('submit', async function (event) {
 
   try {
     // const data = await fetchData(queryParams);
+
     await render(queryParams);
+
   } catch (error) {
     console.error(error);
   }
@@ -35,7 +37,6 @@ document.getElementById('categorySelect').addEventListener('click', () => {
 
 
 // получение значения списка
-
 document.addEventListener('DOMContentLoaded', function() {
     const s = (e) => document.getElementById(e);
     const hideList = (l, t) => (event) => {
@@ -43,22 +44,35 @@ document.addEventListener('DOMContentLoaded', function() {
             l.classList.remove('show');
         }
     };
-    
+
     // Функция для обработки клика по категории или сортировке
     const handleCategoryClick = (event, listElement, triggerElement) => {
         if (event.target.classList.contains('category-item')) {
-            const selectedCategory = event.target.getAttribute('data-value');
+            let selectedCategory = event.target.getAttribute('data-value');
+
+            console.log('Selected category:', selectedCategory);
             
             // Обновление текста кнопки
             triggerElement.textContent = event.target.textContent;
-    
+
             // Присвоение выбранной категории сортировки к элементу
             triggerElement.setAttribute('data-selected-category', selectedCategory);
-    
-            console.log('Selected category:', selectedCategory);
 
             // Закрытие списка после выбора категории
             listElement.classList.remove('show');
+
+            // Возвращаем выбранную категорию
+
+            const inputValue = selectedCategory;
+
+            // Создаем объект с параметрами запроса
+            const queryParams = {
+                category: inputValue,
+                // Add other query parameters as needed
+            };
+
+            // Вызываем функцию render с параметрами запроса
+            render(queryParams);
         }
     };
 
