@@ -18,7 +18,7 @@ filterForm.addEventListener('submit', async function (event) {
   }
 
   try {
-    const data = await fetchData(queryParams);
+    // const data = await fetchData(queryParams);
     await render(queryParams);
   } catch (error) {
     console.error(error);
