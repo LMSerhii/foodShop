@@ -44,37 +44,40 @@ document.addEventListener('DOMContentLoaded', function() {
             l.classList.remove('show');
         }
     };
+// Функция для обработки клика по категории или сортировке
+const handleCategoryClick = (event, listElement, triggerElement) => {
+    if (event.target.classList.contains('category-item')) {
+        let selectedCategory = event.target.getAttribute('data-value');
 
-    // Функция для обработки клика по категории или сортировке
-    const handleCategoryClick = (event, listElement, triggerElement) => {
-        if (event.target.classList.contains('category-item')) {
-            let selectedCategory = event.target.getAttribute('data-value');
+        console.log('Selected category:', selectedCategory);
+        
+        // Обновление текста кнопки
+        triggerElement.textContent = event.target.textContent;
 
-            console.log('Selected category:', selectedCategory);
-            
-            // Обновление текста кнопки
-            triggerElement.textContent = event.target.textContent;
+        // Присвоение выбранной категории сортировки к элементу
+        triggerElement.setAttribute('data-selected-category', selectedCategory);
 
-            // Присвоение выбранной категории сортировки к элементу
-            triggerElement.setAttribute('data-selected-category', selectedCategory);
+        // Закрытие списка после выбора категории
+        listElement.classList.remove('show');
 
-            // Закрытие списка после выбора категории
-            listElement.classList.remove('show');
+        // Возвращаем выбранную категорию
 
-            // Возвращаем выбранную категорию
+        // Получаем значение ключевого слова
+        const keywordInput = document.getElementById('keywordInput');
+        const inputValue = keywordInput.value;
 
-            const inputValue = selectedCategory;
+        // Создаем объект с параметрами запроса
+        const queryParams = {
+            category: selectedCategory,
+            keyword: inputValue, // Добавляем ключевое слово в запрос
+            // Другие параметры запроса, если необходимо
+        };
 
-            // Создаем объект с параметрами запроса
-            const queryParams = {
-                category: inputValue,
-                // Add other query parameters as needed
-            };
+        // Вызываем функцию render с параметрами запроса
+        render(queryParams);
+    }
+};
 
-            // Вызываем функцию render с параметрами запроса
-            render(queryParams);
-        }
-    };
 
     const sortTriggerElement = s('sortProducts');
     const sortList = s('sortBProductsList');
