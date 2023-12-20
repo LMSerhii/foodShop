@@ -9,7 +9,7 @@
 
 .container-hero {
  max-width: 335px;
- max-height: 167px;
+ 
 }
 
 .h-one-hero {
@@ -19,6 +19,10 @@
     max-width: 335px; 
     color: #1E1E1E;
     margin: 0 auto 16px;
+}
+
+.hero-green-food {
+    color: #6D8434;
 }
 
 .h-two-hero {
@@ -31,10 +35,11 @@
 
 }
 
-.hero-green-food {
-    color: #6D8434;
+.hero-content {
+    margin-top: 25px;
+    background-color: #E8E8E2;
 }
 
-.hero-img {
-
+.hero-picture {
+    border-radius: 20px;
 }
