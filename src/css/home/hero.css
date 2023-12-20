@@ -1,0 +1,40 @@
+.hero {
+    max-width: 428px; 
+    background-color: #E8E8E2;
+    padding: 128px 20px;
+    margin: 0 auto;
+    text-align: center;
+
+}
+
+.container-hero {
+ max-width: 335px;
+ max-height: 167px;
+}
+
+.h-one-hero {
+    font-family: "Neue Montreal", "Medium";
+    font-size: 44px;
+    line-height: 1.48em;
+    max-width: 335px; 
+    color: #1E1E1E;
+    margin: 0 auto 16px;
+}
+
+.h-two-hero {
+    font-family: "NeueMontreal", 'Regular';
+    font-size: 14px;
+    line-height: 1.18em;
+    max-width: 292px;
+    color: #010101;
+    margin: 0 auto;
+
+}
+
+.hero-green-food {
+    color: #6D8434;
+}
+
+.hero-img {
+
+}
