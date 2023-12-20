@@ -6,27 +6,6 @@ const filterForm = document.getElementById('filterForm');
 
 
 
-filterForm.addEventListener('submit', async function (event) {
-  event.preventDefault();
-  const keywordInput = document.getElementById('keywordInput');
-  const inputValue = keywordInput.value;
-  queryParams.keyword = inputValue;
-
-  if (!inputValue.trim()) {
-    console.log('Please enter a keyword before submitting.');
-    return;
-  }
-
-  try {
-    // const data = await fetchData(queryParams);
-
-    await render(queryParams);
-
-  } catch (error) {
-    console.error(error);
-  }
-});
-
 
 document.getElementById('sortProducts').addEventListener('click', () => {
     document.getElementById('sortBProductsList').classList.toggle('show');
@@ -36,53 +15,56 @@ document.getElementById('categorySelect').addEventListener('click', () => {
 });
 
 
-// получение значения списка
-document.addEventListener('DOMContentLoaded', function() {
-    const s = (e) => document.getElementById(e);
-    const hideList = (l, t) => (event) => {
-        if (!l.contains(event.target) && event.target !== t) {
-            l.classList.remove('show');
+
+
+document.addEventListener('DOMContentLoaded', function () {
+
+    // Функция для получения элемента по его ID
+    const getById = (id) => document.getElementById(id);
+
+    // Функция для скрытия списка при клике вне элемента списка или триггера
+    const hideList = (listElement, triggerElement) => (event) => {
+        if (!listElement.contains(event.target) && event.target !== triggerElement) {
+            listElement.classList.remove('show');
         }
     };
-// Функция для обработки клика по категории или сортировке
-const handleCategoryClick = (event, listElement, triggerElement) => {
-    if (event.target.classList.contains('category-item')) {
-        let selectedCategory = event.target.getAttribute('data-value');
 
-        console.log('Selected category:', selectedCategory);
-        
-        // Обновление текста кнопки
-        triggerElement.textContent = event.target.textContent;
+    // Функция для обработки клика по категории или сортировке
+    const handleCategoryClick = (event, listElement, triggerElement) => {
+        if (event.target.classList.contains('category-item')) {
+            let selectedCategory = event.target.getAttribute('data-value');
 
-        // Присвоение выбранной категории сортировки к элементу
-        triggerElement.setAttribute('data-selected-category', selectedCategory);
+            console.log('Выбранная категория:', selectedCategory);
 
-        // Закрытие списка после выбора категории
-        listElement.classList.remove('show');
+            // Обновление текста кнопки
+            triggerElement.textContent = event.target.textContent;
 
-        // Возвращаем выбранную категорию
+            // Присвоение выбранной категории сортировки к элементу
+            triggerElement.setAttribute('data-selected-category', selectedCategory);
 
-        // Получаем значение ключевого слова
-        const keywordInput = document.getElementById('keywordInput');
-        const inputValue = keywordInput.value;
+            // Закрытие списка после выбора категории
+            listElement.classList.remove('show');
 
-        // Создаем объект с параметрами запроса
-        const queryParams = {
-            category: selectedCategory,
-            keyword: inputValue, // Добавляем ключевое слово в запрос
-            // Другие параметры запроса, если необходимо
-        };
+            // Получаем значение ключевого слова
+            const keywordInput = getById('keywordInput');
+            const inputValue = keywordInput.value;
 
-        // Вызываем функцию render с параметрами запроса
-        render(queryParams);
-    }
-};
+            // Создаем объект с параметрами запроса
+            const queryParams = {
+                category: selectedCategory,
+                keyword: inputValue, 
+               
+            };
 
+            // Вызываем функцию render с параметрами запроса
+            render(queryParams);
+        }
+    };
 
-    const sortTriggerElement = s('sortProducts');
-    const sortList = s('sortBProductsList');
-    const categoryTriggerElement = s('categorySelect');
-    const categoryList = s('categoryBProductsList');
+    const sortTriggerElement = getById('sortProducts');
+    const sortList = getById('sortBProductsList');
+    const categoryTriggerElement = getById('categorySelect');
+    const categoryList = getById('categoryBProductsList');
 
     // Добавление слушателей событий
     document.addEventListener('click', hideList(sortList, sortTriggerElement));
@@ -91,4 +73,43 @@ const handleCategoryClick = (event, listElement, triggerElement) => {
     // Передача параметров в функцию обработки клика
     categoryList.addEventListener('click', (event) => handleCategoryClick(event, categoryList, categoryTriggerElement));
     sortList.addEventListener('click', (event) => handleCategoryClick(event, sortList, sortTriggerElement));
+
+    // Добавление слушателя для формы фильтрации
+    const filterForm = getById('filterForm');
+    filterForm.addEventListener('submit', async function (event) {
+        event.preventDefault();
+        const keywordInput = getById('keywordInput');
+        const inputValue = keywordInput.value;
+
+        if (!inputValue.trim()) {
+            console.log('Пожалуйста, введите ключевое слово перед отправкой.');
+            return;
+        }
+
+        try {
+            // Получаем выбранную категорию сортировки
+            const selectedCategory = categoryTriggerElement.getAttribute('data-selected-category');
+
+            // Создаем объект с параметрами запроса
+            const queryParams = {
+                category: selectedCategory,
+                keyword: inputValue, // Добавляем ключевое слово в запрос
+
+                // Другие параметры запроса, если необходимо
+            };
+
+            // Вызываем функцию render с параметрами запроса
+            render(queryParams);
+        } catch (error) {
+            console.error(error);
+        }
+    });
 });
+
+// https://food-boutique.b.goit.study/api/products?page=1&limit=6&byABC=false
+// https://food-boutique.b.goit.study/api/products?page=1&limit=6&byABC=true
+// https://food-boutique.b.goit.study/api/products?page=1&limit=6&byPrice=true
+// https://food-boutique.b.goit.study/api/products?page=1&limit=6&byPrice=false
+// https://food-boutique.b.goit.study/api/products?page=1&limit=6&byPopularity=false
+// https://food-boutique.b.goit.study/api/products?page=1&limit=6&byPopularity=true
+
