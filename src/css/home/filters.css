@@ -1,0 +1,36 @@
+body {
+    background-color: #E8E8E2;
+}
+
+/* .filters-form-container {
+    padding-right: 20px;
+    padding-left: 20px;
+    width: 375px;
+    margin: 0 auto;
+} */
+
+.filters-form {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 335px;
+    margin: 0 auto;
+    margin-top: 8px;
+}
+
+.filters-select1,
+.filters-select2,
+.filters-input {
+    display: block;
+    width: 100%;
+}
+
+.filters-button {
+    position: absolute;
+    border-radius: 50%;
+    top: 0;
+    right: 0;
+    height: 24px;
+    width: 24px;
+}
