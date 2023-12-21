@@ -41,7 +41,8 @@
 .h-one-hero {
     font-family: "Neue Montreal", "Medium";
     font-size: 44px;
-    line-height: 1.48em;
+    font-weight: 500;
+    line-height: 48px;
     max-width: 335px; 
     color: #1E1E1E;
     margin: 0 auto 16px;
@@ -50,7 +51,7 @@
 @media screen and (min-width: 768px) {
     .h-one-hero {
         font-size: 80px;
-        line-height: 1.80em;
+        line-height: 80px;
         max-width: 658px; 
     }
 }
@@ -68,17 +69,37 @@
 .h-two-hero {
     font-family: "Neue Montreal", 'Regular';
     font-size: 14px;
-    font-weight: 200;
-    line-height: 1.18em;
+    font-weight: 400;
+    line-height: 18px;
     max-width: 292px;
     color: #010101;
     margin: 0 auto;
     
 }
 
+@media screen and (min-width: 768px) {
+    .h-two-hero {
+        font-size: 18px;
+        line-height: 24px;
+        max-width: 492px; 
+    }
+}
+
 .hero-content {
-    margin-top: 25px;
+    margin-top: 30px;
     background-color: #E8E8E2;
+}
+
+@media screen and (min-width: 768px) {
+    .hero-content {
+     
+    }
+}
+
+@media screen and (min-width: 1150px) {
+    .hero-content {
+       
+    }
 }
 
 .hero-picture {
@@ -92,4 +113,18 @@
     max-height: 100px;
     margin-left: 230px;
     margin-top: -8px;
+}
+
+@media screen and (min-width: 768px) {
+    .hero-organic-food {
+        margin-left: 555px;
+        margin-top: -25px;
+    }
+}
+
+@media screen and (min-width: 1150px) {
+    .hero-organic-food {
+        margin-left: 925px;
+        margin-top: -40px;
+    }
 }
