@@ -26,12 +26,30 @@ document.addEventListener('DOMContentLoaded', function () {
             category: selectedCategory,
         };
 
-        // Add sorting parameter if sortingValue is present
         if (sortingValue) {
-            queryParams.sort = sortingValue;
-        }
+          if (sortingValue === 'alphabetical') {
+            queryParams.byABC = true;
+          } else if (sortingValue === 'reverse-alphabetical') {
+            queryParams.byABC = false;
+          }
 
-        // Add keyword parameter if inputValue is present
+          if (sortingValue === 'cheap') {
+            queryParams.byPrice = true;
+          } else if (sortingValue === 'expensive') {
+            queryParams.byPrice = false;
+          }
+
+          if (sortingValue === 'popular') {
+            queryParams.byPopularity = false;
+          } else if (sortingValue === 'not-popular') {
+            queryParams.byPopularity = true;
+          }
+        }
+        
+
+          
+
+       
         if (inputValue) {
             queryParams.keyword = inputValue;
         }
@@ -53,10 +71,9 @@ document.addEventListener('DOMContentLoaded', function () {
             const sortingValue = getById('sortProducts').getAttribute('data-selected-sort');
             const keywordInput = getById('keywordInput');
             const inputValue = keywordInput.value;
-            
             const queryParams = createQueryParams(selectedCategory, sortingValue, inputValue);
 
-            // Call the render function with the query parameters
+       
             render(queryParams);
         }
     };
@@ -78,7 +95,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             const queryParams = createQueryParams(selectedCategory, selectedSort, inputValue);
 
-            // Call the render function with the query parameters
+           
             render(queryParams);
         }
     };
@@ -111,7 +128,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             const queryParams = createQueryParams(selectedCategory, selectedSort, inputValue);
 
-            // Call the render function with the query parameters
+           
             render(queryParams);
         } catch (error) {
             console.error(error);

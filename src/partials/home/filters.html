@@ -119,7 +119,7 @@
           <li class="category-item" data-value="reverse-alphabetical">
             Z to A
           </li>
-          <li class="category-item" data-value="cheap">Cheap</li>
+          <li class="category-item" data-value="cheap" data-value="cheap">Cheap</li>
           <li class="category-item" data-value="expensive">Expensive</li>
           <li class="category-item" data-value="popular">Popular</li>
           <li class="category-item" data-value="not-popular">Not popular</li>
@@ -133,9 +133,37 @@
   </div>
 </div>
 
-<!-- alphabetical
+
+<!-- 
+alphabetical
 reverse-alphabetical
 cheap
 expensive
 popular
-not-popular -->
+not-popular
+
+
+queryParams.sort
+
+
+byABC=false
+byABC=false
+byPrice=false
+byPrice=false
+Popularity=false
+Popularity=false
+ -->
+<!-- 
+ if (sortingValue) {
+            
+  queryParams.byABC = sortingValue;
+  queryParams.byABC = sortingValue;
+  queryParams.byPrice = sortingValue;
+  queryParams.byPrice = sortingValue;
+  queryParams.Popularity = sortingValue;
+  queryParams.Popularity = sortingValue;
+
+}
+когда sortingValue =alphabetical то испольщовать queryParams.byABC = true, когда sortingValue =reverse-alphabetical то queryParams.byABC = false,
+когда sortingValue =cheap то queryParams.byPrice = true, когда sortingValue =expensive то queryParams.byPrice = false,
+когда sortingValue =popular то queryParams.Popularity = false, когда sortingValue =not-popular то queryParams.Popularity = true -->
