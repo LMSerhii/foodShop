@@ -1,22 +1,19 @@
 import axios from 'axios';
 import { common } from './common';
+
 // get a list of all products
-
-async function fetchData(params) {
-  const response = await axios({
-    url: `${common.BASE_URL}/products`,
-    method: 'GET',
-    header: {
-      'Content-Type': 'aplication/json',
-    },
-    params,
-  });
-  return response.data;
-}
-
-async function getData(params) {
+async function getData(query) {
+  // return object {page, perPage, results[], totalPages}
   try {
-    return await fetchData(params);
+    const response = await axios({
+      url: `${common.BASE_URL}/products`,
+      method: 'GET',
+      header: {
+        'Content-Type': 'aplication/json',
+      },
+      query,
+    });
+    return response.data;
   } catch (error) {
     // errorMarkup(error.response.status);
     console.log(error);
@@ -24,21 +21,17 @@ async function getData(params) {
 }
 
 // get an object by ID
-
-async function fetchDataId(id) {
-  const response = await axios({
-    url: `${common.BASE_URL}/products/${id}`,
-    method: 'GET',
-    header: {
-      'Content-Type': 'aplication/json',
-    },
-  });
-  return response.data;
-}
-
 async function getDataId(id) {
+  // returns the card object
   try {
-    return await fetchDataId(id);
+    const response = await axios({
+      url: `${common.BASE_URL}/products/${id}`,
+      method: 'GET',
+      header: {
+        'Content-Type': 'aplication/json',
+      },
+    });
+    return response.data;
   } catch (error) {
     // errorMarkup(error.response.status);
     console.log(error);
@@ -46,117 +39,112 @@ async function getDataId(id) {
 }
 
 // get a list of popular products
-
-async function fetchPopular() {
-  const response = await axios({
-    url: `${common.BASE_URL}/products/popular`,
-    method: 'GET',
-    header: {
-      'Content-Type': 'aplication/json',
-    },
-  });
-  return response.data;
-}
-
-async function getPopular() {
+async function getPopular(limit) {
+  // returns an array of data
   try {
-    return await fetchPopular();
+    let query = null;
+
+    if (limit) {
+      query = { limit: limit };
+    }
+    const response = await axios({
+      url: `${common.BASE_URL}/products/popular`,
+      method: 'GET',
+      header: {
+        'Content-Type': 'aplication/json',
+      },
+      query,
+    });
+    return response.data;
   } catch (error) {
-    errorMarkup(error.response.status);
+    // errorMarkup(error.response.status);
+    console.log(error);
   }
 }
 
 // get a list of products with a discount
-
-async function fetchDiscount() {
-  const response = await axios({
-    url: `${common.BASE_URL}/products/discount`,
-    method: 'GET',
-    header: {
-      'Content-Type': 'aplication/json',
-    },
-  });
-  return response.data;
-}
-
 async function getDiscount() {
+  // returns an array of data
   try {
-    return await fetchDiscount();
+    const response = await axios({
+      url: `${common.BASE_URL}/products/discount`,
+      method: 'GET',
+      header: {
+        'Content-Type': 'aplication/json',
+      },
+    });
+    return response.data;
   } catch (error) {
-    errorMarkup(error.response.status);
+    // errorMarkup(error.response.status);
+    console.log(error);
   }
 }
 
 // get categories
-
-async function fetchCategories() {
-  const response = await axios({
-    url: `${common.BASE_URL}/products/categories`,
-    method: 'GET',
-    header: {
-      'Content-Type': 'aplication/json',
-    },
-  });
-  return response.data;
-}
-
 async function getCategories() {
+  // returns an array of data
   try {
-    return await fetchCategories();
+    const response = await axios({
+      url: `${common.BASE_URL}/products/categories`,
+      method: 'GET',
+      header: {
+        'Content-Type': 'aplication/json',
+      },
+    });
+    return response.data;
   } catch (error) {
-    errorMarkup(error.response.status);
+    // errorMarkup(error.response.status);
+    console.log(error);
   }
 }
 
 // request to create a new order
-
-async function new_order(id) {
-  const response = await axios({
-    url: `${common.BASE_URL}/products/${id}`,
-    method: 'POST',
-    header: {
-      'Content-Type': 'aplication/json',
-    },
-  });
-  return response.data;
-}
-
-async function order(id) {
+async function createOrder(email, productList) {
+  // returns an object
   try {
-    return await fetchDataId(id);
+    const response = await axios({
+      url: 'https://food-boutique.b.goit.study/api/orders1',
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      data: {
+        email: email,
+        products: productList,
+      },
+    });
+    return response;
   } catch (error) {
-    // errorMarkup(error.response.status);
-    console.log(error);
+    return error;
   }
 }
 
 // request a subscription
-
-async function subscription(email) {
-  const response = await axios.post({
-    // url: `${common.BASE_URL}/subscription`,
-    url: 'https://food-boutique.b.goit.study/api/subscription',
-    method: 'POST',
-    headers: {
-      accept: 'application/json',
-      'Content-Type': 'application/json',
-    },
-
-    body: JSON.stringify({
-      email: email,
-    }),
-  });
-  return response;
-}
-
-async function post_sub(email) {
+async function createSubscription(email) {
+  // returns an object
   try {
-    const result = await subscription(email);
-    console.log(result);
+    const response = await axios({
+      url: `${common.BASE_URL}/subscription`,
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      data: {
+        email: email,
+      },
+    });
+    return response;
   } catch (error) {
-    // errorMarkup(error.response.status);
-    console.log(error);
+    return error;
   }
 }
 
-export { post_sub, subscription };
+export {
+  getData,
+  getDataId,
+  getPopular,
+  getDiscount,
+  getCategories,
+  createOrder,
+  createSubscription,
+};
