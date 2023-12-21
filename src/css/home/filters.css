@@ -1,21 +1,22 @@
-body {
+.filters-form-container {
     background-color: #E8E8E2;
+    font-family: Neue Montreal;
+
 }
 
-/* .filters-form-container {
-    padding-right: 20px;
-    padding-left: 20px;
-    width: 375px;
-    margin: 0 auto;
-} */
+.filters-form-label {
+    color: rgba(1, 1, 1, 0.30);
+    font-size: 14px;
+    line-height: 1.28;
+}
 
 .filters-form {
     position: relative;
+
     display: flex;
     flex-direction: column;
     gap: 12px;
-    width: 335px;
-    margin: 0 auto;
+
     margin-top: 8px;
 }
 
@@ -26,11 +27,29 @@ body {
     width: 100%;
 }
 
+.filters-input {
+    padding: 15px 50px 15px 20px;
+    
+    border-radius: 30px;
+    border: 1px solid rgba(1, 1, 1, 0.30);
+    background-color: transparent;
+}
+
+.filters-input::placeholder {
+    color: #010101;
+    font-size: 14px;
+    line-height: 1.28;
+}
+
 .filters-button {
     position: absolute;
-    border-radius: 50%;
-    top: 0;
-    right: 0;
-    height: 24px;
-    width: 24px;
+    top: 2px;
+    right: 20px;
+
+    padding: 0;
+    height: 44px;
+    width: 30px;
+
+    border: none;
+    background-color: #E8E8E2;;
 }

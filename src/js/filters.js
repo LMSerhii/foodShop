@@ -11,19 +11,19 @@ function createMarkupFilters(arr) {
     return `<div class="container">
     <label class="filters-form-label" for="filters-form-id">Filters:</label>
     <form class="filters-form" id="filters-form-id">
-        <input type="text" placeholder="Search for anything">
+        <input class="filters-input" type="text" placeholder="Search for anything">
         <select class="categories-select" name="categories" id="categories-select-id">
-            <option value="">${arrCategories[0]}</option>
-            <option value="">${arrCategories[1]}</option>
-            <option value="">${arrCategories[2]}</option>
-            <option value="">${arrCategories[3]}</option>
-            <option value="">${arrCategories[4]}</option>
-            <option value="">${arrCategories[5]}</option>
-            <option value="">${arrCategories[6]}</option>
-            <option value="">${arrCategories[7]}</option>
-            <option value="">${arrCategories[8]}</option>
-            <option value="">${arrCategories[9]}</option>
-            <option value="">${arrCategories[10]}</option>
+            <option value="">${arr[0]}</option>
+            <option value="">${arr[1]}</option>
+            <option value="">${arr[2]}</option>
+            <option value="">${arr[3]}</option>
+            <option value="">${arr[4]}</option>
+            <option value="">${arr[5]}</option>
+            <option value="">${arr[6]}</option>
+            <option value="">${arr[7]}</option>
+            <option value="">${arr[8]}</option>
+            <option value="">${arr[9]}</option>
+            <option value="">${arr[10]}</option>
             <option value="">Show all</option>
         </select>
         <select class="filters-select" name="filters" id="filters-select-id">
@@ -41,7 +41,8 @@ function createMarkupFilters(arr) {
               </svg>
         </button>
     </form>
-    </div>`}
+    </div>`
+}
 
 filtersSection.innerHTML = createMarkupFilters(arrCategories);
 
