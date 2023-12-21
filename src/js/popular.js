@@ -14,8 +14,9 @@
 import axios from 'axios';
 // import { common } from './common';
 const BASE_URL = 'https://food-boutique.b.goit.study/api/products/popular';
-
+let page = 1;
 const queryParams = {
+  page: '1',
   limit: '6',
 };
 
@@ -41,6 +42,7 @@ async function fetchData() {
     // },
 
     // );
+    console.log(response.data);
     return response.data;
   } catch (error) {
     console.error('Error:', error);
@@ -48,25 +50,25 @@ async function fetchData() {
   }
 }
 
-fetchData();
-
-async function getData(params) {
+async function getData() {
   try {
-    const data = await fetchData(params);
+    const data = await fetchData();
 
     // pages.page = data.page;
     // pages.perPage = data.perPage;
     // pages.totalPages = data.totalPages;
 
-    return data.results;
+    console.log(data);
+    return data;
   } catch (error) {
     errorMarkup(error.status);
   }
 }
 
-render(params);
-async function render(params) {
-  const results = await getData(params);
+render();
+
+async function render() {
+  const results = await getData();
 
   if (!results) {
     return;
