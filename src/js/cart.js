@@ -1,29 +1,150 @@
 import axios from 'axios';
+const basketImg = '../css/images/yellow shopping basket.png'
+const productList = document.querySelector('.product-list');
+const underline = "http://www.w3.org/2000/svg";
+// import svg_sprite from '../img/sprite.svg';
+const svg_sprite = '../img/sprite.svg';
 
-function emptyCart(product) {
-  const emptyCartContainer = document.querySelector('.empty-cart');
-  document.body.classList.add('empty-cart-background');
+const BASE_URL = 'https://food-boutique.b.goit.study/api';
 
-  const img = document.createElement('img');
-  img.src = '../css/images/yellow shopping basket.png';
-  img.alt = 'Жовтий порожній кошик';
-
-  const paragraph = document.createElement('p');
-  const span = document.createElement('span');
-  span.className = 'span';
-  span.textContent = 'empty....';
-  paragraph.textContent = 'Your basket is ';
-  paragraph.appendChild(span);
-  
-  const paragraph_2 = document.createElement('p');
-  paragraph_2.textContent =
-    'Go to the main page to select your favorite products and add them to the cart.';
-
-  emptyCartContainer.appendChild(img);
-  emptyCartContainer.appendChild(paragraph);
-  // emptyCartContainer.appendChild(span);
-  emptyCartContainer.appendChild(paragraph_2);
-  
+async function fetchData(params) {
+  try {
+    const response = await axios({
+      url: `${BASE_URL}/products`,
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      params,
+    });
+    return response.data;
+  } catch (error) {
+    console.log("Error", error);
+    throw error; // Обов'язково прокидайте помилку, щоб її можна було обробляти вище
+  }
 }
 
-emptyCart();
+fetchData()
+  .then(data => {
+    productList.insertAdjacentHTML("beforeend", createMarkup(data.results));
+  })
+  .catch(error => {
+    // Обробка помилки при виклику fetchData
+    console.log("Error", error);
+    
+  });
+
+function createMarkup(array) {
+  return array.map(({ _id, name, img, category, price, size, is10PercentOff, popularity }) => {
+    return `
+      <li class="product-card">
+        <img class="product-card-img" src="${img}" alt="${name}">
+
+        <div class="product-container"> 
+          <div class="product-title">
+            <h2 class="product-name">${name}</h2>
+            <svg width="18" height="18">
+              <use href="${svg_sprite}#icon-ion_close-sharp"></use>
+            </svg>
+          </div>
+
+
+          <div class="product-category">
+            <p class="product-info"><span class="info-style">Category:</span> ${category} <span class="info-style info-space">Size:</span> ${size}</p>
+          </div>
+          <p class="product-price">$${price}</p>
+        </div>
+        
+      </li>
+    `
+  }).join('');
+}
+
+
+
+
+// const BASE_URL = 'https://food-boutique.b.goit.study/api '
+
+// async function fetchData(params) {
+  
+//   const response = await axios({
+//     url: `${BASE_URL}/products`,
+//     method: 'GET',
+//     headers: {
+//       'Content-Type': 'application/json',
+//     },
+//     params,
+//   });
+//   return response.data;
+// }
+
+// fetchData()
+//   .then(data => {
+//     emptyCartContainer.insertAdjacentHTML("beforeend", createMarkup(data.results))
+//   })
+//   .catch(error => console.log("Error", error));
+
+
+// function createMarkup(array) {
+//   return array.map(({
+//     id, name, img, category, price, size, is10PercentOff, popularity
+//   }) => {return
+//   `<li class="product-card">
+//     <img src="${img}" alt="${name}">
+//   </li>
+//   `}
+//   ).join('');
+// }
+
+
+// FETCH
+async function getData(params) {
+  try {
+    return await fetchData(params);
+  } catch (error) {
+    // errorMarkup(error.response.status);
+    console.log(error);
+  }
+}
+
+async function fetchDataId(id) {
+  const response = await axios({
+    url: `${BASE_URL}/products/${id}`,
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
+  return response.data;
+}
+
+async function getDataId(id) {
+  try {
+    return await fetchDataId(id);
+  } catch (error) {
+    // errorMarkup(error.response.status);
+    console.log(error);
+  }
+}
+
+
+
+
+// // STORAGE
+// const save = (key, value) => {
+//   try {
+//     const serializedState = JSON.stringify(value);
+//     localStorage.setItem(key, serializedState);
+//   } catch (error) {
+//     console.error('Set state error: ', error.message);
+//   }
+// };
+// ​
+// const load = key => {
+//   try {
+//     const serializedState = localStorage.getItem(key);
+//     return serializedState === null ? undefined : JSON.parse(serializedState);
+//   } catch (error) {
+//     console.error('Get state error: ', error.message);
+//   }
+// };

@@ -1,34 +1,44 @@
-<section class="cart-section">
-  <!-- Title -->
-  <div class="container title-container">
-    <a class="cart-logo-icon" href="./index.html">
-      <svg class="" width="18px" height="18px">
-        <use
-          href="../css/images/sprite.svg#icon-heroicons-solid_shopping-cart"
-        ></use>
-      </svg>
-    </a>
-    <h1 class="cart-title">Cart</h1>
-  </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart</title>
 
-  <!-- Product list -->
-  <div class="product-list">
+  <link rel="stylesheet" href="../css/cart.css" />
+</head>
+<body>
+  <section class="cart-section ">
+    <!-- Title -->
+    <div class="container">
+      <div class="title-container">
+        <a class="cart-logo-icon" href="./index.html">
+          <svg class="" width="18px" height="18px">
+            <use
+              href="../css/images/sprite.svg#icon-heroicons-solid_shopping-cart"
+            ></use>
+          </svg>
+        </a>
+        <h1 class="cart-title">Cart</h1>
+      </div>
     <!-- Delete button -->
-    <div class="delete-container">
-      <button class="button-delete">
-        Delete all
-        <svg class="" width="24px" height="24px">
-          <use href="../css/images/sprite.svg#icon-ion_close-sharp"></use>
-        </svg>
-      </button>
-    </div>
-
-    <!-- порожній кошик  -->
-    <div class="empty-cart">
-
-    </div>
-   
+      <div class="delete-container">
+        <button class="button-delete">
+          Delete all
+          <svg class="" width="24px" height="24px">
+            <use href="../css/images/sprite.svg#icon-ion_close-sharp"></use>
+          </svg>
+        </button>
+      </div>
+      <!-- Product list -->
+      <ul class="product-list"></ul>
+      <!-- порожній кошик  -->
+      <div class="empty-cart"></div>
   </div>
-</section>
+  </section>
+</body>
+</html>
+
+
 
 
