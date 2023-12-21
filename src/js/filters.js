@@ -1,5 +1,4 @@
-import './api_service';
-import { render } from './products';
+import { render} from './products';
 
 document.getElementById('sortProducts').addEventListener('click', () => {
   document.getElementById('sortBProductsList').classList.toggle('show');
@@ -8,6 +7,8 @@ document.getElementById('sortProducts').addEventListener('click', () => {
 document.getElementById('categorySelect').addEventListener('click', () => {
   document.getElementById('categoryBProductsList').classList.toggle('show');
 });
+
+
 
 document.addEventListener('DOMContentLoaded', function () {
   const getById = id => document.getElementById(id);
@@ -154,25 +155,4 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
-// byABC=false
-// byABC=false
-// byPrice=false
-// byPrice=false
-// Popularity=false
-// Popularity=false
 
-// alphabetical = (byABC=false)
-// reverse-alphabetical  = (byABC=false)
-// cheap  = (byPrice=false)
-// expensive  = (byPrice=false)
-// popular  = (Popularity=false)
-// not-popular  = (Popularity=false)
-
-// https://food-boutique.b.goit.study/api/products?page=1&limit=6&byABC=false
-// https://food-boutique.b.goit.study/api/products?page=1&limit=6&byABC=true
-// https://food-boutique.b.goit.study/api/products?page=1&limit=6&byPrice=true
-// https://food-boutique.b.goit.study/api/products?page=1&limit=6&byPrice=false
-// https://food-boutique.b.goit.study/api/products?page=1&limit=6&byPopularity=false
-// https://food-boutique.b.goit.study/api/products?page=1&limit=6&byPopularity=true
-
-// https://food-boutique.b.goit.study/api/products?page=1&limit=6&category=Deli&byABC=false

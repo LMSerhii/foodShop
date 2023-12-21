@@ -141,6 +141,9 @@ select option {
   border-right: none;
   outline: none;
   background-color: transparent;
+  width: 100%;
+  max-width: 350px;
+  height: 48px;
 }
 
 #categorySelect {
@@ -256,11 +259,7 @@ select option {
   margin: 0;
 }
 
-#keywordInput {
-  width: 100%;
-  max-width: 350px;
-  height: 48px;
-}
+
 .visually-hidden {
   position: absolute;
   width: 1px;
