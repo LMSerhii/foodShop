@@ -1,139 +1,157 @@
-import axios from 'axios';
-import { common } from './common';
 import './api_service';
-import { getData, fetchData, render, createMarkup, queryParams } from './products';
-const filterForm = document.getElementById('filterForm');
+import { render } from './products';
 
 document.getElementById('sortProducts').addEventListener('click', () => {
-    document.getElementById('sortBProductsList').classList.toggle('show');
+  document.getElementById('sortBProductsList').classList.toggle('show');
 });
 
 document.getElementById('categorySelect').addEventListener('click', () => {
-    document.getElementById('categoryBProductsList').classList.toggle('show');
+  document.getElementById('categoryBProductsList').classList.toggle('show');
 });
 
 document.addEventListener('DOMContentLoaded', function () {
-    const getById = (id) => document.getElementById(id);
+  const getById = id => document.getElementById(id);
 
-    const hideList = (listElement, triggerElement) => (event) => {
-        if (!listElement.contains(event.target) && event.target !== triggerElement) {
-            listElement.classList.remove('show');
-        }
+  const hideList = (listElement, triggerElement) => event => {
+    if (
+      !listElement.contains(event.target) &&
+      event.target !== triggerElement
+    ) {
+      listElement.classList.remove('show');
+    }
+  };
+
+  const createQueryParams = (selectedCategory, sortingValue, inputValue) => {
+    const queryParams = {
+      category: selectedCategory,
     };
 
-    const createQueryParams = (selectedCategory, sortingValue, inputValue) => {
-        const queryParams = {
-            category: selectedCategory,
-        };
+    if (sortingValue) {
+      if (sortingValue === 'alphabetical') {
+        queryParams.byABC = true;
+      } else if (sortingValue === 'reverse-alphabetical') {
+        queryParams.byABC = false;
+      }
 
-        if (sortingValue) {
-          if (sortingValue === 'alphabetical') {
-            queryParams.byABC = true;
-          } else if (sortingValue === 'reverse-alphabetical') {
-            queryParams.byABC = false;
-          }
+      if (sortingValue === 'cheap') {
+        queryParams.byPrice = true;
+      } else if (sortingValue === 'expensive') {
+        queryParams.byPrice = false;
+      }
 
-          if (sortingValue === 'cheap') {
-            queryParams.byPrice = true;
-          } else if (sortingValue === 'expensive') {
-            queryParams.byPrice = false;
-          }
+      if (sortingValue === 'popular') {
+        queryParams.byPopularity = false;
+      } else if (sortingValue === 'not-popular') {
+        queryParams.byPopularity = true;
+      }
+    }
 
-          if (sortingValue === 'popular') {
-            queryParams.byPopularity = false;
-          } else if (sortingValue === 'not-popular') {
-            queryParams.byPopularity = true;
-          }
-        }
-        
+    if (inputValue) {
+      queryParams.keyword = inputValue;
+    }
 
-          
+    return queryParams;
+  };
 
-       
-        if (inputValue) {
-            queryParams.keyword = inputValue;
-        }
+  const handleCategoryClick = (event, listElement, triggerElement) => {
+    if (event.target.classList.contains('category-item')) {
+      let selectedCategory = event.target.getAttribute('data-value');
 
-        return queryParams;
-    };
+      console.log('Selected category:', selectedCategory);
 
-    const handleCategoryClick = (event, listElement, triggerElement) => {
-        if (event.target.classList.contains('category-item')) {
-            let selectedCategory = event.target.getAttribute('data-value');
+      triggerElement.textContent = event.target.textContent;
+      triggerElement.setAttribute('data-selected-category', selectedCategory);
 
-            console.log('Selected category:', selectedCategory);
+      listElement.classList.remove('show');
 
-            triggerElement.textContent = event.target.textContent;
-            triggerElement.setAttribute('data-selected-category', selectedCategory);
+      const sortingValue =
+        getById('sortProducts').getAttribute('data-selected-sort');
+      const keywordInput = getById('keywordInput');
+      const inputValue = keywordInput.value;
+      const queryParams = createQueryParams(
+        selectedCategory,
+        sortingValue,
+        inputValue
+      );
 
-            listElement.classList.remove('show');
+      render(queryParams);
+    }
+  };
 
-            const sortingValue = getById('sortProducts').getAttribute('data-selected-sort');
-            const keywordInput = getById('keywordInput');
-            const inputValue = keywordInput.value;
-            const queryParams = createQueryParams(selectedCategory, sortingValue, inputValue);
+  const handleSortClick = (event, listElement, triggerElement) => {
+    if (event.target.classList.contains('category-item')) {
+      let selectedSort = event.target.getAttribute('data-value');
 
-       
-            render(queryParams);
-        }
-    };
+      console.log('Selected sort:', selectedSort);
 
-    const handleSortClick = (event, listElement, triggerElement) => {
-        if (event.target.classList.contains('category-item')) {
-            let selectedSort = event.target.getAttribute('data-value');
+      triggerElement.textContent = event.target.textContent;
+      triggerElement.setAttribute('data-selected-sort', selectedSort);
 
-            console.log('Selected sort:', selectedSort);
+      listElement.classList.remove('show');
 
-            triggerElement.textContent = event.target.textContent;
-            triggerElement.setAttribute('data-selected-sort', selectedSort);
+      const selectedCategory = getById('categorySelect').getAttribute(
+        'data-selected-category'
+      );
+      const keywordInput = getById('keywordInput');
+      const inputValue = keywordInput.value;
 
-            listElement.classList.remove('show');
+      const queryParams = createQueryParams(
+        selectedCategory,
+        selectedSort,
+        inputValue
+      );
 
-            const selectedCategory = getById('categorySelect').getAttribute('data-selected-category');
-            const keywordInput = getById('keywordInput');
-            const inputValue = keywordInput.value;
+      render(queryParams);
+    }
+  };
 
-            const queryParams = createQueryParams(selectedCategory, selectedSort, inputValue);
+  const sortTriggerElement = getById('sortProducts');
+  const sortList = getById('sortBProductsList');
+  const categoryTriggerElement = getById('categorySelect');
+  const categoryList = getById('categoryBProductsList');
 
-           
-            render(queryParams);
-        }
-    };
+  document.addEventListener('click', hideList(sortList, sortTriggerElement));
+  document.addEventListener(
+    'click',
+    hideList(categoryList, categoryTriggerElement)
+  );
 
-    const sortTriggerElement = getById('sortProducts');
-    const sortList = getById('sortBProductsList');
-    const categoryTriggerElement = getById('categorySelect');
-    const categoryList = getById('categoryBProductsList');
+  categoryList.addEventListener('click', event =>
+    handleCategoryClick(event, categoryList, categoryTriggerElement)
+  );
+  sortList.addEventListener('click', event =>
+    handleSortClick(event, sortList, sortTriggerElement)
+  );
 
-    document.addEventListener('click', hideList(sortList, sortTriggerElement));
-    document.addEventListener('click', hideList(categoryList, categoryTriggerElement));
+  const filterForm = getById('filterForm');
+  filterForm.addEventListener('submit', async function (event) {
+    event.preventDefault();
+    const keywordInput = getById('keywordInput');
+    const inputValue = keywordInput.value;
 
-    categoryList.addEventListener('click', (event) => handleCategoryClick(event, categoryList, categoryTriggerElement));
-    sortList.addEventListener('click', (event) => handleSortClick(event, sortList, sortTriggerElement));
+    if (!inputValue.trim()) {
+      console.log('Please enter a keyword before submitting.');
+      return;
+    }
 
-    const filterForm = getById('filterForm');
-    filterForm.addEventListener('submit', async function (event) {
-        event.preventDefault();
-        const keywordInput = getById('keywordInput');
-        const inputValue = keywordInput.value;
+    try {
+      const selectedCategory = categoryTriggerElement.getAttribute(
+        'data-selected-category'
+      );
+      const selectedSort =
+        sortTriggerElement.getAttribute('data-selected-sort');
 
-        if (!inputValue.trim()) {
-            console.log('Please enter a keyword before submitting.');
-            return;
-        }
+      const queryParams = createQueryParams(
+        selectedCategory,
+        selectedSort,
+        inputValue
+      );
 
-        try {
-            const selectedCategory = categoryTriggerElement.getAttribute('data-selected-category');
-            const selectedSort = sortTriggerElement.getAttribute('data-selected-sort');
-
-            const queryParams = createQueryParams(selectedCategory, selectedSort, inputValue);
-
-           
-            render(queryParams);
-        } catch (error) {
-            console.error(error);
-        }
-    });
+      render(queryParams);
+    } catch (error) {
+      console.error(error);
+    }
+  });
 });
 
 // byABC=false
@@ -142,7 +160,6 @@ document.addEventListener('DOMContentLoaded', function () {
 // byPrice=false
 // Popularity=false
 // Popularity=false
-
 
 // alphabetical = (byABC=false)
 // reverse-alphabetical  = (byABC=false)
@@ -150,7 +167,6 @@ document.addEventListener('DOMContentLoaded', function () {
 // expensive  = (byPrice=false)
 // popular  = (Popularity=false)
 // not-popular  = (Popularity=false)
-
 
 // https://food-boutique.b.goit.study/api/products?page=1&limit=6&byABC=false
 // https://food-boutique.b.goit.study/api/products?page=1&limit=6&byABC=true
@@ -160,6 +176,3 @@ document.addEventListener('DOMContentLoaded', function () {
 // https://food-boutique.b.goit.study/api/products?page=1&limit=6&byPopularity=true
 
 // https://food-boutique.b.goit.study/api/products?page=1&limit=6&category=Deli&byABC=false
-
-
-
