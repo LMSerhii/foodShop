@@ -20,8 +20,9 @@ const queryParams = {
   limit: '6',
 };
 
-const divPopular = document.querySelector('.popular-products');
-console.dir(divPopular);
+import { refs } from './refs';
+console.dir(refs);
+
 const popularProductList = document.querySelector('.popular_products_list');
 console.log(popularProductList);
 
