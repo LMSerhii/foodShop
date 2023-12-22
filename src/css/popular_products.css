@@ -37,8 +37,9 @@ body {
 }
 .popular_products_list {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: 14px;
+  margin: 12px;
 }
 
 .popular-card {
@@ -51,8 +52,9 @@ body {
 }
 
 .popular-box {
-  /* display: flex; */
-  /* flex-direction: column; */
+  display: flex;
+  flex-direction: row;
+  padding: 14px;
 }
 
 .popular-container {

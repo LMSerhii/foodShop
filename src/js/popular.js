@@ -33,9 +33,8 @@ function createMarkup(arrey) {
   }
   return arrey
     .map(({ _id, name, img, category, size, popularity }) => {
-      return `<div class "popular-box">
-      <li class="popular-card" data-id=${_id}>
-                    <div class="popular-container">
+      return `<li class="popular-card" data-id=${_id}>
+                    <div class="popular-box">
                       <a href="#" class="card-img-link">
                           <img src="${img}" alt="${name}" width="140" height="140" loading="lazy"/>
                       </a>
@@ -59,8 +58,7 @@ function createMarkup(arrey) {
                           </svg>
                       </button>
                     </div>
-                </li>
-                </div>`;
+                </li>`;
     })
     .join('');
 }
