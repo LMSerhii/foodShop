@@ -1,4 +1,6 @@
 /* base */
+
+/* 375,768, 1440 */
 .container {
   max-width: 335px;
   margin: 0 auto;
@@ -24,6 +26,7 @@
 */
 .header {
   padding-top: 18px;
+  background-color: #e8e8e2;
 }
 
 .header-content {
