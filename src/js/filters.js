@@ -2,8 +2,6 @@ import { render} from './products';
 import axios from 'axios';
 const categoryList = document.getElementById('categoryBProductsList');
 let categories = []; // Массив категорий
-\
-
 // Загрузка категорий с сервера
 const fetchCategories = async () => { 
   try {
