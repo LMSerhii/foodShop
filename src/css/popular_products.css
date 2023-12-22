@@ -80,7 +80,7 @@ body {
   flex-direction: column;
   gap: 9px;
 }
-.prod .info-style {
+.info-style {
   color: rgba(1, 1, 1, 0.3);
   font-family: Neue Montreal;
   font-size: 12px;
@@ -89,7 +89,9 @@ body {
   line-height: 1, 17;
   gap: 9px;
 }
-
+span {
+  color: #010101;
+}
 .popular-info-wraper {
   display: flex;
   gap: 9px;
