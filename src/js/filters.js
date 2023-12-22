@@ -1,26 +1,69 @@
-
-
 import { render} from './products';
+import axios from 'axios';
+const categoryList = document.getElementById('categoryBProductsList');
+let categories = []; // Массив категорий
+\
+
+// Загрузка категорий с сервера
+const fetchCategories = async () => { 
+  try {
+    const response = await axios.get('https://food-boutique.b.goit.study/api/products/categories'); // Выполнение GET-запроса
+    const data = response.data; // Получение данных
+    
+    categories = [...data, 'Show all']; // Обновление массива категорий
+    displayCategories(categories); // Отображение категорий
+    console.log(categories);
+  } catch (error) {
+    console.error('Error fetching categories:', error); // Обработка ошибок
+  }
+};
+console.log(fetchCategories());
+
+
+// Отображение категорий в списке
+const displayCategories = categories => { 
+  const listItems = categories
+    .map(category => {
+      let displayCategory = category.replace(/_/g, ' ');
+      // Дополнительная обработка для категории 'Breads_&_Bakery'
+      if (category === 'Breads_&_Bakery') {
+        displayCategory = displayCategory.replace(/&/g, '/');
+      }
+      return `<li class="category-item" data-value="${category}">${displayCategory}</li>`;
+    })
+    .join('');
+    categoryList.innerHTML = listItems; // Обновление разметки списка категорий
+};
+
+
+
+
+function toggleCategoryList() {
+  toggleList('categoryBProductsList');
+}
+function toggleSortList() {
+  toggleList('sortBProductsList');
+}
 
 
 // Навешиваем обработчик события "click" на элемент с id "sortProducts"
 // при клике вызываем функцию toggleSortList
 document.getElementById('sortProducts').addEventListener('click', toggleSortList);
-function toggleSortList() {
-  toggleList('sortBProductsList');
-}
+
 // Навешиваем обработчик события "click" на элемент с id "categorySelect"
 // при клике вызываем функцию toggleCategoryList
 document.getElementById('categorySelect').addEventListener('click', toggleCategoryList);
 
-function toggleCategoryList() {
-  toggleList('categoryBProductsList');
-}
+
+
+
 // Функция для переключения видимости списка элементов по его id
 function toggleList(listId) {
   const listElement = document.getElementById(listId);
   listElement.classList.toggle('show');
 }
+
+
 
 // Функция, скрывающая список, если произошел клик за его пределами
 function hideList(listElement, triggerElement) {
@@ -30,6 +73,9 @@ function hideList(listElement, triggerElement) {
     }
   };
 }
+
+
+
 
 // Функция для создания объекта с параметрами запроса
 const createQueryParams = (selectedCategory, sortingValue, inputValue) => {
@@ -67,6 +113,8 @@ const createQueryParams = (selectedCategory, sortingValue, inputValue) => {
   return queryParams;
 };
 
+
+
 // Функция обработки клика по категории
 function handleCategoryClick(event, listElement, triggerElement) {
   if (event.target.classList.contains('category-item')) {
@@ -89,6 +137,9 @@ function handleCategoryClick(event, listElement, triggerElement) {
   }
 }
 
+
+
+
 // Функция обработки клика по сортировке
 function handleSortClick(event, listElement, triggerElement) {
   if (event.target.classList.contains('category-item')) {
@@ -110,6 +161,9 @@ function handleSortClick(event, listElement, triggerElement) {
     render(queryParams);
   }
 }
+
+
+
 
 // Навешиваем обработчики событий и инициализируем некоторые переменные после полной загрузки документа
 document.addEventListener('DOMContentLoaded', function () {
@@ -159,153 +213,5 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 });
-
-
-
-
-// document.addEventListener('DOMContentLoaded', function () {
-//   const getById = id => document.getElementById(id);
-
-//   const hideList = (listElement, triggerElement) => event => {
-//     if (
-//       !listElement.contains(event.target) &&
-//       event.target !== triggerElement
-//     ) {
-//       listElement.classList.remove('show');
-//     }
-//   };
-
-//   const createQueryParams = (selectedCategory, sortingValue, inputValue) => {
-//     const queryParams = {
-//       category: selectedCategory,
-//     };
-
-//     if (sortingValue) {
-//       if (sortingValue === 'alphabetical') {
-//         queryParams.byABC = true;
-//       } else if (sortingValue === 'reverse-alphabetical') {
-//         queryParams.byABC = false;
-//       }
-
-//       if (sortingValue === 'cheap') {
-//         queryParams.byPrice = true;
-//       } else if (sortingValue === 'expensive') {
-//         queryParams.byPrice = false;
-//       }
-
-//       if (sortingValue === 'popular') {
-//         queryParams.byPopularity = false;
-//       } else if (sortingValue === 'not-popular') {
-//         queryParams.byPopularity = true;
-//       }
-//     }
-
-//     if (inputValue) {
-//       queryParams.keyword = inputValue;
-//     }
-
-//     return queryParams;
-//   };
-
-//   const handleCategoryClick = (event, listElement, triggerElement) => {
-//     if (event.target.classList.contains('category-item')) {
-//       let selectedCategory = event.target.getAttribute('data-value');
-
-//       console.log('Selected category:', selectedCategory);
-
-//       triggerElement.textContent = event.target.textContent;
-//       triggerElement.setAttribute('data-selected-category', selectedCategory);
-
-//       listElement.classList.remove('show');
-
-//       const sortingValue =
-//         getById('sortProducts').getAttribute('data-selected-sort');
-//       const keywordInput = getById('keywordInput');
-//       const inputValue = keywordInput.value;
-//       const queryParams = createQueryParams(
-//         selectedCategory,
-//         sortingValue,
-//         inputValue
-//       );
-
-//       render(queryParams);
-//     }
-//   };
-
-//   const handleSortClick = (event, listElement, triggerElement) => {
-//     if (event.target.classList.contains('category-item')) {
-//       let selectedSort = event.target.getAttribute('data-value');
-
-//       console.log('Selected sort:', selectedSort);
-
-//       triggerElement.textContent = event.target.textContent;
-//       triggerElement.setAttribute('data-selected-sort', selectedSort);
-
-//       listElement.classList.remove('show');
-
-//       const selectedCategory = getById('categorySelect').getAttribute(
-//         'data-selected-category'
-//       );
-//       const keywordInput = getById('keywordInput');
-//       const inputValue = keywordInput.value;
-
-//       const queryParams = createQueryParams(
-//         selectedCategory,
-//         selectedSort,
-//         inputValue
-//       );
-
-//       render(queryParams);
-//     }
-//   };
-
-//   const sortTriggerElement = getById('sortProducts');
-//   const sortList = getById('sortBProductsList');
-//   const categoryTriggerElement = getById('categorySelect');
-//   const categoryList = getById('categoryBProductsList');
-
-//   document.addEventListener('click', hideList(sortList, sortTriggerElement));
-//   document.addEventListener(
-//     'click',
-//     hideList(categoryList, categoryTriggerElement)
-//   );
-
-//   categoryList.addEventListener('click', event =>
-//     handleCategoryClick(event, categoryList, categoryTriggerElement)
-//   );
-//   sortList.addEventListener('click', event =>
-//     handleSortClick(event, sortList, sortTriggerElement)
-//   );
-
-//   const filterForm = getById('filterForm');
-//   filterForm.addEventListener('submit', async function (event) {
-//     event.preventDefault();
-//     const keywordInput = getById('keywordInput');
-//     const inputValue = keywordInput.value;
-
-//     if (!inputValue.trim()) {
-//       console.log('Please enter a keyword before submitting.');
-//       return;
-//     }
-
-//     try {
-//       const selectedCategory = categoryTriggerElement.getAttribute(
-//         'data-selected-category'
-//       );
-//       const selectedSort =
-//         sortTriggerElement.getAttribute('data-selected-sort');
-
-//       const queryParams = createQueryParams(
-//         selectedCategory,
-//         selectedSort,
-//         inputValue
-//       );
-
-//       render(queryParams);
-//     } catch (error) {
-//       console.error(error);
-//     }
-//   });
-// });
 
 
