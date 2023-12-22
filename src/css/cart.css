@@ -67,6 +67,11 @@ body {
   margin-bottom: 30px;
 }
 
+.btn-del-product {
+  border: none;
+  background: none;
+}
+
   .product-card {
   display: flex;
     max-width: 335px;
@@ -108,15 +113,21 @@ body {
   margin-top: 36px;
 }
 
+.product-price.product-name.m {
+  margin-right: 88px;
+}
 
+.product-name span {
+  color: #6D8434;
+}
 
-
-/* .empty-cart {
+.empty-cart {
   display: flex;
   flex-direction: column;
   justify-items: center;
   align-items: center;
-} */
+  margin-top: 75px;
+}
 
 .info-style {
   color: rgba(1, 1, 1, 0.30);
@@ -137,7 +148,7 @@ body {
 
 .scrollable {
   overflow-y: scroll;
-  max-height: 450px; /* або будь-яка інша відповідна висота */
+  max-height: 465px; /* або будь-яка інша відповідна висота */
   padding-right: 9px
 }
 
@@ -211,4 +222,47 @@ padding: 26px 0 14px 18px ;
   font-weight: 500;
   line-height: 1.29;
   margin-bottom: 80px;
+  border: none;
 }
+
+.empty-basket {
+  margin-bottom: 28px;
+}
+
+.empt-text {
+  margin-top: 14px;
+  color: rgba(1, 1, 1, 0.70);
+  text-align: center;
+  font-family: Neue Montreal;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.29;
+  max-width: 279px;
+
+}
+
+.counter {
+  display: flex;
+}
+
+.btn-counter {
+  display: flex;
+  /* padding: 4px 12px; */
+  justify-content: center;
+  align-items: center; 
+  border-radius: 100px; 
+  margin-top: auto;
+  border: 1px solid rgba(1, 1, 1, 0.10);
+  background: none;
+  
+}
+
+
+.decrement, .increment{
+  background: none;
+  border: none;
+}
+
+
+

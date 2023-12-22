@@ -62,5 +62,13 @@
 <symbol id="icon-Vector-338" viewBox="0 0 5360 32">
 <path stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" stroke-width="16" d="M0 16h5360"></path>
 </symbol>
+<symbol id="icon-minus" viewBox="0 0 32 32">
+<path stroke-linejoin="round"  stroke="#010101" stroke-linecap="round" stroke-miterlimit="4" stroke-width="3.4286" d="M6.67 16h18.667"></path>
+</symbol>
+<symbol id="icon-plus" viewBox="0 0 32 32">
+<path stroke-linejoin="round" stroke="#010101" stroke-linecap="round" stroke-miterlimit="4" stroke-width="3.4286" d="M16 6.667v18.667"></path>
+<path stroke-linejoin="round" stroke="#010101" stroke-linecap="round" stroke-miterlimit="4" stroke-width="3.4286" d="M6.67 16h18.667"></path>
+</symbol>
+
 </defs>
 </svg>
