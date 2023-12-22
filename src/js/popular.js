@@ -33,12 +33,13 @@ function createMarkup(arrey) {
   }
   return arrey
     .map(({ _id, name, img, category, size, popularity }) => {
-      return `<div class "container">
+      return `<div class "popular-box">
       <li class="popular-card" data-id=${_id}>
                     <div class="popular-container">
                       <a href="#" class="card-img-link">
                           <img src="${img}" alt="${name}" width="140" height="140" loading="lazy"/>
                       </a>
+                      <div class="card-info-box">
                       <a href="#" class="card-name-link">
                         <h3 class="popular-name">${name}</h3>
                       </a>
@@ -47,6 +48,7 @@ function createMarkup(arrey) {
                           <li class="info-style">Size: <span>${size}</span></li>
                           <li class="info-style">Popularity: <span>${popularity}</span></li>
                       </ul>
+                      </div>
                     </div>
 
                     <div class="card-bottom">
