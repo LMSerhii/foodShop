@@ -13,27 +13,49 @@ function createMarkupFilters(arr) {
     <form class="filters-form" id="filters-form-id">
         <input class="filters-input" type="text" placeholder="Search for anything">
         <select class="categories-select" name="categories" id="categories-select-id">
-            <option value="">${arr[0]}</option>
-            <option value="">${arr[1]}</option>
-            <option value="">${arr[2]}</option>
-            <option value="">${arr[3]}</option>
-            <option value="">${arr[4]}</option>
-            <option value="">${arr[5]}</option>
-            <option value="">${arr[6]}</option>
-            <option value="">${arr[7]}</option>
-            <option value="">${arr[8]}</option>
-            <option value="">${arr[9]}</option>
-            <option value="">${arr[10]}</option>
-            <option value="">Show all</option>
+            <option data-placeholder="true"></option>
+            <option style="color: rgba(1, 1, 1, 0.50); font-size: 14px; line-height: 1.28;" 
+            value="${arr[0]}">${arr[0]}</option>
+            <option data-placeholder="true"></option>
+            <option style="color: rgba(1, 1, 1, 0.50); font-size: 14px; line-height: 1.28;" 
+            value="${arr[1]}">${arr[1]}</option>
+            <option style="color: rgba(1, 1, 1, 0.50); font-size: 14px; line-height: 1.28;" 
+            value="${arr[2]}">${arr[2]}</option>
+            <option style="color: rgba(1, 1, 1, 0.50); font-size: 14px; line-height: 1.28;" 
+            value="${arr[3]}">${arr[3]}</option>
+            <option style="color: rgba(1, 1, 1, 0.50); font-size: 14px; line-height: 1.28;" 
+            value="${arr[4]}">${arr[4]}</option>
+            <option style="color: rgba(1, 1, 1, 0.50); font-size: 14px; line-height: 1.28;" 
+            value="${arr[5]}">${arr[5]}</option>
+            <option style="color: rgba(1, 1, 1, 0.50); font-size: 14px; line-height: 1.28;" 
+            value="${arr[6]}">${arr[6]}</option>
+            <option style="color: rgba(1, 1, 1, 0.50); font-size: 14px; line-height: 1.28;" 
+            value="${arr[7]}">${arr[7]}</option>
+            <option style="color: rgba(1, 1, 1, 0.50); font-size: 14px; line-height: 1.28;" 
+            value="${arr[8]}">${arr[8]}</option>
+            <option style="color: rgba(1, 1, 1, 0.50); font-size: 14px; line-height: 1.28;" 
+            value="${arr[9]}">${arr[9]}</option>
+            <option style="color: rgba(1, 1, 1, 0.50); font-size: 14px; line-height: 1.28;" 
+            value="${arr[10]}">${arr[10]}</option>
+            <option style="color: rgba(1, 1, 1, 0.50); font-size: 14px; line-height: 1.28;" 
+            value="">Show all</option>
         </select>
         <select class="filters-select" name="filters" id="filters-select-id">
-            <option value="A to Z">A to Z</option>
-            <option value="Z to A">Z to A</option>
-            <option value="Cheap">Cheap</option>
-            <option value="Expensive">Expensive</option>
-            <option value="Popular">Popular</option>
-            <option value="Not popular">Not popular</option>
-            <option value="Show all">Show all</option>
+            <option class="option-placeholder" data-placeholder="true">A to Z</option>
+            <option style="color: rgba(1, 1, 1, 0.50); font-size: 14px; line-height: 1.28;" 
+            value="A to Z">A to Z</option>
+            <option style="color: rgba(1, 1, 1, 0.50); font-size: 14px; line-height: 1.28;" 
+            value="Z to A">Z to A</option>
+            <option style="color: rgba(1, 1, 1, 0.50); font-size: 14px; line-height: 1.28;" 
+            value="Cheap">Cheap</option>
+            <option style="color: rgba(1, 1, 1, 0.50); font-size: 14px; line-height: 1.28;" 
+            value="Expensive">Expensive</option>
+            <option style="color: rgba(1, 1, 1, 0.50); font-size: 14px; line-height: 1.28;" 
+            value="Popular">Popular</option>
+            <option style="color: rgba(1, 1, 1, 0.50); font-size: 14px; line-height: 1.28;" 
+            value="Not popular">Not popular</option>
+            <option style="color: rgba(1, 1, 1, 0.50); font-size: 14px; line-height: 1.28;" 
+            value="Show all">Show all</option>
         </select>
         <button class="filters-button" type="submit">
             <svg width="20" height="20" fill="#010101">
@@ -49,6 +71,7 @@ filtersSection.innerHTML = createMarkupFilters(arrCategories);
 new SlimSelect({
   select: '#filters-select-id',
   settings: {
+    placeholderText: 'A to Z',
     showSearch: false,
   },
 });

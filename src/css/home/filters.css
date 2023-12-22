@@ -53,3 +53,39 @@
     border: none;
     background-color: #E8E8E2;;
 }
+
+.ss-main.categories-select {
+    background: #E8E8E2;
+}
+
+.ss-values {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 20px;
+}
+
+.ss-main.categories-select {
+    border-radius: 30px;
+    border: 1px solid rgba(1, 1, 1, 0.30);
+}
+
+.ss-main.categories-select.ss-open-below {
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+.ss-main.filters-select {
+    border-radius: 30px;
+    border: 1px solid rgba(1, 1, 1, 0.30);
+}
+
+.ss-main.filters-select.ss-open-below {
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+.ss-open-below {
+    border-radius: 15px;
+    padding-top: 14px;
+    padding-left: 20px;
+}
