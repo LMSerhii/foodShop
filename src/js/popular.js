@@ -44,6 +44,7 @@ function createMarkup(arrey) {
                       </a>
                       <ul class="popular-info-list">
                           <li class="info-style">Category: <span>${category}</span></li>
+                          <div class="popular-info-wraper">
                           <li class="info-style">Size: <span>${size}</span></li>
                           <li class="info-style">Popularity: <span>${popularity}</span></li>
                       </ul>

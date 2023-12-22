@@ -98,6 +98,10 @@ body {
   gap: 9px;
 }
 
+.popular-info-wraper {
+  display: flex;
+  gap: 9px;
+}
 /* .delete-container {
   display: flex;
   justify-content: flex-end;
