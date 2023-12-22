@@ -6,6 +6,7 @@
 @import url('./footer.css');
 @import url('./cart.css');
 @import url('./modal.css');
+@import url('./popular_products.css');
 
 body {
   font-family: 'Neue Montreal';
