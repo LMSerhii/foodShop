@@ -71,6 +71,17 @@ body {
   font-weight: 500;
   line-height: 1.11;
 }
+.popular-card-img-link {
+  width: 74px;
+  height: 74px;
+  background: lightgray 50% / cover no-repeat;
+  display: flex;
+  align-items: center;
+  padding: 9px;
+  margin-right: 10px;
+  border-radius: 10px;
+  background: #e8e8e2;
+}
 
 /* .delete-container {
   display: flex;
@@ -127,14 +138,7 @@ body {
   line-height: 1.12;
 }
 
-.product-card-img {
-  width: 100px;
-  height: 100px;
-  background: lightgray 50% / cover no-repeat;
-  border-radius: 10px;
-  background: #fafafa;
-  margin-right: 20px;
-}
+
 
 .product-title {
   display: flex;
