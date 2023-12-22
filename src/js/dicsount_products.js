@@ -39,3 +39,12 @@ function createDiscountMarkup(array) {
 //  <svg class="" width="" height="">
 //    <use href="${svg_sprite}#cart"></use>
 //  </svg>
+
+// add listner to products
+
+const discProdList = document.querySelector('.discount-product-list');
+console.log(discProdList);
+
+discProdList.addEventListener('click', clickOnDiscount());
+
+function clickOnDiscount() {}
