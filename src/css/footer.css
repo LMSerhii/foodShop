@@ -15,13 +15,7 @@
   max-width: 280px;
   padding: 0 20px;
 }
-.footer-container {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  justify-content: center;
-  align-content: flex-start;
-}
+
 @media screen and (min-width: 375px) {
   .container {
     max-width: 375px;
@@ -29,8 +23,6 @@
 }
 
 .footer-box {
-  display: flex;
-  flex-direction: column;
   margin-bottom: 80px;
 }
 .logo-link {
@@ -78,7 +70,6 @@
   display: flex;
   gap: 12px;
 }
-
 .footer-social-links {
   display: flex;
   border-radius: 10px;
@@ -165,8 +156,7 @@
     padding: 0 32px;
   }
   .footer-box {
-    flex-direction: row;
-    justify-content: center;
+    display: flex;
     margin-bottom: 80px;
   }
   .footer-left-box {
@@ -198,10 +188,6 @@
   .footer-paragraph {
     font-size: 18px;
     line-height: 1.33;
-  }
-  .text-subscribe-box {
-    display: flex;
-    flex-direction: column;
   }
   .subscribe-paragraph {
     width: 312px;
@@ -248,9 +234,6 @@
   .text-subscribe-box {
     display: flex;
     flex-direction: row;
-  }
-  .with-logo-container {
-    margin-right: 148px;
   }
   .footer-logo {
     width: 157px;
