@@ -1,0 +1,102 @@
+/* error style */
+
+.error_box {
+  padding-top: 40px;
+  padding-bottom: 70px;
+}
+
+@media screen and (min-width: 375px) {
+  .error_box {
+    padding-top: 80px;
+    padding-bottom: 140px;
+  }
+}
+
+.error_title {
+  max-width: 240px;
+  color: var(--black);
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.11;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+
+@media screen and (min-width: 375px) {
+  .error_title {
+    max-width: 261px;
+    font-size: 18px;
+    margin-bottom: 14px;
+  }
+}
+
+.error_title span {
+  color: var(--lightGreen);
+  margin-left: 8px;
+}
+
+.error_text {
+  max-width: 260px;
+  color: rgba(1, 1, 1, 0.7);
+  text-align: center;
+  line-height: 1.28;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 375px) {
+  .error_text {
+    max-width: 279px;
+  }
+}
+
+/* not found style */
+
+.notFound_box {
+  padding-top: 60px;
+  padding-bottom: 100px;
+}
+
+@media screen and (min-width: 375px) {
+  .notFound_box {
+    padding-top: 80px;
+    padding-bottom: 140px;
+  }
+}
+
+.notFound_title {
+  max-width: 240px;
+  color: var(--black);
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.11;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+
+@media screen and (min-width: 375px) {
+  .notFound_title {
+    max-width: 261px;
+    font-size: 18px;
+    margin-bottom: 14px;
+  }
+}
+
+.notFound_title span {
+  color: var(--lightGreen);
+}
+
+.notFound_text {
+  max-width: 260px;
+  color: rgba(1, 1, 1, 0.7);
+  text-align: center;
+  line-height: 1.28;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 375px) {
+  .notFound_text {
+    max-width: 279px;
+  }
+}
