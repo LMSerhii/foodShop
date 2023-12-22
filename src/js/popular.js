@@ -42,7 +42,7 @@ function createMarkup(arrey) {
                       <a href="#" class="card-name-link">
                         <h3 class="popular-name">${name}</h3>
                       </a>
-                      <ul class="product-container">
+                      <ul class="popular-info-list">
                           <li class="info-style">Category: <span>${category}</span></li>
                           <li class="info-style">Size: <span>${size}</span></li>
                           <li class="info-style">Popularity: <span>${popularity}</span></li>

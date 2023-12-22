@@ -70,6 +70,7 @@ body {
   font-size: 18px;
   font-weight: 500;
   line-height: 1.11;
+  margin-bottom: 12px;
 }
 .popular-card-img-link {
   width: 74px;
@@ -81,6 +82,20 @@ body {
   margin-right: 10px;
   border-radius: 10px;
   background: #e8e8e2;
+}
+.popular-info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+.prod .info-style {
+  color: rgba(1, 1, 1, 0.3);
+  font-family: Neue Montreal;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1, 17;
+  gap: 9px;
 }
 
 /* .delete-container {
