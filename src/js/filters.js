@@ -27,7 +27,6 @@ const displayCategories = categories => {
     .map(category => {
       let displayCategory = category.replace(/_/g, ' ');
      
-      
       return `<li class="category-item" data-value="${category}">${displayCategory}</li>`;
     })
     .join('');
