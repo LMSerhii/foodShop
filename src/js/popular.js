@@ -1,82 +1,28 @@
-// import axios from 'axios';
-// async function fetchData() {
-//   const apiUrl = 'https://food-boutique.b.goit.study/api/products/popular';
-//   const params = { limit: '6' };
-//   try {
-//     const response = await axios.get(apiUrl, { params });
-//     console.log(response.data);
-//   } catch (error) {
-//     console.error(`Помилка: ${error.message}`);
-//   }
-// }
-// fetchData();
-
 import axios from 'axios';
 // import { common } from './common';
-const BASE_URL = 'https://food-boutique.b.goit.study/api/products/popular';
-let page = 1;
-const queryParams = {
-  page: '1',
-  limit: '6',
-};
+import { getPopular } from './api_service';
+
+import { getDataId } from './api_service';
 
 import { refs } from './refs';
-console.dir(refs);
+console.log(refs);
 
 const popularProductList = document.querySelector('.popular_products_list');
 console.log(popularProductList);
 
-// const pages = {
-//   page: 0,
-//   perPage: 0,
-//   totalPages: 0,
-// };
-
-async function fetchData() {
-  try {
-    const response = await axios.get(BASE_URL, {
-      params: queryParams,
-    });
-    // method: 'GET',
-    // header: {
-    //   'Content-Type': 'aplication/json',
-    // },
-
-    // );
-    console.log(response.data);
-    return response.data;
-  } catch (error) {
-    console.error('Error:', error);
-    throw error;
-  }
-}
-
-async function getData() {
-  try {
-    const data = await fetchData();
-
-    // pages.page = data.page;
-    // pages.perPage = data.perPage;
-    // pages.totalPages = data.totalPages;
-
-    console.log(data);
-    return data;
-  } catch (error) {
-    errorMarkup(error.status);
-  }
-}
+getPopular();
 
 render();
 
 async function render() {
-  const results = await getData();
+  const results = await getPopular();
 
   if (!results) {
     return;
   }
 
   const markup = createMarkup(results);
-  popularProductList.innerHTML = '';
+  // popularProductList.innerHTML = '';
   popularProductList.insertAdjacentHTML('beforeend', markup);
 }
 
@@ -115,6 +61,4 @@ function createMarkup(arrey) {
     .join('');
 }
 
-function errorMarkup(status) {
-  popularProductList.innerHTML = `<p class="error_status error">${status}</p><p class="error_text error">Ой, щось пішло не так ...</p>`;
-}
+// getDataId();

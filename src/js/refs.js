@@ -1,5 +1,5 @@
 const refs = {
-  productList: document.querySelector('.product-list'),
+  popularProductList: document.querySelector('.popular-products'),
 };
 
 export { refs };
