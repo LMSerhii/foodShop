@@ -1,6 +1,9 @@
 import { render} from './products';
 import axios from 'axios';
 const categoryList = document.getElementById('categoryBProductsList');
+  // Получаем введенное значение из поля для ключевого слова
+ 
+  const inputValue = keywordInput.value;
 let categories = []; // Массив категорий
 // Загрузка категорий с сервера
 const fetchCategories = async () => { 
@@ -23,14 +26,12 @@ const displayCategories = categories => {
   const listItems = categories
     .map(category => {
       let displayCategory = category.replace(/_/g, ' ');
-      // Дополнительная обработка для категории 'Breads_&_Bakery'
-      if (category === 'Breads_&_Bakery') {
-        displayCategory = displayCategory.replace(/&/g, '/');
-      }
+     
+      
       return `<li class="category-item" data-value="${category}">${displayCategory}</li>`;
     })
     .join('');
-    categoryList.innerHTML = listItems; // Обновление разметки списка категорий
+    categoryList.innerHTML = listItems; 
 };
 
 
@@ -163,9 +164,9 @@ function handleSortClick(event, listElement, triggerElement) {
 
 
 
-// Навешиваем обработчики событий и инициализируем некоторые переменные после полной загрузки документа
+
 document.addEventListener('DOMContentLoaded', function () {
-  // Инициализация переменных
+  
   const sortTriggerElement = document.getElementById('sortProducts');
   const sortList = document.getElementById('sortBProductsList');
   const categoryTriggerElement = document.getElementById('categorySelect');
@@ -188,7 +189,7 @@ document.addEventListener('DOMContentLoaded', function () {
   filterForm.addEventListener('submit', async function (event) {
     event.preventDefault();
 
-    // Получаем введенное значение из поля для ключевого слова
+    // // Получаем введенное значение из поля для ключевого слова
     const keywordInput = document.getElementById('keywordInput');
     const inputValue = keywordInput.value;
 
