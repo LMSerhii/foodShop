@@ -25,6 +25,7 @@ async function fetchData(params) {
 async function init() {
   const productList = document.querySelector('.product-list');
   const deleteAllButton = document.getElementById('deleteAllButton');
+  const countCart = document.getElementById('product-count')
 
   try {
     const data = await fetchData();
@@ -78,6 +79,59 @@ async function init() {
       `;
     }).join('');
   }
+
+
+  async function updateProductCount() {
+    try {
+      const data = await fetchData();
+      const productCount = data.results.length;
+  
+      const productCountSpan = document.getElementById('product-count');
+      productCountSpan.textContent = `(${productCount})`;
+  
+    } catch (error) {
+      console.error("Error", error);
+    }
+  }
+  
+  // Викликаємо функцію для оновлення кількості продуктів
+  updateProductCount();
+  
+  // Додамо слухач подій для видалення продуктів
+  // Це простий приклад, ви можете використовувати свою логіку обробки подій відповідно до вашого коду.
+  document.addEventListener('click', async function (event) {
+    const deleteButton = event.target.closest('.btn-del-product');
+    if (deleteButton) {
+      await deleteProduct();
+      updateProductCount(); // Після видалення оновлюємо кількість продуктів
+    }
+  });
+  
+  // Замініть цю функцію на вашу функцію видалення продукту
+  async function deleteProduct() {
+    // Ваш код для видалення продукту.
+    // Переконайтеся, що ви оновлюєте інтерфейс так, щоб відображався новий стан.
+    console.log('Product deleted!');
+  }
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   //  Ініціалізація лічильника на кожній картці з продуктом
   function initCounters() {
