@@ -2,8 +2,9 @@ import axios from 'axios';
 const basketImg = '../css/images/yellow shopping basket.png'
 const productList = document.querySelector('.product-list');
 const underline = "http://www.w3.org/2000/svg";
-// import svg_sprite from '../img/sprite.svg';
-const svg_sprite = '../img/sprite.svg';
+import svg_sprite from '../css/images/sprite.svg';
+const productLimit = 3;
+
 
 const BASE_URL = 'https://food-boutique.b.goit.study/api';
 
@@ -25,17 +26,25 @@ async function fetchData(params) {
 }
 
 fetchData()
+
   .then(data => {
     productList.insertAdjacentHTML("beforeend", createMarkup(data.results));
+    // console.log(data.results.length);
+    if (data.results.length > 3) {
+      productList.classList.add('scrollable');
+    } else {
+      productList.classList.remove('scrollable');
+    }
   })
   .catch(error => {
     // Обробка помилки при виклику fetchData
     console.log("Error", error);
-    
   });
 
+
 function createMarkup(array) {
-  return array.map(({ _id, name, img, category, price, size, is10PercentOff, popularity }) => {
+  return array.map(({ _id, name, img, category, price, size }) => {
+    
     return `
       <li class="product-card">
         <img class="product-card-img" src="${img}" alt="${name}">
@@ -50,52 +59,15 @@ function createMarkup(array) {
 
 
           <div class="product-category">
-            <p class="product-info"><span class="info-style">Category:</span> ${category} <span class="info-style info-space">Size:</span> ${size}</p>
+            <p class="product-info"><span class="info-style">Category:</span> ${category.replace('_',' ')} <span class="info-style info-space">Size:</span> ${size}</p>
           </div>
-          <p class="product-price">$${price}</p>
+          <p class="product-price product-name">$${price}</p>
         </div>
         
       </li>
     `
   }).join('');
 }
-
-
-
-
-// const BASE_URL = 'https://food-boutique.b.goit.study/api '
-
-// async function fetchData(params) {
-  
-//   const response = await axios({
-//     url: `${BASE_URL}/products`,
-//     method: 'GET',
-//     headers: {
-//       'Content-Type': 'application/json',
-//     },
-//     params,
-//   });
-//   return response.data;
-// }
-
-// fetchData()
-//   .then(data => {
-//     emptyCartContainer.insertAdjacentHTML("beforeend", createMarkup(data.results))
-//   })
-//   .catch(error => console.log("Error", error));
-
-
-// function createMarkup(array) {
-//   return array.map(({
-//     id, name, img, category, price, size, is10PercentOff, popularity
-//   }) => {return
-//   `<li class="product-card">
-//     <img src="${img}" alt="${name}">
-//   </li>
-//   `}
-//   ).join('');
-// }
-
 
 // FETCH
 async function getData(params) {
@@ -148,3 +120,15 @@ async function getDataId(id) {
 //     console.error('Get state error: ', error.message);
 //   }
 // };
+
+
+
+/**
+  |============================
+  | ORDER PART
+  |============================
+*/
+const orderContainer = document.querySelector('.order-container');
+
+
+

@@ -19,7 +19,7 @@
             ></use>
           </svg>
         </a>
-        <h1 class="cart-title">Cart</h1>
+        <h1 class="title">Cart</h1>
       </div>
     <!-- Delete button -->
       <div class="delete-container">
@@ -32,6 +32,31 @@
       </div>
       <!-- Product list -->
       <ul class="product-list"></ul>
+      <!-- Order list -->
+      <div class="order-container">
+        <h2 class="title order-title">Your Order</h2>
+          <div class="total-count">
+            <p class="product-name tittle-total">Total</p>
+              <div class="sum-info">
+                <span class="info-style">Sum: </span>
+                <span class="title" id="total-count">234</span>
+              </div>
+          </div>
+
+          <input
+            class="form-input"
+            type="email"
+            name="user-email"
+            id="user-email"
+            placeholder="Mail: Enter your email"
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+            title="Wrong email"
+            required
+          />
+          <button class="btn-checkout" type="submit"> Checkout</button>
+
+      </div>
+
       <!-- порожній кошик  -->
       <div class="empty-cart"></div>
   </div>
