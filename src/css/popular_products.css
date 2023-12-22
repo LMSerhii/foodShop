@@ -20,24 +20,6 @@ body {
   padding-bottom: 40px;
 }
 
-.card-btn {
-  display: inline-flex;
-  padding: 4px;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  border: none;
-
-  /* width: 20px;
-  height: 20px; */
-  border-radius: 30px;
-  background: #e8e8e2;
-  /* display: inline-flex;
-  padding: 4px;
-  justify-content: center;
-  align-items: center; */
-}
-
 .title-popular-product {
   font-size: 24px;
   font-weight: 500;
@@ -54,20 +36,21 @@ body {
 .popular-card {
   display: flex;
   width: 335px;
-  height: 98px;
+
   flex-shrink: 0;
   border-radius: 10px;
   background: #fafafa;
+  padding: 14px;
+  position: relative;
 }
 
 .popular-box {
   display: flex;
-  flex-direction: row;
-  padding: 14px;
 }
 
 .popular-container {
   display: flex;
+  justify-content: center;
 }
 
 .card-info-box {
@@ -111,98 +94,31 @@ body {
   display: flex;
   gap: 9px;
 }
+.card-btn {
+  width: 20px;
+  height: 20px;
+  display: inline-flex;
+  padding: 4px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  border-radius: 30px;
+  background: #e8e8e2;
+  border: none;
+}
 
 .icon {
   display: inline-block;
   width: 12px;
   height: 12px;
-  /* stroke-width: 1px;
-  stroke: rgba(1, 1, 1, 0.1); */
+
   fill: #6d8434;
 }
-/* .delete-container {
-  display: flex;
-  justify-content: flex-end;
+
+.card-bottom {
+  position: absolute;
+  position: absolute;
+  top: 14px;
+  right: 14px;
 }
-
-.button-delete {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  border: none;
-  background: none;
-}
-
-.popular-container {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  overflow-y: auto; /* Додаємо вертикальний скролл, якщо кількість продуктів більше 3 */
-/* max-height: 430px; Задаємо максимальну висоту контейнера для вертикального скроллу */
-/* margin-bottom: 30px; */
-/* } */
-
-/* .popular-card {
-  border: 2px dotted red;
-  display: flex;
-  max-width: 335px;
-  margin-bottom: 30px;
-  overflow-x: hidden;
-  padding-bottom: 30px;
-  border-bottom: 1px solid rgba(1, 1, 1, 0.1);
-} */
-
-/* .icon-product-cart {
-  width: 167.5em;
-} */
-
-/* .popular-name {
-  color: #010101;
-  font-family: Neue Montreal;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 1.12;
-}
-
-
-
-.product-title {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  margin-bottom: 10px;
-}
-
-.product-container {
-  width: 100%;
-} */
-
-/* .product-category {
-  border: 2px dotted green;
-} */
-
-/* .empty-cart {
-  display: flex;
-  flex-direction: column;
-  justify-items: center;
-  align-items: center;
-} */
-
-/* .info-style {
-  color: rgba(1, 1, 1, 0.3);
-  font-family: Neue Montreal;
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 1, 17;
-}
-
-.info-space {
-  margin-left: 8px;
-}
-
-.product-info {
-  margin-bottom: 36px;
-} */
