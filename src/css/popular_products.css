@@ -20,13 +20,22 @@ body {
   padding-bottom: 40px;
 }
 
-.cart-logo-icon {
-  border-radius: 30px;
-  background: #6d8434;
+.card-btn {
   display: inline-flex;
-  padding: 10px;
+  padding: 4px;
   justify-content: center;
   align-items: center;
+  gap: 10px;
+  border: none;
+
+  /* width: 20px;
+  height: 20px; */
+  border-radius: 30px;
+  background: #e8e8e2;
+  /* display: inline-flex;
+  padding: 4px;
+  justify-content: center;
+  align-items: center; */
 }
 
 .title-popular-product {
@@ -102,6 +111,15 @@ body {
   display: flex;
   gap: 9px;
 }
+
+.icon {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  /* stroke-width: 1px;
+  stroke: rgba(1, 1, 1, 0.1); */
+  fill: #6d8434;
+}
 /* .delete-container {
   display: flex;
   justify-content: flex-end;
@@ -135,17 +153,8 @@ body {
   border-bottom: 1px solid rgba(1, 1, 1, 0.1);
 } */
 
-/* .icon {
-    display: inline-block;
-    width: 1em;
-    height: 1em;
-    stroke-width: 1px;
-    stroke: rgba(1, 1, 1, 0.10);
-    fill: currentColor;
-} */
-
 /* .icon-product-cart {
-    width: 167.5em;
+  width: 167.5em;
 } */
 
 /* .popular-name {

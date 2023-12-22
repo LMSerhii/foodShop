@@ -54,7 +54,7 @@ function createMarkup(arrey) {
                     <div class="card-bottom">
                       
                       <button class="card-btn" type="button">
-                          <svg class="card-btn-icon" width="18" height="18">
+                          <svg class="icon" width="18" height="18">
                               <use href="./img/sprite.svg#cart"></use>
                           </svg>
                       </button>
