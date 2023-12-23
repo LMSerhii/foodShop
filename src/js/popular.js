@@ -4,9 +4,7 @@ import { getPopular } from './api_service';
 
 import { getDataId } from './api_service';
 import svg_sprite from '../img/sprite.svg';
-// import { save, load } from './storage';
-// import { addToCart } from './helpers/addToCart';
-// import { productMarkup, notFoundMarkup } from './markupFunctions';
+import { save, load } from './storage';
 
 const refs = {
   popularProductList: document.querySelector('.popular-products'),
@@ -17,7 +15,7 @@ console.log(popularProductList);
 
 popularProductList.addEventListener('click', onPopularList);
 
-getPopular();
+// getPopular();
 
 render();
 
@@ -100,43 +98,5 @@ async function addToCard(event) {
   console.dir(event.target);
 }
 // getDataId();
-
-// import { common } from './common';
-// import { refs } from './refs';
-// import { getData } from './api_service';
-// import { save, load } from './storage';
-// import { addToCart } from './helpers/addToCart';
-// import { productMarkup, notFoundMarkup } from './markupFunctions';
-
-// const renderProducts = async query => {
-//   const data = await getData(query);
-
-//   if (!data.results.length) {
-//     notFoundMarkup(refs.productList);
-//     return;
-//   }
-
-//   save(common.PAGES, {
-//     page: data.page,
-//     perPage: data.perPage,
-//     totalPages: data.totalPages,
-//   });
-
-//   refs.productList.innerHTML = productMarkup(data.results);
-// };
-
-// const onProductList = evt => {
-//   evt.preventDefault();
-
-//   if (evt.target.closest('.js-cart')) {
-//     addToCart(evt);
-//   }
-
-//   if (evt.target.classList.contains('js-info')) {
-//     openModal(evt);
-//   }
-// };
-
-// refs.productList.addEventListener('click', onProductList);
-
-// export { renderProducts };
+// save();
+// load();
