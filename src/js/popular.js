@@ -3,6 +3,9 @@ import axios from 'axios';
 import { getPopular } from './api_service';
 
 import { getDataId } from './api_service';
+// import { save, load } from './storage';
+// import { addToCart } from './helpers/addToCart';
+// import { productMarkup, notFoundMarkup } from './markupFunctions';
 
 const refs = {
   popularProductList: document.querySelector('.popular-products'),
