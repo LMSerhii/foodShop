@@ -40,7 +40,7 @@ function createMarkup(arrey) {
   }
   return arrey
     .map(({ _id, name, img, category, size, popularity }) => {
-      return `<li class="popular-card" data-id=${_id}>
+      return `<li class="popular-card js-card" data-id=${_id}>
                     <div class="popular-box">
                       <div class="popular-card-img-wrap">
                           <img src="${img}" alt="${name}" width="56" height="56" loading="lazy"/>
@@ -61,7 +61,7 @@ function createMarkup(arrey) {
 
                     <div class="card-bottom">
                       
-                      <button class="card-btn" type="button">
+                      <button class="card-btn js-cart" type="button">
                           <svg class="icon" width="18" height="18">
                               <use href="${svg_sprite}#cart"></use>
                           </svg>
@@ -72,6 +72,33 @@ function createMarkup(arrey) {
     .join('');
 }
 
+function onPopularList(event) {
+  event.preventDefault();
+
+  if (event.target.closest('.js-cart')) {
+    addToCard(event);
+  }
+
+  if (event.target.classList.contains('js-info')) {
+    const { id } = event.target.closest('.js-card').dataset;
+    console.log(id);
+  }
+}
+
+async function addToCard(event) {
+  const { id } = event.target.closest('.js-card').dataset;
+
+  console.log(event.target);
+
+  event.target.closest(
+    '.js-cart'
+  ).innerHTML = `<button class="btn-check" type="button">
+  <svg class="icon-check" width="18" height="18">
+                              <use href="${svg_sprite}#check"></use>
+                          </svg>
+                          </button>`;
+  console.dir(event.target);
+}
 // getDataId();
 
 // import { common } from './common';

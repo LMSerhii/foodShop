@@ -124,3 +124,26 @@ span {
   top: 14px;
   right: 14px;
 }
+
+.icon-check {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+
+  fill: none;
+  stroke: #fafafa;
+}
+
+.btn-check {
+  width: 20px;
+  height: 20px;
+  display: inline-flex;
+  padding: 4px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  border-radius: 30px;
+  background: #6d8434;
+  border: none;
+}
