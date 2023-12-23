@@ -11,7 +11,7 @@ const refs = {
 };
 
 const popularProductList = document.querySelector('.popular_products_list');
-console.log(popularProductList);
+console.dir(popularProductList);
 
 popularProductList.addEventListener('click', onPopularList);
 
@@ -27,7 +27,7 @@ async function render() {
   }
 
   const markup = createMarkup(results);
-  // popularProductList.innerHTML = '';
+
   popularProductList.insertAdjacentHTML('beforeend', markup);
 }
 
@@ -97,6 +97,3 @@ async function addToCard(event) {
                           </button>`;
   console.dir(event.target);
 }
-// getDataId();
-// save();
-// load();
