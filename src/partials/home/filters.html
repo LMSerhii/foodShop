@@ -1,1 +1,39 @@
-<section class="filters-form-container"></section>
+<section class="filters">
+  <div class="container">
+    <form class="form" name="filters">
+      <label class="form-label" for="textInput">Filters:</label>
+      <div class="filter-input-wrapper">
+        <input
+          class="filters-input js-input"
+          type="text"
+          id="textInput"
+          name="search"
+          placeholder="Search for anything"
+        />
+
+        <button class="search-btn" type="submit">
+          <svg class="search-btn-svg" width="32" height="32">
+            <use href="../../img/sprite.svg#search"></use>
+          </svg>
+        </button>
+      </div>
+
+      <select
+        class="filters-select"
+        id="categoryField"
+        name="categories"
+        aria-placeholder="Categories"
+      >
+        <option data-placeholder="true"></option>
+        <option data-placeholder="true" value="Show_all">Show all</option>
+      </select>
+
+      <select
+        class="filters-select"
+        id="abcField"
+        name="alpabetSearch"
+        aria-placeholder="A to Z"
+      ></select>
+    </form>
+  </div>
+</section>
