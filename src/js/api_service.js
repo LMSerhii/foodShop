@@ -11,12 +11,11 @@ async function getData(query) {
       header: {
         'Content-Type': 'aplication/json',
       },
-      query,
+      params: query,
     });
     return response.data;
   } catch (error) {
-    // errorMarkup(error.response.status);
-    console.log(error);
+    return error;
   }
 }
 
@@ -33,8 +32,7 @@ async function getDataId(id) {
     });
     return response.data;
   } catch (error) {
-    // errorMarkup(error.response.status);
-    console.log(error);
+    return error;
   }
 }
 
@@ -53,12 +51,11 @@ async function getPopular(limit) {
       header: {
         'Content-Type': 'aplication/json',
       },
-      query,
+      params: query,
     });
     return response.data;
   } catch (error) {
-    // errorMarkup(error.response.status);
-    console.log(error);
+    return error;
   }
 }
 
@@ -75,8 +72,7 @@ async function getDiscount() {
     });
     return response.data;
   } catch (error) {
-    // errorMarkup(error.response.status);
-    console.log(error);
+    return error;
   }
 }
 
@@ -93,8 +89,7 @@ async function getCategories() {
     });
     return response.data;
   } catch (error) {
-    // errorMarkup(error.response.status);
-    console.log(error);
+    return error;
   }
 }
 

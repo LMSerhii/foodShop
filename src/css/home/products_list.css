@@ -1,0 +1,176 @@
+.product-list {
+padding-top: 10px;
+padding-bottom: 20px;
+}
+
+@media screen and (min-width: 375px) {
+.product-list {
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+}
+
+.card {
+position: relative;
+padding: 14px;
+border-radius: 20px;
+background-color: var(--white);
+}
+
+@media screen and (min-width: 375px) {
+.card {
+    padding: 20px;
+}
+}
+
+.card:not(:last-child) {
+margin-bottom: 15px;
+}
+
+@media screen and (min-width: 375px) {
+.card:not(:last-child) {
+    margin-bottom: 20px;
+}
+}
+
+.card-top {
+margin-bottom: 20px;
+}
+
+@media screen and (min-width: 375px) {
+.card-top {
+    margin-bottom: 40px;
+}
+}
+
+.card-img-wrapper {
+display: flex;
+align-items: center;
+justify-content: center;
+padding: 8px 34px;
+border-radius: 10px;
+background-color: var(--background);
+margin-bottom: 15px;
+}
+
+@media screen and (min-width: 375px) {
+.card-img-wrapper {
+    padding: 18px 78px;
+    margin-bottom: 20px;
+}
+}
+
+.card-product-name {
+font-size: 16px;
+font-weight: 500;
+line-height: 1.11;
+margin-bottom: 8px;
+}
+
+@media screen and (min-width: 375px) {
+.card-product-name {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+}
+
+.card-prodcuts-list {
+display: flex;
+flex-wrap: wrap;
+align-items: center;
+gap: 8px;
+}
+
+@media screen and (min-width: 375px) {
+.card-prodcuts-list {
+    gap: 4px;
+}
+}
+
+.card-prodcuts-item {
+color: var(--lightGrey);
+font-size: 10px;
+line-height: 1.16;
+}
+
+@media screen and (min-width: 375px) {
+.card-prodcuts-item {
+    font-size: 12px;
+}
+}
+
+.card-prodcuts-item span {
+color: var(--black);
+font-size: 10px;
+line-height: 1.16;
+margin-left: 4px;
+}
+
+@media screen and (min-width: 375px) {
+.card-prodcuts-item span {
+    font-size: 12px;
+    margin-left: 4px;
+}
+}
+
+.card-bottom {
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+
+.card-producs-price {
+font-size: 16px;
+font-weight: 500;
+line-height: 1.11;
+}
+
+@media screen and (min-width: 375px) {
+.card-producs-price {
+    font-size: 18px;
+}
+}
+
+.card-btn {
+width: 28px;
+height: 28px;
+display: flex;
+align-items: center;
+justify-content: center;
+border-radius: 30px;
+background-color: var(--lightGreen);
+border: none;
+}
+
+@media screen and (min-width: 375px) {
+.card-btn {
+    width: 34px;
+    height: 34px;
+}
+}
+
+.card-btn-icon {
+fill: var(--background);
+}
+
+.card-btn-icon-check {
+stroke: var(--background);
+fill: transparent;
+}
+
+/* discount */
+
+.discount-icon {
+position: absolute;
+top: 3px;
+right: 10px;
+width: 40px;
+height: 40px;
+}
+
+@media screen and (min-width: 375px) {
+.discount-icon {
+    width: 60px;
+    height: 60px;
+}
+}
