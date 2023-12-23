@@ -20,6 +20,13 @@ body {
   padding-bottom: 40px;
 }
 
+@media screen and (min-width: 768px) {
+  .popular-products {
+    padding-top: 50px;
+    padding-bottom: 32px;
+  }
+}
+
 .title-popular-product {
   font-size: 24px;
   font-weight: 500;
@@ -44,6 +51,12 @@ body {
   position: relative;
 }
 
+@media screen and (min-width: 768px) {
+  .popular-card {
+    width: 275px;
+  }
+}
+
 .popular-box {
   display: flex;
 }
@@ -64,6 +77,14 @@ body {
   line-height: 1.11;
   margin-bottom: 12px;
 }
+
+@media screen and (min-width: 768px) {
+  .popular-name {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+}
+
 .popular-card-img-wrap {
   width: 74px;
   height: 74px;
@@ -79,6 +100,14 @@ body {
   display: flex;
   flex-direction: column;
   gap: 9px;
+}
+
+@media screen and (min-width: 768px) {
+  .popular-info-list {
+    width: 563px;
+    flex-wrap: wrap;
+    gap: 13px;
+  }
 }
 .info-style {
   color: rgba(1, 1, 1, 0.3);
