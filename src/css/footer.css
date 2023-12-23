@@ -15,19 +15,8 @@
   max-width: 280px;
   padding: 0 20px;
 }
-
-@media screen and (min-width: 375px) {
-  .container {
-    max-width: 375px;
-  }
-}
-
 .footer-box {
   margin-bottom: 80px;
-}
-.logo-link {
-  display: flex;
-  align-items: center;
 }
 .footer-left-box {
   margin-bottom: 40px;
@@ -39,12 +28,8 @@
   font-weight: 900;
   line-height: 1.11;
   letter-spacing: -0.02em;
-  width: 118px;
 }
 .with-logo-container {
-  display: flex;
-  align-items: center;
-  flex-direction: row;
   margin-bottom: 20px;
 }
 .logo-list {
@@ -99,15 +84,11 @@
   font-size: 14px;
   line-height: 1.28;
 }
-.subscribe-box {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
 .subscribe-paragraph {
   color: var(--lightgrey);
   font-size: 14px;
   line-height: 1.28;
+  margin-bottom: 20px;
 }
 .subscribe-form {
   display: flex;
@@ -120,14 +101,17 @@
   border-radius: 30px;
   border: 1px solid var(--lightgrey);
   background-color: var(--green);
+  color: rgba(232, 232, 226, 0.6);
+  padding-left: 18px;
+}
+.subscribe-input:focus {
+  outline: none;
 }
 .subscribe-input::placeholder {
   color: rgba(232, 232, 226, 0.6);
   font-size: 14px;
   line-height: 1.28;
-  padding-left: 18px;
 }
-
 .send-btn {
   height: 42px;
   border-radius: 30px;
@@ -149,6 +133,12 @@
   opacity: 0.9;
   line-height: 1.29;
 }
+
+@media screen and (min-width: 375px) {
+  .container {
+    max-width: 375px;
+  }
+}
 /* Tablet */
 @media screen and (min-width: 768px) {
   .container {
@@ -157,7 +147,6 @@
   }
   .footer-box {
     display: flex;
-    margin-bottom: 80px;
   }
   .footer-left-box {
     margin-right: 78px;
@@ -166,8 +155,10 @@
   .with-logo-container {
     margin-bottom: 24px;
   }
+  .logo-item {
+    width: 157px;
+  }
   .footer-logo {
-    width: 197px;
     font-size: 24px;
     line-height: 1;
   }
@@ -179,9 +170,7 @@
     width: 44px;
     height: 44px;
   }
-
   .footer-text {
-    width: 429px;
     line-height: 1.1;
     font-size: 40px;
   }
@@ -190,7 +179,6 @@
     line-height: 1.33;
   }
   .subscribe-paragraph {
-    width: 312px;
     font-size: 18px;
     line-height: 1.33;
   }
@@ -199,6 +187,7 @@
   }
   .subscribe-input {
     height: 48px;
+    width: 336px;
   }
   .subscribe-input::placeholder {
     font-size: 16px;
@@ -206,6 +195,7 @@
   }
   .send-btn {
     height: 48px;
+    width: 336px;
   }
   .policy-list {
     display: flex;
@@ -231,12 +221,14 @@
   .footer-left-box {
     margin-right: 149px;
   }
+  .subscribe-box {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
   .text-subscribe-box {
     display: flex;
     flex-direction: row;
-  }
-  .footer-logo {
-    width: 157px;
   }
   .footer-text-box {
     margin-right: 148px;

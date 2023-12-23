@@ -3,14 +3,14 @@ import { common } from './common';
 import { createSubscription } from './api_service';
 
 export const refs = {
-  emailInput: document.querySelector('.subscribe-input'),
+  emailForm: document.querySelector('.subscribe-form'),
   sendBtn: document.querySelector('.send-btn'),
 };
 
-refs.emailInput.addEventListener('change', onEmailEnter);
+refs.emailInput.addEventListener('submit', onEmailEnter);
 
 export function onEmailEnter(event) {
-  //   event.preventDefault();
+  event.preventDefault();
 
   const data = event.currentTarget;
   const email = data.value.trim();
