@@ -94,4 +94,18 @@ export { renderCategory };
 
 new SlimSelect({
   select: '#categoryField',
-})
+  settings: {
+    placeholderText: 'Categories',
+    showSearch: false,
+  },
+});
+
+new SlimSelect({
+  select: '#abcField',
+  settings: {
+    placeholderText: 'A to Z',
+    showSearch: false,
+  },
+});
+
+
