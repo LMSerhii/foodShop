@@ -39,15 +39,16 @@ function createMarkup(arrey) {
     .map(({ _id, name, img, category, size, popularity }) => {
       return `<li class="popular-card" data-id=${_id}>
                     <div class="popular-box">
-                      <a href="#" class="popular-card-img-link">
+                      <div class="popular-card-img-wrap">
                           <img src="${img}" alt="${name}" width="56" height="56" loading="lazy"/>
-                      </a>
+                      </div>
                       <div class="card-info-box">
-                      <a href="#" class="card-name-link">
+                      
                         <h3 class="popular-name">${name}</h3>
-                      </a>
+                      
                       <ul class="popular-info-list">
-                          <li class="info-style">Category: <span>${category}</span></li>
+                          <li class="info-style">Category:
+                          <span>${category.replace('_', ' ')}</span></li>
                           <div class="popular-info-wraper">
                           <li class="info-style">Size: <span>${size}</span></li>
                           <li class="info-style">Popularity: <span>${popularity}</span></li>
