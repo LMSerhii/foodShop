@@ -1,7 +1,7 @@
 <section class="filters">
   <div class="container">
-    <form class="form" name="filters">
-      <label class="form-label" for="textInput">Filters:</label>
+    <label class="form-label" for="filtersForm">Filters:</label>
+    <form class="form" name="filters" id="filtersForm">
       <div class="filter-input-wrapper">
         <input
           class="filters-input js-input"
@@ -12,14 +12,14 @@
         />
 
         <button class="search-btn" type="submit">
-          <svg class="search-btn-svg" width="32" height="32">
+          <svg class="search-btn-svg" width="20" height="20">
             <use href="../../img/sprite.svg#search"></use>
           </svg>
         </button>
       </div>
 
       <select
-        class="filters-select"
+        class="categories-select"
         id="categoryField"
         name="categories"
         aria-placeholder="Categories"

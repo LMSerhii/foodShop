@@ -5,8 +5,6 @@ import { renderProducts } from './products';
 import SlimSelect from 'slim-select';
 import '../../node_modules/slim-select/dist/slimselect.css';
 
-
-
 new SlimSelect({
   select: '#abcField',
   settings: {
@@ -43,6 +41,7 @@ const renderCategory = async () => {
   const data = await getCategories();
   const markup = createCategoryMarkup(data);
   refs.categoryField.insertAdjacentHTML('beforeend', markup);
+
   new SlimSelect({
     select: '#categoryField',
     settings: {
@@ -53,7 +52,6 @@ const renderCategory = async () => {
 };
 
 renderCategory()
-
 
 const onCategoryField = evt => {
   const currentCategory = evt.target.value;
@@ -69,8 +67,6 @@ const onCategoryField = evt => {
   const query = load(common.LOCAL_QUERY_KEY);
   renderProducts(query);
 };
-
-
 
 const onAbcField = evt => {
   const currentCategory = evt.target.value;
@@ -110,7 +106,3 @@ refs.abcField.addEventListener('change', onAbcField);
 refs.searchField.addEventListener('input', onSearchField);
 
 export { renderCategory };
-
-
-
-
