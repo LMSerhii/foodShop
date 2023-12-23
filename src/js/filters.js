@@ -132,10 +132,10 @@ const getSortValue = sortCategory => {
             getSort = '&byPrice=false';
             break;
         case 'popular':
-            getSort = '&byPopularity=true';
+            getSort = '&byPopularity=false';
             break;
         case 'not-popular':
-            getSort = '&byPopularity=false';
+            getSort = '&byPopularity=true';
             break;
         default:
             break;
@@ -199,6 +199,6 @@ refs.categoryField.addEventListener('change', onCategoryField);
 refs.abcField.addEventListener('change', onAbcField);
 refs.searchField.addEventListener('input', onSearchField);
 
-export { renderCategory };
+
 
 
