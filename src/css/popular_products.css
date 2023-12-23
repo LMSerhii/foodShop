@@ -63,7 +63,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 14px;
-  margin: 12px;
+  margin: 0;
 }
 @media screen and (min-width: 768px) {
   .popular_products_list {
@@ -71,7 +71,6 @@ body {
     flex-direction: row;
     flex-wrap: wrap;
     gap: 13px;
-    margin: 0;
   }
 }
 @media screen and (min-width: 1440px) {
@@ -90,6 +89,11 @@ body {
   padding: 14px;
   position: relative;
 }
+@media (min-width: 280px) {
+  .popular-card {
+    width: 100%;
+  }
+}
 
 @media screen and (min-width: 768px) {
   .popular-card {
@@ -103,7 +107,6 @@ body {
 
 .popular-container {
   display: flex;
-  justify-content: center;
 }
 
 @media screen and (min-width: 768px) {
