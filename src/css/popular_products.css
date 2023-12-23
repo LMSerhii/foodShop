@@ -37,6 +37,7 @@ body {
 .popular-products {
   padding-top: 40px;
   padding-bottom: 40px;
+  margin: 0;
 }
 
 @media screen and (min-width: 768px) {
@@ -107,6 +108,7 @@ body {
 
 .popular-container {
   display: flex;
+  margin: 0;
 }
 
 @media screen and (min-width: 768px) {
