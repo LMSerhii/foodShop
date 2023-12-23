@@ -5,12 +5,24 @@ import { renderProducts } from './products';
 import SlimSelect from 'slim-select';
 import '../../node_modules/slim-select/dist/slimselect.css';
 
+
+
+new SlimSelect({
+  select: '#abcField',
+  settings: {
+    placeholderText: 'A to Z',
+    showSearch: false,
+  },
+});
+
 const refs = {
   searchField: document.querySelector('.js-input'),
   categoryField: document.querySelector('#categoryField'),
   abcField: document.querySelector('#abcField'),
   form: document.querySelector('.form'),
 };
+
+// const abcList = ["A to Z", "Z to A", "Cheap", "Expensive", "Popular", "Not popular", "Show all"]
 
 const createCategoryMarkup = arrey => {
   if (!arrey.length) {
@@ -29,12 +41,19 @@ const createCategoryMarkup = arrey => {
 
 const renderCategory = async () => {
   const data = await getCategories();
-  console.log(data);
   const markup = createCategoryMarkup(data);
   refs.categoryField.insertAdjacentHTML('beforeend', markup);
+  new SlimSelect({
+    select: '#categoryField',
+    settings: {
+      placeholderText: 'Categories',
+      showSearch: false,
+    },
+  });
 };
 
 renderCategory()
+
 
 const onCategoryField = evt => {
   const currentCategory = evt.target.value;
@@ -50,6 +69,8 @@ const onCategoryField = evt => {
   const query = load(common.LOCAL_QUERY_KEY);
   renderProducts(query);
 };
+
+
 
 const onAbcField = evt => {
   const currentCategory = evt.target.value;
@@ -84,28 +105,12 @@ const onSearchField = evt => {
 };
 
 refs.form.addEventListener('submit', onForm);
-
 refs.categoryField.addEventListener('change', onCategoryField);
-
 refs.abcField.addEventListener('change', onAbcField);
 refs.searchField.addEventListener('input', onSearchField);
 
 export { renderCategory };
 
-new SlimSelect({
-  select: '#categoryField',
-  settings: {
-    placeholderText: 'Categories',
-    showSearch: false,
-  },
-});
 
-new SlimSelect({
-  select: '#abcField',
-  settings: {
-    placeholderText: 'A to Z',
-    showSearch: false,
-  },
-});
 
 
