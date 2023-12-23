@@ -89,3 +89,8 @@
     padding-top: 14px;
     padding-left: 20px;
 }
+
+.ss-content.ss-open-below {
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
