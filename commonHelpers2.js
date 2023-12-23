@@ -74,4 +74,4 @@ import{a as f,i as h}from"./assets/vendor-2dcf4ad5.js";(function(){const s=docum
                               </p>
                               </div>
                             `},b=async t=>{const s=await m(t);if(!s.results.length){$(d.productList);return}u(i.PAGES,{page:s.page,perPage:s.perPage,totalPages:s.totalPages}),d.productList.innerHTML=v(s.results)},_=t=>{t.preventDefault(),t.target.closest(".js-cart")&&L(t),t.target.classList.contains("js-info")&&openModal(t)};d.productList.addEventListener("click",_);u(i.LOCAL_QUERY_KEY,i.INIT_QUERY);const p=y(i.LOCAL_QUERY_KEY)??[];console.log(p);b(p);
-//# sourceMappingURL=commonHelpers.js.map
+//# sourceMappingURL=commonHelpers2.js.map
