@@ -46,6 +46,13 @@ body {
   }
 }
 
+@media screen and (min-width: 1440px) {
+  .popular-products {
+    padding-top: 30px;
+    padding-bottom: 20px;
+  }
+}
+
 .title-popular-product {
   font-size: 24px;
   font-weight: 500;
@@ -65,6 +72,11 @@ body {
     flex-wrap: wrap;
     gap: 13px;
     margin: 0;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .popular_products_list {
+    flex-direction: column;
   }
 }
 
