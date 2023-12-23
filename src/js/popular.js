@@ -4,8 +4,9 @@ import { getPopular } from './api_service';
 
 import { getDataId } from './api_service';
 
-import { refs } from './refs';
-console.log(refs);
+const refs = {
+  popularProductList: document.querySelector('.popular-products'),
+};
 
 const popularProductList = document.querySelector('.popular_products_list');
 console.log(popularProductList);
