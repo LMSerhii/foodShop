@@ -4,6 +4,7 @@ import { save, load } from './storage';
 import { common } from './common';
 import { renderProducts } from './products';
 import axios from 'axios';
+
 let categories = [];
 
 const refs = {
@@ -97,6 +98,7 @@ const onForm = evt => {
 };
 
 
+
 const onAbcField = async evt => {
     const currentCategory = evt.target.value;
     const currQuery = load(common.LOCAL_QUERY_KEY);
@@ -104,6 +106,16 @@ const onAbcField = async evt => {
     save(common.LOCAL_QUERY_KEY, currQuery);
     const query = load(common.LOCAL_QUERY_KEY);
     const sortCategory = query.sort;
+
+    const getSort = getSortValue(sortCategory);
+
+    const result = await get(query, getSort);
+    renderProductsSort(result);
+};
+
+
+
+const getSortValue = sortCategory => {
     let getSort = {};
 
     switch (sortCategory) {
@@ -129,9 +141,11 @@ const onAbcField = async evt => {
             break;
     }
 
-    const result = await get(query, getSort);
-    renderProductsSort(result);
+    return getSort;
 };
+
+
+
 
 
 
