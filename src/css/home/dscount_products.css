@@ -1,0 +1,78 @@
+.discount-product-container {
+  padding: 40px 20px;
+}
+
+.discount-product-title {
+  color: #010101;
+  font-family: Neue Montreal;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.16;
+  margin-bottom: 20px;
+  margin-right: 143px;
+}
+
+.discount-product-element {
+  padding: 16px;
+  width: 335px;
+  height: 232px;
+  flex-shrink: 0;
+  border-radius: 15px;
+  background: #fafafa;
+  margin-bottom: 20px;
+}
+.discount-product-img-wrapper {
+  padding: 18px 95px;
+  border-radius: 10px;
+  background: #e8e8e2;
+  width: 304px;
+  height: 150px;
+  flex-shrink: 0;
+  margin-bottom: 16px;
+}
+.discount-product-img {
+  width: 114px;
+  height: 114px;
+  flex-shrink: 0;
+}
+.discount-product-descr {
+  display: flex;
+  justify-content: space-between;
+}
+.discount-product-name-wrapper {
+}
+.discount-product-name {
+  color: #010101;
+  font-family: Neue Montreal;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.11;
+}
+.discount-product-price-wrapper {
+  display: flex;
+  gap: 8px;
+}
+.discount-product-price {
+  color: #010101;
+  font-family: Neue Montreal;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.11;
+  margin: 7px auto;
+}
+.discount-product-btn {
+  width: 34px;
+  height: 34px;
+  display: inline-flex;
+  padding: 8px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+  border: none;
+  background: #6d8434;
+  /* gap: 10px; */
+  color: #fafafa;
+}
