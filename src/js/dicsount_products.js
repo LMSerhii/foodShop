@@ -7,7 +7,7 @@ async function dataDiscountProd() {
   const markup = createDiscountMarkup(data);
   dicsProd.innerHTML = markup;
 }
-dataDiscountProd();
+
 
 // add to ul
 
@@ -48,3 +48,6 @@ console.log(discProdList);
 discProdList.addEventListener('click', clickOnDiscount());
 
 function clickOnDiscount() {}
+
+
+export {dataDiscountProd}
