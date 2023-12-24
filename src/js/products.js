@@ -1,4 +1,6 @@
-import { common } from './common';
+import axios from 'axios';
+
+import { common } from './common.js';
 import { refs } from './refs';
 import { getData } from './api_service';
 import { save, load } from './storage';
@@ -37,15 +39,18 @@ const onProductList = evt => {
 refs.productList.addEventListener('click', onProductList);
 
 // Отримання даних від сервера (ваш власний метод)
-import * as tui from 'tui-pagination'; // або імпорт { Pagination } from 'tui-pagination';
+import Pagination from 'tui-pagination';
 import 'tui-pagination/dist/tui-pagination.css';
 
-// Решта вашого коду
+const container = document.getElementById('pagination-container');
+const pagination = new Pagination(container, {
+  totalItems: 500,
+});
 
-// import $ from 'jquery';
-// tui.use($, window.jQuery);
+let itemsPerPage = 10;
+let currentPage = 1;
 
-async function fetchPage({ page, itemsPerPage }) {
+async function fetchPage({ page, perPage }) {
   try {
     const response = await axios({
       url: `${common.BASE_URL}/products`,
@@ -53,63 +58,34 @@ async function fetchPage({ page, itemsPerPage }) {
       headers: {
         'Content-Type': 'application/json',
       },
-      params: { page, itemsPerPage },
+      params: { page, perPage },
     });
-    return response.data;
+    if (response.status === 200) {
+      return response.data;
+    } else {
+      throw new Error(`Request failed with status ${response.status}`);
+    }
   } catch (error) {
-    return error;
+    console.error('Error fetching data:', error);
+    throw error;
   }
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-  const container = document.getElementById('pagination');
-  const itemsPerPage = 10;
-  let currentPage = 1;
+function updatePage(pageData) {
+  // Обробляйте отримані дані та оновлюйте сторінку
+  console.log('Received page data:', pageData);
+}
 
-  function updatePage(pageData) {
-    const totalItems = pageData.totalItems;
-    const totalPages = Math.ceil(totalItems / itemsPerPage);
+pagination.on('beforeMove', event => {
+  const newPage = event.page;
+  if (newPage !== currentPage) {
+    currentPage = newPage;
 
-    const pagination = new tui.Pagination(container, {
-      totalItems: totalItems,
-      itemsPerPage: itemsPerPage,
-      visiblePages: 5,
-      page: currentPage,
-      centerAlign: false,
-      firstItemClassName: 'tui-first-child',
-      lastItemClassName: 'tui-last-child',
-      template: {
-        page: '<a href="#" class="tui-page-btn">{{page}}</a>',
-        currentPage:
-          '<strong class="tui-page-btn tui-is-selected">{{page}}</strong>',
-        moveButton:
-          '<a href="#" class="tui-page-btn tui-{{type}}">' +
-          '<span class="tui-ico-{{type}}">{{type}}</span>' +
-          '</a>',
-        disabledMoveButton:
-          '<span class="tui-page-btn tui-is-disabled tui-{{type}}">' +
-          '<span class="tui-ico-{{type}}">{{type}}</span>' +
-          '</span>',
-        moreButton:
-          '<a href="#" class="tui-page-btn tui-{{type}}-is-ellip">' +
-          '<span class="tui-ico-ellip">...</span>' +
-          '</a>',
-      },
-    });
+    fetchPage({ page: currentPage, perPage: itemsPerPage }).then(updatePage);
 
-    pagination.on('beforeMove', event => {
-      const newPage = event.page;
-      if (newPage !== currentPage) {
-        currentPage = newPage;
-        fetchPage({ page: currentPage, itemsPerPage: itemsPerPage }).then(
-          updatePage
-        );
-      }
-      event.stop();
-    });
+    // Використовуйте return false для відміни стандартної обробки події
+    return false;
   }
-
-  fetchPage({ page: currentPage, itemsPerPage: itemsPerPage }).then(updatePage);
 });
 
 export { renderProducts };
