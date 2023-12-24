@@ -1,112 +1,113 @@
-import axios from 'axios';
-import svg_sprite from '../img/sprite.svg';
-import empty_basket from '../img/yellow shopping basket.png';
+
+import { load, save, remove } from './storage';
 import { common } from './common';
-import { refs } from './refs';
-import { getData } from './api_service';
-import { save, load } from './storage';
-import { addToCart } from './helpers/addToCart';
-import { productMarkup, notFoundMarkup } from './markupFunctions';
-
-const BASE_URL = 'https://food-boutique.b.goit.study/api';
+import { producCartMarkup } from './markupFunctions';
 
 
-// Ваша функція для завантаження даних
-async function fetchData(params) {
-  try {
-    const response = await axios({
-      url: `${BASE_URL}/products`,
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      params,
-    });
-    return response.data;
-  } catch (error) {
-    console.error("Error", error);
-    throw error;
-  }
-}
+const cartList = document.querySelector('.cart-product-list');
 
 
 
-// Основна функція ініціалізації
-async function init() {
-  const productList = document.querySelector('.product-list');
+const cart = load(common.LOCAL_CART_KEY) ?? [];
 
-  try {
-    const data = await fetchData();
-    const cartItems = getCartItems();
-      
-    productList.innerHTML = createMarkup(data.results, cartItems);
-    
-  } catch (error) {
-    console.error('Error', error);
-  }
+console.log(cart.length);
+console.log(cart);
 
+/**
+  |============================
+  | 
+  |============================
+*/
+const validClose = productId => {
+  // Знаходимо індекс елемента за _id
+  const index = cart.findIndex(({ _id }) => _id === productId);
 
-  function createMarkup(array, cartItems) {
-    return array
-      .filter(({ _id }) => cartItems.some(item => item.id === _id))
-      .map(({ _id, name, img, category, price, size }) => {
-        const cartItem = cartItems.find(item => item.id === _id);
-        const quantity = cartItem ? cartItem.quantity : 0;
+  console.log('Index:', index);
 
-        return `
-          <li class="product-card" data-product-id="${_id}">
-            <img class="product-card-img" src="${img}" alt="${name}">
-            
-            <div class="product-container"> 
-              <div class="product-title">
-                <h2 class="product-name">${name}</h2>
-                <button type="button" id="test" class="btn-del-product" data-product-id="${_id}">
-                  <svg class="delete-icon" width="18" height="18">
-                    <use href="${svg_sprite}#close"></use>
-                  </svg>
-                </button>
-              </div>
+  // Перевірка, чи елемент знайдено за вказаним _id
+  if (index !== -1) {
+    // Отримуємо об'єкт за індексом
+    const product = cart[index];
 
-              <div class="product-category">
-                <p class="product-info"><span class="info-style">Category:</span> ${category.replace('_', ' ')} <span class="info-style info-space">Size:</span> ${size}</p>
-              </div>
+    // Отримуємо ціну з об'єкта
+    const price = product.price;
 
-              <div class="counter">
-                <p class="product-price product-name m">$${price}</p>
-                <div class="btn-counter">
-                  <button class="decrement" type="button" data-action="decrement" data-product-id="${_id}">
-                    <svg class="icon-minus" width="14" height="14">
-                      <use href="${svg_sprite}#minus"></use>
-                    </svg>
-                  </button>
-
-                  <span class="counter-value">${quantity}</span>
-
-                  <button class="increment" type="button" data-action="increment" data-product-id="${_id}">
-                    <svg class="icon-plus" width="14" height="14">
-                      <use href="${svg_sprite}#plus"></use>
-                    </svg>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </li>
-        `;
-      })
-      .join('');
-  }
-  console.log(getCartItems());
-
+    console.log('Price:', price);
+    const summary = {};
+    // Видалення елемента за індексом
+    cart.splice(index, 1);
   
 
+    // Оновлення локального сховища
+    remove(common.LOCAL_CART_KEY);
+    save(common.LOCAL_CART_KEY, cart);
 
-  // Функція отримує товари з локального сховища
-  function getCartItems() {
-    return JSON.parse(localStorage.getItem('cart')) || [];
+    // Оновлення відображення кошика
+    cartList.innerHTML = producCartMarkup(cart);
+  } else {
+    console.log('Product not found.');
   }
+};
+
+/**
+  |============================
+  | 
+  |============================
+*/
+
+// const validClose = productId => {
+//   const index = cart.findIndex(({ _id }) => _id === productId);
+
+//   console.log(index);
+
+//   cart.splice(index, 1);
+
+//   remove(common.LOCAL_CART_KEY);
+
+//   save(common.LOCAL_CART_KEY, cart);
+
+//   cartList.innerHTML = producCartMarkup(cart);
+// };
+
+const onClose = evt => {
+  if (evt.currentTarget === evt.target) {
+    return;
+  }
+
+  const id = evt.target.closest('.js-card').dataset.id;
+  console.log(evt.target);
+  
+  if (evt.target.classList.contains('js-close')) {
+    validClose(id);
+  }
+};
+
+
+
+const deleteAllButton = document.getElementById('deleteAllButton');
+
+// Функція для очищення значення ключа "cart" у локальному сховищі
+function clearCartLocalStorage() {
+  localStorage.setItem('cart', '[]');
+  location.reload();
 }
 
+// Додавання обробника подій для кнопки "Delete all"
+deleteAllButton.addEventListener('click', clearCartLocalStorage);
 
 
-init();
+
+const renderCart = () => {
+
+  if (cart.length > 3) {
+    // Застосування вертикального скролу
+    cartList.classList.add('scrollable');
+  }
+
+  cartList.innerHTML = producCartMarkup(cart);
+  cartList.addEventListener('click', onClose);
+};
+
+renderCart();
+
 

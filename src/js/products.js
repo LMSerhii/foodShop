@@ -6,6 +6,8 @@ import { addToCart } from './helpers/addToCart';
 import { productMarkup, notFoundMarkup } from './markupFunctions';
 
 const renderProducts = async query => {
+  refs.productList.innerHTML = `<div class="loader_box"><span class="loader"></span></div>`;
+
   const data = await getData(query);
 
   if (!data.results.length) {

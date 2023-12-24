@@ -1,4 +1,7 @@
 import svg_sprite from '../img/sprite.svg';
+import empty_basket from '../img/yellow shopping basket.png';
+const orderContainer = document.querySelector('.order-container')
+const deleteContainer = document.querySelector('.delete-container');
 
 const productMarkup = arrey => {
 if (!arrey.length) {
@@ -118,4 +121,94 @@ element.innerHTML = `<div class="notFound_box">
                         `;
 };
 
-export { productMarkup, errorMarkup, notFoundMarkup };
+const producCartMarkup = arrey => {
+if (!arrey.length) {
+    deleteContainer.classList.add('visually-hidden');
+    orderContainer.classList.add('visually-hidden');
+    return `
+    <img class="basket-img" src="${empty_basket}" alt="Yellow empty basket">
+    <div class="basket-text">
+        <p class="empty-text"> Your basket is <span>empty...</span></p>
+        <p class="empty-comment">Go to the main page to select your favorite products and add them to the cart.</p>
+    </div>
+    `;
+}
+return arrey
+    .map(
+    ({
+        _id,
+        name,
+        img,
+        category,
+        price,
+        size,
+        is10PercentOff,
+        popularity,
+    }) => {
+        if (!is10PercentOff) {
+        return `<li class="js-card product-card" data-id=${_id}>
+
+                <img class="product-card-img" src="${img}" alt="${name}">
+
+            <div class="product-container"> 
+                <div class="product-title">
+                    <h2 class="product-name">${name}</h2>
+                    <button type="button" id="test" class="btn-del-product js-close" data-product-id="${_id}">
+                        <svg class="delete-icon js-close" width="18" height="18">
+                            <use href="${svg_sprite}#close"></use>
+                        </svg>
+                    </button>
+            </div>
+
+            <div class="product-category">
+                <p class="product-info"><span class="info-style">Category:</span> ${category.replace('_', ' ')} <span class="info-style info-space">Size:</span> ${size}</p>
+            </div>
+                <p class="product-price product-name m">$${price}</p>
+
+        </li>`;
+        } else {
+        return `<li class="product-card" data-product-id="${_id}">
+        //             <img class="product-card-img" src="${img}" alt="${name}">
+                    
+        //             <div class="product-container"> 
+        //               <div class="product-title">
+        //                 <h2 class="product-name">${name}</h2>
+        //                 <button type="button" class="btn-del-product js-close" data-product-id="${_id}">
+        //                   <svg class="delete-icon" width="18" height="18">
+        //                     <use href="${svg_sprite}#close"></use>
+        //                   </svg>
+        //                 </button>
+        //               </div>
+        
+        //               <div class="product-category">
+        //                 <p class="product-info"><span class="info-style">Category:</span> ${category.replace('_', ' ')} <span class="info-style info-space">Size:</span> ${size}</p>
+        //               </div>
+        
+        //               <div class="counter">
+        //                 <p class="product-price product-name m">$${price}</p>
+        //                 <div class="btn-counter">
+        //                   <button class="decrement" type="button" data-action="decrement" data-product-id="${_id}">
+        //                     <svg class="icon-minus" width="14" height="14">
+        //                       <use href="${svg_sprite}#minus"></use>
+        //                     </svg>
+        //                   </button>
+        
+        //                   <span class="counter-value">${quantity}</span>
+        
+        //                   <button class="increment" type="button" data-action="increment" data-product-id="${_id}">
+        //                     <svg class="icon-plus" width="14" height="14">
+        //                       <use href="${svg_sprite}#plus"></use>
+        //                     </svg>
+        //                   </button>
+        //                 </div>
+        //               </div>
+        //             </div>
+        //           </li>
+        //         `;
+        }
+    }
+    )
+    .join('');
+};
+
+export { productMarkup, errorMarkup, notFoundMarkup, producCartMarkup };

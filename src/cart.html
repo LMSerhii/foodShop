@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="./css/styles.css" />
 </head>
 <body>
+  <load src="partials/header.html" />
   <section class="cart-section ">
     <!-- Title -->
     <div class="container">
@@ -31,9 +32,9 @@
         </button>
       </div>
       <!-- Product list -->
-      <ul class="product-list"></ul>
+      <ul class="cart-product-list"></ul>
       <!-- Order list -->
-      <div class="order-container">
+      <div class="order-container"> 
         <h2 class="title order-title">Your Order</h2>
           <div class="total-count">
             <p class="product-name tittle-total">Total</p>
@@ -55,11 +56,11 @@
           />
           <button class="btn-checkout" type="submit"> Checkout</button>
 
-      </div>
-
-      <!-- порожній кошик  -->
-      
+      </div>  
   </div>
+  <!-- <p class="cart-value">Cart()</p> -->
+  <!-- <ul class="cart-list"></ul> -->
+  
   </section>
   <script type="module" src="../js/cart.js"></script>
 </body>

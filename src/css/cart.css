@@ -72,30 +72,30 @@ body {
   background: none;
 }
 
-  .product-card {
+.product-card {
   display: flex;
-    max-width: 335px;
-    margin-bottom: 30px;
-    overflow-x: hidden;   
-    border-bottom: 1px solid rgba(1, 1, 1, 0.10);
+  max-width: 335px;
+  margin-bottom: 30px;
+  overflow-x: hidden;   
+  border-bottom: 1px solid rgba(1, 1, 1, 0.10);
 }
 
-  .product-name{
-    color: #010101;
-    font-family: Neue Montreal;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 1.12;
+.product-name{
+  color: #010101;
+  font-family: Neue Montreal;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.12;
 }
 
-  .product-card-img {
-    width: 100px;
-    height: 100px;
-    background: lightgray 50% / cover no-repeat;
-    border-radius: 10px;
-    background: #FAFAFA;
-    margin-right: 20px;
+.product-card-img {
+  width: 100px;
+  height: 100px;
+  background: lightgray 50% / cover no-repeat;
+  border-radius: 10px;
+  background: #FAFAFA;
+  margin-right: 20px;
 }
 
 .product-title {
@@ -148,7 +148,7 @@ body {
 
 .scrollable {
   overflow-y: scroll;
-  max-height: 465px; /* або будь-яка інша відповідна висота */
+  max-height: 485px; /* або будь-яка інша відповідна висота */
   padding-right: 9px
 }
 
@@ -180,7 +180,7 @@ background: rgba(1, 1, 1, 0.08);
   margin-bottom: 40px;
 }
 
-.product-list {
+.cart-product-list {
   margin-bottom: 60px;
 }
 
@@ -225,12 +225,23 @@ padding: 26px 0 14px 18px ;
   border: none;
 }
 
-.empty-basket {
-  margin-bottom: 28px;
+
+.empty-text {
+
+color: #010101;
+font-family: Neue Montreal;
+font-size: 18px;
+font-style: normal;
+font-weight: 500;
+line-height: 1.12;
+margin-bottom: 14px;
 }
 
-.empt-text {
-  margin-top: 14px;
+.empty-text span {
+  color: #6D8434;
+}
+
+.empty-comment {
   color: rgba(1, 1, 1, 0.70);
   text-align: center;
   font-family: Neue Montreal;
@@ -238,31 +249,19 @@ padding: 26px 0 14px 18px ;
   font-style: normal;
   font-weight: 400;
   line-height: 1.29;
-  max-width: 279px;
-
-}
-
-.counter {
-  display: flex;
-}
-
-.btn-counter {
-  display: flex;
-  /* padding: 4px 12px; */
-  justify-content: center;
-  align-items: center; 
-  border-radius: 100px; 
-  margin-top: auto;
-  border: 1px solid rgba(1, 1, 1, 0.10);
-  background: none;
   
 }
 
-
-.decrement, .increment{
-  background: none;
-  border: none;
+.basket-img {
+  width: 132px;
+  height: 114px;
+  margin-bottom: 28px;
+  margin: 105px auto 28px;
 }
 
-
+.basket-text {
+  margin: 0 auto;
+  max-width: 279px;
+  text-align: center;
+}
 
