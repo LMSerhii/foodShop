@@ -99,45 +99,44 @@ async function addToCard(event) {
   console.dir(event.target);
 }
 
-console.dir();
+// console.dir();
 
-// <div class="product-card" id="productCard">
-//   <img src="зображення.jpg" alt="Зображення продукту">
-//   <h2>Назва продукту</h2>
-//   <p>Категорія: <span id="category">Категорія продукту</span></p>
-//   <p>Розмір пакування: <span id="packageSize">Розмір</span></p>
-//   <p>Популярність: <span id="popularity">Показник популярності</span></p>
-//   <button id="addToCartButton" onclick="addToCart()">Додати до кошика</button>
-// </div>
+// import { common } from './common';
+// import { refs } from './refs';
+// import { getData } from './api_service';
+// import { save, load } from './storage';
+// import { addToCart } from './helpers/addToCart';
+// import { productMarkup, notFoundMarkup } from './markupFunctions';
 
-// Функція для додавання продукту до кошика
-// function addToLocalStorage() {
-//   // Отримуємо інформацію про продукт
-//   const productName = document.querySelector('.popular-name').textContent;
-//   console.log(productName);
-//   // var productCategory = document.querySelector('#category').textContent;
-//   // var productSize = document.querySelector('#packageSize').textContent;
+// const renderProducts = async query => {
+//   const data = await getData(query);
 
-//     // Перевіряємо, чи вже є продукт у кошику
-//     var cart = JSON.parse(localStorage.getItem('cart')) || [];
-//     var isProductInCart = cart.some(function(item) {
-//       return item.name === productName && item.category === productCategory && item.size === productSize;
-//     });
+//   if (!data.results.length) {
+//     notFoundMarkup(refs.productList);
+//     return;
+//   }
 
-//     if (!isProductInCart) {
-//       // Додаємо продукт до кошика
-//       var product = {
-//         name: productName,
-//         category: productCategory,
-//         size: productSize
-//       };
-//       cart.push(product);
+//   save(common.PAGES, {
+//     page: data.page,
+//     perPage: data.perPage,
+//     totalPages: data.totalPages,
+//   });
 
-//       // Оновлюємо інформацію у localStorage
-//       localStorage.setItem('cart', JSON.stringify(cart));
+//   refs.productList.innerHTML = productMarkup(data.results);
+// };
 
-//       // Змінюємо кнопку на ✓, щоб вказати, що продукт додано
-//       document.querySelector('#addToCartButton').innerHTML = '✓ Додано до кошика';
-//       document.querySelector('#addToCartButton').disabled = true; // Деактивуємо кнопку
-//     }
-// }
+// const onProductList = evt => {
+//   evt.preventDefault();
+
+//   if (evt.target.closest('.js-cart')) {
+//     addToCart(evt);
+//   }
+
+//   if (evt.target.classList.contains('js-info')) {
+//     openModal(evt);
+//   }
+// };
+
+// refs.productList.addEventListener('click', onProductList);
+
+// export { renderProducts };
