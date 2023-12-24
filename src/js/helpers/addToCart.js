@@ -1,3 +1,5 @@
+import iziToast from 'izitoast';
+import '../../../node_modules/izitoast/dist/css/iziToast.min.css';
 import svg_sprite from '../../img/sprite.svg';
 import { getDataId } from '../api_service';
 import { save, load } from '../storage';
@@ -25,6 +27,7 @@ const addToCart = async evt => {
                                <use href="${svg_sprite}#check"></use>
                            </svg>
                          </button>`;
+
 };
 
 export { addToCart };

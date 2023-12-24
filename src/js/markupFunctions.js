@@ -1,5 +1,8 @@
 import svg_sprite from '../img/sprite.svg';
 
+
+// products
+
 const productMarkup = arrey => {
   if (!arrey.length) {
     return;
@@ -118,4 +121,34 @@ const notFoundMarkup = element => {
                             `;
 };
 
-export { productMarkup, errorMarkup, notFoundMarkup };
+// filters
+
+const createCategoryMarkup = arrey => {
+  if (!arrey.length) {
+    return `<option value="not_found_categories">Not found categories</option>`;
+  }
+  return arrey
+    .map(
+      category =>
+        `<option value="${category}">${category
+          .replace('_', ' ')
+          .replace('_', ' ')}</option>`
+    )
+    .join('');
+};
+
+const createSortMarkup = array => {
+  return array
+    .map(category => {
+      return `<option value="${category.value}">${category.label}</option>`;
+    })
+    .join('');
+};
+
+export {
+  productMarkup,
+  errorMarkup,
+  notFoundMarkup,
+  createCategoryMarkup,
+  createSortMarkup,
+};
