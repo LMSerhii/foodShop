@@ -1,13 +1,60 @@
 :root {
-    --background: #e8e8e2;
-    --white: #fafafa;
-    --black: #010101;
-    --lightGreen: #6d8434;
-    --darkGreen: #586f1f;
-    --lightGrey: rgba(1, 1, 1, 0.3);
-    --grey: rgba(232, 232, 226, 0.6);
-    --modalBackground: rgba(1, 1, 1, 0.4);
-    --darkGrey: rgba(109, 132, 52, 0.05);
+  --background: #e8e8e2;
+  --white: #fafafa;
+  --black: #010101;
+  --lightGreen: #6d8434;
+  --darkGreen: #586f1f;
+  --lightGrey: rgba(1, 1, 1, 0.3);
+  --grey: rgba(232, 232, 226, 0.6);
+  --modalBackground: rgba(1, 1, 1, 0.4);
+  --darkGrey: rgba(109, 132, 52, 0.05);
+}
+
+body {
+  font-family: Neue Montreal;
+  font-style: normal;
+  font-weight: 400;
+  color: #010101;
+  background-color: var(--background);
+}
+
+.visually-hidden {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  margin: -1px;
+}
+
+.container {
+  max-width: 280px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 375px) {
+  .container {
+    max-width: 375px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 768px;
+    padding: 0 32px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .container {
+    max-width: 1440px;
+    padding: 0 100px;
+  }
 }
 body {
 font-family: Neue Montreal;
