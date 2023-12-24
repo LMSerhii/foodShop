@@ -1,4 +1,4 @@
-import svg_sprite from './img/sprite.svg';
+import svg_sprite from '../img/sprite.svg';
 
 const producCartMarkup = arrey => {
   if (!arrey.length) {
