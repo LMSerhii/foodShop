@@ -17,17 +17,21 @@ popularProductList.addEventListener('click', onPopularList);
 
 // getPopular();
 
-render();
+renderPopular();
 
-async function render() {
+async function renderPopular() {
   const results = await getPopular();
-
-  if (!results) {
+  if (!results.length) {
+    notFoundMarkup(refs.popularProductList);
     return;
   }
+  save(common.PAGES, {
+    page: results.page,
+    perPage: results.perPage,
+    totalPages: results.totalPages,
+  });
 
   const markup = createMarkup(results);
-
   popularProductList.insertAdjacentHTML('beforeend', markup);
 }
 
@@ -78,64 +82,8 @@ function onPopularList(evt) {
   }
 
   if (evt.target.classList.contains('js-info')) {
-    const { id } = evt.target.closest('.js-card').dataset;
-    console.log(id);
+    openModal(evt);
   }
 }
 
-// async function addToCard(event) {
-//   const { id } = event.target.closest('.js-card').dataset;
-
-//   console.log(event.target.closest('.js-card'));
-//   console.log({ id });
-
-//   event.target.closest(
-//     '.js-cart'
-//   ).innerHTML = `<button class="btn-check" type="button">
-//   <svg class="icon-check" width="18" height="18">
-//                               <use href="${svg_sprite}#check"></use>
-//                           </svg>
-//                           </button>`;
-//   console.dir(event.target);
-// }
-
-// import { common } from './common';
-// import { refs } from './refs';
-// import { getData } from './api_service';
-// import { save, load } from './storage';
-// import { productMarkup, notFoundMarkup } from './markupFunctions';
-
-// const renderProducts = async query => {
-//   refs.productList.innerHTML = `<div class="loader_box"><span class="loader"></span></div>`;
-
-//   const data = await getData(query);
-
-//   if (!data.results.length) {
-//     notFoundMarkup(refs.productList);
-//     return;
-//   }
-
-//   save(common.PAGES, {
-//     page: data.page,
-//     perPage: data.perPage,
-//     totalPages: data.totalPages,
-//   });
-
-//   refs.productList.innerHTML = productMarkup(data.results);
-// };
-
-// const onProductList = evt => {
-//   evt.preventDefault();
-
-//   if (evt.target.closest('.js-cart')) {
-//     addToCart(evt);
-//   }
-
-//   if (evt.target.classList.contains('js-info')) {
-//     openModal(evt);
-//   }
-// };
-
-// refs.productList.addEventListener('click', onProductList);
-
-// export { renderProducts };
+export { renderPopular };

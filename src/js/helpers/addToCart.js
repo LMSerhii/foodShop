@@ -1,5 +1,3 @@
-// import iziToast from 'izitoast';
-// import '../../../node_modules/izitoast/dist/css/iziToast.min.css';
 import svg_sprite from '../../img/sprite.svg';
 import { getDataId } from '../api_service';
 import { save, load } from '../storage';
@@ -22,15 +20,11 @@ const addToCart = async evt => {
 
   evt.target.closest(
     '.js-cart'
-  ).innerHTML = `<button class="btn-check" type="button">
+  ).innerHTML = `<button class="btn-check js-cart" type="button">
    <svg class="icon-check" width="18" height="18">
                                <use href="${svg_sprite}#check"></use>
                            </svg>
                          </button>`;
-
-  // iziToast.success({
-  //   message: 'Successfully added to cart',
-  // });
 };
 
 export { addToCart };

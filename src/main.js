@@ -1,22 +1,10 @@
-import './js/popular';
-// import { renderProducts } from './js/products';
-// import { save, load } from './js/storage';
-// import { common } from './js/common';
+import { renderPopular } from './js/popular';
+import { save, load } from './js/storage';
+import { common } from './js/common';
 
-// save(common.LOCAL_QUERY_KEY, common.INIT_QUERY);
+save(common.LOCAL_QUERY_KEY, common.INIT_QUERY);
 
-// const storage_query = load(common.LOCAL_QUERY_KEY) ?? [];
-// console.log(storage_query);
+const storage_query = load(common.LOCAL_QUERY_KEY) ?? [];
+console.log(storage_query);
 
-// renderProducts(storage_query);
-
-// import { renderProducts } from './js/products';
-// import { save, load } from './js/storage';
-// import { common } from './js/common';
-
-// save(common.LOCAL_QUERY_KEY, common.INIT_QUERY);
-
-// const storage_query = load(common.LOCAL_QUERY_KEY) ?? [];
-// console.log(storage_query);
-
-// renderProducts(storage_query);
+// renderPopular(storage_query);
