@@ -56,6 +56,11 @@
     }
   }
 
+  .filters-input:hover,
+  .filters-input:focus {
+    box-shadow: 0 0 5px rgba(1, 1, 1, 0.40);
+  }
+
 .filters-input::placeholder {
     color: #010101;
 
@@ -146,8 +151,9 @@
     line-height: 1.28;
 }
 
+.ss-main:hover,
 .ss-main:focus {
-    box-shadow: none !important;
+    box-shadow: 0 0 5px rgba(1, 1, 1, 0.40) !important;
 }
 
 .ss-content .ss-list .ss-option.ss-highlighted,
@@ -161,6 +167,12 @@
     
     font-size: 14px;
     line-height: 1.28;
+}
+
+.ss-content .ss-list .ss-option:hover,
+.ss-content .ss-list .ss-option:focus {
+    color: #010101 !important;
+    background-color: transparent !important;
 }
 
 .ss-content.categories-select.ss-open-below {
