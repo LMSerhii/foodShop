@@ -14,7 +14,7 @@
   position: relative;
   padding: 14px;
   border-radius: 20px;
-  background-color: var(--lightGreen);
+  background-color: #fafafa;
 }
 
 @media screen and (min-width: 375px) {
