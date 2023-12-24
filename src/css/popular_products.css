@@ -82,17 +82,24 @@ body {
 
 .popular-card {
   display: flex;
-  width: 335px;
+  width: 100%;
 
   flex-shrink: 0;
   border-radius: 10px;
   background: #fafafa;
   padding: 14px;
   position: relative;
+  margin: 0;
 }
-@media (min-width: 280px) {
+/* @media (max-width: 280px) {
   .popular-card {
-    width: 100%;
+    max-width: 100%;
+  }
+} */
+
+@media screen and (min-width: 375px) {
+  .container {
+    width: 335px;
   }
 }
 
