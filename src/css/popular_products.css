@@ -82,7 +82,7 @@ body {
 
 .popular-card {
   display: flex;
-  width: 100%;
+  width: 335px;
 
   flex-shrink: 0;
   border-radius: 10px;
@@ -91,17 +91,17 @@ body {
   position: relative;
   margin: 0;
 }
-/* @media (max-width: 280px) {
+@media (max-width: 375px) {
   .popular-card {
-    max-width: 100%;
+    width: 100%;
   }
-} */
+}
 
-@media screen and (min-width: 375px) {
+/* @media screen and (min-width: 375px) {
   .container {
     width: 335px;
   }
-}
+} */
 
 @media screen and (min-width: 768px) {
   .popular-card {
@@ -114,12 +114,14 @@ body {
 }
 
 .popular-container {
+  width: 335px;
   display: flex;
   margin: 0;
 }
 
 @media screen and (min-width: 768px) {
   .popular-container {
+    width: 563px;
     margin-left: 0;
     justify-content: flex-start;
   }
