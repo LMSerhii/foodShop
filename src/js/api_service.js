@@ -1,6 +1,5 @@
 import axios from 'axios';
 import { common } from './common';
-
 // get a list of all products
 async function getData(query) {
   // return object {page, perPage, results[], totalPages}
@@ -128,9 +127,9 @@ async function createSubscription(email) {
         email: email,
       },
     });
-    return response;
+    return response.status;
   } catch (error) {
-    return error;
+    return error.response.status;
   }
 }
 
@@ -143,3 +142,4 @@ export {
   createOrder,
   createSubscription,
 };
+
