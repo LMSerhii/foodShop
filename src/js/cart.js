@@ -6,7 +6,6 @@ import { refs } from './refs';
 import { getData } from './api_service';
 import { save, load } from './storage';
 import { addToCart } from './helpers/addToCart';
-// import { removeFromCart } from './helpers/removeFromCart';
 import { productMarkup, notFoundMarkup } from './markupFunctions';
 
 const BASE_URL = 'https://food-boutique.b.goit.study/api';
