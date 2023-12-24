@@ -15,7 +15,7 @@ body {
   margin: 0 auto;
 }
 
-.title {
+.cart-title {
   color: #010101;
   font-family: Neue Montreal;
   font-size: 24px;
@@ -35,7 +35,7 @@ body {
   fill: #E8E8E2;
 }
 
-.title-container {
+.cart-title-container {
   display: flex;
   gap: 14px;
   align-items: center;
@@ -167,8 +167,8 @@ background: rgba(1, 1, 1, 0.08);
 }
 
 .total-count {
-  width: 335px;
-  height: 60px;
+  min-width: 60vw;
+  /* height: 60px; */
   border-radius: 8px;
   background: rgba(109, 132, 52, 0.05);
   display: flex;
@@ -193,24 +193,31 @@ padding: 26px 0 14px 18px ;
 }
 
 .form-input {
+  position: relative;
   width: 100%;
-  color: #010101;
   font-family: Neue Montreal;
   font-size: 14px;
   line-height: 1.29;
   background-color: inherit;
-  padding: 12px 183px 12px 20px;
+  padding: 12px 0;
   justify-content: center;
   align-items: center;
   gap: 8px;
   border-radius: 30px;
   border: 1px solid rgba(1, 1, 1, 0.30);  
   margin-bottom: 14px;
+  text-indent: 20px;
+  color: inherit;
 }
+
+.form-input:focus {
+  outline-color: #6D8434; 
+}
+
 
 .btn-checkout {
   display: inline-flex;
-  padding: 12px 138px;
+  padding: 12px 8vw;
   justify-content: center;
   align-items: center;
   gap: 10px;
@@ -223,6 +230,7 @@ padding: 26px 0 14px 18px ;
   line-height: 1.29;
   margin-bottom: 80px;
   border: none;
+  width: 100%;
 }
 
 
