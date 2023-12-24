@@ -117,5 +117,6 @@ import{a as d}from"./assets/vendor-b325e1ef.js";(function(){const e=document.cre
           <button class="discount-product-btn" type="button">add</button>
           </div>
         </div>
+        
         </li>`}).join("")}const _=document.querySelector(".discount-product-list");console.log(_);_.addEventListener("click",void 0);u(s.LOCAL_QUERY_KEY,s.INIT_QUERY);const x=l(s.LOCAL_QUERY_KEY)??[];T();g(x);G();D();
 //# sourceMappingURL=commonHelpers2.js.map
