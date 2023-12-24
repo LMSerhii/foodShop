@@ -279,4 +279,5 @@ export {
   createCategoryMarkup,
   createSortMarkup,
   createMarkupPopular,
+  producCartMarkup,
 };
