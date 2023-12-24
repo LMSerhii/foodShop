@@ -86,7 +86,8 @@ function onPopularList(event) {
 async function addToCard(event) {
   const { id } = event.target.closest('.js-card').dataset;
 
-  console.log(event.target);
+  console.log(event.target.closest('.js-card'));
+  console.log({ id });
 
   event.target.closest(
     '.js-cart'
@@ -97,3 +98,46 @@ async function addToCard(event) {
                           </button>`;
   console.dir(event.target);
 }
+
+console.dir();
+
+// <div class="product-card" id="productCard">
+//   <img src="зображення.jpg" alt="Зображення продукту">
+//   <h2>Назва продукту</h2>
+//   <p>Категорія: <span id="category">Категорія продукту</span></p>
+//   <p>Розмір пакування: <span id="packageSize">Розмір</span></p>
+//   <p>Популярність: <span id="popularity">Показник популярності</span></p>
+//   <button id="addToCartButton" onclick="addToCart()">Додати до кошика</button>
+// </div>
+
+// Функція для додавання продукту до кошика
+// function addToLocalStorage() {
+//   // Отримуємо інформацію про продукт
+//   const productName = document.querySelector('.popular-name').textContent;
+//   console.log(productName);
+//   // var productCategory = document.querySelector('#category').textContent;
+//   // var productSize = document.querySelector('#packageSize').textContent;
+
+//     // Перевіряємо, чи вже є продукт у кошику
+//     var cart = JSON.parse(localStorage.getItem('cart')) || [];
+//     var isProductInCart = cart.some(function(item) {
+//       return item.name === productName && item.category === productCategory && item.size === productSize;
+//     });
+
+//     if (!isProductInCart) {
+//       // Додаємо продукт до кошика
+//       var product = {
+//         name: productName,
+//         category: productCategory,
+//         size: productSize
+//       };
+//       cart.push(product);
+
+//       // Оновлюємо інформацію у localStorage
+//       localStorage.setItem('cart', JSON.stringify(cart));
+
+//       // Змінюємо кнопку на ✓, щоб вказати, що продукт додано
+//       document.querySelector('#addToCartButton').innerHTML = '✓ Додано до кошика';
+//       document.querySelector('#addToCartButton').disabled = true; // Деактивуємо кнопку
+//     }
+// }
