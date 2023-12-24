@@ -10,7 +10,7 @@ body {
 
 .container {
   max-width: 280px;
-  /* max-width: 375px; */
+
   padding: 0 20px;
   margin: 0 auto;
 }
@@ -96,12 +96,6 @@ body {
     width: 100%;
   }
 }
-
-/* @media screen and (min-width: 375px) {
-  .container {
-    width: 335px;
-  }
-} */
 
 @media screen and (min-width: 768px) {
   .popular-card {
