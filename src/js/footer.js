@@ -1,32 +1,33 @@
-import axios from 'axios';
-import { common } from './common';
 import { createSubscription } from './api_service';
 
 export const refs = {
   emailForm: document.querySelector('.subscribe-form'),
+  emailInput: document.querySelector('.subscribe-input'),
   sendBtn: document.querySelector('.send-btn'),
 };
 
-refs.emailInput.addEventListener('submit', onEmailEnter);
+refs.emailForm.addEventListener('submit', onEmailEnter);
 
-export function onEmailEnter(event) {
+export async function onEmailEnter(event) {
   event.preventDefault();
 
-  const data = event.currentTarget;
-  const email = data.value.trim();
-  console.log(email);
-  if (email !== '') {
-    refs.sendBtn.addEventListener('click', onSendBtn);
+  const email = refs.emailInput.value.trim();
+  if (!email) {
+    return;
   }
-  //   event.currentTarget.reset();
+  const result = await onSendBtn(email);
 }
 
-export async function onSendBtn() {
-  try {
-    const result = await createSubscription(email);
-    const status = result.status;
-    console.log(status);
-  } catch (error) {
-    console.log(error.message);
+export async function onSendBtn(email) {
+  const result = await createSubscription(email);
+  switch (result) {
+    case 201:
+      return true;
+    case 409:
+      return false;
+
+    default:
+      break;
   }
+  return result;
 }
