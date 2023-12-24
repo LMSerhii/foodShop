@@ -8,6 +8,7 @@ const refs = {
   emailForm: document.querySelector('.subscribe-form'),
   emailInput: document.querySelector('.subscribe-input'),
   sendBtn: document.querySelector('.send-btn'),
+  popularProductList: document.querySelector('.popular-products'),
 };
 
 export { refs };
