@@ -1,5 +1,6 @@
 const refs = {
   productList: document.querySelector('.product-list'),
+
   searchField: document.querySelector('.js-input'),
   categoryField: document.querySelector('#categoryField'),
   abcField: document.querySelector('#abcField'),

@@ -77,6 +77,7 @@ async function getDiscount() {
     return response.data;
   } catch (error) {
 
+
     return error;
 
   }
@@ -95,6 +96,7 @@ async function getCategories() {
     });
     return response.data;
   } catch (error) {
+
 
     return error;
   }
@@ -136,6 +138,7 @@ async function createSubscription(email) {
       },
     });
 
+
     return response.status;
   } catch (error) {
     return error.response.status;
@@ -151,5 +154,4 @@ export {
   createOrder,
   createSubscription,
 };
-
 

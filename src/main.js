@@ -1,6 +1,7 @@
 import { renderProducts } from './js/products';
 import { save, load } from './js/storage';
 import { common } from './js/common';
+
 import { renderSelects } from './js/filters';
 import { renderPopular } from './js/popular';
 import { dataDiscountProd } from './js/dicsount_products';

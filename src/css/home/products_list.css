@@ -1,4 +1,5 @@
 .product-list {
+
   padding-top: 10px;
   padding-bottom: 20px;
 }
@@ -161,6 +162,7 @@
 /* discount */
 
 .discount-icon {
+
   position: absolute;
   top: 3px;
   right: 10px;

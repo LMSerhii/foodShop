@@ -1,5 +1,21 @@
 import svg_sprite from '../img/sprite.svg';
 
+const producCartMarkup = arrey => {
+if (!arrey.length) {
+    deleteContainer.classList.add('visually-hidden');
+    orderContainer.classList.add('visually-hidden');
+    return `
+    <img class="basket-img" src="${empty_basket}" alt="Yellow empty basket">
+    <div class="basket-text">
+        <p class="empty-text"> Your basket is <span>empty...</span></p>
+        <p class="empty-comment">Go to the main page to select your favorite products and add them to the cart.</p>
+    </div>
+    `;
+}
+return arrey
+    .map(
+    ({
+
 // products
 
 const productMarkup = arrey => {
@@ -135,6 +151,7 @@ const createCategoryMarkup = arrey => {
     )
     .join('');
 };
+
 
 const createSortMarkup = array => {
   return array
