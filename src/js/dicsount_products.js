@@ -30,15 +30,12 @@ function createDiscountMarkup(array) {
           <button class="discount-product-btn" type="button">add</button>
           </div>
         </div>
+        
         </li>`;
       }
     })
     .join('');
 }
-
-//  <svg class="" width="" height="">
-//    <use href="${svg_sprite}#cart"></use>
-//  </svg>
 
 // add listner to products
 
