@@ -37,3 +37,5 @@ const onProductList = evt => {
 refs.productList.addEventListener('click', onProductList);
 
 export { renderProducts };
+
+

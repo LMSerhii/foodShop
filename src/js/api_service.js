@@ -18,6 +18,8 @@ async function getData(query) {
   }
 }
 
+
+
 // get an object by ID
 async function getDataId(id) {
   // returns the card object
