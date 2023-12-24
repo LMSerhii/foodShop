@@ -146,9 +146,6 @@ const getSortValue = sortCategory => {
 
 
 
-
-
-
 async function get(query, getSort) {
     try {
         const response = await axios({
