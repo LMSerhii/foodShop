@@ -107,7 +107,7 @@ const onAbcField = async evt => {
     const query = load(common.LOCAL_QUERY_KEY);
     const sortCategory = query.sort;
 
-    const getSort = getSortValue(sortCategory);
+    const getSort = SortValue(sortCategory);
 
     const result = await get(query, getSort);
     renderProductsSort(result);
@@ -115,7 +115,7 @@ const onAbcField = async evt => {
 
 
 
-const getSortValue = sortCategory => {
+const SortValue = sortCategory => {
     let getSort = {};
 
     switch (sortCategory) {
