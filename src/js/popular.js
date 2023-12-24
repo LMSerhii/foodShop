@@ -1,8 +1,8 @@
 import axios from 'axios';
-// import { common } from './common';
+import { common } from './common';
 import { getPopular } from './api_service';
+import { addToCart } from './helpers/addToCart';
 
-import { getDataId } from './api_service';
 import svg_sprite from '../img/sprite.svg';
 import { save, load } from './storage';
 
@@ -70,40 +70,39 @@ function createMarkup(arrey) {
     .join('');
 }
 
-function onPopularList(event) {
-  event.preventDefault();
+function onPopularList(evt) {
+  evt.preventDefault();
 
-  if (event.target.closest('.js-cart')) {
-    addToCard(event);
+  if (evt.target.closest('.js-cart')) {
+    addToCart(evt);
   }
 
-  if (event.target.classList.contains('js-info')) {
-    const { id } = event.target.closest('.js-card').dataset;
+  if (evt.target.classList.contains('js-info')) {
+    const { id } = evt.target.closest('.js-card').dataset;
     console.log(id);
   }
 }
 
-async function addToCard(event) {
-  const { id } = event.target.closest('.js-card').dataset;
+// async function addToCard(event) {
+//   const { id } = event.target.closest('.js-card').dataset;
 
-  console.log(event.target.closest('.js-card'));
-  console.log({ id });
+//   console.log(event.target.closest('.js-card'));
+//   console.log({ id });
 
-  event.target.closest(
-    '.js-cart'
-  ).innerHTML = `<button class="btn-check" type="button">
-  <svg class="icon-check" width="18" height="18">
-                              <use href="${svg_sprite}#check"></use>
-                          </svg>
-                          </button>`;
-  console.dir(event.target);
-}
+//   event.target.closest(
+//     '.js-cart'
+//   ).innerHTML = `<button class="btn-check" type="button">
+//   <svg class="icon-check" width="18" height="18">
+//                               <use href="${svg_sprite}#check"></use>
+//                           </svg>
+//                           </button>`;
+//   console.dir(event.target);
+// }
 
 // import { common } from './common';
 // import { refs } from './refs';
 // import { getData } from './api_service';
 // import { save, load } from './storage';
-// import { addToCart } from './helpers/addToCart';
 // import { productMarkup, notFoundMarkup } from './markupFunctions';
 
 // const renderProducts = async query => {
