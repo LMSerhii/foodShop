@@ -100,10 +100,13 @@ const onForm = evt => {
 
 
 const onAbcField = async evt => {
+
     const currentCategory = evt.target.value;
     const currQuery = load(common.LOCAL_QUERY_KEY);
+
     currQuery.sort = currentCategory;
     save(common.LOCAL_QUERY_KEY, currQuery);
+    
     const query = load(common.LOCAL_QUERY_KEY);
     const sortCategory = query.sort;
 
