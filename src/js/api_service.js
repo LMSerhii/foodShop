@@ -11,14 +11,15 @@ async function getData(query) {
       header: {
         'Content-Type': 'aplication/json',
       },
-      query,
+
+      params: query,
     });
     return response.data;
   } catch (error) {
-    // errorMarkup(error.response.status);
-    console.log(error);
+    return error;
   }
 }
+
 
 // get an object by ID
 async function getDataId(id) {
@@ -33,8 +34,8 @@ async function getDataId(id) {
     });
     return response.data;
   } catch (error) {
-    // errorMarkup(error.response.status);
-    console.log(error);
+
+    return error;
   }
 }
 
@@ -53,12 +54,12 @@ async function getPopular(limit) {
       header: {
         'Content-Type': 'aplication/json',
       },
-      query,
+
+      params: query,
     });
     return response.data;
   } catch (error) {
-    // errorMarkup(error.response.status);
-    console.log(error);
+    return error;
   }
 }
 
@@ -75,8 +76,9 @@ async function getDiscount() {
     });
     return response.data;
   } catch (error) {
-    // errorMarkup(error.response.status);
-    console.log(error);
+
+    return error;
+
   }
 }
 
@@ -93,8 +95,8 @@ async function getCategories() {
     });
     return response.data;
   } catch (error) {
-    // errorMarkup(error.response.status);
-    console.log(error);
+
+    return error;
   }
 }
 
@@ -133,9 +135,10 @@ async function createSubscription(email) {
         email: email,
       },
     });
-    return response;
+
+    return response.status;
   } catch (error) {
-    return error;
+    return error.response.status;
   }
 }
 
@@ -148,3 +151,5 @@ export {
   createOrder,
   createSubscription,
 };
+
+
