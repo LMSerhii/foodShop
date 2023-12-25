@@ -233,7 +233,7 @@ const createSortMarkup = array => {
 
 //  Popular
 
-function createMarkupPopular(arrey) {
+const createMarkupPopular = arrey => {
   if (!arrey.length) {
     console.log('Sorry not data');
     return;
@@ -270,7 +270,46 @@ function createMarkupPopular(arrey) {
                 </li>`;
     })
     .join('');
-}
+};
+
+const createDiscountMarkup = array => {
+  return array
+    .map(({ img, name, price, _id, is10PercentOff }) => {
+      if (is10PercentOff) {
+        return `
+        <li class="discount-product-element">
+
+          <svg class="discount-label" width="60" height="60">
+          <use href="${svg_sprite}#discount"></use>
+          </svg>
+
+          <div class="discount-product-img-wrapper">
+           <img class="discount-product-img" src="${img}" alt="${name}">
+          </div>
+        
+        <div class="discount-product-descr">
+
+         <div class="discount-product-name-wrapper">
+           <h3 class="discount-product-name">${name}</h3>
+          </div>
+
+         <div class="discount-product-price-wrapper">
+          <p class="discount-product-price">$${price}</p>
+          <button class="discount-product-btn" type="button">
+            <svg class="discount-product-icon" width="18" height="18">
+              <use href=" ${svg_sprite}#cart"></use>
+            </svg>
+         
+          </button>
+        </div>
+
+        </div>
+        
+        </li>`;
+      }
+    })
+    .join('');
+};
 
 export {
   productMarkup,
@@ -279,5 +318,6 @@ export {
   createCategoryMarkup,
   createSortMarkup,
   createMarkupPopular,
-  producCartMarkup 
+  producCartMarkup,
+  createDiscountMarkup,
 };

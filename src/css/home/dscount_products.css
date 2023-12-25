@@ -20,6 +20,7 @@ body {
 }
 
 .discount-product-element {
+  position: relative;
   padding: 16px;
   border-radius: 15px;
   background: #fafafa;
@@ -73,4 +74,12 @@ body {
   width: 18px;
   height: 18px;
   fill: #e8e8e2;
+}
+
+/* doscount-label */
+
+.discount-label {
+  position: absolute;
+  top: 3px;
+  right: 10px;
 }
