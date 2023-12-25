@@ -124,34 +124,34 @@
                                 find the perfect product for you.
                               </p>
                               </div>
-                            `},f=s=>s.length?s.map(t=>`<option value="${t}">${t.replace("_"," ").replace("_"," ")}</option>`).join(""):'<option value="not_found_categories">Not found categories</option>',y=s=>s.map(t=>`<option value="${t.value}">${t.label}</option>`).join(""),$=s=>{if(!s.length){console.log("Sorry not data");return}return s.map(({_id:t,name:r,img:c,category:e,size:o,popularity:a})=>`<li class="popular-card js-card" data-id=${t}>
-                    <div class="popular-box">
-                      <div class="popular-card-img-wrap">
-                          <img src="${c}" alt="${r}" width="56" height="56" loading="lazy"/>
-                      </div>
-                      <div class="card-info-box">
-                      
-                        <h3 class="popular-name">${r}</h3>
-                      
-                      <ul class="popular-info-list">
-                          <li class="info-style">Category:
-                          <span>${e.replace("_"," ")}</span></li>
-                          <div class="popular-info-wraper">
-                          <li class="info-style">Size: <span>${o}</span></li>
-                          <li class="info-style">Popularity: <span>${a}</span></li>
-                      </ul>
-                      </div>
-                    </div>
+                            `},f=s=>s.length?s.map(t=>`<option value="${t}">${t.replace("_"," ").replace("_"," ")}</option>`).join(""):'<option value="not_found_categories">Not found categories</option>',y=s=>s.map(t=>`<option value="${t.value}">${t.label}</option>`).join(""),$=s=>{if(!s.length){console.log("Sorry not data");return}return s.map(({_id:t,name:r,img:c,category:e,size:o,popularity:a})=>`<li class="popular-card popular-item js-card" data-id="${t}">
+  <div class="popular-box">
+    <div class="popular-card-img-wrap">
+      <img src="${c}" alt="${r}" width="56" height="56" loading="lazy" />
+    </div>
+    <div class="card-info-box">
+      <h3 class="popular-name">${r}</h3>
 
-                    <div class="card-bottom">
-                      
-                      <button class="card-btn js-cart" type="button">
-                          <svg class="icon" width="18" height="18">
-                              <use href="${i}#cart"></use>
-                          </svg>
-                      </button>
-                    </div>
-                </li>`).join("")},b=s=>s.map(({img:t,name:r,price:c,_id:e,is10PercentOff:o})=>{if(o)return`
+      <ul class="popular-info-list">
+        <li class="info-style">
+          Category: <span>${e.replace("_"," ")}</span>
+        </li>
+        <div class="popular-info-wraper">
+          <li class="info-style">Size: <span>${o}</span></li>
+          <li class="info-style">Popularity: <span>${a}</span></li>
+        </div>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card-bottom">
+    <button class="card-btn js-cart" type="button">
+      <svg class="icon" width="18" height="18">
+        <use href="${i}#cart"></use>
+      </svg>
+    </button>
+  </div>
+</li>`).join("")},b=s=>s.map(({img:t,name:r,price:c,_id:e,is10PercentOff:o})=>{if(o)return`
         <li class="discount-product-element">
 
           <svg class="discount-label" width="60" height="60">
@@ -180,5 +180,5 @@
 
         </div>
         
-        </li>`}).join(""),S={productList:document.querySelector(".product-list"),searchField:document.querySelector(".js-input"),categoryField:document.querySelector("#categoryField"),abcField:document.querySelector("#abcField"),form:document.querySelector(".form"),productList:document.querySelector(".product-list"),emailForm:document.querySelector(".subscribe-form"),emailInput:document.querySelector(".subscribe-input"),sendBtn:document.querySelector(".send-btn"),popularProductList:document.querySelector(".popular-products"),totalAmountDisplay:document.querySelector(".total-amount"),cartList:document.querySelector(".cart-product-list"),deleteAllButton:document.getElementById("deleteAllButton"),productsCount:document.getElementById("product-count"),dicsProd:document.querySelector(".discount-product-list"),discProdList:document.querySelector(".discount-product-list")};export{p as a,i as b,m as c,h as d,f as e,y as f,$ as g,b as h,u as l,v as n,g as p,S as r,n as s};
-//# sourceMappingURL=refs-8c3bfa97.js.map
+        </li>`}).join(""),S={productList:document.querySelector(".product-list"),searchField:document.querySelector(".js-input"),categoryField:document.querySelector("#categoryField"),abcField:document.querySelector("#abcField"),form:document.querySelector(".form"),productList:document.querySelector(".product-list"),emailForm:document.querySelector(".subscribe-form"),emailInput:document.querySelector(".subscribe-input"),sendBtn:document.querySelector(".send-btn"),popularProductList:document.querySelector(".popular-products"),totalAmountDisplay:document.querySelector(".total-amount"),cartList:document.querySelector(".cart-product-list"),deleteAllButton:document.getElementById("deleteAllButton"),productsCount:document.getElementById("product-count"),dicsProd:document.querySelector(".discount-product-list"),discProdList:document.querySelector(".discount-product-list"),popularProductList:document.querySelector(".popular_products_list")};export{p as a,i as b,m as c,h as d,f as e,y as f,$ as g,b as h,u as l,v as n,g as p,S as r,n as s};
+//# sourceMappingURL=refs-85e6fdcc.js.map
