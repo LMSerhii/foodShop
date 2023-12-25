@@ -6,6 +6,19 @@
 } */
 
 .tui-pagination .tui-first-child.tui-is-selected {
-    color: red;
     border-radius: 50%;
 }
+
+.tui-pagination .tui-first,
+.tui-pagination .tui-prev,
+.tui-pagination .tui-next,
+.tui-pagination .tui-last,
+.tui-pagination .tui-page-btn,
+.tui-pagination .tui-first-child,
+.tui-pagination .tui-is-selected,
+.tui-pagination .tui-prev-is-ellip,
+.tui-pagination .tui-next-is-ellip {
+    border-radius: 60px;
+    background: #FAFAFA;
+}
+

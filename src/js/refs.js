@@ -15,6 +15,7 @@ const refs = {
   productsCount: document.getElementById('product-count'),
   dicsProd: document.querySelector('.discount-product-list'),
   discProdList: document.querySelector('.discount-product-list'),
+  paginationContainer: document.getElementById('pagination-container'),
 };
 
 export { refs };

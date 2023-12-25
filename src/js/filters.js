@@ -6,6 +6,8 @@ import { getCategories } from './api_service';
 import { save, load } from './storage';
 import { renderProducts } from './products';
 import { createCategoryMarkup, createSortMarkup } from './markupFunctions';
+import { loadPaginationData } from './pagination';
+
 
 let categories = [];
 
@@ -33,7 +35,7 @@ const renderSelects = async () => {
 const onCategoryField = evt => {
   const currentCategory = evt.target.value;
   const currQuery = load(common.LOCAL_QUERY_KEY);
-
+  currQuery.page = '1';
   if (currentCategory === 'Show_all') {
     currQuery.category = null;
   } else {
@@ -48,7 +50,7 @@ const onForm = evt => {
   evt.preventDefault();
   const currentValue = refs.searchField.value;
   const currQuery = load(common.LOCAL_QUERY_KEY);
-
+  currQuery.page = '1';
   if (!currentValue) {
     currQuery.keyword = null;
   } else {
@@ -70,6 +72,8 @@ const onAbcField = async evt => {
 
   const query = load(common.LOCAL_QUERY_KEY);
   const sortCategory = query.sort;
+
+  currQuery.page = '1';
 
   const getSort = SortValue(sortCategory);
 
@@ -133,11 +137,13 @@ const renderProductsSort = async result => {
     totalPages: result.totalPages,
   });
   refs.productList.innerHTML = productMarkup(result.results);
+  loadPaginationData()
 };
 
 const onSearchField = evt => {
   if (evt.target.value === '') {
     const currentQuery = load(common.LOCAL_QUERY_KEY);
+    currentQuery.page = '1';
     currentQuery.keyword = null;
     save(common.LOCAL_QUERY_KEY, currentQuery);
     const query = load(common.LOCAL_QUERY_KEY);
