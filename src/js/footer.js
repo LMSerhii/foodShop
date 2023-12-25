@@ -1,9 +1,12 @@
 import { createSubscription } from './api_service';
+
 import { refs } from './refs';
 
-refs.emailForm.addEventListener('submit', onEmailEnter);
+const renderFooter = () => {
+  refs.emailForm.addEventListener('submit', onEmailEnter);
+};
 
-export async function onEmailEnter(event) {
+async function onEmailEnter(event) {
   event.preventDefault();
 
   const email = refs.emailInput.value.trim();
@@ -13,7 +16,7 @@ export async function onEmailEnter(event) {
   const result = await onSendBtn(email);
 }
 
-export async function onSendBtn(email) {
+async function onSendBtn(email) {
   const result = await createSubscription(email);
   switch (result) {
     case 201:

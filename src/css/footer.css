@@ -106,6 +106,7 @@
 }
 .subscribe-input:focus {
   outline: none;
+  border-color: rgb(146, 243, 146);
 }
 .subscribe-input::placeholder {
   color: rgba(232, 232, 226, 0.6);
