@@ -5,12 +5,7 @@ import { addToCart } from './helpers/addToCart';
 import { save, load } from './storage';
 import { createMarkupPopular } from './markupFunctions';
 
-const popularProductList = document.querySelector('.popular_products_list');
-console.dir(popularProductList);
-
-popularProductList.addEventListener('click', onPopularList);
-
-async function renderPopular() {
+const renderPopular = async () => {
   const results = await getPopular();
   if (!results.length) {
     notFoundMarkup(refs.popularProductList);
@@ -23,10 +18,10 @@ async function renderPopular() {
   });
 
   const markup = createMarkupPopular(results);
-  popularProductList.insertAdjacentHTML('beforeend', markup);
-}
+  refs.popularProductList.insertAdjacentHTML('beforeend', markup);
+};
 
-function onPopularList(evt) {
+const onPopularList = evt => {
   evt.preventDefault();
 
   if (evt.target.closest('.js-cart')) {
@@ -36,6 +31,8 @@ function onPopularList(evt) {
   if (evt.target.classList.contains('js-info')) {
     openModal(evt);
   }
-}
+};
+
+refs.popularProductList.addEventListener('click', onPopularList);
 
 export { renderPopular };
