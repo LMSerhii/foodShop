@@ -7,9 +7,9 @@
     <title>FoodShop</title>
     
     <script type="module" crossorigin src="/foodShop/commonHelpers2.js"></script>
-    <link rel="modulepreload" crossorigin href="/foodShop/assets/refs-102b93b5.js">
+    <link rel="modulepreload" crossorigin href="/foodShop/assets/refs-50feb617.js">
     <link rel="modulepreload" crossorigin href="/foodShop/assets/vendor-b325e1ef.js">
-    <link rel="stylesheet" href="/foodShop/assets/refs-6ff2cb6d.css">
+    <link rel="stylesheet" href="/foodShop/assets/refs-1470ed35.css">
     <link rel="stylesheet" href="/foodShop/assets/vendor-e5212ee8.css">
   </head>
   <body>
@@ -50,8 +50,14 @@
   
   <section class="filters">
   <div class="container">
+<!--      <label class="form-label" for="filtersForm">Filters:</label>
+    <form class="form" name="filters" id="filtersForm"> -->
+
     <form class="form" name="filters">
-      <label class="form-label" for="textInput">Filters:</label>
+      <label class="form-label" for="textInput">
+        Filters:
+      </label>
+
       <div class="filter-input-wrapper">
         <input
           class="filters-input js-input"
@@ -62,6 +68,15 @@
         />
 
         <button class="search-btn" type="submit">
+<!--         <svg class="search-btn-svg" width="20" height="20">
+            <use href="../../img/sprite.svg#search"></use>
+          </svg>
+        </button>
+      </div>
+
+      <select
+        class="categories-select"  -->
+
           <svg class="search-btn-svg" width="32" height="32">
             <use href="/foodShop/assets/sprite-10b57387.svg#search"></use>
           </svg>
@@ -73,6 +88,10 @@
         name="categories"
         aria-placeholder="Categories"
       >
+<!--       <option data-placeholder="true"></option>
+        <option value="Show_all">Show all</option>
+      </select>  -->
+
         <option data-placeholder="true">Categories</option>
       </select>
       <select
@@ -81,18 +100,27 @@
         name="alpabetSearch"
         aria-placeholder="A to Z"
       >
-        <!-- <option data-placeholder="true">A to Z</option>
-        <option value="alphabetical" >A to Z</option>
-        <option value="reverse-alphabetical" >Z to A</option>
-        <option value="cheap" >Cheap</option>
-        <option value="expensive" >Expensive</option>
-        <option value="popular" >Popular</option>
-        <option value="not-popular" >Not popular</option>
-        <option value="" >Show all</option> -->
+<!--        <option value="A to Z">A to Z</option>
+      <option value="Z to A">Z to A</option>
+      <option value="Cheap">Cheap</option>
+      <option value="Expensive">Expensive</option>
+      <option value="Popular">Popular</option>
+      <option value="Not popular">Not popular</option>
+      <option value="Show all">Show all</option>
+    </select>  -->
+
+        <option data-placeholder="true">A to Z</option>
+        <option value="alphabetical">A to Z</option>
+        <option value="reverse-alphabetical">Z to A</option>
+        <option value="cheap">Cheap</option>
+        <option value="expensive">Expensive</option>
+        <option value="popular">Popular</option>
+        <option value="not-popular">Not popular</option>
+        <option value="">Show all</option>
       </select>
     </form>
   </div>
-</section>
+</section>;
 
   <div class="container">
 
