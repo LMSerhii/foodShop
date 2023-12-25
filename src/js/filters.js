@@ -1,3 +1,60 @@
+// import { getCategories } from './api_service';
+// import { save, load } from './storage';
+// import { common } from './common';
+// import { renderProducts } from './products';
+// import SlimSelect from 'slim-select';
+// import '../../node_modules/slim-select/dist/slimselect.css';
+
+// new SlimSelect({
+//   select: '#abcField',
+//   settings: {
+//     placeholderText: 'A to Z',
+//     showSearch: false,
+//   },
+// });
+
+// const refs = {
+//   searchField: document.querySelector('.js-input'),
+//   categoryField: document.querySelector('#categoryField'),
+//   abcField: document.querySelector('#abcField'),
+//   form: document.querySelector('.form'),
+// };
+
+// // const abcList = ["A to Z", "Z to A", "Cheap", "Expensive", "Popular", "Not popular", "Show all"]
+
+// const createCategoryMarkup = arrey => {
+//   if (!arrey.length) {
+//     return `<option value="not_found_categories">Not found categories</option>`;
+//   }
+//   return arrey
+//     .map(
+//       category =>
+//         `<option value="${category}">${category
+//           .replace('_', ' ')
+//           .replace('_', ' ')}</option>`
+//     )
+//     .join('');
+// };
+
+
+// const renderCategory = async () => {
+//   const data = await getCategories();
+//   const markup = createCategoryMarkup(data);
+//   refs.categoryField.insertAdjacentHTML('beforeend', markup);
+
+//   new SlimSelect({
+//     select: '#categoryField',
+//     settings: {
+//       placeholderText: 'Categories',
+//       showSearch: false,
+//     },
+//   });
+// };
+
+// renderCategory()
+
+
+
 import axios from 'axios';
 import { common } from './common';
 import { refs } from './refs';
@@ -54,7 +111,6 @@ const onForm = evt => {
   } else {
     currQuery.keyword = currentValue;
   }
-
   save(common.LOCAL_QUERY_KEY, currQuery);
 
   const query = load(common.LOCAL_QUERY_KEY);
