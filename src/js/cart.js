@@ -9,9 +9,8 @@ const renderItemCount = () => {
   const itemCount = cart.length;
   console.log(`Item Count: ${itemCount}`);
 
-  productsCount.textContent = `(${itemCount})`;
-  productsCountHeader.textContent = `(${itemCount})`;
-
+  refs.productsCount.textContent = `(${itemCount})`;
+  refs.productsCountHeader.textContent = `(${itemCount})`;
 };
 
 const validClose = productId => {
