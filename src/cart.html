@@ -12,7 +12,7 @@
   <section class="cart-section ">
     <!-- Title -->
     <div class="container">
-      <div class="title-container">
+      <div class="cart-title-container">
         <a class="cart-logo-icon" href="./index.html">
           <svg class="" width="18px" height="18px">
             <use
@@ -20,7 +20,7 @@
             ></use>
           </svg>
         </a>
-        <h1 class="title">Cart<span id="product-count">()</span></h1>
+        <h1 class="cart-title">Cart<span id="product-count"></span></h1>
       </div>
     <!-- Delete button -->
       <div class="delete-container">
@@ -35,12 +35,12 @@
       <ul class="cart-product-list"></ul>
       <!-- Order list -->
       <div class="order-container"> 
-        <h2 class="title order-title">Your Order</h2>
+        <h2 class="cart-title order-title">Your Order</h2>
           <div class="total-count">
             <p class="product-name tittle-total">Total</p>
               <div class="sum-info">
                 <span class="info-style">Sum: </span>
-                <span class="title" id="total-count">234</span>
+                <span class="cart-title total-amount" id="total-count"></span>
               </div>
           </div>
 
@@ -49,7 +49,7 @@
             type="email"
             name="user-email"
             id="user-email"
-            placeholder="Mail: Enter your email"
+            placeholder="Mail:   Enter your email"
             pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
             title="Wrong email"
             required

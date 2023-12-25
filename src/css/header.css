@@ -21,6 +21,7 @@
 }
 
 .logo-item:first-child {
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -28,6 +29,7 @@
   height: 24px;
   border-radius: 50%;
   background-color: var(--lightGreen);
+
 }
 @media screen and (min-width: 375px) {
   .logo-item:first-child {

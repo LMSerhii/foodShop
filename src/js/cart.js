@@ -3,71 +3,38 @@ import { load, save, remove } from './storage';
 import { common } from './common';
 import { producCartMarkup } from './markupFunctions';
 
-
+const totalAmountDisplay = document.querySelector('.total-amount');
 const cartList = document.querySelector('.cart-product-list');
-
-
-
+const deleteAllButton = document.getElementById('deleteAllButton');
+const productsCount = document.getElementById('product-count');
 const cart = load(common.LOCAL_CART_KEY) ?? [];
 
-console.log(cart.length);
-console.log(cart);
 
-/**
-  |============================
-  | 
-  |============================
-*/
+
+const renderItemCount = () => {
+  const itemCount = cart.length;
+  console.log(`Item Count: ${itemCount}`);
+  productsCount.textContent = `(${itemCount})`;
+};
+renderItemCount();
+
 const validClose = productId => {
-  // Знаходимо індекс елемента за _id
   const index = cart.findIndex(({ _id }) => _id === productId);
 
-  console.log('Index:', index);
+  console.log(index);
 
-  // Перевірка, чи елемент знайдено за вказаним _id
-  if (index !== -1) {
-    // Отримуємо об'єкт за індексом
-    const product = cart[index];
+  cart.splice(index, 1);
 
-    // Отримуємо ціну з об'єкта
-    const price = product.price;
+  remove(common.LOCAL_CART_KEY);
 
-    console.log('Price:', price);
-    const summary = {};
-    // Видалення елемента за індексом
-    cart.splice(index, 1);
-  
+  save(common.LOCAL_CART_KEY, cart);
 
-    // Оновлення локального сховища
-    remove(common.LOCAL_CART_KEY);
-    save(common.LOCAL_CART_KEY, cart);
-
-    // Оновлення відображення кошика
-    cartList.innerHTML = producCartMarkup(cart);
-  } else {
-    console.log('Product not found.');
-  }
+  cartList.innerHTML = producCartMarkup(cart);
+  renderTotalAmount(); // Оновлення суми при видаленні товару
+  renderItemCount();
 };
 
-/**
-  |============================
-  | 
-  |============================
-*/
 
-// const validClose = productId => {
-//   const index = cart.findIndex(({ _id }) => _id === productId);
-
-//   console.log(index);
-
-//   cart.splice(index, 1);
-
-//   remove(common.LOCAL_CART_KEY);
-
-//   save(common.LOCAL_CART_KEY, cart);
-
-//   cartList.innerHTML = producCartMarkup(cart);
-// };
 
 const onClose = evt => {
   if (evt.currentTarget === evt.target) {
@@ -82,9 +49,11 @@ const onClose = evt => {
   }
 };
 
+const renderTotalAmount = () => {
+  const totalAmount = cart.reduce((acc, product) => acc + product.price, 0).toFixed(2);
+  totalAmountDisplay.textContent = `$${totalAmount}`;
+};
 
-
-const deleteAllButton = document.getElementById('deleteAllButton');
 
 // Функція для очищення значення ключа "cart" у локальному сховищі
 function clearCartLocalStorage() {
@@ -106,6 +75,7 @@ const renderCart = () => {
 
   cartList.innerHTML = producCartMarkup(cart);
   cartList.addEventListener('click', onClose);
+  renderTotalAmount();
 };
 
 renderCart();
