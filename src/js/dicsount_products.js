@@ -1,11 +1,13 @@
 import { getDiscount } from './api_service';
 const dicsProd = document.querySelector('.discount-product-list');
+// import { refs } from './refs';
 // fetch data
 async function dataDiscountProd() {
   const data = await getDiscount();
   console.log(data);
-  const markup = createDiscountMarkup(data);
+  const markup = createDiscountMarkup(data.slice(0, 2));
   dicsProd.innerHTML = markup;
+  // refs.dicsProd.innerHTML = markup;
 }
 dataDiscountProd();
 
