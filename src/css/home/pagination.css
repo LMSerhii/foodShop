@@ -1,0 +1,11 @@
+/* .pagination-container.pagination-container {
+    margin-left: 100px;
+    margin: 0 auto;
+    display: flex;
+    gap: 20px;
+} */
+
+.tui-pagination .tui-first-child.tui-is-selected {
+    color: red;
+    border-radius: 50%;
+}
