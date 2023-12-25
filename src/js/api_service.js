@@ -122,6 +122,7 @@ async function createOrder(email, productList) {
 // request a subscription
 async function createSubscription(email) {
   // returns an object
+  console.log(createSubscription);
   try {
     const response = await axios({
       url: `${common.BASE_URL}/subscription`,
@@ -137,6 +138,7 @@ async function createSubscription(email) {
   } catch (error) {
     return error;
   }
+  
 }
 
 export {
@@ -148,3 +150,4 @@ export {
   createOrder,
   createSubscription,
 };
+
