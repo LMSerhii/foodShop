@@ -12,19 +12,9 @@ const producCartMarkup = arrey => {
         </div>
         `;
   }
-  return arrey
-    .map(
-      ({
-        _id,
-        name,
-        img,
-        category,
-        price,
-        size,
-        is10PercentOff,
-        popularity,
-      }) => {
-        if (!is10PercentOff) {
+  return arrey.map(
+    ({ _id, name, img, category, price, size, is10PercentOff, popularity }) => {
+      if (!is10PercentOff) {
         return `<li class="js-card product-card" data-id=${_id}>
 
                 
@@ -41,12 +31,15 @@ const producCartMarkup = arrey => {
                         </div>
 
                         <div class="product-category">
-                            <p class="product-info"><span class="info-style">Category:</span> ${category.replace('_', ' ')} <span class="info-style info-space">Size:</span> ${size}</p>
+                            <p class="product-info"><span class="info-style">Category:</span> ${category.replace(
+                              '_',
+                              ' '
+                            )} <span class="info-style info-space">Size:</span> ${size}</p>
                         </div>
 
                         <p class="product-price product-name m">$${price}</p>
                 </li>`;
-        } else {
+      } else {
         return `<li class="js-card product-card" data-id=${_id}>
         
                     <img class="product-card-img" src="${img}" alt="${name}">
@@ -64,7 +57,10 @@ const producCartMarkup = arrey => {
                         </div>
 
                         <div class="product-category">
-                            <p class="product-info"><span class="info-style">Category:</span> ${category.replace('_', ' ')} <span class="info-style info-space">Size:</span> ${size}</p>
+                            <p class="product-info"><span class="info-style">Category:</span> ${category.replace(
+                              '_',
+                              ' '
+                            )} <span class="info-style info-space">Size:</span> ${size}</p>
                         </div>
                         <div class="discount">
                         <p class="product-price product-name m">$${price}</p>
@@ -76,8 +72,10 @@ const producCartMarkup = arrey => {
                         
                 </li>
                 `;
-
-      
+      }
+    }
+  );
+};
 
 // products
 
@@ -168,7 +166,6 @@ const productMarkup = arrey => {
               
             </div>
         </li>`;
-
         }
       }
     )
