@@ -1,17 +1,16 @@
 import { getDiscount } from './api_service';
-const dicsProd = document.querySelector('.discount-product-list');
-// fetch data
-async function dataDiscountProd() {
-  const data = await getDiscount();
-  console.log(data);
-  const markup = createDiscountMarkup(data);
-  dicsProd.innerHTML = markup;
-}
+import { refs } from './refs';
 
+// fetch data
+const dataDiscountProd = async () => {
+  const data = await getDiscount();
+  const markup = createDiscountMarkup(data.slice(0, 2));
+  refs.dicsProd.innerHTML = markup;
+};
 
 // add to ul
 
-function createDiscountMarkup(array) {
+const createDiscountMarkup = array => {
   return array
     .map(({ img, name, price, _id, is10PercentOff }) => {
       if (is10PercentOff) {
@@ -35,16 +34,12 @@ function createDiscountMarkup(array) {
       }
     })
     .join('');
-}
+};
 
 // add listner to products
 
-const discProdList = document.querySelector('.discount-product-list');
-console.log(discProdList);
+const clickOnDiscount = () => {};
 
-discProdList.addEventListener('click', clickOnDiscount());
+refs.discProdList.addEventListener('click', clickOnDiscount());
 
-function clickOnDiscount() {}
-
-
-export {dataDiscountProd}
+export { dataDiscountProd };
