@@ -13,6 +13,7 @@
         </symbol>
         <symbol id="plus" viewBox="0 0 32 32">
             <path stroke-linecap="round" stroke="#000000" stroke-linejoin="round" stroke-width="3.429"
+
                 d="M16 6.667v18.667M6.67 16h18.667" />
         </symbol>
         <symbol id="close" viewBox="0 0 32 32">
