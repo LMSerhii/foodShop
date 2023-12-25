@@ -1,6 +1,5 @@
 const refs = {
   productList: document.querySelector('.product-list'),
-
   searchField: document.querySelector('.js-input'),
   categoryField: document.querySelector('#categoryField'),
   abcField: document.querySelector('#abcField'),
@@ -10,6 +9,10 @@ const refs = {
   emailInput: document.querySelector('.subscribe-input'),
   sendBtn: document.querySelector('.send-btn'),
   popularProductList: document.querySelector('.popular-products'),
+  totalAmountDisplay: document.querySelector('.total-amount'),
+  cartList: document.querySelector('.cart-product-list'),
+  deleteAllButton: document.getElementById('deleteAllButton'),
+  productsCount: document.getElementById('product-count'),
 };
 
 export { refs };
