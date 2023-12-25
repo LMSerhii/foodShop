@@ -1,10 +1,6 @@
 import { createSubscription } from './api_service';
 
-// export const refs = {
-//   emailForm: document.querySelector('.subscribe-form'),
-//   emailInput: document.querySelector('.subscribe-input'),
-//   sendBtn: document.querySelector('.send-btn'),
-// };
+import { refs } from './refs';
 
 const renderFooter = () => {
   refs.emailForm.addEventListener('submit', onEmailEnter);

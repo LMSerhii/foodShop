@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { common } from './common';
+
 // get a list of all products
 async function getData(query) {
   // return object {page, perPage, results[], totalPages}
@@ -10,6 +11,7 @@ async function getData(query) {
       header: {
         'Content-Type': 'aplication/json',
       },
+
       params: query,
     });
     return response.data;
@@ -17,7 +19,6 @@ async function getData(query) {
     return error;
   }
 }
-
 
 
 // get an object by ID
@@ -33,6 +34,7 @@ async function getDataId(id) {
     });
     return response.data;
   } catch (error) {
+
     return error;
   }
 }
@@ -52,6 +54,7 @@ async function getPopular(limit) {
       header: {
         'Content-Type': 'aplication/json',
       },
+
       params: query,
     });
     return response.data;
@@ -73,7 +76,10 @@ async function getDiscount() {
     });
     return response.data;
   } catch (error) {
+
+
     return error;
+
   }
 }
 
@@ -90,6 +96,8 @@ async function getCategories() {
     });
     return response.data;
   } catch (error) {
+
+
     return error;
   }
 }
@@ -129,6 +137,8 @@ async function createSubscription(email) {
         email: email,
       },
     });
+
+
     return response.status;
   } catch (error) {
     return error.response.status;
