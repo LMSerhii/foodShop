@@ -7,6 +7,7 @@ const totalAmountDisplay = document.querySelector('.total-amount');
 const cartList = document.querySelector('.cart-product-list');
 const deleteAllButton = document.getElementById('deleteAllButton');
 const productsCount = document.getElementById('product-count');
+const productsCountHeader = document.getElementById('product-count-header');
 const cart = load(common.LOCAL_CART_KEY) ?? [];
 
 
@@ -15,6 +16,7 @@ const renderItemCount = () => {
   const itemCount = cart.length;
   console.log(`Item Count: ${itemCount}`);
   productsCount.textContent = `(${itemCount})`;
+  productsCountHeader.textContent = `(${itemCount})`;
 };
 renderItemCount();
 
