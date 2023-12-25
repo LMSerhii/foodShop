@@ -48,5 +48,6 @@ discProdList.addEventListener('click', clickOnDiscount());
 
 function clickOnDiscount(event) {
   if (event) {
+    console.log(mmmm);
   }
 }
