@@ -230,34 +230,37 @@ const createMarkupPopular = arrey => {
   }
   return arrey
     .map(({ _id, name, img, category, size, popularity }) => {
-      return `<li class="popular-card popular-item js-card" data-id="${_id}">
-  <div class="popular-box">
-    <div class="popular-card-img-wrap">
-      <img src="${img}" alt="${name}" width="56" height="56" loading="lazy" />
-    </div>
-    <div class="card-info-box">
-      <h3 class="popular-name">${name}</h3>
+      return `<li class="popular-card js-card" data-id=${_id}>
+                    <div class="popular-box">
+                      <div class="popular-wraper">
+                        <div class="popular-card-img-wrap">
+                            <img src="${img}" alt="${name}" width="56" height="56" loading="lazy"/>
+                        </div>
+                        <div class="popular-card-info-box">
+                        
+                          <h3 class="popular-name">${name}</h3>
+                        
+                        <ul class="popular-info-list">
+                            <li class="popular-info-style">Category:
+                            <span>${category.replace('_', ' ')}</span></li>
+                            <div class="popular-info-wraper">
+                            <li class="popular-info-style">Size: <span>${size}</span></li>
+                            <li class="popular-info-style">Popularity: <span>${popularity}</span></li>
+                            </div>
+                        </ul>
+                                            </div>
+                      </div>
 
-      <ul class="popular-info-list">
-        <li class="info-style">
-          Category: <span>${category.replace('_', ' ')}</span>
-        </li>
-        <div class="popular-info-wraper">
-          <li class="info-style">Size: <span>${size}</span></li>
-          <li class="info-style">Popularity: <span>${popularity}</span></li>
-        </div>
-      </ul>
-    </div>
-  </div>
-
-  <div class="card-bottom">
-    <button class="card-btn js-cart" type="button">
-      <svg class="icon" width="18" height="18">
-        <use href="${svg_sprite}#cart"></use>
-      </svg>
-    </button>
-  </div>
-</li>`;
+                    <div class="popular-card-bottom">
+                      
+                      <button class="popular-card-btn js-cart" type="button">
+                          <svg class="popular-icon" width="18" height="18">
+                              <use href="${svg_sprite}#cart"></use>
+                          </svg>
+                      </button>
+                    </div>
+                    </div>
+                </li>`;
     })
     .join('');
 };
