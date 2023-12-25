@@ -13,8 +13,17 @@ const dataDiscountProd = async () => {
 
 // add listner to products
 
-const clickOnDiscount = () => {};
+const discProdList = document.querySelector('.discount-product-list');
+console.log(discProdList);
+
+// const clickOnDiscount = () => {};
 
 refs.discProdList.addEventListener('click', clickOnDiscount());
+
+function clickOnDiscount(event) {
+  if (event) {
+    console.log(mmmm);
+  }
+}
 
 export { dataDiscountProd };
