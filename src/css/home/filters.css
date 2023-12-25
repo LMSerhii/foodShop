@@ -1,36 +1,208 @@
-.filters {
-    padding-top: 36px;
-    padding-bottom: 20px;
-  }
-  
-  .form {
-  }
-  
-  .filter-input-wrapper {
+.form-label {
+    color: rgba(1, 1, 1, 0.30);
+
+    font-size: 14px;
+    line-height: 1.28;
+}
+
+.filter-input-wrapper {
     position: relative;
+
+    margin-bottom: 12px;
+}
+
+@media screen and (min-width: 768px) {
+    .filter-input-wrapper {
+        margin: 0;
+    }
   }
-  
-  .form-label {
+
+.form {
+    margin-top: 8px;
+}
+
+@media screen and (min-width: 768px) {
+    .form {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        padding-right: 30px;
+    }
   }
-  .filters-input {
+
+  @media screen and (min-width: 1440px) {
+    .form {
+        width: 674px;
+        padding: 0;
+    }
+  }
+
+.filters-input {
+    padding-left: 20px;
+    padding-right: 50px;
+    height: 48px;
     width: 100%;
-    height: 40px;
-  }
-  .filters-select {
-    width: 100%;
-    height: 40px;
-  }
-  .search-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-  
-    padding: 0;
-    border: none;
+
+    border-radius: 30px;
+    border: 1px solid rgba(1, 1, 1, 0.30);
     background-color: transparent;
+    outline: none;
+}
+
+@media screen and (min-width: 768px) {
+    .filters-input {
+        width: 269px;
+    }
   }
-  .search-btn-svg {
-    width: 20px;
-    height: 20px;
+
+  .filters-input:hover,
+  .filters-input:focus {
+    box-shadow: 0 0 5px rgba(1, 1, 1, 0.40);
   }
-  
+
+.filters-input::placeholder {
+    color: #010101;
+
+    font-size: 14px;
+    line-height: 1.28;
+}
+
+.search-btn {
+    position: absolute;
+    top: 2px;
+    right: 20px;
+
+    padding: 0;
+    height: 44px;
+    width: 30px;
+
+    border: none;
+    background-color: #E8E8E2;
+    ;
+}
+
+.ss-main.categories-select {
+    height: 48px;
+    margin-bottom: 12px;
+
+    background: #E8E8E2;
+    border: 1px solid rgba(1, 1, 1, 0.30);
+    border-radius: 30px;
+}
+
+@media screen and (min-width: 768px) {
+    .ss-main.categories-select {
+        margin: 0;
+    }
+  }
+
+.ss-values {
+    padding-left: 20px;
+}
+
+.ss-main.categories-select {
+    border-radius: 30px !important;
+    border: 1px solid rgba(1, 1, 1, 0.30);
+}
+
+.ss-main.categories-select.ss-open-below {
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+.ss-main.filters-select {
+    height: 48px;
+
+    border-radius: 30px !important;
+    border: 1px solid rgba(1, 1, 1, 0.30);
+}
+
+.ss-open-below {
+    border-radius: 15px !important;
+}
+
+.ss-content.ss-open-below {
+    padding: 14px 20px;
+
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.ss-main .ss-arrow {
+    margin-right: 20px !important;
+}
+
+.ss-placeholder {
+    color: #010101 !important;
+
+    font-size: 14px;
+    line-height: 1.28 !important;
+}
+
+.ss-main .ss-values .ss-placeholder {
+    padding-left: 0;
+}
+
+.ss-main .ss-values .ss-single {
+    color: #010101;
+
+    font-size: 14px;
+    line-height: 1.28;
+}
+
+.ss-main:hover,
+.ss-main:focus {
+    box-shadow: 0 0 5px rgba(1, 1, 1, 0.40) !important;
+}
+
+.ss-content .ss-list .ss-option.ss-highlighted,
+.ss-content .ss-list .ss-option:not(.ss-disabled).ss-selected {
+    color: #010101 !important;
+    background-color: #fff !important;
+}
+
+.ss-content .ss-list .ss-option {
+    color: rgba(1, 1, 1, 0.50) !important;
+    
+    font-size: 14px;
+    line-height: 1.28;
+}
+
+.ss-content .ss-list .ss-option:hover,
+.ss-content .ss-list .ss-option:focus {
+    color: #010101 !important;
+    background-color: transparent !important;
+}
+
+.ss-content.categories-select.ss-open-below {
+    top: 204.312px !important;
+}
+
+@media screen and (min-width: 375px) {
+    .ss-content.categories-select.ss-open-below {
+        top: 217.512px !important;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .ss-content.categories-select.ss-open-below {
+        top: 166.55px !important;
+    }
+}
+
+.ss-content.filters-select.ss-open-below {
+    top: 264.312px !important;
+}
+
+@media screen and (min-width: 375px) {
+    .ss-content.filters-select.ss-open-below {
+        top: 277.513px !important;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .ss-content.filters-select.ss-open-below {
+        top: 166.513px !important;
+    }
+}
