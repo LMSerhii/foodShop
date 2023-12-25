@@ -117,21 +117,29 @@ const onForm = evt => {
   renderProducts(query);
 };
 
+
+
 const onAbcField = async evt => {
   const currentCategory = evt.target.value;
-  const currQuery = load(common.LOCAL_QUERY_KEY);
+  save(common.LOCAL_SORT, currentCategory);
+  const query = load(common.LOCAL_SORT);
+  const getSort = SortValue(query);
+  const URL = load(common.LOCAL_QUERY_KEY);
 
-  currQuery.sort = currentCategory;
-  save(common.LOCAL_QUERY_KEY, currQuery);
+  let sortUrl = `${common.BASE_URL}/products?page=${URL.page}&limit=${URL.limit}${getSort}`;
 
-  const query = load(common.LOCAL_QUERY_KEY);
-  const sortCategory = query.sort;
+      if (URL.keyword !== null) {
+    sortUrl += `&keyword=${URL.keyword}`;
+      }
 
-  const getSort = SortValue(sortCategory);
+      if (URL.category !== null) {
+    sortUrl += `&category=${URL.category}`;
+      }
 
-  const result = await get(query, getSort);
+  const result = await get(sortUrl);
   renderProductsSort(result);
 };
+
 
 const SortValue = sortCategory => {
   let getSort = {};
@@ -162,21 +170,24 @@ const SortValue = sortCategory => {
   return getSort;
 };
 
-async function get(query, getSort) {
+async function get(sortUrl) {
   try {
     const response = await axios({
-      url: `${common.BASE_URL}/products?${getSort}`,
+      url: `${sortUrl}`,
       method: 'GET',
       header: {
         'Content-Type': 'application/json',
       },
-      params: query,
+
     });
     return response.data;
   } catch (error) {
     return error;
   }
 }
+
+
+
 
 const renderProductsSort = async result => {
   if (!result.results.length) {
@@ -207,3 +218,8 @@ refs.abcField.addEventListener('change', onAbcField);
 refs.searchField.addEventListener('input', onSearchField);
 
 export { renderSelects };
+
+
+
+
+
