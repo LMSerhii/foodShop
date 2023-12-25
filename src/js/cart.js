@@ -8,7 +8,10 @@ const cart = load(common.LOCAL_CART_KEY) ?? [];
 const renderItemCount = () => {
   const itemCount = cart.length;
   console.log(`Item Count: ${itemCount}`);
-  refs.productsCount.textContent = `(${itemCount})`;
+
+  productsCount.textContent = `(${itemCount})`;
+  productsCountHeader.textContent = `(${itemCount})`;
+
 };
 
 const validClose = productId => {
