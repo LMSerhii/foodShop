@@ -15,9 +15,8 @@ const producCartMarkup = arrey => {
   return arrey.map(
     ({ _id, name, img, category, price, size, is10PercentOff, popularity }) => {
       if (!is10PercentOff) {
-        return `<li class="js-card product-card gallery" data-id=${_id}>
+        return `<li class="js-card product-card" data-id=${_id}>
 
-                
                     <img class="product-card-img" src="${img}" alt="${name}">
 
                         <div class="product-container"> 
