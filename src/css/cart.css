@@ -1,0 +1,277 @@
+body {
+  background-color: #E8E8E2;
+  color: #010101;
+  font-family: Neue Montreal;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.17;
+}
+
+.container {
+  min-width: 260px;
+  max-width: 375px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+.cart-title {
+  color: #010101;
+  font-family: Neue Montreal;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 28px; /* 116.667% */
+  text-transform: uppercase;
+}
+
+.cart-logo-icon {
+  border-radius: 30px;
+  background: #6d8434;
+  display: inline-flex;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  fill: #E8E8E2;
+}
+
+.cart-title-container {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+.delete-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 30px;
+}
+
+.button-delete {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  background: none;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.29;
+}
+
+.product-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  margin-bottom: 30px;
+}
+
+.btn-del-product {
+  border: none;
+  background: none;
+}
+
+.product-card {
+  display: flex;
+  max-width: 335px;
+  margin-bottom: 30px;
+  overflow-x: hidden;   
+  border-bottom: 1px solid rgba(1, 1, 1, 0.10);
+}
+
+.product-name{
+  color: #010101;
+  font-family: Neue Montreal;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.12;
+}
+
+.product-card-img {
+  width: 100px;
+  height: 100px;
+  background: lightgray 50% / cover no-repeat;
+  border-radius: 10px;
+  background: #FAFAFA;
+  margin-right: 20px;
+  position: relative;
+}
+
+.product-title {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.product-container {
+  width: 100%;
+}
+
+.product-price {
+  margin-top: 36px;
+}
+
+.product-name span {
+  color: #6D8434;
+}
+
+.empty-cart {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  margin-top: 75px;
+}
+
+.info-style {
+  color: rgba(1, 1, 1, 0.30);
+  font-family: Neue Montreal;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1,17;
+}
+
+.info-space {
+  margin-left: 8px;
+}
+
+.product-info {
+  margin-bottom: 36px;
+}
+
+.scrollable {
+  overflow-y: scroll;
+  max-height: 485px; /* або будь-яка інша відповідна висота */
+  padding-right: 9px
+}
+
+
+/*  Для Google Chrome, Яндекс.Браузер, Safari и Opera используйте следующие CSS свойства. */
+/* полоса прокрутки (скроллбар) */
+.scrollable::-webkit-scrollbar {
+  width: 5px; /* ширина для вертикального скролла */
+}
+
+/* ползунок скроллбара */
+.scrollable::-webkit-scrollbar-thumb {
+/* background-color: #143861; */
+border-radius: 20px;
+background: rgba(1, 1, 1, 0.08);
+}
+
+.total-count {
+  /* width: 60vw; */
+  max-width: 375px;
+  border-radius: 8px;
+  background: rgba(109, 132, 52, 0.05);
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.order-title {
+  margin-bottom: 40px;
+}
+
+.cart-product-list {
+  margin-bottom: 60px;
+}
+
+.sum-info {
+  padding: 18px 18px;
+}
+
+.tittle-total {
+padding: 26px 0 14px 18px ;
+}
+
+.form-input {
+  position: relative;
+  width: 100%;
+  font-family: Neue Montreal;
+  font-size: 14px;
+  line-height: 1.29;
+  background-color: inherit;
+  padding: 12px 0;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 30px;
+  border: 1px solid rgba(1, 1, 1, 0.30);  
+  margin-bottom: 14px;
+  text-indent: 20px;
+  color: inherit;
+}
+
+.form-input:focus {
+  outline-color: #6D8434; 
+}
+
+
+.btn-checkout {
+  display: inline-flex;
+  padding: 12px 8vw;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 30px;
+  background: #6D8434;
+  color: #E8E8E2;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.29;
+  margin-bottom: 80px;
+  border: none;
+  width: 100%;
+}
+
+
+.empty-text {
+color: #010101;
+font-family: Neue Montreal;
+font-size: 18px;
+font-style: normal;
+font-weight: 500;
+line-height: 1.12;
+margin-bottom: 14px;
+}
+
+.empty-text span {
+  color: #6D8434;
+}
+
+.empty-comment {
+  color: rgba(1, 1, 1, 0.70);
+  text-align: center;
+  font-family: Neue Montreal;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.29;
+  
+}
+
+.basket-img {
+  width: 132px;
+  height: 114px;
+  margin-bottom: 28px;
+  margin: 105px auto 28px;
+}
+
+.basket-text {
+  margin: 0 auto;
+  max-width: 279px;
+  text-align: center;
+}
+
+.discount {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}

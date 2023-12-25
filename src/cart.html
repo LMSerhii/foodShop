@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart</title>
+
+  <link rel="stylesheet" href="./css/styles.css" />
+</head>
+<body>
+  <load src="partials/header.html" />
+  <section class="cart-section ">
+    <!-- Title -->
+    <div class="container">
+      <div class="cart-title-container">
+        <a class="cart-logo-icon" href="./index.html">
+          <svg class="" width="18px" height="18px">
+            <use
+              href="./img/sprite.svg#cart"
+            ></use>
+          </svg>
+        </a>
+        <h1 class="cart-title">Cart<span id="product-count"></span></h1>
+      </div>
+    <!-- Delete button -->
+      <div class="delete-container">
+        <button id="deleteAllButton" class="button-delete">
+          Delete all
+          <svg class="" width="24px" height="24px">
+            <use href="./img/sprite.svg#close"></use>
+          </svg>
+        </button>
+      </div>
+      <!-- Product list -->
+      <ul class="cart-product-list"></ul>
+      <!-- Order list -->
+      <div class="order-container"> 
+        <h2 class="cart-title order-title">Your Order</h2>
+          <div class="total-count">
+            <p class="product-name tittle-total">Total</p>
+              <div class="sum-info">
+                <span class="info-style">Sum: </span>
+                <span class="cart-title total-amount" id="total-count"></span>
+              </div>
+          </div>
+
+          <form>
+            <input
+              class="form-input"
+              type="email"
+              name="user-email"
+              id="user-email"
+              placeholder="Mail:   Enter your email"
+              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+              title="Wrong email"
+              required
+            />
+            <button class="btn-checkout" type="submit"> Checkout</button>
+          </form>
+      </div>  
+  </div>
+  <!-- <p class="cart-value">Cart()</p> -->
+  <!-- <ul class="cart-list"></ul> -->
+  
+  </section>
+  <script type="module" src="./js/cart.js"></script>
+</body>
+</html>
+
+
+
+

@@ -1,57 +1,91 @@
+// import { getCategories } from './api_service';
+// import { save, load } from './storage';
+// import { common } from './common';
+// import { renderProducts } from './products';
+// import SlimSelect from 'slim-select';
+// import '../../node_modules/slim-select/dist/slimselect.css';
+
+// new SlimSelect({
+//   select: '#abcField',
+//   settings: {
+//     placeholderText: 'A to Z',
+//     showSearch: false,
+//   },
+// });
+
+// const refs = {
+//   searchField: document.querySelector('.js-input'),
+//   categoryField: document.querySelector('#categoryField'),
+//   abcField: document.querySelector('#abcField'),
+//   form: document.querySelector('.form'),
+// };
+
+// // const abcList = ["A to Z", "Z to A", "Cheap", "Expensive", "Popular", "Not popular", "Show all"]
+
+// const createCategoryMarkup = arrey => {
+//   if (!arrey.length) {
+//     return `<option value="not_found_categories">Not found categories</option>`;
+//   }
+//   return arrey
+//     .map(
+//       category =>
+//         `<option value="${category}">${category
+//           .replace('_', ' ')
+//           .replace('_', ' ')}</option>`
+//     )
+//     .join('');
+// };
+
+
+// const renderCategory = async () => {
+//   const data = await getCategories();
+//   const markup = createCategoryMarkup(data);
+//   refs.categoryField.insertAdjacentHTML('beforeend', markup);
+
+//   new SlimSelect({
+//     select: '#categoryField',
+//     settings: {
+//       placeholderText: 'Categories',
+//       showSearch: false,
+//     },
+//   });
+// };
+
+// renderCategory()
+
+
+
+import axios from 'axios';
+import { common } from './common';
+import { refs } from './refs';
+import { productMarkup, notFoundMarkup } from './markupFunctions';
 import { getCategories } from './api_service';
 import { save, load } from './storage';
-import { common } from './common';
 import { renderProducts } from './products';
-import SlimSelect from 'slim-select';
-import '../../node_modules/slim-select/dist/slimselect.css';
+import { createCategoryMarkup, createSortMarkup } from './markupFunctions';
 
-new SlimSelect({
-  select: '#abcField',
-  settings: {
-    placeholderText: 'A to Z',
-    showSearch: false,
-  },
-});
+let categories = [];
 
-const refs = {
-  searchField: document.querySelector('.js-input'),
-  categoryField: document.querySelector('#categoryField'),
-  abcField: document.querySelector('#abcField'),
-  form: document.querySelector('.form'),
-};
+const sortArrey = [
+  { value: 'alphabetical', label: 'A to Z' },
+  { value: 'reverse-alphabetical', label: 'Z to A' },
+  { value: 'cheap', label: 'Cheap' },
+  { value: 'expensive', label: 'Expensive' },
+  { value: 'popular', label: 'Popular' },
+  { value: 'not-popular', label: 'Not popular' },
+  { value: '', label: 'Show all' },
+];
 
-// const abcList = ["A to Z", "Z to A", "Cheap", "Expensive", "Popular", "Not popular", "Show all"]
-
-const createCategoryMarkup = arrey => {
-  if (!arrey.length) {
-    return `<option value="not_found_categories">Not found categories</option>`;
-  }
-  return arrey
-    .map(
-      category =>
-        `<option value="${category}">${category
-          .replace('_', ' ')
-          .replace('_', ' ')}</option>`
-    )
-    .join('');
-};
-
-
-const renderCategory = async () => {
+const renderSelects = async () => {
   const data = await getCategories();
-  const markup = createCategoryMarkup(data);
+
+  categories = [...data, 'Show_all'];
+
+  const markup = createCategoryMarkup(categories);
+
   refs.categoryField.insertAdjacentHTML('beforeend', markup);
-
-  new SlimSelect({
-    select: '#categoryField',
-    settings: {
-      placeholderText: 'Categories',
-      showSearch: false,
-    },
-  });
+  refs.abcField.innerHTML = createSortMarkup(sortArrey);
 };
-
-renderCategory()
 
 const onCategoryField = evt => {
   const currentCategory = evt.target.value;
@@ -63,14 +97,8 @@ const onCategoryField = evt => {
     currQuery.category = currentCategory;
   }
   save(common.LOCAL_QUERY_KEY, currQuery);
-
   const query = load(common.LOCAL_QUERY_KEY);
   renderProducts(query);
-};
-
-const onAbcField = evt => {
-  const currentCategory = evt.target.value;
-  console.log(currentCategory);
 };
 
 const onForm = evt => {
@@ -89,12 +117,85 @@ const onForm = evt => {
   renderProducts(query);
 };
 
+const onAbcField = async evt => {
+  const currentCategory = evt.target.value;
+  const currQuery = load(common.LOCAL_QUERY_KEY);
+
+  currQuery.sort = currentCategory;
+  save(common.LOCAL_QUERY_KEY, currQuery);
+
+  const query = load(common.LOCAL_QUERY_KEY);
+  const sortCategory = query.sort;
+
+  const getSort = SortValue(sortCategory);
+
+  const result = await get(query, getSort);
+  renderProductsSort(result);
+};
+
+const SortValue = sortCategory => {
+  let getSort = {};
+
+  switch (sortCategory) {
+    case 'alphabetical':
+      getSort = '&byABC=true';
+      break;
+    case 'reverse-alphabetical':
+      getSort = '&byABC=false';
+      break;
+    case 'cheap':
+      getSort = '&byPrice=true';
+      break;
+    case 'expensive':
+      getSort = '&byPrice=false';
+      break;
+    case 'popular':
+      getSort = '&byPopularity=false';
+      break;
+    case 'not-popular':
+      getSort = '&byPopularity=true';
+      break;
+    default:
+      break;
+  }
+
+  return getSort;
+};
+
+async function get(query, getSort) {
+  try {
+    const response = await axios({
+      url: `${common.BASE_URL}/products?${getSort}`,
+      method: 'GET',
+      header: {
+        'Content-Type': 'application/json',
+      },
+      params: query,
+    });
+    return response.data;
+  } catch (error) {
+    return error;
+  }
+}
+
+const renderProductsSort = async result => {
+  if (!result.results.length) {
+    notFoundMarkup(refs.productList);
+    return;
+  }
+  save(common.PAGES, {
+    page: result.page,
+    perPage: result.perPage,
+    totalPages: result.totalPages,
+  });
+  refs.productList.innerHTML = productMarkup(result.results);
+};
+
 const onSearchField = evt => {
   if (evt.target.value === '') {
     const currentQuery = load(common.LOCAL_QUERY_KEY);
     currentQuery.keyword = null;
     save(common.LOCAL_QUERY_KEY, currentQuery);
-
     const query = load(common.LOCAL_QUERY_KEY);
     renderProducts(query);
   }

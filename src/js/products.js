@@ -6,6 +6,7 @@ import { addToCart } from './helpers/addToCart';
 import { productMarkup, notFoundMarkup } from './markupFunctions';
 
 const renderProducts = async query => {
+
   const data = await getData(query);
 
   if (!data.results.length) {
@@ -37,3 +38,4 @@ const onProductList = evt => {
 refs.productList.addEventListener('click', onProductList);
 
 export { renderProducts };
+
