@@ -206,4 +206,4 @@ refs.categoryField.addEventListener('change', onCategoryField);
 refs.abcField.addEventListener('change', onAbcField);
 refs.searchField.addEventListener('input', onSearchField);
 
-export { renderCategory };
+export { renderSelects };
