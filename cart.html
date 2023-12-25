@@ -7,8 +7,8 @@
 
   
   <script type="module" crossorigin src="/foodShop/commonHelpers.js"></script>
-  <link rel="modulepreload" crossorigin href="/foodShop/assets/refs-85e6fdcc.js">
-  <link rel="stylesheet" href="/foodShop/assets/refs-7f07f933.css">
+  <link rel="modulepreload" crossorigin href="/foodShop/assets/refs-a1c92229.js">
+  <link rel="stylesheet" href="/foodShop/assets/refs-6ff2cb6d.css">
 </head>
 <body>
   <header class="header">
@@ -35,8 +35,9 @@
             <svg class="nav-icon" width="18" height="18">
               <use href="/foodShop/assets/sprite-10b57387.svg#cart"></use>
             </svg>
-          </a>
-          <span class="cartValue">Cart (0)</span>
+        </a>
+        <p class="cartValue">Cart <span id="product-count-header">0</span></p>
+
         </li>
       </ul>
     </nav>
@@ -78,18 +79,19 @@
               </div>
           </div>
 
-          <input
-            class="form-input"
-            type="email"
-            name="user-email"
-            id="user-email"
-            placeholder="Mail:   Enter your email"
-            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
-            title="Wrong email"
-            required
-          />
-          <button class="btn-checkout" type="submit"> Checkout</button>
-
+          <form>
+            <input
+              class="form-input"
+              type="email"
+              name="user-email"
+              id="user-email"
+              placeholder="Mail:   Enter your email"
+              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+              title="Wrong email"
+              required
+            />
+            <button class="btn-checkout" type="submit"> Checkout</button>
+          </form>
       </div>  
   </div>
   <!-- <p class="cart-value">Cart()</p> -->
