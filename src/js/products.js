@@ -4,9 +4,9 @@ import { getData } from './api_service';
 import { save, load } from './storage';
 import { addToCart } from './helpers/addToCart';
 import { productMarkup, notFoundMarkup } from './markupFunctions';
+import { validChecked } from './helpers/validChecked';
 
 const renderProducts = async query => {
-
   const data = await getData(query);
 
   if (!data.results.length) {
@@ -20,7 +20,8 @@ const renderProducts = async query => {
     totalPages: data.totalPages,
   });
 
-  refs.productList.innerHTML = productMarkup(data.results);
+  const result = validChecked(data.results);
+  refs.productList.innerHTML = productMarkup(result);
 };
 
 const onProductList = evt => {
@@ -38,4 +39,3 @@ const onProductList = evt => {
 refs.productList.addEventListener('click', onProductList);
 
 export { renderProducts };
-
