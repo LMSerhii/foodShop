@@ -17,21 +17,27 @@ new SlimSelect({
   },
 });
 
-const renderCategory = async () => {
-  const data = await getCategories();
-  const markup = createCategoryMarkup(data);
-  refs.categoryField.insertAdjacentHTML('beforeend', markup);
 
-  new SlimSelect({
-    select: '#categoryField',
-    settings: {
-      placeholderText: 'Categories',
-      showSearch: false,
-    },
-  });
-};
 
-renderCategory();
+// const renderCategory = async () => {
+  
+//   const data = await getCategories();
+//   const markup = createCategoryMarkup(data);
+  
+//   refs.categoryField.insertAdjacentHTML('beforeend', markup);
+
+//   new SlimSelect({
+//     select: '#categoryField',
+//     settings: {
+//       placeholderText: 'Categories',
+//       showSearch: false,
+//     },
+//   });
+// };
+
+// renderCategory();
+
+
 
 let categories = [];
 
@@ -50,10 +56,20 @@ const renderSelects = async () => {
 
   categories = [...data, 'Show_all'];
 
+
   const markup = createCategoryMarkup(categories);
 
   refs.categoryField.insertAdjacentHTML('beforeend', markup);
   refs.abcField.innerHTML = createSortMarkup(sortArrey);
+  
+  new SlimSelect({
+    select: '#categoryField',
+    settings: {
+      placeholderText: 'Categories',
+      showSearch: false,
+    },
+  });
+
 };
 
 const onCategoryField = async evt => {
