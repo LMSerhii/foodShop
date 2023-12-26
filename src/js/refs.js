@@ -11,7 +11,9 @@ const refs = {
   popularProductList: document.querySelector('.popular-products'),
   totalAmountDisplay: document.querySelector('.total-amount'),
   cartList: document.querySelector('.cart-product-list'),
+
   deleteAllButton: document.getElementById('deleteAllButton'),
+
   productsCount: document.getElementById('product-count'),
   dicsProd: document.querySelector('.discount-product-list'),
   discProdList: document.querySelector('.discount-product-list'),
