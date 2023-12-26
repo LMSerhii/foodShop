@@ -20,7 +20,6 @@ async function getData(query) {
   }
 }
 
-
 // get an object by ID
 async function getDataId(id) {
   // returns the card object
@@ -34,7 +33,6 @@ async function getDataId(id) {
     });
     return response.data;
   } catch (error) {
-
     return error;
   }
 }
@@ -76,10 +74,7 @@ async function getDiscount() {
     });
     return response.data;
   } catch (error) {
-
-
     return error;
-
   }
 }
 
@@ -96,8 +91,6 @@ async function getCategories() {
     });
     return response.data;
   } catch (error) {
-
-
     return error;
   }
 }
@@ -138,7 +131,6 @@ async function createSubscription(email) {
       },
     });
 
-
     return response.status;
   } catch (error) {
     return error.response.status;
@@ -154,4 +146,3 @@ export {
   createOrder,
   createSubscription,
 };
-

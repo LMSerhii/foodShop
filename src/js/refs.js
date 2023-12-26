@@ -17,6 +17,8 @@ const refs = {
   discProdList: document.querySelector('.discount-product-list'),
   popularProductList: document.querySelector('.popular_products_list'),
   productsCountHeader: document.querySelector('#product-count-header'),
+
+  // modalCloseBtn: document.querySelector('.js-modal-close'),
 };
 
 export { refs };
