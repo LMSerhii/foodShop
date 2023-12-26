@@ -1,33 +1,60 @@
-/* .popular-products {
-  margin: 0 auto;
-  padding-top: 60px;
-  padding-bottom: 25px;
-  padding-left: 10px;
-  padding-right: 10px;
+.popular-products {
+  /* margin: 0 auto; */
 }
 
-@media screen and (min-width: 375px) {
+/* @media screen and (min-width: 375px) {
   .popular-products {
     padding-top: 80px;
     padding-bottom: 40px;
-    padding-left: 20px;
-    padding-right: 20px;
+   
   }
 } */
 
-/* @media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) {
   .popular-products {
     padding-top: 50px;
     padding-bottom: 32px;
+    padding-left: 20px;
+    padding-right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
 
-@media screen and (min-width: 1440px) {
+/* @media screen and (min-width: 1440px) {
   .popular-products {
     padding-top: 30px;
     padding-bottom: 20px;
   }
 } */
+
+.container-popular {
+  max-width: 280px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 375px) {
+  .container-popular {
+    max-width: 375px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container-popular {
+    max-width: 768px;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .container-popular {
+    max-width: 1440px;
+    padding: 0 100px;
+  }
+}
 
 .title-popular-product {
   font-size: 24px;
@@ -38,7 +65,7 @@
 .popular_products_list {
   margin: 0 auto;
 }
-/* @media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) {
   .popular_products_list {
     display: flex;
     width: 563px;
@@ -47,11 +74,12 @@
     gap: 13px;
   }
 }
+
 @media screen and (min-width: 1440px) {
   .popular_products_list {
     flex-direction: column;
   }
-} */
+}
 
 .popular-card {
   width: 240px;
@@ -72,14 +100,14 @@
   }
 }
 
-/* @media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) {
   .popular-card {
     width: calc((100% - 13px) / 2);
   }
   .popular-card:not(:last-child) {
     margin-bottom: 0;
   }
-} */
+}
 
 .popular-box {
   display: flex;
@@ -100,13 +128,13 @@
   }
 }
 
-/* @media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) {
   .popular-container {
     width: 563px;
     margin-left: 0;
     justify-content: flex-start;
   }
-} */
+}
 
 .popular-name {
   font-size: 18px;
@@ -115,12 +143,12 @@
   margin-bottom: 12px;
 }
 
-/* @media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) {
   .popular-name {
     font-size: 20px;
     margin-bottom: 10px;
   }
-} */
+}
 
 .popular-card-img-wrap {
   width: 74px;
