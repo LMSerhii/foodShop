@@ -4,6 +4,7 @@ import { common } from './js/common';
 import { renderSelects } from './js/filters';
 import { renderPopular } from './js/popular';
 import { dataDiscountProd } from './js/dicsount_products';
+import './js/pagination';
 
 save(common.LOCAL_QUERY_KEY, common.INIT_QUERY);
 

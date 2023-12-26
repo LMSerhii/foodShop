@@ -6,32 +6,9 @@ import { getCategories } from './api_service';
 import { save, load } from './storage';
 import { renderProducts } from './products';
 import { createCategoryMarkup, createSortMarkup } from './markupFunctions';
-import SlimSelect from 'slim-select';
-import '../../node_modules/slim-select/dist/slimselect.css';
 
-new SlimSelect({
-  select: '#abcField',
-  settings: {
-    placeholderText: 'A to Z',
-    showSearch: false,
-  },
-});
+import { loadPaginationData } from './pagination';
 
-const renderCategory = async () => {
-  const data = await getCategories();
-  const markup = createCategoryMarkup(data);
-  refs.categoryField.insertAdjacentHTML('beforeend', markup);
-
-  new SlimSelect({
-    select: '#categoryField',
-    settings: {
-      placeholderText: 'Categories',
-      showSearch: false,
-    },
-  });
-};
-
-renderCategory();
 
 let categories = [];
 
@@ -54,12 +31,21 @@ const renderSelects = async () => {
 
   refs.categoryField.insertAdjacentHTML('beforeend', markup);
   refs.abcField.innerHTML = createSortMarkup(sortArrey);
+
+  new SlimSelect({
+    select: '#categoryField',
+    settings: {
+      placeholderText: 'Categories',
+      showSearch: false,
+    },
+  });
+
 };
 
 const onCategoryField = evt => {
   const currentCategory = evt.target.value;
   const currQuery = load(common.LOCAL_QUERY_KEY);
-
+  currQuery.page = '1';
   if (currentCategory === 'Show_all') {
     currQuery.category = null;
   } else {
@@ -74,7 +60,7 @@ const onForm = evt => {
   evt.preventDefault();
   const currentValue = refs.searchField.value;
   const currQuery = load(common.LOCAL_QUERY_KEY);
-
+  currQuery.page = '1';
   if (!currentValue) {
     currQuery.keyword = null;
   } else {
@@ -95,6 +81,8 @@ const onAbcField = async evt => {
 
   const query = load(common.LOCAL_QUERY_KEY);
   const sortCategory = query.sort;
+
+  currQuery.page = '1';
 
   const getSort = SortValue(sortCategory);
 
@@ -158,11 +146,13 @@ const renderProductsSort = async result => {
     totalPages: result.totalPages,
   });
   refs.productList.innerHTML = productMarkup(result.results);
+  loadPaginationData()
 };
 
 const onSearchField = evt => {
   if (evt.target.value === '') {
     const currentQuery = load(common.LOCAL_QUERY_KEY);
+    currentQuery.page = '1';
     currentQuery.keyword = null;
     save(common.LOCAL_QUERY_KEY, currentQuery);
     const query = load(common.LOCAL_QUERY_KEY);
