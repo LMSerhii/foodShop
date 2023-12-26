@@ -22,7 +22,12 @@ refs.discProdList.addEventListener('click', clickOnDiscount());
 
 function clickOnDiscount(event) {
   if (event) {
-    console.log(mmmm);
+    event.preventDefault();
+    console.log(aaaa);
+    // const openDiskProd =
+    //   openMenuBtn.getAttribute('aria-expanded') === 'true' || false;
+    // openMenuBtn.setAttribute('aria-expanded', !isMenuOpen);
+    // mobileMenu.classList.toggle('is-open');
   }
 }
 
