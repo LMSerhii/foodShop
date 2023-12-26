@@ -25,13 +25,13 @@
 
 .hero {
   padding-top: 64px;
-  padding-bottom: 64px;
+  padding-bottom: 28px;
 }
 
 @media screen and (min-width: 375px) {
   .hero {
     padding-top: 72px;
-    padding-bottom: 72px;
+    padding-bottom: 36px;
   }
 }
 
