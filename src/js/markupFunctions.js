@@ -134,6 +134,8 @@ const productMarkup = arrey => {
         </li>`;
         } else {
           return `<li class="card js-card" data-id=${_id}>
+            
+
             <div class="card-top">
   
               <div class="card-img-wrapper">
@@ -270,14 +272,14 @@ const createDiscountMarkup = array => {
     .map(({ img, name, price, _id, is10PercentOff }) => {
       if (is10PercentOff) {
         return `
-        <li class="discount-product-element">
+        <li class="discount-product-element js-card" data-id=${_id}>
 
           <svg class="discount-label" width="60" height="60">
           <use href="${svg_sprite}#discount"></use>
           </svg>
 
           <div class="discount-product-img-wrapper">
-           <img class="discount-product-img" src="${img}" alt="${name}">
+           <img class="discount-product-img" src="${img}" alt="${name}" width="114" height="114" loading="lazy">
           </div>
         
         <div class="discount-product-descr">
@@ -288,7 +290,9 @@ const createDiscountMarkup = array => {
 
          <div class="discount-product-price-wrapper">
           <p class="discount-product-price">$${price}</p>
-          <button class="discount-product-btn" type="button">
+
+          <button class="discount-product-btn js-cart" type="button">
+
             <svg class="discount-product-icon" width="18" height="18">
               <use href=" ${svg_sprite}#cart"></use>
             </svg>
