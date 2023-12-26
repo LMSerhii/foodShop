@@ -1,4 +1,4 @@
-import{a as d}from"./vendor-38dd3e46.js";(function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const r of document.querySelectorAll('link[rel="modulepreload"]'))o(r);new MutationObserver(r=>{for(const a of r)if(a.type==="childList")for(const c of a.addedNodes)c.tagName==="LINK"&&c.rel==="modulepreload"&&o(c)}).observe(document,{childList:!0,subtree:!0});function e(r){const a={};return r.integrity&&(a.integrity=r.integrity),r.referrerpolicy&&(a.referrerPolicy=r.referrerpolicy),r.crossorigin==="use-credentials"?a.credentials="include":r.crossorigin==="anonymous"?a.credentials="omit":a.credentials="same-origin",a}function o(r){if(r.ep)return;r.ep=!0;const a=e(r);fetch(r.href,a)}})();const g=(s,t)=>{try{const e=JSON.stringify(t);localStorage.setItem(s,e)}catch(e){console.error("Set state error: ",e.message)}},v=s=>{try{const t=localStorage.getItem(s);return t===null?void 0:JSON.parse(t)}catch(t){console.error("Get state error: ",t.message)}},m=s=>{try{localStorage.removeItem(s)}catch(t){console.error("Get state error: ",t.message)}},u={BASE_URL:"https://food-boutique.b.goit.study/api",LOCAL_CART_KEY:"cart",LOCAL_QUERY_KEY:"query",LOCAL_SORT:"sort",INIT_QUERY:{keyword:null,category:null,page:1,limit:6},PAGES:"pages",ORDER:"order",NUMBER_OF_DISCOUNT:2},i="/foodShop/assets/sprite-10b57387.svg",y=s=>{if(s.length)return s.map(({_id:t,name:e,img:o,category:r,price:a,size:c,is10PercentOff:n,popularity:l,isChecked:p})=>n?p?`<li class="card js-card" data-id=${t}>
+import{a as n}from"./vendor-eaa4441d.js";(function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const r of document.querySelectorAll('link[rel="modulepreload"]'))o(r);new MutationObserver(r=>{for(const a of r)if(a.type==="childList")for(const c of a.addedNodes)c.tagName==="LINK"&&c.rel==="modulepreload"&&o(c)}).observe(document,{childList:!0,subtree:!0});function e(r){const a={};return r.integrity&&(a.integrity=r.integrity),r.referrerpolicy&&(a.referrerPolicy=r.referrerpolicy),r.crossorigin==="use-credentials"?a.credentials="include":r.crossorigin==="anonymous"?a.credentials="omit":a.credentials="same-origin",a}function o(r){if(r.ep)return;r.ep=!0;const a=e(r);fetch(r.href,a)}})();const g=(s,t)=>{try{const e=JSON.stringify(t);localStorage.setItem(s,e)}catch(e){console.error("Set state error: ",e.message)}},v=s=>{try{const t=localStorage.getItem(s);return t===null?void 0:JSON.parse(t)}catch(t){console.error("Get state error: ",t.message)}},m=s=>{try{localStorage.removeItem(s)}catch(t){console.error("Get state error: ",t.message)}},d={BASE_URL:"https://food-boutique.b.goit.study/api",LOCAL_CART_KEY:"cart",LOCAL_QUERY_KEY:"query",LOCAL_SORT:"sort",INIT_QUERY:{keyword:null,category:null,page:1,limit:6},PAGES:"pages",ORDER:"order",NUMBER_OF_DISCOUNT:2},i="/foodShop/assets/sprite-10b57387.svg",y=s=>{if(s.length)return s.map(({_id:t,name:e,img:o,category:r,price:a,size:c,is10PercentOff:l,popularity:u,isChecked:p})=>l?p?`<li class="card js-card" data-id=${t}>
             <div class="card-top">
   
               <div class="card-img-wrapper">
@@ -10,7 +10,7 @@ import{a as d}from"./vendor-38dd3e46.js";(function(){const t=document.createElem
               <ul class="card-prodcuts-list">
                   <li class="card-prodcuts-item">Category: <span>${r.replace("_"," ")}</span></li>
                   <li class="card-prodcuts-item">Size: <span>${c}</span></li>
-                  <li class="card-prodcuts-item">Popularity: <span>${l}</span></li>
+                  <li class="card-prodcuts-item">Popularity: <span>${u}</span></li>
               </ul>
             </div>
   
@@ -40,7 +40,7 @@ import{a as d}from"./vendor-38dd3e46.js";(function(){const t=document.createElem
               <ul class="card-prodcuts-list">
                   <li class="card-prodcuts-item">Category: <span>${r.replace("_"," ")}</span></li>
                   <li class="card-prodcuts-item">Size: <span>${c}</span></li>
-                  <li class="card-prodcuts-item">Popularity: <span>${l}</span></li>
+                  <li class="card-prodcuts-item">Popularity: <span>${u}</span></li>
               </ul>
             </div>
   
@@ -74,7 +74,7 @@ import{a as d}from"./vendor-38dd3e46.js";(function(){const t=document.createElem
                     <span>${c}</span>
                   </li>
                   <li class="card-prodcuts-item">Popularity:
-                    <span>${l}</span>
+                    <span>${u}</span>
                   </li>
               </ul>
               
@@ -109,7 +109,7 @@ import{a as d}from"./vendor-38dd3e46.js";(function(){const t=document.createElem
                     <span>${c}</span>
                   </li>
                   <li class="card-prodcuts-item">Popularity:
-                    <span>${l}</span>
+                    <span>${u}</span>
                   </li>
               </ul>
               
@@ -136,7 +136,7 @@ import{a as d}from"./vendor-38dd3e46.js";(function(){const t=document.createElem
                                 find the perfect product for you.
                               </p>
                               </div>
-                            `},f=s=>s.length?s.map(t=>`<option value="${t}">${t.replace("_"," ").replace("_"," ")}</option>`).join(""):'<option value="not_found_categories">Not found categories</option>',b=s=>s.map(t=>`<option value="${t.value}">${t.label}</option>`).join(""),w=s=>{if(!s.length){console.log("Sorry not data");return}return s.map(({_id:t,name:e,img:o,category:r,size:a,popularity:c,isChecked:n})=>n?`<li class="popular-card js-card" data-id=${t}>
+                            `},f=s=>s.length?s.map(t=>`<option value="${t}">${t.replace("_"," ").replace("_"," ")}</option>`).join(""):'<option value="not_found_categories">Not found categories</option>',b=s=>s.map(t=>`<option value="${t.value}">${t.label}</option>`).join(""),w=s=>{if(!s.length){console.log("Sorry not data");return}return s.map(({_id:t,name:e,img:o,category:r,size:a,popularity:c,isChecked:l})=>l?`<li class="popular-card js-card" data-id=${t}>
         <div class="popular-box">
           <div class="popular-wraper">
             <div class="popular-card-img-wrap">
@@ -267,7 +267,7 @@ import{a as d}from"./vendor-38dd3e46.js";(function(){const t=document.createElem
                     find the perfect product for you.
                   </p>
                 </div>
-      `).join(""),j=s=>s.length?s.map(({_id:t,name:e,img:o,category:r,price:a,size:c,is10PercentOff:n,popularity:l})=>n?`<li class="js-card product-card" data-id=${t}>
+      `).join(""),j=s=>s.length?s.map(({_id:t,name:e,img:o,category:r,price:a,size:c,is10PercentOff:l,popularity:u})=>l?`<li class="js-card product-card" data-id=${t}>
                   <img class="product-card-img" src="${o}" alt="${e}">
                       <div class="product-container">
                           <div class="product-title">
@@ -326,5 +326,5 @@ import{a as d}from"./vendor-38dd3e46.js";(function(){const t=document.createElem
       <p class="empty-text"> Your basket is <span>empty...</span></p>
       <p class="empty-comment">Go to the main page to select your favorite products and add them to the cart.</p>
   </div>
-  `);async function _(s){try{return(await d({url:`${u.BASE_URL}/products`,method:"GET",header:{"Content-Type":"aplication/json"},params:s})).data}catch(t){return t}}async function C(s){try{return(await d({url:`${u.BASE_URL}/products/${s}`,method:"GET",header:{"Content-Type":"aplication/json"}})).data}catch(t){console.log(t)}}async function L(s){try{let t=null;return s&&(t={limit:s}),(await d({url:`${u.BASE_URL}/products/popular`,method:"GET",header:{"Content-Type":"aplication/json"},params:t})).data}catch(t){return t}}async function q(){try{return(await d({url:`${u.BASE_URL}/products/discount`,method:"GET",header:{"Content-Type":"aplication/json"}})).data}catch(s){return s}}async function E(){try{return(await d({url:`${u.BASE_URL}/products/categories`,method:"GET",header:{"Content-Type":"aplication/json"}})).data}catch(s){return s}}async function k(s,t){try{return await d({url:"https://food-boutique.b.goit.study/api/orders",method:"POST",headers:{"Content-Type":"application/json"},data:{email:s,products:t}})}catch(e){return e}}const T={productList:document.querySelector(".product-list"),searchField:document.querySelector(".js-input"),categoryField:document.querySelector("#categoryField"),abcField:document.querySelector("#abcField"),form:document.querySelector(".form"),productList:document.querySelector(".product-list"),emailForm:document.querySelector(".subscribe-form"),emailInput:document.querySelector(".subscribe-input"),sendBtn:document.querySelector(".send-btn"),popularProductList:document.querySelector(".popular-products"),totalAmountDisplay:document.querySelector(".total-amount"),cartList:document.querySelector(".cart-product-list"),deleteAllButton:document.getElementById("deleteAllButton"),productsCount:document.getElementById("product-count"),dicsProd:document.querySelector(".discount-product-list"),discProdList:document.querySelector(".discount-product-list"),paginationContainer:document.getElementById("pagination-container"),popularProductList:document.querySelector(".popular_products_list"),productsCountHeader:document.querySelector("#product-count-header")};export{k as a,m as b,u as c,i as d,_ as e,y as f,C as g,E as h,f as i,b as j,L as k,v as l,w as m,$ as n,q as o,j as p,S as q,T as r,g as s};
-//# sourceMappingURL=refs-3010f107.js.map
+  `);async function _(s){try{return(await n({url:`${d.BASE_URL}/products`,method:"GET",header:{"Content-Type":"aplication/json"},params:s})).data}catch(t){return t}}async function C(s){try{return(await n({url:`${d.BASE_URL}/products/${s}`,method:"GET",header:{"Content-Type":"aplication/json"}})).data}catch(t){return t}}async function L(s){try{let t=null;return s&&(t={limit:s}),(await n({url:`${d.BASE_URL}/products/popular`,method:"GET",header:{"Content-Type":"aplication/json"},params:t})).data}catch(t){return t}}async function E(){try{return(await n({url:`${d.BASE_URL}/products/discount`,method:"GET",header:{"Content-Type":"aplication/json"}})).data}catch(s){return s}}async function q(){try{return(await n({url:`${d.BASE_URL}/products/categories`,method:"GET",header:{"Content-Type":"aplication/json"}})).data}catch(s){return s}}async function k(s,t){try{return await n({url:"https://food-boutique.b.goit.study/api/orders",method:"POST",headers:{"Content-Type":"application/json"},data:{email:s,products:t}})}catch(e){return e}}async function T(s){try{return(await n({url:`${d.BASE_URL}/subscription`,method:"POST",headers:{"Content-Type":"application/json"},data:{email:s}})).status}catch(t){return t.response.status}}const P={productList:document.querySelector(".product-list"),searchField:document.querySelector(".js-input"),categoryField:document.querySelector("#categoryField"),abcField:document.querySelector("#abcField"),form:document.querySelector(".form"),productList:document.querySelector(".product-list"),emailForm:document.querySelector(".subscribe-form"),emailInput:document.querySelector(".subscribe-input"),sendBtn:document.querySelector(".send-btn"),popularProductList:document.querySelector(".popular-products"),totalAmountDisplay:document.querySelector(".total-amount"),cartList:document.querySelector(".cart-product-list"),deleteAllButton:document.getElementById("deleteAllButton"),productsCount:document.getElementById("product-count"),dicsProd:document.querySelector(".discount-product-list"),discProdList:document.querySelector(".discount-product-list"),paginationContainer:document.getElementById("pagination-container"),popularProductList:document.querySelector(".popular_products_list"),productsCountHeader:document.querySelector("#product-count-header")};export{k as a,m as b,d as c,i as d,_ as e,y as f,C as g,q as h,f as i,b as j,L as k,v as l,w as m,$ as n,E as o,j as p,S as q,P as r,g as s,T as t};
+//# sourceMappingURL=refs-01566874.js.map
