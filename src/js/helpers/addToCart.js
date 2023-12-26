@@ -28,6 +28,10 @@ const addToCart = async evt => {
                                <use href="${svg_sprite}#check"></use>
                            </svg>
                          </button>`;
+  iziToast.success({
+    title: 'OK',
+    message: 'Added to cart!',
+  });
 };
 
 const popularAddToCart = async evt => {
@@ -51,5 +55,10 @@ const popularAddToCart = async evt => {
                                <use href="${svg_sprite}#check"></use>
                            </svg>
                          </button>`;
+
+  iziToast.success({
+    title: 'OK',
+    message: 'Added to cart!',
+  });
 };
 export { addToCart, popularAddToCart };
