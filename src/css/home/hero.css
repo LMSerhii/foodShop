@@ -1,132 +1,183 @@
+.container {
+  max-width: 280px;
+  padding: 0 16px;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 375px) {
+  .container {
+    max-width: 375px;
+    padding: 0 20px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 768px;
+    padding: 0 32px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .container {
+    max-width: 1440px;
+    padding: 0 100px;
+  }
+}
+
 .hero {
-    max-width: 768px; 
-    background-color: #E8E8E2;
-    padding: 128px 20px;
-    margin: 0 auto;
-    text-align: center;
+  padding-top: 64px;
+  padding-bottom: 28px;
+}
 
+@media screen and (min-width: 375px) {
+  .hero {
+    padding-top: 72px;
+    padding-bottom: 36px;
+  }
 }
 
 @media screen and (min-width: 768px) {
-    .hero {
-        max-width: 1150px ; 
-        padding: 188px 55px;
-    }
+  .hero {
+    padding-top: 124px;
+    padding-bottom: 36px;
+  }
 }
 
-@media screen and (min-width: 1150px) {
-     .hero {
-        max-width: 1440px; 
-        padding: 149px 199px;
-    }
+@media screen and (min-width: 1440px) {
+  .hero {
+    padding-top: 85px;
+    padding-bottom: 36px;
+  }
 }
-
-.container-hero {
- max-width: 335px;
-}
-
-@media screen and (min-width: 768px) {
-    .container-hero {
-        max-width: 658px;
-    }
-}
-
-@media screen and (min-width: 1150px) {
-    .container-hero {
-        max-width: 1042px;
-    }
-}
-
 
 .h-one-hero {
-    font-family: "Neue Montreal", "Medium";
+  text-align: center;
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 1.09;
+  letter-spacing: -0.02em;
+  max-width: 260px;
+  margin: 0 auto;
+  margin-bottom: 12px;
+}
+
+@media screen and (min-width: 375px) {
+  .h-one-hero {
     font-size: 44px;
-    font-weight: 500;
-    line-height: 48px;
-    max-width: 335px; 
-    color: #1E1E1E;
-    margin: 0 auto 16px;
+    margin-bottom: 16px;
+    max-width: 335px;
+  }
 }
 
 @media screen and (min-width: 768px) {
-    .h-one-hero {
-        font-size: 80px;
-        line-height: 80px;
-        max-width: 658px; 
-        margin: 0 auto 20px;
-    }
+  .h-one-hero {
+    font-size: 80px;
+    margin-bottom: 20px;
+    max-width: 658px;
+    line-height: 1;
+  }
 }
 
-@media screen and (min-width: 1150px) {
-    .h-one-hero {
-        max-width: 1042px; 
-    }
+@media screen and (min-width: 1440px) {
+  .h-one-hero {
+    max-width: 1042px;
+  }
 }
 
 .hero-green-food {
-    color: #6D8434;
+  color: #6d8434;
+}
+.p-two-hero {
+  color: rgba(1, 1, 1, 0.8);
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.28;
+  max-width: 240px;
+  margin: 0 auto;
+  margin-bottom: 32px;
 }
 
-.p-two-hero {
-    font-family: "Neue Montreal", 'Regular';
+@media screen and (min-width: 375px) {
+  .p-two-hero {
     font-size: 14px;
-    font-weight: 400;
-    line-height: 18px;
     max-width: 292px;
-    color: #010101;
-    margin: 0 auto;
-    
+    margin-bottom: 32px;
+  }
 }
 
 @media screen and (min-width: 768px) {
-    .p-two-hero {
-        font-size: 18px;
-        line-height: 24px;
-        max-width: 492px; 
-    }
+  .p-two-hero {
+    font-size: 18px;
+    max-width: 492px;
+    margin-bottom: 40px;
+    line-height: 1.33;
+  }
 }
 
 .hero-content {
-    margin-top: 30px;
-    background-color: #E8E8E2;
-    position: relative;
+  position: relative;
+  background-color: #6d8434;
+  width: 240px;
+  height: 343px;
+  border-radius: 20px;
+  background-image: url(../../img/mobile_hero@1x.jpg);
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  margin: 0 auto;
+}
+
+@media screen and (min-device-pixel-ratio: 2),
+  screen and (min-resolution: 192dpi),
+  screen and (min-resolution: 2dppx) {
+  .hero-content {
+    background-image: url(../../img/mobile_hero@2x.jpg);
+  }
+}
+
+@media screen and (min-width: 375px) {
+  .hero-content {
+    width: 335px;
+    height: 438px;
+  }
 }
 
 @media screen and (min-width: 768px) {
+  .hero-content {
+    width: 704px;
+    height: 580px;
+    background-image: url(../../img/tablet_hero@1x.jpg);
+  }
+
+  @media screen and (min-device-pixel-ratio: 2),
+    screen and (min-resolution: 192dpi),
+    screen and (min-resolution: 2dppx) {
     .hero-content {
-     
+      background-image: url(../../img/tablet_hero@2x.jpg);
     }
+  }
 }
 
-@media screen and (min-width: 1150px) {
-    .hero-content {
-       
-    }
-}
+@media screen and (min-width: 1440px) {
+  .hero-content {
+    width: 1240px;
+    height: 350px;
+    background-image: url(../../img/desctop_hero@1x.jpg);
+  }
 
-.hero-picture {
-    border-radius: 20px;
+  @media screen and (min-device-pixel-ratio: 2),
+    screen and (min-resolution: 192dpi),
+    screen and (min-resolution: 2dppx) {
+    .hero-content {
+      background-image: url(../../img/desctop_hero@2x.jpg);
+    }
+  }
 }
 
 .hero-organic-food {
-    border-radius: 50px;
-    position: absolute;
-    max-width: 100px;
-    max-height: 100px;
-    margin-top: -25px;
-    margin-left: 227px;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
-
-@media screen and (min-width: 768px) {
-    .hero-organic-food {
-        margin-top: -10px;
-        margin-left: 550px;
-    }
-}
-
-@media screen and (min-width: 1150px) {
-    .hero-organic-food {
-        margin-top: -38px;
-        margin-left: 930px;
-    }
+.hero-picture {
 }
