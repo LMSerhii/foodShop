@@ -378,7 +378,6 @@ const createMarkupPopular = arrey => {
 };
 
 const createDiscountMarkup = arrey => {
-  console.log(arrey);
   return arrey
     .map(({ img, name, price, _id, is10PercentOff, isChecked }) => {
       if (is10PercentOff) {
