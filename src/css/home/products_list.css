@@ -1,12 +1,11 @@
 .product-list {
-
   padding-top: 10px;
   padding-bottom: 20px;
 }
 
 @media screen and (min-width: 375px) {
   .product-list {
-    padding-top: 20px;
+    padding-top: 40px;
     padding-bottom: 40px;
   }
 }
@@ -162,7 +161,6 @@
 /* discount */
 
 .discount-icon {
-
   position: absolute;
   top: 3px;
   right: 10px;
