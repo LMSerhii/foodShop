@@ -6,6 +6,7 @@ import { getCategories } from './api_service';
 import { save, load } from './storage';
 import { renderProducts } from './products';
 import { createCategoryMarkup, createSortMarkup } from './markupFunctions';
+
 import { loadPaginationData } from './pagination';
 
 
@@ -30,6 +31,15 @@ const renderSelects = async () => {
 
   refs.categoryField.insertAdjacentHTML('beforeend', markup);
   refs.abcField.innerHTML = createSortMarkup(sortArrey);
+
+  new SlimSelect({
+    select: '#categoryField',
+    settings: {
+      placeholderText: 'Categories',
+      showSearch: false,
+    },
+  });
+
 };
 
 const onCategoryField = evt => {
@@ -56,7 +66,6 @@ const onForm = evt => {
   } else {
     currQuery.keyword = currentValue;
   }
-
   save(common.LOCAL_QUERY_KEY, currQuery);
 
   const query = load(common.LOCAL_QUERY_KEY);

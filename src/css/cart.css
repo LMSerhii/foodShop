@@ -96,6 +96,7 @@ body {
   border-radius: 10px;
   background: #FAFAFA;
   margin-right: 20px;
+  position: relative;
 }
 
 .product-title {
@@ -103,6 +104,7 @@ body {
   justify-content: space-between;
   width: 100%;
   margin-bottom: 10px;
+  position: relative;
 }
 
 .product-container {
@@ -111,10 +113,6 @@ body {
 
 .product-price {
   margin-top: 36px;
-}
-
-.product-price.product-name.m {
-  margin-right: 88px;
 }
 
 .product-name span {
@@ -167,8 +165,8 @@ background: rgba(1, 1, 1, 0.08);
 }
 
 .total-count {
-  min-width: 60vw;
-  /* height: 60px; */
+  /* width: 60vw; */
+  max-width: 375px;
   border-radius: 8px;
   background: rgba(109, 132, 52, 0.05);
   display: flex;
@@ -235,7 +233,6 @@ padding: 26px 0 14px 18px ;
 
 
 .empty-text {
-
 color: #010101;
 font-family: Neue Montreal;
 font-size: 18px;
@@ -273,3 +270,8 @@ margin-bottom: 14px;
   text-align: center;
 }
 
+.discount {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
