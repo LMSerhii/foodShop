@@ -221,14 +221,14 @@
                     </div>
                     </div>
                 </li>`).join("")},S=r=>r.map(({img:t,name:e,price:a,_id:s,is10PercentOff:c})=>{if(c)return`
-        <li class="discount-product-element">
+        <li class="discount-product-element js-card" data-id=${s}>
 
           <svg class="discount-label" width="60" height="60">
           <use href="${l}#discount"></use>
           </svg>
 
           <div class="discount-product-img-wrapper">
-           <img class="discount-product-img" src="${t}" alt="${e}">
+           <img class="discount-product-img" src="${t}" alt="${e}" width="114" height="114" loading="lazy">
           </div>
         
         <div class="discount-product-descr">
@@ -239,7 +239,9 @@
 
          <div class="discount-product-price-wrapper">
           <p class="discount-product-price">$${a}</p>
-          <button class="discount-product-btn" type="button">
+
+          <button class="discount-product-btn js-cart" type="button">
+
             <svg class="discount-product-icon" width="18" height="18">
               <use href=" ${l}#cart"></use>
             </svg>
@@ -250,4 +252,4 @@
         </div>
         
         </li>`}).join(""),w={productList:document.querySelector(".product-list"),searchField:document.querySelector(".js-input"),categoryField:document.querySelector("#categoryField"),abcField:document.querySelector("#abcField"),form:document.querySelector(".form"),productList:document.querySelector(".product-list"),emailForm:document.querySelector(".subscribe-form"),emailInput:document.querySelector(".subscribe-input"),sendBtn:document.querySelector(".send-btn"),popularProductList:document.querySelector(".popular-products"),totalAmountDisplay:document.querySelector(".total-amount"),cartList:document.querySelector(".cart-product-list"),deleteAllButton:document.getElementById("deleteAllButton"),productsCount:document.getElementById("product-count"),dicsProd:document.querySelector(".discount-product-list"),discProdList:document.querySelector(".discount-product-list"),popularProductList:document.querySelector(".popular_products_list"),productsCountHeader:document.querySelector("#product-count-header")};export{h as a,l as b,g as c,v as d,f as e,y as f,b as g,S as h,p as l,$ as n,m as p,w as r,n as s};
-//# sourceMappingURL=refs-aae2997d.js.map
+//# sourceMappingURL=refs-7914278c.js.map
