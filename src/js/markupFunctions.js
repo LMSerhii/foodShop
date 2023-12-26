@@ -124,9 +124,9 @@ const productMarkup = arrey => {
             <div class="card-bottom">
               <p class="card-producs-price">$${price}</p>
   
-              <button class="btn-check" type="button">
+              <button class="card-btn" type="button">
   
-                  <svg class="icon-check" width="18" height="18">
+                  <svg class="card-btn-icon-check" width="18" height="18">
                       <use href="${svg_sprite}#check"></use>
                   </svg>
   
@@ -196,8 +196,8 @@ const productMarkup = arrey => {
             <div class="card-bottom">
               <p class="card-producs-price">$${price}</p>
   
-              <button class="btn-check" type="button">
-                  <svg class="icon-check" width="18" height="18">
+              <button class="card-btn" type="button">
+                  <svg class="card-btn-icon-check" width="18" height="18">
                       <use href="${svg_sprite}#check"></use>
                   </svg>
               </button>
@@ -306,78 +306,158 @@ const createMarkupPopular = arrey => {
     return;
   }
   return arrey
-    .map(({ _id, name, img, category, size, popularity }) => {
-      return `<li class="popular-card js-card" data-id=${_id}>
-                    <div class="popular-box">
-                      <div class="popular-wraper">
-                        <div class="popular-card-img-wrap">
-                            <img src="${img}" alt="${name}" width="56" height="56" loading="lazy"/>
-                        </div>
-                        <div class="popular-card-info-box">
-                        
-                          <h3 class="popular-name">${name}</h3>
-                        
-                        <ul class="popular-info-list">
-                            <li class="popular-info-style">Category:
-                            <span>${category.replace('_', ' ')}</span></li>
-                            <div class="popular-info-wraper">
-                            <li class="popular-info-style">Size: <span>${size}</span></li>
-                            <li class="popular-info-style">Popularity: <span>${popularity}</span></li>
-                            </div>
-                        </ul>
-                                            </div>
-                      </div>
+    .map(({ _id, name, img, category, size, popularity, isChecked }) => {
+      if (isChecked) {
+        return `<li class="popular-card js-card" data-id=${_id}>
+        <div class="popular-box">
+          <div class="popular-wraper">
+            <div class="popular-card-img-wrap">
+                <img src="${img}" alt="${name}" width="56" height="56" loading="lazy"/>
+            </div>
+            <div class="popular-card-info-box">
+            
+              <h3 class="popular-name">${name}</h3>
+            
+            <ul class="popular-info-list">
+                <li class="popular-info-style">Category:
+                <span>${category.replace('_', ' ')}</span></li>
+                <div class="popular-info-wraper">
+                <li class="popular-info-style">Size: <span>${size}</span></li>
+                <li class="popular-info-style">Popularity: <span>${popularity}</span></li>
+                </div>
+            </ul>
+                                </div>
+          </div>
 
-                    <div class="popular-card-bottom">
-                      
-                      <button class="popular-card-btn js-cart" type="button">
-                          <svg class="popular-icon" width="18" height="18">
-                              <use href="${svg_sprite}#cart"></use>
-                          </svg>
-                      </button>
-                    </div>
-                    </div>
-                </li>`;
+        <div class="popular-card-bottom">
+          
+          <button class="popular-card-btn" type="button">
+            <svg class="popular-icon-check" width="18" height="18">
+              <use href="${svg_sprite}#check"></use>
+            </svg>
+          </button>
+          
+        </div>
+        </div>
+    </li>`;
+      } else {
+        return `<li class="popular-card js-card" data-id=${_id}>
+        <div class="popular-box">
+          <div class="popular-wraper">
+            <div class="popular-card-img-wrap">
+                <img src="${img}" alt="${name}" width="56" height="56" loading="lazy"/>
+            </div>
+            <div class="popular-card-info-box">
+            
+              <h3 class="popular-name">${name}</h3>
+            
+            <ul class="popular-info-list">
+                <li class="popular-info-style">Category:
+                <span>${category.replace('_', ' ')}</span></li>
+                <div class="popular-info-wraper">
+                <li class="popular-info-style">Size: <span>${size}</span></li>
+                <li class="popular-info-style">Popularity: <span>${popularity}</span></li>
+                </div>
+            </ul>
+                                </div>
+          </div>
+
+        <div class="popular-card-bottom">
+          
+          <button class="popular-card-btn js-cart" type="button">
+              <svg class="popular-icon" width="18" height="18">
+                  <use href="${svg_sprite}#cart"></use>
+              </svg>
+          </button>
+        </div>
+        </div>
+    </li>`;
+      }
     })
     .join('');
 };
 
-const createDiscountMarkup = array => {
-  return array
-    .map(({ img, name, price, _id, is10PercentOff }) => {
+const createDiscountMarkup = arrey => {
+  return arrey
+    .map(({ img, name, price, _id, is10PercentOff, isChecked }) => {
       if (is10PercentOff) {
-        return `
-        <li class="discount-product-element js-card" data-id=${_id}>
-
-          <svg class="discount-label" width="60" height="60">
-          <use href="${svg_sprite}#discount"></use>
-          </svg>
-
-          <div class="discount-product-img-wrapper">
-           <img class="discount-product-img" src="${img}" alt="${name}" width="114" height="114" loading="lazy">
-          </div>
-        
-        <div class="discount-product-descr">
-
-         <div class="discount-product-name-wrapper">
-           <h3 class="discount-product-name">${name}</h3>
-          </div>
-
-         <div class="discount-product-price-wrapper">
-          <p class="discount-product-price">$${price}</p>
-
-          <button class="discount-product-btn js-cart" type="button">
-
-            <svg class="discount-product-icon" width="18" height="18">
-              <use href=" ${svg_sprite}#cart"></use>
+        if (isChecked) {
+          return `
+          <li class="discount-product-element js-card" data-id=${_id}>
+  
+            <svg class="discount-label" width="60" height="60">
+            <use href="${svg_sprite}#discount"></use>
             </svg>
-         
-          </button>
-        </div>
+  
+            <div class="discount-product-img-wrapper">
+             <img class="discount-product-img" src="${img}" alt="${name}" width="114" height="114" loading="lazy">
+            </div>
+          
+          <div class="discount-product-descr">
+  
+           <div class="discount-product-name-wrapper">
+             <h3 class="discount-product-name">${name}</h3>
+            </div>
+  
+           <div class="discount-product-price-wrapper">
+            <p class="discount-product-price">$${price}</p>
+  
+            <button class="card-btn" type="button">
+            <svg class="card-btn-icon-check" width="18" height="18">
+                <use href="${svg_sprite}#check"></use>
+            </svg>
 
-        </div>
-        
-        </li>`;
+        </button>
+          </div>
+  
+          </div>
+          
+          </li>`;
+        } else {
+          return `
+          <li class="discount-product-element js-card" data-id=${_id}>
+  
+            <svg class="discount-label" width="60" height="60">
+            <use href="${svg_sprite}#discount"></use>
+            </svg>
+  
+            <div class="discount-product-img-wrapper">
+             <img class="discount-product-img" src="${img}" alt="${name}" width="114" height="114" loading="lazy">
+            </div>
+          
+          <div class="discount-product-descr">
+  
+           <div class="discount-product-name-wrapper">
+             <h3 class="discount-product-name">${name}</h3>
+            </div>
+  
+           <div class="discount-product-price-wrapper">
+            <p class="discount-product-price">$${price}</p>
+  
+            <button class="discount-product-btn js-cart" type="button">
+  
+              <svg class="discount-product-icon" width="18" height="18">
+                <use href=" ${svg_sprite}#cart"></use>
+              </svg>
+           
+            </button>
+          </div>
+  
+          </div>
+          
+          </li>`;
+        }
+      } else {
+        return `<div class="notFound_box">
+                  <p class="notFound_title">
+                      Nothing was found for the selected <span>filters...</span>
+                  </p>
+                  <p class="notFound_text">
+                    Try adjusting your search parameters or browse our range by other criteria to
+                    find the perfect product for you.
+                  </p>
+                </div>
+      `;
       }
     })
     .join('');

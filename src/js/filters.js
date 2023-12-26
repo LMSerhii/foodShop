@@ -9,35 +9,14 @@ import { createCategoryMarkup, createSortMarkup } from './markupFunctions';
 import SlimSelect from 'slim-select';
 import '../../node_modules/slim-select/dist/slimselect.css';
 
+import { loadPaginationData } from './pagination';
+
 new SlimSelect({
   select: '#abcField',
   settings: {
-    placeholderText: 'A to Z',
     showSearch: false,
   },
 });
-
-
-
-// const renderCategory = async () => {
-  
-//   const data = await getCategories();
-//   const markup = createCategoryMarkup(data);
-  
-//   refs.categoryField.insertAdjacentHTML('beforeend', markup);
-
-//   new SlimSelect({
-//     select: '#categoryField',
-//     settings: {
-//       placeholderText: 'Categories',
-//       showSearch: false,
-//     },
-//   });
-// };
-
-// renderCategory();
-
-
 
 let categories = [];
 
@@ -75,7 +54,7 @@ const renderSelects = async () => {
 const onCategoryField = async evt => {
   const currentCategory = evt.target.value;
   const currQuery = load(common.LOCAL_QUERY_KEY);
-
+  currQuery.page = '1';
   if (currentCategory === 'Show_all') {
     currQuery.category = null;
   } else {
@@ -98,7 +77,7 @@ const onForm = async evt => {
   evt.preventDefault();
   const currentValue = refs.searchField.value;
   const currQuery = load(common.LOCAL_QUERY_KEY);
-
+  currQuery.page = '1';
   if (!currentValue) {
     currQuery.keyword = null;
   } else {
@@ -209,11 +188,13 @@ const renderProductsSort = async result => {
     totalPages: result.totalPages,
   });
   refs.productList.innerHTML = productMarkup(result.results);
+  loadPaginationData();
 };
 
 const onSearchField = evt => {
   if (evt.target.value === '') {
     const currentQuery = load(common.LOCAL_QUERY_KEY);
+    currentQuery.page = '1';
     currentQuery.keyword = null;
     save(common.LOCAL_QUERY_KEY, currentQuery);
     const query = load(common.LOCAL_QUERY_KEY);
