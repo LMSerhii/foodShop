@@ -9,8 +9,10 @@
 
     
     <script type="module" crossorigin src="/foodShop/commonHelpers.js"></script>
-    <link rel="modulepreload" crossorigin href="/foodShop/assets/refs-64b9390c.js">
-    <link rel="stylesheet" href="/foodShop/assets/refs-faad9ae0.css">
+    <link rel="modulepreload" crossorigin href="/foodShop/assets/vendor-38dd3e46.js">
+    <link rel="modulepreload" crossorigin href="/foodShop/assets/refs-2e332072.js">
+    <link rel="stylesheet" href="/foodShop/assets/vendor-ad7b3e82.css">
+    <link rel="stylesheet" href="/foodShop/assets/refs-5e7ee880.css">
   </head>
   <body>
     <header class="header">
@@ -86,11 +88,12 @@
               name="user-email"
               id="user-email"
               placeholder="Mail:   Enter your email"
-              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
               title="Wrong email"
               required
             />
-            <button class="btn-checkout" type="submit">Checkout</button>
+            <button class="btn-checkout" id="checkoutButton" type="submit">
+              Checkout
+            </button>
           </form>
         </div>
       </div>
