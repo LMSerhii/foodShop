@@ -1,7 +1,7 @@
 import { common } from './common';
 import { refs } from './refs';
-import { getData } from './api_service';
-import { getDataId } from './api_service';
+import { getData, getDataId } from './api_service';
+
 import { save, load } from './storage';
 import { addToCart } from './helpers/addToCart';
 import { productMarkup, notFoundMarkup } from './markupFunctions';
@@ -31,7 +31,7 @@ const onProductList = evt => {
   }
 
   if (evt.target.classList.contains('js-info')) {
-    displayProductDetails(evt);
+    displayProductDetails;
   }
 };
 
@@ -58,15 +58,15 @@ refs.productList.addEventListener('click', onProductList);
 //     }
 //   }
 // };
-
+console.trace();
+const divModal = document.querySelector('.modal');
+console.dir(divModal);
 document.addEventListener('DOMContentLoaded', function () {
   const modal = {
     openModal: document.querySelector('[data-modal-open]'),
     closeModal: document.querySelector('.modal__close'),
-    dataModal: document.getElementById('productModal'), // Замініть 'productModal' на унікальний id
+    dataModal: document.getElementById('productModal'),
   };
-
-  console.log('modal.dataModal:', modal.dataModal);
 
   // Перевірка наявності елементів перед додаванням обробників подій
   if (modal.openModal) {
@@ -81,7 +81,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function handleOpenModal() {
     if (modal.dataModal) {
-      modal.dataModal.classList.toggle('is-hidden');
+      // modal.dataModal.classList.remove('is-hidden');
+      modal.style.display = 'block';
     }
   }
 
@@ -91,7 +92,6 @@ document.addEventListener('DOMContentLoaded', function () {
       event.target.closest('[data-modal-close]')
     ) {
       modal.dataModal.classList.add('is-hidden');
-      modal.dataModal.removeEventListener('click', handleBackdropClick);
     }
   }
 
@@ -102,33 +102,32 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   const displayProductDetails = async evt => {
-    console.log(
-      'Clicked on product card:',
-      evt.target.closest('.js-info').dataset
-    );
-    const { id } = evt.target.closest('.js-info').dataset;
+    if (evt && evt.target) {
+      const closestInfo = evt.target.closest('.js-info');
 
-    try {
-      const data = await getDataId(id);
-      console.log('Data from getDataId:', data);
+      if (closestInfo) {
+        const { id } = closestInfo.dataset;
 
-      if (data) {
-        const successContent = successModal(data);
-        console.log('Success content:', successContent);
+        try {
+          const data = await getDataId(id);
 
-        // Видалено зайвий виклик функції
-        modal.dataModal.innerHTML = successContent;
-        modal.dataModal.classList.remove('is-hidden');
-        modal.dataModal.addEventListener('click', handleBackdropClick);
+          if (data) {
+            const successContent = successModal(data);
+            divModal.innerHTML = successContent;
+            modal.dataModal.classList.remove('is-hidden');
+          }
+
+          save(common.PAGES, {
+            page: data.page,
+            perPage: data.perPage,
+            totalPages: data.totalPages,
+          });
+        } catch (err) {
+          console.error(err);
+        }
+      } else {
+        console.error('.js-info not found in the ancestor elements.');
       }
-
-      save(common.PAGES, {
-        page: data.page,
-        perPage: data.perPage,
-        totalPages: data.totalPages,
-      });
-    } catch (err) {
-      console.error(err);
     }
   };
 
@@ -142,40 +141,19 @@ document.addEventListener('DOMContentLoaded', function () {
           </svg>
         </button>
 
-      <div>
-        <li class="card js-info" data-id=${_id}>
-          <div class="card-top">
-            <div class="card-img-wrapper">
-              <img class="img-modal" src="${img}" alt="${name}" width="300" height="300" loading="lazy"/>
+        <div>
+          <li class="card js-info" data-id=${_id}>
+            <!-- Видаліть id="productModal" звідси -->
+            <div class="card-top">
+              <!-- Залиште решту коду незміненою -->
             </div>
-            <h3 class="card-product-name">${name}</h3>
-            <ul class="card-prodcuts-list">
-              <li class="card-prodcuts-item">Category:
-                <span>${category.replace('_', ' ')}</span>
-              </li>
-              <li class="card-prodcuts-item">Size:
-                <span>${size}</span>
-              </li>
-              <li class="card-prodcuts-item">Popularity:
-                <span>${popularity}</span>
-              </li>
-              <li class ="describtion">
-                <p class="text-desc">${desc}</p>
-              </li>
-            </ul>
-          </div>
-          <div class="card-bottom">
-            <p class="card-producs-price">$${price}</p>
-            <button class="card-btn js-info" type="button">
-              <svg class="card-btn-icon" width="18" height="18">
-                <use href="${svg_sprite}#cart"></use>
-              </svg>
-            </button>
-          </div>
-        </li>
-      </div>`;
+            <div class="card-bottom">
+              <!-- Залиште решту коду незміненою -->
+            </div>
+          </li>
+        </div>`;
       })
-      .join(''); // Об'єднати рядки масиву в один рядок
+      .join('');
   }
 
   // Додавання обробника подій на елемент з data-modal-open=""
@@ -183,7 +161,5 @@ document.addEventListener('DOMContentLoaded', function () {
     modal.dataModal.addEventListener('click', handleOpenModal);
   }
 });
-
-// export { displayProductDetails };
 
 export { renderProducts };
