@@ -6,9 +6,17 @@ import { getCategories } from './api_service';
 import { save, load } from './storage';
 import { renderProducts } from './products';
 import { createCategoryMarkup, createSortMarkup } from './markupFunctions';
+import SlimSelect from 'slim-select';
+import '../../node_modules/slim-select/dist/slimselect.css';
 
 import { loadPaginationData } from './pagination';
 
+new SlimSelect({
+  select: '#abcField',
+  settings: {
+    showSearch: false,
+  },
+});
 
 let categories = [];
 
@@ -39,7 +47,6 @@ const renderSelects = async () => {
       showSearch: false,
     },
   });
-
 };
 
 const onCategoryField = evt => {
@@ -146,7 +153,7 @@ const renderProductsSort = async result => {
     totalPages: result.totalPages,
   });
   refs.productList.innerHTML = productMarkup(result.results);
-  loadPaginationData()
+  loadPaginationData();
 };
 
 const onSearchField = evt => {

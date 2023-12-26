@@ -5,6 +5,8 @@ import { save, load } from './storage';
 import { addToCart } from './helpers/addToCart';
 import { productMarkup, notFoundMarkup } from './markupFunctions';
 import { loadPaginationData } from './pagination';
+import { validChecked } from './helpers/validChecked';
+
 const renderProducts = async query => {
   const data = await getData(query);
 
@@ -21,8 +23,7 @@ const renderProducts = async query => {
 
   const result = validChecked(data.results);
   refs.productList.innerHTML = productMarkup(result);
-  loadPaginationData()
-
+  loadPaginationData();
 };
 
 const onProductList = evt => {
