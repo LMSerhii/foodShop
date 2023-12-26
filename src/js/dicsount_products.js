@@ -1,6 +1,7 @@
 import { getDiscount } from './api_service';
 import { refs } from './refs';
 import { createDiscountMarkup } from './markupFunctions';
+import { addToCart } from './helpers/addToCart';
 
 // fetch data
 const dataDiscountProd = async () => {
@@ -13,8 +14,19 @@ const dataDiscountProd = async () => {
 
 // add listner to products
 
-const clickOnDiscount = () => {};
+const clickOnDiscount = evt => {
+  evt.preventDefault();
 
-refs.discProdList.addEventListener('click', clickOnDiscount());
+  if (evt.target.closest('.js-cart')) {
+    console.log(evt.target.closest('.js-cart'));
+    addToCart(evt);
+  }
+
+  if (evt.target.classList.contains('js-info')) {
+    openModal(evt);
+  }
+};
+
+refs.discProdList.addEventListener('click', clickOnDiscount);
 
 export { dataDiscountProd };

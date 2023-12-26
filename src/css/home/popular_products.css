@@ -52,7 +52,7 @@
 .popular-card {
   width: 240px;
   border-radius: 10px;
-  background: #fafafa;
+  background-color: #fafafa;
   padding: 8px;
   margin: 0;
 }
@@ -127,7 +127,7 @@
   padding: 9px;
   margin-right: 10px;
   border-radius: 10px;
-  background: #e8e8e2;
+  background-color: #e8e8e2;
 }
 .popular-info-list {
   display: flex;
@@ -161,7 +161,7 @@ span {
   gap: 10px;
 
   border-radius: 30px;
-  background: #e8e8e2;
+  background-color: #e8e8e2;
   border: none;
 }
 
@@ -174,24 +174,6 @@ span {
 }
 
 .popular-icon-check {
-  display: inline-block;
-  width: 12px;
-  height: 12px;
-
-  fill: none;
-  stroke: #fafafa;
-}
-
-.popular-btn-check {
-  width: 20px;
-  height: 20px;
-  display: inline-flex;
-  padding: 4px;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-
-  border-radius: 30px;
-  background: #6d8434;
-  border: none;
+  stroke: #6d8434;
+  fill: transparent;
 }

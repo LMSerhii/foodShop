@@ -1,9 +1,9 @@
 import { common } from './common';
 import { refs } from './refs';
 import { getPopular } from './api_service';
-import { popularAddToCart } from './helpers/addToCart';
 import { save, load } from './storage';
 import { createMarkupPopular } from './markupFunctions';
+import { addToCartFromPopular } from './helpers/addToCart';
 
 const renderPopular = async () => {
   const results = await getPopular();
@@ -25,7 +25,7 @@ const onPopularList = evt => {
   evt.preventDefault();
 
   if (evt.target.closest('.js-cart')) {
-    popularAddToCart(evt);
+    addToCartFromPopular(evt);
   }
 
   if (evt.target.classList.contains('js-info')) {

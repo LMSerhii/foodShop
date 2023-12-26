@@ -9,6 +9,7 @@ const cart = load(common.LOCAL_CART_KEY) ?? [];
 
 const addToCart = async evt => {
   const { id } = evt.target.closest('.js-card').dataset;
+  console.log(id);
 
   const product = await getDataId(id);
 
@@ -17,6 +18,8 @@ const addToCart = async evt => {
   if (inStorage) {
     return;
   }
+
+  console.log(product);
 
   cart.push(product);
   save(common.LOCAL_CART_KEY, cart);
@@ -34,8 +37,9 @@ const addToCart = async evt => {
   });
 };
 
-const popularAddToCart = async evt => {
+const addToCartFromPopular = async evt => {
   const { id } = evt.target.closest('.js-card').dataset;
+  console.log(id);
 
   const product = await getDataId(id);
 
@@ -44,6 +48,8 @@ const popularAddToCart = async evt => {
   if (inStorage) {
     return;
   }
+
+  console.log(product);
 
   cart.push(product);
   save(common.LOCAL_CART_KEY, cart);
@@ -61,4 +67,5 @@ const popularAddToCart = async evt => {
     message: 'Added to cart!',
   });
 };
-export { addToCart, popularAddToCart };
+
+export { addToCart, addToCartFromPopular };
