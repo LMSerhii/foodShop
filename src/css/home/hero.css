@@ -1,0 +1,183 @@
+.container {
+  max-width: 280px;
+  padding: 0 16px;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 375px) {
+  .container {
+    max-width: 375px;
+    padding: 0 20px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 768px;
+    padding: 0 32px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .container {
+    max-width: 1440px;
+    padding: 0 100px;
+  }
+}
+
+.hero {
+  padding-top: 64px;
+  padding-bottom: 28px;
+}
+
+@media screen and (min-width: 375px) {
+  .hero {
+    padding-top: 72px;
+    padding-bottom: 36px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .hero {
+    padding-top: 124px;
+    padding-bottom: 36px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .hero {
+    padding-top: 85px;
+    padding-bottom: 36px;
+  }
+}
+
+.h-one-hero {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 1.09;
+  letter-spacing: -0.02em;
+  max-width: 260px;
+  margin: 0 auto;
+  margin-bottom: 12px;
+}
+
+@media screen and (min-width: 375px) {
+  .h-one-hero {
+    font-size: 44px;
+    margin-bottom: 16px;
+    max-width: 335px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .h-one-hero {
+    font-size: 80px;
+    margin-bottom: 20px;
+    max-width: 658px;
+    line-height: 1;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .h-one-hero {
+    max-width: 1042px;
+  }
+}
+
+.hero-green-food {
+  color: #6d8434;
+}
+.p-two-hero {
+  color: rgba(1, 1, 1, 0.8);
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.28;
+  max-width: 240px;
+  margin: 0 auto;
+  margin-bottom: 32px;
+}
+
+@media screen and (min-width: 375px) {
+  .p-two-hero {
+    font-size: 14px;
+    max-width: 292px;
+    margin-bottom: 32px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .p-two-hero {
+    font-size: 18px;
+    max-width: 492px;
+    margin-bottom: 40px;
+    line-height: 1.33;
+  }
+}
+
+.hero-content {
+  position: relative;
+  background-color: #6d8434;
+  width: 240px;
+  height: 343px;
+  border-radius: 20px;
+  background-image: url(../../img/mobile_hero@1x.jpg);
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  margin: 0 auto;
+}
+
+@media screen and (min-device-pixel-ratio: 2),
+  screen and (min-resolution: 192dpi),
+  screen and (min-resolution: 2dppx) {
+  .hero-content {
+    background-image: url(../../img/mobile_hero@2x.jpg);
+  }
+}
+
+@media screen and (min-width: 375px) {
+  .hero-content {
+    width: 335px;
+    height: 438px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .hero-content {
+    width: 704px;
+    height: 580px;
+    background-image: url(../../img/tablet_hero@1x.jpg);
+  }
+
+  @media screen and (min-device-pixel-ratio: 2),
+    screen and (min-resolution: 192dpi),
+    screen and (min-resolution: 2dppx) {
+    .hero-content {
+      background-image: url(../../img/tablet_hero@2x.jpg);
+    }
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .hero-content {
+    width: 1240px;
+    height: 350px;
+    background-image: url(../../img/desctop_hero@1x.jpg);
+  }
+
+  @media screen and (min-device-pixel-ratio: 2),
+    screen and (min-resolution: 192dpi),
+    screen and (min-resolution: 2dppx) {
+    .hero-content {
+      background-image: url(../../img/desctop_hero@2x.jpg);
+    }
+  }
+}
+
+.hero-organic-food {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.hero-picture {
+}

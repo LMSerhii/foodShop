@@ -23,14 +23,18 @@ const addToCart = async evt => {
 
   evt.target.closest(
     '.js-cart'
-  ).innerHTML = `<button class="btn-check js-cart" type="button">
-   <svg class="icon-check" width="18" height="18">
-                               <use href="${svg_sprite}#check"></use>
-                           </svg>
-                         </button>`;
+  ).innerHTML = `<button class="card-btn" type="button">
+                    <svg class="card-btn-icon-check" width="18" height="18">
+                        <use href="${svg_sprite}#check"></use>
+                    </svg>
+                </button>`;
+  iziToast.success({
+    title: 'OK',
+    message: 'Added to cart!',
+  });
 };
 
-const popularAddToCart = async evt => {
+const addToCartFromPopular = async evt => {
   const { id } = evt.target.closest('.js-card').dataset;
 
   const product = await getDataId(id);
@@ -46,10 +50,16 @@ const popularAddToCart = async evt => {
 
   evt.target.closest(
     '.js-cart'
-  ).innerHTML = `<button class="popular-btn-check js-cart" type="button">
-   <svg class="popular-icon-check" width="18" height="18">
-                               <use href="${svg_sprite}#check"></use>
-                           </svg>
-                         </button>`;
+  ).innerHTML = `<button class="popular-card-btn" type="button">
+                    <svg class="popular-icon-check" width="18" height="18">
+                      <use href="${svg_sprite}#check"></use>
+                    </svg>
+                </button>`;
+
+  iziToast.success({
+    title: 'OK',
+    message: 'Added to cart!',
+  });
 };
-export { addToCart, popularAddToCart };
+
+export { addToCart, addToCartFromPopular };

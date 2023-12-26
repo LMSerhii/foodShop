@@ -9,29 +9,14 @@ import { createCategoryMarkup, createSortMarkup } from './markupFunctions';
 import SlimSelect from 'slim-select';
 import '../../node_modules/slim-select/dist/slimselect.css';
 
+import { loadPaginationData } from './pagination';
+
 new SlimSelect({
   select: '#abcField',
   settings: {
-    placeholderText: 'A to Z',
     showSearch: false,
   },
 });
-
-const renderCategory = async () => {
-  const data = await getCategories();
-  const markup = createCategoryMarkup(data);
-  refs.categoryField.insertAdjacentHTML('beforeend', markup);
-
-  new SlimSelect({
-    select: '#categoryField',
-    settings: {
-      placeholderText: 'Categories',
-      showSearch: false,
-    },
-  });
-};
-
-renderCategory();
 
 let categories = [];
 
@@ -54,95 +39,135 @@ const renderSelects = async () => {
 
   refs.categoryField.insertAdjacentHTML('beforeend', markup);
   refs.abcField.innerHTML = createSortMarkup(sortArrey);
+
+  new SlimSelect({
+    select: '#categoryField',
+    settings: {
+      placeholderText: 'Categories',
+      showSearch: false,
+    },
+  });
 };
 
-const onCategoryField = evt => {
+const onCategoryField = async evt => {
   const currentCategory = evt.target.value;
   const currQuery = load(common.LOCAL_QUERY_KEY);
-
+  currQuery.page = '1';
   if (currentCategory === 'Show_all') {
     currQuery.category = null;
   } else {
     currQuery.category = currentCategory;
   }
   save(common.LOCAL_QUERY_KEY, currQuery);
-  const query = load(common.LOCAL_QUERY_KEY);
-  renderProducts(query);
+  const query = load(common.LOCAL_SORT);
+  const URL = load(common.LOCAL_QUERY_KEY);
+
+  let sortUrl = buildSortUrl(common.BASE_URL, URL);
+  sortUrl = buildSortByQuery(sortUrl, query);
+
+  const result = await get(sortUrl);
+  renderProductsSort(result);
 };
 
-const onForm = evt => {
+const onForm = async evt => {
   evt.preventDefault();
   const currentValue = refs.searchField.value;
   const currQuery = load(common.LOCAL_QUERY_KEY);
-
+  currQuery.page = '1';
   if (!currentValue) {
     currQuery.keyword = null;
   } else {
     currQuery.keyword = currentValue;
   }
   save(common.LOCAL_QUERY_KEY, currQuery);
+  const query = load(common.LOCAL_SORT);
+  const URL = load(common.LOCAL_QUERY_KEY);
 
-  const query = load(common.LOCAL_QUERY_KEY);
-  renderProducts(query);
+  let sortUrl = buildSortUrl(common.BASE_URL, URL);
+  sortUrl = buildSortByQuery(sortUrl, query);
+
+  const result = await get(sortUrl);
+  renderProductsSort(result);
+};
+//2e1
+const buildSortUrl = (baseURL, URL) => {
+  let sortUrl = `${baseURL}/products?page=${URL.page}&limit=${URL.limit}`;
+
+  if (URL.keyword) {
+    sortUrl += `&keyword=${URL.keyword}`;
+  }
+
+  if (URL.category && URL.category !== 'all') {
+    sortUrl += `&category=${formatCategory(URL.category)}`;
+  }
+
+  return sortUrl;
+};
+
+const formatCategory = category => {
+  switch (category) {
+    case 'Meat_&_Seafood':
+      return 'Meat_%26_Seafood';
+    case 'Breads_&_Bakery':
+      return 'Breads_%26_Bakery';
+    default:
+      return category;
+  }
+};
+
+const buildSortByQuery = (sortUrl, query) => {
+  if (query && query !== 'all') {
+    switch (query) {
+      case 'alphabetical':
+        sortUrl += `&byABC=true`;
+        break;
+      case 'reverse-alphabetical':
+        sortUrl += `&byABC=false`;
+        break;
+      case 'cheap':
+        sortUrl += `&byPrice=true`;
+        break;
+      case 'expensive':
+        sortUrl += `&byPrice=false`;
+        break;
+      case 'popular':
+        sortUrl += `&byPopularity=false`;
+        break;
+      case 'not-popular':
+        sortUrl += `&byPopularity=true`;
+        break;
+    }
+  }
+
+  return sortUrl;
 };
 
 const onAbcField = async evt => {
   const currentCategory = evt.target.value;
-  const currQuery = load(common.LOCAL_QUERY_KEY);
+  save(common.LOCAL_SORT, currentCategory);
+  const query = load(common.LOCAL_SORT);
+  const URL = load(common.LOCAL_QUERY_KEY);
 
-  currQuery.sort = currentCategory;
-  save(common.LOCAL_QUERY_KEY, currQuery);
+  let sortUrl = buildSortUrl(common.BASE_URL, URL);
+  sortUrl = buildSortByQuery(sortUrl, query);
 
-  const query = load(common.LOCAL_QUERY_KEY);
-  const sortCategory = query.sort;
-
-  const getSort = SortValue(sortCategory);
-
-  const result = await get(query, getSort);
+  const result = await get(sortUrl);
   renderProductsSort(result);
 };
 
-const SortValue = sortCategory => {
-  let getSort = {};
-
-  switch (sortCategory) {
-    case 'alphabetical':
-      getSort = '&byABC=true';
-      break;
-    case 'reverse-alphabetical':
-      getSort = '&byABC=false';
-      break;
-    case 'cheap':
-      getSort = '&byPrice=true';
-      break;
-    case 'expensive':
-      getSort = '&byPrice=false';
-      break;
-    case 'popular':
-      getSort = '&byPopularity=false';
-      break;
-    case 'not-popular':
-      getSort = '&byPopularity=true';
-      break;
-    default:
-      break;
-  }
-
-  return getSort;
-};
-
-async function get(query, getSort) {
+//wfw
+async function get(sortUrl) {
   try {
     const response = await axios({
-      url: `${common.BASE_URL}/products?${getSort}`,
+      url: `${sortUrl}`,
       method: 'GET',
-      header: {
+      headers: {
         'Content-Type': 'application/json',
       },
-      params: query,
     });
     return response.data;
   } catch (error) {
+    console.error('Error:', error);
     return error;
   }
 }
@@ -158,11 +183,13 @@ const renderProductsSort = async result => {
     totalPages: result.totalPages,
   });
   refs.productList.innerHTML = productMarkup(result.results);
+  loadPaginationData();
 };
 
 const onSearchField = evt => {
   if (evt.target.value === '') {
     const currentQuery = load(common.LOCAL_QUERY_KEY);
+    currentQuery.page = '1';
     currentQuery.keyword = null;
     save(common.LOCAL_QUERY_KEY, currentQuery);
     const query = load(common.LOCAL_QUERY_KEY);

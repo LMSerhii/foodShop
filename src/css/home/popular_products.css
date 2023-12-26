@@ -11,7 +11,7 @@
   }
 }
 
-@media screen and (min-width: 768px) {
+/* @media screen and (min-width: 768px) {
   .popular-products {
     padding-top: 50px;
     padding-bottom: 32px;
@@ -23,7 +23,7 @@
     padding-top: 30px;
     padding-bottom: 20px;
   }
-}
+} */
 
 .title-popular-product {
   font-size: 24px;
@@ -34,7 +34,7 @@
 .popular_products_list {
   margin: 0;
 }
-@media screen and (min-width: 768px) {
+/* @media screen and (min-width: 768px) {
   .popular_products_list {
     display: flex;
     width: 563px;
@@ -47,12 +47,12 @@
   .popular_products_list {
     flex-direction: column;
   }
-}
+} */
 
 .popular-card {
   width: 240px;
   border-radius: 10px;
-  background: #fafafa;
+  background-color: #fafafa;
   padding: 8px;
   margin: 0;
 }
@@ -68,14 +68,14 @@
   }
 }
 
-@media screen and (min-width: 768px) {
+/* @media screen and (min-width: 768px) {
   .popular-card {
     width: calc((100% - 13px) / 2);
   }
   .popular-card:not(:last-child) {
     margin-bottom: 0;
   }
-}
+} */
 
 .popular-box {
   display: flex;
@@ -96,13 +96,13 @@
   }
 }
 
-@media screen and (min-width: 768px) {
+/* @media screen and (min-width: 768px) {
   .popular-container {
     width: 563px;
     margin-left: 0;
     justify-content: flex-start;
   }
-}
+} */
 
 .popular-name {
   font-size: 18px;
@@ -111,12 +111,12 @@
   margin-bottom: 12px;
 }
 
-@media screen and (min-width: 768px) {
+/* @media screen and (min-width: 768px) {
   .popular-name {
     font-size: 20px;
     margin-bottom: 10px;
   }
-}
+} */
 
 .popular-card-img-wrap {
   width: 74px;
@@ -127,7 +127,7 @@
   padding: 9px;
   margin-right: 10px;
   border-radius: 10px;
-  background: #e8e8e2;
+  background-color: #e8e8e2;
 }
 .popular-info-list {
   display: flex;
@@ -161,7 +161,7 @@ span {
   gap: 10px;
 
   border-radius: 30px;
-  background: #e8e8e2;
+  background-color: #e8e8e2;
   border: none;
 }
 
@@ -174,24 +174,6 @@ span {
 }
 
 .popular-icon-check {
-  display: inline-block;
-  width: 12px;
-  height: 12px;
-
-  fill: none;
-  stroke: #fafafa;
-}
-
-.popular-btn-check {
-  width: 20px;
-  height: 20px;
-  display: inline-flex;
-  padding: 4px;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-
-  border-radius: 30px;
-  background: #6d8434;
-  border: none;
+  stroke: #6d8434;
+  fill: transparent;
 }
