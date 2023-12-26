@@ -3,12 +3,16 @@ import { refs } from './refs';
 import { createDiscountMarkup } from './markupFunctions';
 import { addToCart } from './helpers/addToCart';
 import { getRandomProduct } from './helpers/getRandomProduct';
+import { validChecked } from './helpers/validChecked';
 
 // fetch data
 const dataDiscountProd = async () => {
   const data = await getDiscount();
   const randomProducts = getRandomProduct(data);
-  const markup = createDiscountMarkup(randomProducts);
+
+  const result = validChecked(randomProducts);
+
+  const markup = createDiscountMarkup(result);
   refs.dicsProd.innerHTML = markup;
 };
 
@@ -20,7 +24,6 @@ const clickOnDiscount = evt => {
   evt.preventDefault();
 
   if (evt.target.closest('.js-cart')) {
-    console.log(evt.target.closest('.js-cart'));
     addToCart(evt);
   }
 
