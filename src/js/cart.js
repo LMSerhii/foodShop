@@ -15,7 +15,7 @@ const cart = load(common.LOCAL_CART_KEY) ?? [];
 
 const renderItemCount = () => {
   const itemCount = cart.length;
-  console.log(`Item Count: ${itemCount}`);
+  // console.log(`Item Count: ${itemCount}`);
   productsCount.textContent = `(${itemCount})`;
   productsCountHeader.textContent = `(${itemCount})`;
 };
@@ -83,6 +83,45 @@ const renderCart = () => {
 };
 
 renderCart();
+
+
+// Отримуємо всі елементи з класом .counter-pr
+const counters = document.querySelectorAll('.counter-pr');
+
+// Додаємо обробник подій до кожного елемента
+counters.forEach(counter => {
+  const counterValue = counter.querySelector("#value");
+  let value = 0; // Початкове значення лічильника
+
+  const decrementButton = counter.querySelector('[data-action="decrement"]');
+  const incrementButton = counter.querySelector('[data-action="increment"]');
+
+  decrementButton.addEventListener('click', () => {
+    if (value > 0) {
+      value -= 1; // Зменшення значення на 1 при кліку на кнопку "-", якщо воно більше 0
+      updateCounter(counterValue, value);
+    }
+  });
+
+  incrementButton.addEventListener('click', () => {
+    value += 1; // Збільшення значення на 1 при кліку на кнопку "+"
+    updateCounter(counterValue, value);
+  });
+});
+
+function updateCounter(counterValue, value) {
+  counterValue.textContent = value; // Оновлення значення лічильника в інтерфейсі
+}
+
+
+
+
+
+
+
+
+
+
 
 
 export{ clearCartLocalStorage, renderCart, onClose }

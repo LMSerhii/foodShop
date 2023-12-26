@@ -233,13 +233,13 @@ padding: 26px 0 14px 18px ;
 
 
 .empty-text {
-color: #010101;
-font-family: Neue Montreal;
-font-size: 18px;
-font-style: normal;
-font-weight: 500;
-line-height: 1.12;
-margin-bottom: 14px;
+  color: #010101;
+  font-family: Neue Montreal;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.12;
+  margin-bottom: 14px;
 }
 
 .empty-text span {
@@ -274,4 +274,30 @@ margin-bottom: 14px;
   display: flex;
   flex-direction: row;
   align-items: center;
+}
+
+.cart-product-counter {
+  display: flex;
+}
+.counter-pr {
+  margin-top: 36px;
+  margin-left: 88px;
+}
+
+.cart-counter-txt {
+  border: none;
+  background: inherit;
+  color: #010101;
+  font-family: Neue Montreal;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.13; 
+}
+
+.btn-counter {
+  width: 100%;
+  border-radius: 100px;
+  border: 1px solid rgba(1, 1, 1, 0.10);
+  
 }
