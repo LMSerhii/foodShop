@@ -31,6 +31,15 @@ body {
   }
 }
 
+@media screen and (min-width: 1440px) {
+  .discount-section {
+    max-width: 1440px;
+    /* padding-left: 32px;
+    padding-right: 32px; */
+    padding-top: 10px;
+    padding-bottom: 140px;
+  }
+}
 /* .discount-product-container {
   padding: 40px 20px;
 } */
@@ -48,6 +57,13 @@ body {
     display: flex;
     gap: 32px;
     flex-wrap: wrap;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .discount-product-list {
+    flex-direction: column;
+    gap: 20px;
   }
 }
 
@@ -69,6 +85,12 @@ body {
 @media screen and (min-width: 768px) {
   .discount-product-element {
     width: calc((100% - 32px) / 2);
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .discount-product-element {
+    width: 275px;
   }
 }
 
