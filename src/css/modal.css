@@ -1,0 +1,115 @@
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(1, 1, 1, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    overflow-y: auto;
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+      visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .modal-box {
+    position: relative;
+    width: 335px;
+    height: 500px;
+    background-color: #e8e8e2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 1;
+    padding: 20px;
+    border-radius: 20px;
+    padding: 0 15px 0 15px;
+    margin: 0 auto;
+    box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.2),
+    0px 1px 3px 0px rgba(0, 0, 0, 0.12), 0px 1px 1px 0px rgba(0, 0, 0, 0.14);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+  
+  .modal-close {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    border: none;
+    padding: 24px;
+    background-color: transparent;
+    fill: #010101;
+  }
+  
+  /* .modal__close:hover,
+  .modal__close:focus {
+    fill: aqua;
+  } */
+  
+  .modal-icon {
+  }
+  .modal-image{
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  }
+  
+  .modal-text-box {
+    padding-right: 45px;
+    padding-left: 45px;
+  }
+  .modal-text-box.fail {
+    padding-top: 100px;
+    padding-bottom: 80px;
+  }
+  .subscription-thanks {
+    color: var(--black);
+    text-align: center;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.2;
+    margin-bottom: 14px;
+  }
+  .subscription-promise {
+    color: rgba(1, 1, 1, 0.7);
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.28;
+    margin-bottom: 22px;
+  }
+  .subscription-accent {
+    color: green;
+  }
+  @media screen and (min-width: 768px) {
+    .modal-window {
+      width: 490px;
+      padding-top: 90px;
+    }
+    .subscription-thanks {
+      font-size: 24px;
+      line-height: 1;
+      margin-bottom: 20px;
+      width: 245px;
+    }
+    .subscription-promise {
+      font-size: 16px;
+      line-height: 1.25;
+    }
+    .modal-text-box {
+      padding-right: 81px;
+      padding-left: 81px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  
