@@ -1,3 +1,54 @@
+/* .container-products {
+  margin: 0 auto;
+}
+
+/* @media screen and (min-width: 375px) {
+  .popular-products {
+    padding-top: 80px;
+    padding-bottom: 40px;
+   
+  }
+} */
+
+/* @media screen and (min-width: 768px) {
+  .container-products {
+    padding-top: 50px;
+    padding-bottom: 32px;
+    padding-left: 32px;
+    padding-right: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  } */
+/* }  */
+
+/* @media screen and (min-width: 1440px) {
+  .popular-products {
+    padding-top: 30px;
+    padding-bottom: 20px;
+  }
+} */
+
+.container-products {
+  max-width: 280px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 375px) {
+  .container-products {
+    max-width: 375px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container-products {
+    max-width: 768px;
+    padding: 0 32px;
+    margin: 0;
+  }
+}
+
 .product-list {
   padding-top: 10px;
   padding-bottom: 20px;
@@ -9,6 +60,50 @@
     padding-bottom: 40px;
   }
 }
+
+@media screen and (min-width: 768px) {
+  .product-list {
+    padding-top: 20px;
+    padding-bottom: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+  }
+}
+
+/* @media screen and (min-width: 1440px) { */
+/* .popular_products_list {
+    flex-direction: column;
+  }
+}
+
+.popular-card {
+  width: 240px;
+  border-radius: 10px;
+  background-color: #fafafa;
+  padding: 8px;
+  margin: 0;
+}
+
+.popular-card:not(:last-child) {
+  margin-bottom: 14px;
+}
+
+@media screen and (min-width: 375px) {
+  .popular-card {
+    width: 335px;
+    padding: 14px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .popular-card {
+    width: calc((100% - 13px) / 2);
+  }
+  .popular-card:not(:last-child) {
+    margin-bottom: 0;
+  }
+} */
 
 .card {
   position: relative;
@@ -33,13 +128,27 @@
   }
 }
 
-.card-top {
+@media screen and (min-width: 768px) {
+  .card {
+    width: calc((100% - 32px) / 2);
+  }
+  .card:not(:last-child) {
+    margin-bottom: 0;
+  }
+}
+*/ .card-top {
   margin-bottom: 20px;
 }
 
 @media screen and (min-width: 375px) {
   .card-top {
     margin-bottom: 40px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .card-top {
+    margin-bottom: 50px;
   }
 }
 
@@ -74,6 +183,13 @@
   }
 }
 
+@media screen and (min-width: 768px) {
+  .card-product-name {
+    font-size: 20px;
+    line-height: 1.2;
+  }
+}
+
 .card-prodcuts-list {
   display: flex;
   flex-wrap: wrap;
@@ -96,6 +212,13 @@
 @media screen and (min-width: 375px) {
   .card-prodcuts-item {
     font-size: 12px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .card-product-name {
+    font-size: 20px;
+    line-height: 1.2;
   }
 }
 
