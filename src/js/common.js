@@ -5,6 +5,8 @@ const common = {
   LOCAL_SORT: 'sort',
   INIT_QUERY: { keyword: null, category: null, page: 1, limit: 6},
   PAGES: 'pages',
+  ORDER: "order"
+
   NUMBER_OF_DISCOUNT: 2,
 };
 

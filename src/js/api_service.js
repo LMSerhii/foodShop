@@ -100,7 +100,7 @@ async function createOrder(email, productList) {
   // returns an object
   try {
     const response = await axios({
-      url: 'https://food-boutique.b.goit.study/api/orders1',
+      url: 'https://food-boutique.b.goit.study/api/orders',
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
