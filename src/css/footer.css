@@ -141,7 +141,7 @@
   }
 }
 /* Tablet */
-@media screen and (min-width: 768px) {
+/* @media screen and (min-width: 768px) {
   .container {
     max-width: 768px;
     padding: 0 32px;
@@ -204,10 +204,10 @@
     justify-content: space-between;
     gap: 297px;
   }
-}
+} */
 
 /* Desktop */
-@media screen and (min-width: 1440px) {
+/* @media screen and (min-width: 1440px) {
   .footer {
     padding-top: 40px;
   }
@@ -241,4 +241,4 @@
   .policy-list {
     gap: 833px;
   }
-}
+} */

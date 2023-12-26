@@ -94,9 +94,48 @@ const productMarkup = arrey => {
         size,
         is10PercentOff,
         popularity,
+        isChecked,
       }) => {
         if (!is10PercentOff) {
-          return `<li class="card js-card" data-id=${_id}>
+          if (isChecked) {
+            return `<li class="card js-card" data-id=${_id}>
+            <div class="card-top">
+  
+              <div class="card-img-wrapper">
+                  <img src="${img}" alt="${name}" width="140" height="140" loading="lazy"/>
+              </div>
+  
+              <h3 class="card-product-name">${name}</h3>
+  
+              <ul class="card-prodcuts-list">
+                  <li class="card-prodcuts-item">Category:
+                    <span>${category.replace('_', ' ')}</span>
+                  </li>
+                  <li class="card-prodcuts-item">Size:
+                    <span>${size}</span>
+                  </li>
+                  <li class="card-prodcuts-item">Popularity:
+                    <span>${popularity}</span>
+                  </li>
+              </ul>
+              
+            </div>
+  
+            <div class="card-bottom">
+              <p class="card-producs-price">$${price}</p>
+  
+              <button class="btn-check" type="button">
+  
+                  <svg class="icon-check" width="18" height="18">
+                      <use href="${svg_sprite}#check"></use>
+                  </svg>
+  
+              </button>
+  
+            </div>
+        </li>`;
+          } else {
+            return `<li class="card js-card" data-id=${_id}>
             <div class="card-top">
   
               <div class="card-img-wrapper">
@@ -132,10 +171,45 @@ const productMarkup = arrey => {
   
             </div>
         </li>`;
+          }
         } else {
-          return `<li class="card js-card" data-id=${_id}>
-            
+          if (isChecked) {
+            return `<li class="card js-card" data-id=${_id}>
+            <div class="card-top">
+  
+              <div class="card-img-wrapper">
+                  <img src="${img}" alt="${name}" width="140" height="140" loading="lazy"/>
+              </div>
+  
+              <h3 class="card-product-name">${name}</h3>
+  
+              <ul class="card-prodcuts-list">
+                  <li class="card-prodcuts-item">Category: <span>${category.replace(
+                    '_',
+                    ' '
+                  )}</span></li>
+                  <li class="card-prodcuts-item">Size: <span>${size}</span></li>
+                  <li class="card-prodcuts-item">Popularity: <span>${popularity}</span></li>
+              </ul>
+            </div>
+  
+            <div class="card-bottom">
+              <p class="card-producs-price">$${price}</p>
+  
+              <button class="btn-check" type="button">
+                  <svg class="icon-check" width="18" height="18">
+                      <use href="${svg_sprite}#check"></use>
+                  </svg>
+              </button>
 
+              <svg class="discount-icon" width="60" height="60">
+                <use href="${svg_sprite}#discount"></use>
+              </svg>
+              
+            </div>
+        </li>`;
+          } else {
+            return `<li class="card js-card" data-id=${_id}>
             <div class="card-top">
   
               <div class="card-img-wrapper">
@@ -168,6 +242,7 @@ const productMarkup = arrey => {
               
             </div>
         </li>`;
+          }
         }
       }
     )

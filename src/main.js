@@ -13,3 +13,10 @@ renderSelects();
 renderProducts(storage_query);
 renderPopular();
 dataDiscountProd();
+
+const array1 = [5, 12, 8, 130, 44];
+
+const found = array1.find(element => element === 12);
+
+console.log(found);
+// Expected output: 12
