@@ -1,63 +1,51 @@
 import svg_sprite from './img/sprite.svg'; 
+import{onSendBTn} from './footer';
 
-const modal = {
+function modalFunction() {
+  const modal = {
     openModal: document.querySelector('[data-modal-open]'),
-    closeModal: document.querySelector('.modal__close'),
+    closeModal: document.querySelector('[data-modal-close]'),
     dataModal: document.querySelector('[data-modal]'),
   };
-  
-  // modal.closeModal.addEventListener('click', handleClick);
+
+  modal.closeModal.addEventListener('click', handleClick);
   modal.openModal.addEventListener('click', handleClick);
   modal.dataModal.addEventListener('click', handleBackdropClick);
   window.addEventListener('keydown', handleKeyPress);
-  
+
   function handleClick() {
-    modal.dataModal.classList.toggle('is-hidden');
+    modal.dataModal.classList.remove('is-hidden');
   }
-  
+
   function handleBackdropClick(event) {
     if (event.target === modal.dataModal) {
       modal.dataModal.classList.add('is-hidden');
     }
   }
+
   function handleKeyPress(event) {
     if (event.key === 'Escape') {
       modal.dataModal.classList.add('is-hidden');
     }
   }
-  
-  // async function createSubscription() {
-  //   const isAlreadySubscribed = true;
-  //   return isAlreadySubscribed;
-  // }
-  
-  async function createMarkup() {
-    try {
-      const response = await createSubscription();
-      if (response === true) {
-        const successContent = successModal();
-        openModal(successContent);
-      } else if (response === false) {
-        const errorContent = errorModal();
-        openModal(errorContent);
-      } else {
-        console.log('Не виконано', response);
-      }
-    } catch (err) {
-      console.error(err);
-    }
+}
+
+function createModalHTML(result) {
+  const sendResult = onSendBTn(email); 
+
+  if (sendResult) {
+    return successModal();
+  } else {
+    return errorModal();
   }
-  function openModal(content) {
-    modal.dataModal.innerHTML = content;
-    modal.dataModal.classList.remove('is-hidden');
-  }
-  createMarkup();
+}
+
   
   function successModal() {
     return `<div class="modal-box">
     <button class="modal-close" type="button" data-modal-close>
       <svg class="modal-icon" width="22" height="22">
-        <use href="./img/sprite.svg#close"></use>
+        <use href="${svg_sprite}#close"></use>
       </svg>
     </button>
     <div class="modal-text-box">
@@ -86,7 +74,7 @@ const modal = {
     return `<div class="modal-box">
     <button class="modal-close" type="button" data-modal-close>
       <svg class="modal-icon" width="22" height="22">
-        <use href="./img/sprite.svg#close"></use>
+        <use href="${svg_sprite}#close"></use>
       </svg>
     </button>
     <div class="modal-text-box">
@@ -95,6 +83,10 @@ const modal = {
     </p>
     <p class="subscription-promise">
     You have already subscribed to our new products. Watch for offers at the mailing address.
-    </p>`;
+    </p>
+    </div>
+  </div>`;
   }
+
+  modalFunction();
   
