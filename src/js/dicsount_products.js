@@ -2,11 +2,13 @@ import { getDiscount } from './api_service';
 import { refs } from './refs';
 import { createDiscountMarkup } from './markupFunctions';
 import { addToCart } from './helpers/addToCart';
+import { getRandomProduct } from './helpers/getRandomProduct';
 
 // fetch data
 const dataDiscountProd = async () => {
   const data = await getDiscount();
-  const markup = createDiscountMarkup(data.slice(0, 2));
+  const randomProducts = getRandomProduct(data);
+  const markup = createDiscountMarkup(randomProducts);
   refs.dicsProd.innerHTML = markup;
 };
 
