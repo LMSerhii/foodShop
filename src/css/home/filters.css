@@ -15,7 +15,7 @@
     .filter-input-wrapper {
         margin: 0;
     }
-  }
+}
 
 .form {
     margin-top: 8px;
@@ -29,14 +29,14 @@
 
         padding-right: 30px;
     }
-  }
+}
 
-  @media screen and (min-width: 1440px) {
+@media screen and (min-width: 1440px) {
     .form {
         width: 674px;
         padding: 0;
     }
-  }
+}
 
 .filters-input {
     padding-left: 20px;
@@ -54,12 +54,12 @@
     .filters-input {
         width: 269px;
     }
-  }
+}
 
-  .filters-input:hover,
-  .filters-input:focus {
+.filters-input:hover,
+.filters-input:focus {
     box-shadow: 0 0 5px rgba(1, 1, 1, 0.40);
-  }
+}
 
 .filters-input::placeholder {
     color: #010101;
@@ -95,7 +95,7 @@
     .ss-main.categories-select {
         margin: 0;
     }
-  }
+}
 
 .ss-values {
     padding-left: 20px;
@@ -164,7 +164,7 @@
 
 .ss-content .ss-list .ss-option {
     color: rgba(1, 1, 1, 0.50) !important;
-    
+
     font-size: 14px;
     line-height: 1.28;
 }
