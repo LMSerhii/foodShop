@@ -26,3 +26,4 @@ const remove = key => {
 };
 
 export { save, load, remove };
+

@@ -4,10 +4,10 @@ import { getData } from './api_service';
 import { save, load } from './storage';
 import { addToCart } from './helpers/addToCart';
 import { productMarkup, notFoundMarkup } from './markupFunctions';
+import { loadPaginationData } from './pagination';
+import { validChecked } from './helpers/validChecked';
 
 const renderProducts = async query => {
-  refs.productList.innerHTML = `<div class="loader_box"><span class="loader"></span></div>`;
-
   const data = await getData(query);
 
   if (!data.results.length) {
@@ -21,7 +21,9 @@ const renderProducts = async query => {
     totalPages: data.totalPages,
   });
 
-  refs.productList.innerHTML = productMarkup(data.results);
+  const result = validChecked(data.results);
+  refs.productList.innerHTML = productMarkup(result);
+  loadPaginationData();
 };
 
 const onProductList = evt => {

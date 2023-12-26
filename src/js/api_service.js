@@ -11,6 +11,7 @@ async function getData(query) {
       header: {
         'Content-Type': 'aplication/json',
       },
+
       params: query,
     });
     return response.data;
@@ -32,7 +33,7 @@ async function getDataId(id) {
     });
     return response.data;
   } catch (error) {
-    return error;
+    console.log(error);
   }
 }
 
@@ -51,6 +52,7 @@ async function getPopular(limit) {
       header: {
         'Content-Type': 'aplication/json',
       },
+
       params: query,
     });
     return response.data;
@@ -128,9 +130,10 @@ async function createSubscription(email) {
         email: email,
       },
     });
-    return response;
+
+    return response.status;
   } catch (error) {
-    return error;
+    return error.response.status;
   }
 }
 
