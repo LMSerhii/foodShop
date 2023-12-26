@@ -82,6 +82,8 @@ const renderCart = () => {
   refs.cartList.addEventListener('click', onClose);
   renderTotalAmount();
 };
+renderItemCount();
+renderCart();
 
 // Отримуємо всі елементи з класом .counter-pr
 const counters = document.querySelectorAll('.counter-pr');
@@ -111,8 +113,6 @@ const updateCounter = (counterValue, value) => {
   counterValue.textContent = value; // Оновлення значення лічильника в інтерфейсі
 };
 
-renderItemCount();
-renderCart();
 
 // Додавання обробника подій для кнопки "Delete all"
 refs.deleteAllButton.addEventListener('click', clearCartLocalStorage);

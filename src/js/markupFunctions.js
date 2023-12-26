@@ -467,7 +467,7 @@ const producCartMarkup = arrey => {
                       ' '
                   )} <span class="info-style info-space">Size:</span> ${size}</p>
               </div>
-              <div class="cart-product-counter ">
+              <div class="cart-product-counter">
                   <p class="product-price product-name m">$${price}</p>
                   <div class="counter-pr" id="counter">
                       <div class="btn-counter">
