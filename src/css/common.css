@@ -57,50 +57,48 @@ body {
   }
 }
 body {
-font-family: Neue Montreal;
-font-style: normal;
-font-weight: 400;
-color: #010101;
-background-color: var(--background);
+  font-family: Neue Montreal;
+  font-style: normal;
+  font-weight: 400;
+  color: #010101;
+  background-color: var(--background);
 }
 
 .visually-hidden {
-position: absolute;
-white-space: nowrap;
-width: 1px;
-height: 1px;
-overflow: hidden;
-border: 0;
-padding: 0;
-clip: rect(0 0 0 0);
-clip-path: inset(50%);
-margin: -1px;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  margin: -1px;
 }
 
 .container {
-max-width: 280px;
-padding: 0 20px;
-margin: 0 auto;
+  max-width: 280px;
+  padding: 0 20px;
+  margin: 0 auto;
 }
 
 @media screen and (min-width: 375px) {
-.container {
+  .container {
     max-width: 375px;
-}
+  }
 }
 
 @media screen and (min-width: 768px) {
-.container {
+  .container {
     max-width: 768px;
     padding: 0 32px;
-}
+  }
 }
 
 @media screen and (min-width: 1440px) {
-.container {
+  .container {
     max-width: 1440px;
     padding: 0 100px;
+  }
 }
-}
-
-
