@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cart</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/foodShop/assets/cartFavicon-e486fccc.svg" />
 
-  
-  <script type="module" crossorigin src="/foodShop/commonHelpers.js"></script>
-  <link rel="modulepreload" crossorigin href="/foodShop/assets/refs-db7eb833.js">
-  <link rel="stylesheet" href="/foodShop/assets/refs-c85ffcb0.css">
-</head>
-<body>
-  <header class="header">
+    <title>Cart</title>
+
+    
+    <script type="module" crossorigin src="/foodShop/commonHelpers.js"></script>
+    <link rel="modulepreload" crossorigin href="/foodShop/assets/refs-db7eb833.js">
+    <link rel="stylesheet" href="/foodShop/assets/refs-c85ffcb0.css">
+  </head>
+  <body>
+    <header class="header">
   <div class="header-content container">
     <ul class="logo-list">
       <li class="logo-item">
@@ -44,39 +46,37 @@
   </div>
 </header>
 
-  <section class="cart-section ">
-    <!-- Title -->
-    <div class="container">
-      <div class="cart-title-container">
-        <a class="cart-logo-icon" href="./index.html">
-          <svg class="" width="18px" height="18px">
-            <use
-              href="/foodShop/assets/sprite-10b57387.svg#cart"
-            ></use>
-          </svg>
-        </a>
-        <h1 class="cart-title">Cart<span id="product-count"></span></h1>
-      </div>
-    <!-- Delete button -->
-      <div class="delete-container">
-        <button id="deleteAllButton" class="button-delete">
-          Delete all
-          <svg class="" width="24px" height="24px">
-            <use href="/foodShop/assets/sprite-10b57387.svg#close"></use>
-          </svg>
-        </button>
-      </div>
-      <!-- Product list -->
-      <ul class="cart-product-list"></ul>
-      <!-- Order list -->
-      <div class="order-container"> 
-        <h2 class="cart-title order-title">Your Order</h2>
+    <section class="cart-section">
+      <!-- Title -->
+      <div class="container">
+        <div class="cart-title-container">
+          <a class="cart-logo-icon" href="./index.html">
+            <svg class="" width="18px" height="18px">
+              <use href="/foodShop/assets/sprite-10b57387.svg#cart"></use>
+            </svg>
+          </a>
+          <h1 class="cart-title">Cart<span id="product-count"></span></h1>
+        </div>
+        <!-- Delete button -->
+        <div class="delete-container">
+          <button id="deleteAllButton" class="button-delete">
+            Delete all
+            <svg class="" width="24px" height="24px">
+              <use href="/foodShop/assets/sprite-10b57387.svg#close"></use>
+            </svg>
+          </button>
+        </div>
+        <!-- Product list -->
+        <ul class="cart-product-list"></ul>
+        <!-- Order list -->
+        <div class="order-container">
+          <h2 class="cart-title order-title">Your Order</h2>
           <div class="total-count">
             <p class="product-name tittle-total">Total</p>
-              <div class="sum-info">
-                <span class="info-style">Sum: </span>
-                <span class="cart-title total-amount" id="total-count"></span>
-              </div>
+            <div class="sum-info">
+              <span class="info-style">Sum: </span>
+              <span class="cart-title total-amount" id="total-count"></span>
+            </div>
           </div>
 
           <form>
@@ -90,18 +90,13 @@
               title="Wrong email"
               required
             />
-            <button class="btn-checkout" type="submit"> Checkout</button>
+            <button class="btn-checkout" type="submit">Checkout</button>
           </form>
-      </div>  
-  </div>
-  <!-- <p class="cart-value">Cart()</p> -->
-  <!-- <ul class="cart-list"></ul> -->
-  
-  </section>
-  
-</body>
+        </div>
+      </div>
+      <!-- <p class="cart-value">Cart()</p> -->
+      <!-- <ul class="cart-list"></ul> -->
+    </section>
+    
+  </body>
 </html>
-
-
-
-
