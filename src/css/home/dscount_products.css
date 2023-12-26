@@ -4,7 +4,7 @@ body {
 
 .discount-section {
   padding-top: 40px;
-  padding-bottom: 40px;
+  padding-bottom: 80px;
 }
 
 /* .discount-product-container {
@@ -24,6 +24,10 @@ body {
   padding: 16px;
   border-radius: 15px;
   background: #fafafa;
+  margin-bottom: 0;
+}
+
+.discount-product-element:not(:last-child) {
   margin-bottom: 20px;
 }
 .discount-product-img-wrapper {
