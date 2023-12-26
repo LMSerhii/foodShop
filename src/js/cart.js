@@ -2,6 +2,7 @@
 import { load, save, remove } from './storage';
 import { common } from './common';
 import { producCartMarkup } from './markupFunctions';
+import { orderCart } from './orderCart' ;
 
 const totalAmountDisplay = document.querySelector('.total-amount');
 const cartList = document.querySelector('.cart-product-list');
@@ -46,6 +47,7 @@ const onClose = evt => {
   const id = evt.target.closest('.js-card').dataset.id;
   console.log(evt.target);
   
+  
   if (evt.target.classList.contains('js-close')) {
     validClose(id);
   }
@@ -81,5 +83,12 @@ const renderCart = () => {
 };
 
 renderCart();
+
+
+export{ clearCartLocalStorage, renderCart, onClose }
+
+
+
+
 
 
