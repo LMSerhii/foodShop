@@ -19,12 +19,8 @@ const renderItemCount = () => {
 const validClose = productId => {
   const index = cart.findIndex(({ _id }) => _id === productId);
 
-  console.log(index);
-
   cart.splice(index, 1);
-
   remove(common.LOCAL_CART_KEY);
-
   save(common.LOCAL_CART_KEY, cart);
 
   refs.cartList.innerHTML = producCartMarkup(cart);
@@ -33,7 +29,8 @@ const validClose = productId => {
 };
 
 const onClose = evt => {
-  if (evt.currentTarget === evt.target) {
+  const closeButton = evt.target.closest('.js-close');
+  if (!closeButton) {
     return;
   }
 
@@ -42,6 +39,8 @@ const onClose = evt => {
 
   if (evt.target.classList.contains('js-close')) {
     validClose(id);
+    orderContainer.innerHTML = '';
+    refs.deleteAllButton.innerHTML = '';
   }
 };
 
@@ -55,7 +54,6 @@ const renderTotalAmount = () => {
 // Функція для очищення значення ключа "cart" у локальному сховищі
 const clearCartLocalStorage = () => {
   localStorage.setItem('cart', '[]');
-
   location.reload();
 };
 
@@ -81,7 +79,6 @@ const renderCart = () => {
   }
 
   refs.cartList.innerHTML = producCartMarkup(cart);
-
   refs.cartList.addEventListener('click', onClose);
   renderTotalAmount();
 };

@@ -58,15 +58,17 @@ async function handleOrder() {
     console.error('Помилка при замовленні:', error);
   }
 }
+  
+  const checkoutButton = document.getElementById('checkoutButton');
 
-// Обробник події для кнопки
-document
-  .getElementById('checkoutButton')
-  .addEventListener('click', function (event) {
-    event.preventDefault();
-
-    // Виклик функції для обробки замовлення
-    handleOrder();
-  });
+  if (checkoutButton) {
+    // Обробник події для кнопки
+    checkoutButton.addEventListener('click', function (event) {
+      event.preventDefault();
+  
+      // Виклик функції для обробки замовлення
+      handleOrder();
+    });
+  }
 
 export { orderCart };
