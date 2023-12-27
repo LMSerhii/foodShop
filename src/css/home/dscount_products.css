@@ -49,7 +49,7 @@ body {
   font-weight: 500;
   line-height: 1.16;
   margin-bottom: 20px;
-  margin-right: 143px;
+  /* margin-right: 143px; */
 }
 
 @media screen and (min-width: 768px) {
@@ -68,7 +68,7 @@ body {
 }
 
 .discount-product-element {
-  width: 240px;
+  /* width: 240px; */
   position: relative;
   padding: 16px;
   border-radius: 15px;
