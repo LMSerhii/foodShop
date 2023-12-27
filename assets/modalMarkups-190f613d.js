@@ -1,4 +1,4 @@
-import{a as d,b as g}from"./vendor-85c19974.js";(function(){const s=document.createElement("link").relList;if(s&&s.supports&&s.supports("modulepreload"))return;for(const a of document.querySelectorAll('link[rel="modulepreload"]'))r(a);new MutationObserver(a=>{for(const o of a)if(o.type==="childList")for(const i of o.addedNodes)i.tagName==="LINK"&&i.rel==="modulepreload"&&r(i)}).observe(document,{childList:!0,subtree:!0});function e(a){const o={};return a.integrity&&(o.integrity=a.integrity),a.referrerpolicy&&(o.referrerPolicy=a.referrerpolicy),a.crossorigin==="use-credentials"?o.credentials="include":a.crossorigin==="anonymous"?o.credentials="omit":o.credentials="same-origin",o}function r(a){if(a.ep)return;a.ep=!0;const o=e(a);fetch(a.href,o)}})();const b=(t,s)=>{try{const e=JSON.stringify(s);localStorage.setItem(t,e)}catch(e){console.error("Set state error: ",e.message)}},f=t=>{try{const s=localStorage.getItem(t);return s===null?void 0:JSON.parse(s)}catch(s){console.error("Get state error: ",s.message)}},$=t=>{try{localStorage.removeItem(t)}catch(s){console.error("Get state error: ",s.message)}},n={BASE_URL:"https://food-boutique.b.goit.study/api",LOCAL_CART_KEY:"cart",LOCAL_QUERY_KEY:"query",LOCAL_SORT:"sort",INIT_QUERY:{keyword:null,category:null,page:1,limit:6},PAGES:"pages",ORDER:"order",NUMBER_OF_DISCOUNT:2},c="/foodShop/assets/sprite-10b57387.svg",m="/foodShop/assets/yellow_shopping_basket-566aede4.png",w=t=>{if(t.length)return t.map(({_id:s,name:e,img:r,category:a,price:o,size:i,is10PercentOff:l,popularity:u,isChecked:p})=>l?p?`<li class="card js-card" data-id=${s}>
+import{a as l,b as m}from"./vendor-85c19974.js";(function(){const s=document.createElement("link").relList;if(s&&s.supports&&s.supports("modulepreload"))return;for(const a of document.querySelectorAll('link[rel="modulepreload"]'))r(a);new MutationObserver(a=>{for(const o of a)if(o.type==="childList")for(const i of o.addedNodes)i.tagName==="LINK"&&i.rel==="modulepreload"&&r(i)}).observe(document,{childList:!0,subtree:!0});function e(a){const o={};return a.integrity&&(o.integrity=a.integrity),a.referrerpolicy&&(o.referrerPolicy=a.referrerpolicy),a.crossorigin==="use-credentials"?o.credentials="include":a.crossorigin==="anonymous"?o.credentials="omit":o.credentials="same-origin",o}function r(a){if(a.ep)return;a.ep=!0;const o=e(a);fetch(a.href,o)}})();const y=(t,s)=>{try{const e=JSON.stringify(s);localStorage.setItem(t,e)}catch(e){console.error("Set state error: ",e.message)}},f=t=>{try{const s=localStorage.getItem(t);return s===null?void 0:JSON.parse(s)}catch(s){console.error("Get state error: ",s.message)}},$=t=>{try{localStorage.removeItem(t)}catch(s){console.error("Get state error: ",s.message)}},n={BASE_URL:"https://food-boutique.b.goit.study/api",LOCAL_CART_KEY:"cart",LOCAL_QUERY_KEY:"query",LOCAL_SORT:"sort",INIT_QUERY:{keyword:null,category:null,page:1,limit:6},PAGES:"pages",ORDER:"order",NUMBER_OF_DISCOUNT:2},c="/foodShop/assets/sprite-10b57387.svg",v="/foodShop/assets/yellow_shopping_basket-566aede4.png",w=t=>{if(t.length)return t.map(({_id:s,name:e,img:r,category:a,price:o,size:i,is10PercentOff:d,popularity:u,isChecked:p})=>d?p?`<li class="card js-card" data-id=${s}>
             <div class="card-top">
   
               <div class="card-img-wrapper">
@@ -17,7 +17,7 @@ import{a as d,b as g}from"./vendor-85c19974.js";(function(){const s=document.cre
             <div class="card-bottom">
               <p class="card-producs-price">$${o}</p>
   
-              <button class="card-btn" type="button">
+              <button class="card-btn js-cart" type="button">
                   <svg class="card-btn-icon-check" width="18" height="18">
                       <use href="${c}#check"></use>
                   </svg>
@@ -83,7 +83,7 @@ import{a as d,b as g}from"./vendor-85c19974.js";(function(){const s=document.cre
             <div class="card-bottom">
               <p class="card-producs-price">$${o}</p>
   
-              <button class="card-btn" type="button">
+              <button class="card-btn js-cart" type="button">
   
                   <svg class="card-btn-icon-check" width="18" height="18">
                       <use href="${c}#check"></use>
@@ -136,7 +136,7 @@ import{a as d,b as g}from"./vendor-85c19974.js";(function(){const s=document.cre
                                 find the perfect product for you.
                               </p>
                               </div>
-                            `},j=t=>t.length?t.map(s=>`<option value="${s}">${s.replace("_"," ").replace("_"," ")}</option>`).join(""):'<option value="not_found_categories">Not found categories</option>',_=t=>t.map(s=>`<option value="${s.value}">${s.label}</option>`).join(""),k=t=>{if(!t.length){console.log("Sorry not data");return}return t.map(({_id:s,name:e,img:r,category:a,size:o,popularity:i,isChecked:l})=>l?`<li class="popular-card js-card" data-id=${s}>
+                            `},j=t=>t.length?t.map(s=>`<option value="${s}">${s.replace("_"," ").replace("_"," ")}</option>`).join(""):'<option value="not_found_categories">Not found categories</option>',k=t=>t.map(s=>`<option value="${s.value}">${s.label}</option>`).join(""),x=t=>{if(!t.length){console.log("Sorry not data");return}return t.map(({_id:s,name:e,img:r,category:a,size:o,popularity:i,isChecked:d})=>d?`<li class="popular-card js-card" data-id=${s}>
         <div class="popular-box">
           <div class="popular-wraper">
             <div class="popular-card-img-wrap">
@@ -159,7 +159,7 @@ import{a as d,b as g}from"./vendor-85c19974.js";(function(){const s=document.cre
 
         <div class="popular-card-bottom">
           
-          <button class="popular-card-btn" type="button">
+          <button class="popular-card-btn js-cart" type="button">
             <svg class="popular-icon-check" width="18" height="18">
               <use href="${c}#check"></use>
             </svg>
@@ -197,7 +197,7 @@ import{a as d,b as g}from"./vendor-85c19974.js";(function(){const s=document.cre
           </button>
         </div>
         </div>
-    </li>`).join("")},x=t=>t.map(({img:s,name:e,price:r,_id:a,is10PercentOff:o,isChecked:i})=>o?i?`
+    </li>`).join("")},_=t=>t.map(({img:s,name:e,price:r,_id:a,is10PercentOff:o,isChecked:i})=>o?i?`
           <li class="discount-product-element js-card" data-id=${a}>
   
             <svg class="discount-label" width="60" height="60">
@@ -217,7 +217,7 @@ import{a as d,b as g}from"./vendor-85c19974.js";(function(){const s=document.cre
            <div class="discount-product-price-wrapper">
             <p class="discount-product-price">$${r}</p>
   
-            <button class="card-btn" type="button">
+            <button class="card-btn js-cart" type="button">
             <svg class="card-btn-icon-check" width="18" height="18">
                 <use href="${c}#check"></use>
             </svg>
@@ -267,7 +267,7 @@ import{a as d,b as g}from"./vendor-85c19974.js";(function(){const s=document.cre
                     find the perfect product for you.
                   </p>
                 </div>
-      `).join(""),L=t=>t.length?t.map(({_id:s,name:e,img:r,category:a,price:o,size:i,is10PercentOff:l,popularity:u})=>l?`<li class="js-card product-card" data-id=${s}>
+      `).join(""),L=t=>t.length?t.map(({_id:s,name:e,img:r,category:a,price:o,size:i,is10PercentOff:d,popularity:u})=>d?`<li class="js-card product-card" data-id=${s}>
                   <img class="product-card-img" src="${r}" alt="${e}">
                       <div class="product-container">
                           <div class="product-title">
@@ -309,12 +309,12 @@ import{a as d,b as g}from"./vendor-85c19974.js";(function(){const s=document.cre
                       </div>
               </li>`).join(""):(deleteContainer.classList.add("visually-hidden"),orderContainer.classList.add("visually-hidden"),`
  
-  <img class="basket-img" src="${m}" alt="Yellow empty basket">
+  <img class="basket-img" src="${v}" alt="Yellow empty basket">
   <div class="basket-text">
       <p class="empty-text"> Your basket is <span>empty...</span></p>
       <p class="empty-comment">Go to the main page to select your favorite products and add them to the cart.</p>
   </div>
-  `),C={productList:document.querySelector(".product-list"),searchField:document.querySelector(".js-input"),categoryField:document.querySelector("#categoryField"),abcField:document.querySelector("#abcField"),form:document.querySelector(".form"),productList:document.querySelector(".product-list"),emailForm:document.querySelector(".subscribe-form"),emailInput:document.querySelector(".subscribe-input"),sendBtn:document.querySelector(".send-btn"),popularProductList:document.querySelector(".popular-products"),totalAmountDisplay:document.querySelector(".total-amount"),cartList:document.querySelector(".cart-product-list"),deleteAllButton:document.getElementById("deleteAllButton"),productsCount:document.getElementById("product-count"),dicsProd:document.querySelector(".discount-product-list"),discProdList:document.querySelector(".discount-product-list"),paginationContainer:document.getElementById("pagination-container"),popularProductList:document.querySelector(".popular_products_list"),productsCountHeader:document.querySelector("#product-count-header"),divHome:document.querySelector(".home-sections")};async function E(t){try{return(await d({url:`${n.BASE_URL}/products`,method:"GET",header:{"Content-Type":"aplication/json"},params:t})).data}catch(s){return s}}async function q(t){try{return(await d({url:`${n.BASE_URL}/products/${t}`,method:"GET",header:{"Content-Type":"aplication/json"}})).data}catch(s){return s}}async function T(t){try{let s=null;return t&&(s={limit:t}),(await d({url:`${n.BASE_URL}/products/popular`,method:"GET",header:{"Content-Type":"aplication/json"},params:s})).data}catch(s){return s}}async function O(){try{return(await d({url:`${n.BASE_URL}/products/discount`,method:"GET",header:{"Content-Type":"aplication/json"}})).data}catch(t){return t}}async function P(){try{return(await d({url:`${n.BASE_URL}/products/categories`,method:"GET",header:{"Content-Type":"aplication/json"}})).data}catch(t){return t}}async function F(t,s){try{return await d({url:"https://food-boutique.b.goit.study/api/orders",method:"POST",headers:{"Content-Type":"application/json"},data:{email:t,products:s}})}catch(e){return e}}async function A(t){try{return(await d({url:`${n.BASE_URL}/subscription`,method:"POST",headers:{"Content-Type":"application/json"},data:{email:t}})).status}catch(s){return s.response.status}}const B=(t,s)=>{const e=a=>{a.code==="Escape"&&r.close()},r=g.create(s,{onShow:a=>{t.addEventListener("keydown",e),a.element().querySelector(".js-modal-close").onclick=()=>a.close()},onClose:a=>{t.removeEventListener("keydown",e)}});r.show()},v="/foodShop/assets/subscribing@1x-6a8ff382.png",h="/foodShop/assets/subscribing@2x-9debc6b5.png",R=`
+  `),C={productList:document.querySelector(".product-list"),searchField:document.querySelector(".js-input"),categoryField:document.querySelector("#categoryField"),abcField:document.querySelector("#abcField"),form:document.querySelector(".form"),productList:document.querySelector(".product-list"),emailForm:document.querySelector(".subscribe-form"),emailInput:document.querySelector(".subscribe-input"),sendBtn:document.querySelector(".send-btn"),popularProductList:document.querySelector(".popular-products"),totalAmountDisplay:document.querySelector(".total-amount"),cartList:document.querySelector(".cart-product-list"),deleteAllButton:document.getElementById("deleteAllButton"),productsCount:document.getElementById("product-count"),dicsProd:document.querySelector(".discount-product-list"),discProdList:document.querySelector(".discount-product-list"),paginationContainer:document.getElementById("pagination-container"),popularProductList:document.querySelector(".popular_products_list"),productsCountHeader:document.querySelector("#product-count-header"),divHome:document.querySelector(".home-sections")};async function E(t){try{return(await l({url:`${n.BASE_URL}/products`,method:"GET",header:{"Content-Type":"aplication/json"},params:t})).data}catch(s){return s}}async function q(t){try{return(await l({url:`${n.BASE_URL}/products/${t}`,method:"GET",header:{"Content-Type":"aplication/json"}})).data}catch(s){return s}}async function T(t){try{let s=null;return t&&(s={limit:t}),(await l({url:`${n.BASE_URL}/products/popular`,method:"GET",header:{"Content-Type":"aplication/json"},params:s})).data}catch(s){return s}}async function P(){try{return(await l({url:`${n.BASE_URL}/products/discount`,method:"GET",header:{"Content-Type":"aplication/json"}})).data}catch(t){return t}}async function O(){try{return(await l({url:`${n.BASE_URL}/products/categories`,method:"GET",header:{"Content-Type":"aplication/json"}})).data}catch(t){return t}}async function A(t,s){try{return await l({url:"https://food-boutique.b.goit.study/api/orders",method:"POST",headers:{"Content-Type":"application/json"},data:{email:t,products:s}})}catch(e){return e}}async function F(t){try{return(await l({url:`${n.BASE_URL}/subscription`,method:"POST",headers:{"Content-Type":"application/json"},data:{email:t}})).status}catch(s){return s.response.status}}const z=(t,s)=>{const e=a=>{a.code==="Escape"&&r.close()},r=m.create(s,{onShow:a=>{t.addEventListener("keydown",e),a.element().querySelector(".js-modal-close").onclick=()=>a.close()},onClose:a=>{t.removeEventListener("keydown",e)}});r.show()},g="/foodShop/assets/subscribing@1x-6a8ff382.png",h="/foodShop/assets/subscribing@2x-9debc6b5.png",B=`
                   <div class="modal">
 
                     <div class="container">
@@ -343,7 +343,7 @@ import{a as d,b as g}from"./vendor-85c19974.js";(function(){const s=document.cre
                         </div>
                         <img
                         class="modal-image"
-                        srcset="${v} 1x, ${h} 2x"
+                        srcset="${g} 1x, ${h} 2x"
                         src="${h}"
                         alt="basket of fresh vegetables"
                         width="490"
@@ -355,7 +355,7 @@ import{a as d,b as g}from"./vendor-85c19974.js";(function(){const s=document.cre
                     </div>
 
                   </div>
-`,z=`
+`,R=`
               <div class="modal">
 
                 <div class="container">
@@ -396,5 +396,59 @@ import{a as d,b as g}from"./vendor-85c19974.js";(function(){const s=document.cre
                 </p>
               </div>
             </div>
-          </div>`};export{F as a,I as b,n as c,$ as d,m as e,c as f,q as g,E as h,w as i,P as j,j as k,f as l,_ as m,S as n,B as o,L as p,T as q,C as r,b as s,k as t,O as u,x as v,A as w,z as x,R as y};
-//# sourceMappingURL=modalMarkups-cb6c83c0.js.map
+          </div>`},M=({name:t,desc:s,img:e,category:r,price:a,size:o,is10PercentOff:i,popularity:d})=>`
+            <div class="modal">
+            <div class="container">
+              <div class="modal-box-product">
+                <button class="modal-product-close js-modal-close" type="button">
+                  <svg class="modal-icon" width="22" height="22">
+                    <use href="${c}#close"></use>
+                  </svg>
+                </button>
+
+                <div class="modal-product-top">
+                  <div class="modal-product-img-box">
+                    <img
+                      class="modal-product-image"
+                      src="${e}"
+                      alt="${t}"
+                      width="160"
+                      height="160"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="modal-product-text-box">
+                    <p class="modal-product-name">${t}</p>
+                    <ul class="modal-product-list">
+                      <li class="modal-produt-item">Category:
+                        <span class="list-variables">${r}</span>
+                      </li>
+                      <li class="modal-produt-item">Size:
+                        <span class="list-variables">${o}</span>
+                      </li>
+                      <li class="modal-produt-item">Popularity:
+                        <span class="list-variables">${d}</span>
+                      </li>
+                    </ul>
+                    <p class="modal-product-desc">
+                      A round, orange vegetable with a thick shell and seeds inside. It is
+                      often used in cooking and baking for its sweet and earthy flavor.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="modal-product-bottom">
+                  <p class="modal-product-price">$${a}</p>
+                  <button class="modal-product-btn">
+                    Add to
+                    <svg class="modal-product-icon" width="18" height="18">
+                      <use href="${c}#cart"></use>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+`;export{A as a,I as b,n as c,$ as d,v as e,c as f,q as g,E as h,w as i,O as j,j as k,f as l,M as m,S as n,z as o,L as p,k as q,C as r,y as s,T as t,x as u,P as v,_ as w,F as x,R as y,B as z};
+//# sourceMappingURL=modalMarkups-190f613d.js.map
