@@ -39,7 +39,7 @@ window.addEventListener('load', () => {
     // Добавление задержки в 600 миллисекунд
     setTimeout(() => {
       mask.style.opacity = '1';
-    }, 400);
+    }, 500);
   }
 
   const loaderr = document.querySelector('.loaderr');
