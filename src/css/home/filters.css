@@ -16,7 +16,35 @@
         margin: 0;
     }
 } */
+.mask {
+  opacity: 0;
+}
 
+.loaderr {
+  position: relative;
+  right: -309px;
+  top: 97px;
+}
+
+.loaderr {
+  width: 48px;
+  height: 48px;
+  border: 5px solid #6d8434;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+  }
+
+  @keyframes rotation {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+  } 
 .form {
   margin-top: 8px;
 }

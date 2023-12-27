@@ -30,6 +30,24 @@ const sortArrey = [
   { value: '', label: 'Show all' },
 ];
 
+
+const loadNav = document.querySelector('.loadNav')
+console.log(loadNav);
+window.addEventListener('load', () => {
+  let mask = document.querySelector('.mask');
+  if (mask) {
+    mask.style.opacity = '1';
+  }
+
+  const loaderr = document.querySelector('.loaderr');
+  if (loaderr) {
+    // Удаление элемента
+    loaderr.parentNode.removeChild(loaderr);
+  }
+});
+
+
+
 const renderSelects = async () => {
   const data = await getCategories();
 
@@ -196,6 +214,8 @@ const onSearchField = evt => {
     renderProducts(query);
   }
 };
+
+
 
 refs.form.addEventListener('submit', onForm);
 refs.categoryField.addEventListener('change', onCategoryField);
