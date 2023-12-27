@@ -1,15 +1,43 @@
 .modal-box {
+  width: 240px;
   position: relative;
   padding: 80px 44px;
   border-radius: 20px;
   background-color: #e8e8e2;
 }
 
+@media screen and (min-width: 375px) {
+  .modal-box {
+    width: 335px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .modal-box {
+    width: 469px;
+    padding: 100px 60px;
+  }
+}
+
 .modal-box-success {
+  width: 240px;
   position: relative;
   padding: 100px 44px 120px;
   border-radius: 20px;
   background-color: #e8e8e2;
+}
+
+@media screen and (min-width: 375px) {
+  .modal-box-success {
+    width: 335px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .modal-box-success {
+    width: 490px;
+    padding: 90px 80px 120px;
+  }
 }
 
 .modal-close {
@@ -38,6 +66,14 @@
   line-height: 1.2;
   margin-bottom: 14px;
 }
+
+@media screen and (min-width: 768px) {
+  .subscription-thanks {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+}
+
 .subscription-accent {
   color: #6d8434;
 }
@@ -48,6 +84,7 @@
   font-weight: 400;
   line-height: 1.28;
 }
+
 .modal-image {
   position: absolute;
   bottom: 0;
@@ -58,11 +95,26 @@
 }
 
 .order-modal-box {
+  width: 240px;
   position: relative;
   border-radius: 20px;
   background-color: #e8e8e2;
   padding: 40px 20px;
 }
+
+@media screen and (min-width: 375px) {
+  .order-modal-box {
+    width: 335px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .order-modal-box {
+    width: 560px;
+    padding: 80px 40px;
+  }
+}
+
 .order-image {
   margin: 0 auto;
   margin-bottom: 40px;
@@ -85,6 +137,13 @@
   text-transform: uppercase;
   margin-bottom: 20px;
 }
+
+@media screen and (min-width: 768px) {
+  .order-title {
+    font-size: 32px;
+  }
+}
+
 .order-text {
   color: rgba(1, 1, 1, 0.7);
   text-align: center;
@@ -93,6 +152,12 @@
   font-style: normal;
   font-weight: 400;
   line-height: 1.28;
+}
+
+@media screen and (min-width: 768px) {
+  .order-text {
+    font-size: 18px;
+  }
 }
 
 /* product modal */
