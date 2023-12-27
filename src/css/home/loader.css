@@ -1,9 +1,3 @@
-.loader_box {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 80vh;
-}
 .loader {
   width: 100px;
   height: 100px;

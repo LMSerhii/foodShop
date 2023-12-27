@@ -1,6 +1,6 @@
 import { common } from './common';
 import { refs } from './refs';
-import { getData, onLoaderHidden, onLoaderVisible } from './api_service';
+import { getData } from './api_service';
 import { save, load } from './storage';
 import { addToCart } from './helpers/addToCart';
 import { productMarkup, notFoundMarkup } from './markupFunctions';
@@ -8,12 +8,14 @@ import { loadPaginationData } from './pagination';
 import { validChecked } from './helpers/validChecked';
 
 const renderProducts = async query => {
+  refs.productList.innerHTML = `<div class="loader-box"><span class="loader"></span></div>`;
+
   const data = await getData(query);
+
   if (!data.results.length) {
     notFoundMarkup(refs.productList);
     return;
   }
-  // onLoaderVisible();
 
   save(common.PAGES, {
     page: data.page,

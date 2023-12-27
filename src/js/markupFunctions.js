@@ -1,9 +1,5 @@
 import svg_sprite from '../img/sprite.svg';
-
-import { getData, onLoaderHidden, onLoaderVisible } from './api_service';
-
-import empty_basket from '../img/yellow_shopping_basket.png'
-
+import empty_basket from '../img/yellow_shopping_basket.png';
 
 // products
 
@@ -396,7 +392,6 @@ const createDiscountMarkup = arrey => {
 
 const producCartMarkup = arrey => {
   if (!arrey.length) {
-
     deleteContainer.classList.add('visually-hidden');
     orderContainer.classList.add('visually-hidden');
     return `
