@@ -30,13 +30,16 @@ const sortArrey = [
   { value: '', label: 'Show all' },
 ];
 
-
-const loadNav = document.querySelector('.loadNav')
+const loadNav = document.querySelector('.loadNav');
 console.log(loadNav);
+
 window.addEventListener('load', () => {
   let mask = document.querySelector('.mask');
   if (mask) {
-    mask.style.opacity = '1';
+    // Добавление задержки в 600 миллисекунд
+    setTimeout(() => {
+      mask.style.opacity = '1';
+    }, 400);
   }
 
   const loaderr = document.querySelector('.loaderr');
@@ -45,6 +48,7 @@ window.addEventListener('load', () => {
     loaderr.parentNode.removeChild(loaderr);
   }
 });
+
 
 
 
