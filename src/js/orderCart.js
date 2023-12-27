@@ -48,6 +48,7 @@ async function handleOrder() {
     openModalFooter(orderBtn, markup);
 
     // Чекаємо, наприклад, 5 секунд перед очищенням сторінки
+
     setTimeout(() => {
       // Очистка сховища для cart і order
       save(common.LOCAL_CART_KEY, []);
