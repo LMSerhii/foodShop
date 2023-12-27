@@ -2,7 +2,7 @@ import axios from 'axios';
 import { common } from './common';
 import { refs } from './refs';
 import { productMarkup, notFoundMarkup } from './markupFunctions';
-import { getCategories } from './api_service';
+import { getCategories, onLoaderVisible, onLoaderHidden } from './api_service';
 import { save, load } from './storage';
 import { renderProducts } from './products';
 import { createCategoryMarkup, createSortMarkup } from './markupFunctions';
@@ -39,6 +39,10 @@ const renderSelects = async () => {
 
   refs.categoryField.insertAdjacentHTML('beforeend', markup);
   refs.abcField.innerHTML = createSortMarkup(sortArrey);
+  // onLoaderVisible();
+
+  // onLoaderVisible();
+  // onLoaderHidden();
 
   new SlimSelect({
     select: '#categoryField',
@@ -66,11 +70,13 @@ const onCategoryField = async evt => {
   sortUrl = buildSortByQuery(sortUrl, query);
 
   const result = await get(sortUrl);
+  // onLoaderVisible();
   renderProductsSort(result);
 };
 
 const onForm = async evt => {
   evt.preventDefault();
+  onLoaderVisible();
   const currentValue = refs.searchField.value;
   const currQuery = load(common.LOCAL_QUERY_KEY);
   currQuery.page = '1';
@@ -87,6 +93,7 @@ const onForm = async evt => {
   sortUrl = buildSortByQuery(sortUrl, query);
 
   const result = await get(sortUrl);
+  onLoaderHidden();
   renderProductsSort(result);
 };
 //2e1
@@ -152,6 +159,7 @@ const onAbcField = async evt => {
   sortUrl = buildSortByQuery(sortUrl, query);
 
   const result = await get(sortUrl);
+
   renderProductsSort(result);
 };
 
@@ -165,6 +173,7 @@ async function get(sortUrl) {
         'Content-Type': 'application/json',
       },
     });
+
     return response.data;
   } catch (error) {
     console.error('Error:', error);

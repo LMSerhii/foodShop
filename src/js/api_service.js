@@ -1,5 +1,15 @@
 import axios from 'axios';
 import { common } from './common';
+import '../css/home/loader.css';
+import { refs } from './refs';
+
+const loader = document.querySelector('.loader');
+console.dir(loader);
+// const divHome = document.querySelector('.home-sections');
+
+loader.addEventListener('click', onLoaderVisible);
+
+loader.style.display = 'none';
 
 // get a list of all products
 async function getData(query) {
@@ -14,6 +24,7 @@ async function getData(query) {
 
       params: query,
     });
+
     return response.data;
   } catch (error) {
     return error;
@@ -34,7 +45,6 @@ async function getDataId(id) {
     return response.data;
   } catch (error) {
     return error;
-
   }
 }
 
@@ -138,6 +148,17 @@ async function createSubscription(email) {
   }
 }
 
+function onLoaderVisible() {
+  loader.style.display = 'flex';
+  loader.textContent = '';
+  refs.divHome.style.display = 'none';
+}
+
+function onLoaderHidden() {
+  loader.style.display = 'none';
+  refs.divHome.style.display = 'flex';
+}
+
 export {
   getData,
   getDataId,
@@ -146,4 +167,6 @@ export {
   getCategories,
   createOrder,
   createSubscription,
+  onLoaderVisible,
+  onLoaderHidden,
 };
