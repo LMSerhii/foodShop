@@ -163,7 +163,7 @@ span {
   background-color: #e8e8e2;
   border: none;
   transition-property: background-color;
-  transition-duration: 350ms;
+  transition-duration: 500ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -179,7 +179,7 @@ span {
 
   fill: #6d8434;
   transition-property: fill;
-  transition-duration: 350ms;
+  transition-duration: 500ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 

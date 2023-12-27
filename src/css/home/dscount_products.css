@@ -150,8 +150,17 @@ body {
   justify-content: center;
   align-items: center;
   border-radius: 30px;
+  background-color: #6d8434;
   border: none;
-  background: #6d8434;
+
+  transition-property: background-color;
+  transition-duration: 500ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.discount-product-btn:hover,
+.discount-product-btn:focus {
+  background-color: #586f1f;
 }
 
 .discount-product-icon {
