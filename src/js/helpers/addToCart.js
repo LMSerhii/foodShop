@@ -3,6 +3,7 @@ import '../../../node_modules/izitoast/dist/css/iziToast.min.css';
 import svg_sprite from '../../img/sprite.svg';
 import { getDataId } from '../api_service';
 import { save, load } from '../storage';
+
 import { common } from '../common';
 
 const cart = load(common.LOCAL_CART_KEY) ?? [];
@@ -19,6 +20,7 @@ const addToCart = async evt => {
   }
 
   cart.push(product);
+
   save(common.LOCAL_CART_KEY, cart);
 
   evt.target.closest(
@@ -28,6 +30,7 @@ const addToCart = async evt => {
                         <use href="${svg_sprite}#check"></use>
                     </svg>
                 </button>`;
+
   iziToast.success({
     title: 'OK',
     message: 'Added to cart!',
