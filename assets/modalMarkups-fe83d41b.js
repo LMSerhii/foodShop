@@ -1,4 +1,4 @@
-import{a as l,b as h}from"./vendor-85c19974.js";(function(){const s=document.createElement("link").relList;if(s&&s.supports&&s.supports("modulepreload"))return;for(const a of document.querySelectorAll('link[rel="modulepreload"]'))o(a);new MutationObserver(a=>{for(const r of a)if(r.type==="childList")for(const i of r.addedNodes)i.tagName==="LINK"&&i.rel==="modulepreload"&&o(i)}).observe(document,{childList:!0,subtree:!0});function e(a){const r={};return a.integrity&&(r.integrity=a.integrity),a.referrerpolicy&&(r.referrerPolicy=a.referrerpolicy),a.crossorigin==="use-credentials"?r.credentials="include":a.crossorigin==="anonymous"?r.credentials="omit":r.credentials="same-origin",r}function o(a){if(a.ep)return;a.ep=!0;const r=e(a);fetch(a.href,r)}})();const v=(t,s)=>{try{const e=JSON.stringify(s);localStorage.setItem(t,e)}catch(e){console.error("Set state error: ",e.message)}},y=t=>{try{const s=localStorage.getItem(t);return s===null?void 0:JSON.parse(s)}catch(s){console.error("Get state error: ",s.message)}},b=t=>{try{localStorage.removeItem(t)}catch(s){console.error("Get state error: ",s.message)}},d={BASE_URL:"https://food-boutique.b.goit.study/api",LOCAL_CART_KEY:"cart",LOCAL_QUERY_KEY:"query",LOCAL_SORT:"sort",INIT_QUERY:{keyword:null,category:null,page:1,limit:6},PAGES:"pages",ORDER:"order",NUMBER_OF_DISCOUNT:2},c="/foodShop/assets/sprite-10b57387.svg",g="/foodShop/assets/yellow_shopping_basket-566aede4.png",f=t=>{if(t.length)return t.map(({_id:s,name:e,img:o,category:a,price:r,size:i,is10PercentOff:n,popularity:u,isChecked:p})=>n?p?`<li class="card js-card" data-id=${s}>
+import{a as l,b as g}from"./vendor-85c19974.js";(function(){const s=document.createElement("link").relList;if(s&&s.supports&&s.supports("modulepreload"))return;for(const a of document.querySelectorAll('link[rel="modulepreload"]'))o(a);new MutationObserver(a=>{for(const r of a)if(r.type==="childList")for(const i of r.addedNodes)i.tagName==="LINK"&&i.rel==="modulepreload"&&o(i)}).observe(document,{childList:!0,subtree:!0});function e(a){const r={};return a.integrity&&(r.integrity=a.integrity),a.referrerpolicy&&(r.referrerPolicy=a.referrerpolicy),a.crossorigin==="use-credentials"?r.credentials="include":a.crossorigin==="anonymous"?r.credentials="omit":r.credentials="same-origin",r}function o(a){if(a.ep)return;a.ep=!0;const r=e(a);fetch(a.href,r)}})();const b=(t,s)=>{try{const e=JSON.stringify(s);localStorage.setItem(t,e)}catch(e){console.error("Set state error: ",e.message)}},f=t=>{try{const s=localStorage.getItem(t);return s===null?void 0:JSON.parse(s)}catch(s){console.error("Get state error: ",s.message)}},$=t=>{try{localStorage.removeItem(t)}catch(s){console.error("Get state error: ",s.message)}},d={BASE_URL:"https://food-boutique.b.goit.study/api",LOCAL_CART_KEY:"cart",LOCAL_QUERY_KEY:"query",LOCAL_SORT:"sort",INIT_QUERY:{keyword:null,category:null,page:1,limit:6},PAGES:"pages",ORDER:"order",NUMBER_OF_DISCOUNT:2},c="/foodShop/assets/sprite-10b57387.svg",m="/foodShop/assets/yellow_shopping_basket-566aede4.png",w=t=>{if(t.length)return t.map(({_id:s,name:e,img:o,category:a,price:r,size:i,is10PercentOff:n,popularity:u,isChecked:p})=>n?p?`<li class="card js-card" data-id=${s}>
             <div class="card-top">
   
               <div class="card-img-wrapper">
@@ -127,7 +127,7 @@ import{a as l,b as h}from"./vendor-85c19974.js";(function(){const s=document.cre
               </button>
   
             </div>
-        </li>`).join("")},$=t=>{t.innerHTML=`<div class="notFound_box">
+        </li>`).join("")},S=t=>{t.innerHTML=`<div class="notFound_box">
                               <p class="notFound_title">
                                   Nothing was found for the selected <span>filters...</span>
                               </p>
@@ -136,7 +136,7 @@ import{a as l,b as h}from"./vendor-85c19974.js";(function(){const s=document.cre
                                 find the perfect product for you.
                               </p>
                               </div>
-                            `},w=t=>t.length?t.map(s=>`<option value="${s}">${s.replace("_"," ").replace("_"," ")}</option>`).join(""):'<option value="not_found_categories">Not found categories</option>',S=t=>t.map(s=>`<option value="${s.value}">${s.label}</option>`).join(""),j=t=>{if(!t.length){console.log("Sorry not data");return}return t.map(({_id:s,name:e,img:o,category:a,size:r,popularity:i,isChecked:n})=>n?`<li class="popular-card js-card" data-id=${s}>
+                            `},j=t=>t.length?t.map(s=>`<option value="${s}">${s.replace("_"," ").replace("_"," ")}</option>`).join(""):'<option value="not_found_categories">Not found categories</option>',_=t=>t.map(s=>`<option value="${s.value}">${s.label}</option>`).join(""),k=t=>{if(!t.length){console.log("Sorry not data");return}return t.map(({_id:s,name:e,img:o,category:a,size:r,popularity:i,isChecked:n})=>n?`<li class="popular-card js-card" data-id=${s}>
         <div class="popular-box">
           <div class="popular-wraper">
             <div class="popular-card-img-wrap">
@@ -197,7 +197,7 @@ import{a as l,b as h}from"./vendor-85c19974.js";(function(){const s=document.cre
           </button>
         </div>
         </div>
-    </li>`).join("")},_=t=>t.map(({img:s,name:e,price:o,_id:a,is10PercentOff:r,isChecked:i})=>r?i?`
+    </li>`).join("")},x=t=>t.map(({img:s,name:e,price:o,_id:a,is10PercentOff:r,isChecked:i})=>r?i?`
           <li class="discount-product-element js-card" data-id=${a}>
   
             <svg class="discount-label" width="60" height="60">
@@ -267,7 +267,7 @@ import{a as l,b as h}from"./vendor-85c19974.js";(function(){const s=document.cre
                     find the perfect product for you.
                   </p>
                 </div>
-      `).join(""),k=t=>t.length?t.map(({_id:s,name:e,img:o,category:a,price:r,size:i,is10PercentOff:n,popularity:u})=>n?`<li class="js-card product-card" data-id=${s}>
+      `).join(""),E=t=>t.length?t.map(({_id:s,name:e,img:o,category:a,price:r,size:i,is10PercentOff:n,popularity:u})=>n?`<li class="js-card product-card" data-id=${s}>
           <img class="product-card-img" src="${o}" alt="${e}">
               <div class="product-container">
                   <div class="product-title">
@@ -305,12 +305,12 @@ import{a as l,b as h}from"./vendor-85c19974.js";(function(){const s=document.cre
                           
                       </div>
               </li>`).join(""):`
-  <img class="basket-img" src="${g}" alt="Yellow empty basket">
+  <img class="basket-img" src="${m}" alt="Yellow empty basket">
   <div class="basket-text">
       <p class="empty-text"> Your basket is <span>empty...</span></p>
       <p class="empty-comment">Go to the main page to select your favorite products and add them to the cart.</p>
   </div>
-  `;async function x(t){try{return(await l({url:`${d.BASE_URL}/products`,method:"GET",header:{"Content-Type":"aplication/json"},params:t})).data}catch(s){return s}}async function E(t){try{return(await l({url:`${d.BASE_URL}/products/${t}`,method:"GET",header:{"Content-Type":"aplication/json"}})).data}catch(s){return s}}async function L(t){try{let s=null;return t&&(s={limit:t}),(await l({url:`${d.BASE_URL}/products/popular`,method:"GET",header:{"Content-Type":"aplication/json"},params:s})).data}catch(s){return s}}async function C(){try{return(await l({url:`${d.BASE_URL}/products/discount`,method:"GET",header:{"Content-Type":"aplication/json"}})).data}catch(t){return t}}async function q(){try{return(await l({url:`${d.BASE_URL}/products/categories`,method:"GET",header:{"Content-Type":"aplication/json"}})).data}catch(t){return t}}async function T(t,s){try{return await l({url:"https://food-boutique.b.goit.study/api/orders",method:"POST",headers:{"Content-Type":"application/json"},data:{email:t,products:s}})}catch(e){return e}}async function O(t){try{return(await l({url:`${d.BASE_URL}/subscription`,method:"POST",headers:{"Content-Type":"application/json"},data:{email:t}})).status}catch(s){return s.response.status}}const P={productList:document.querySelector(".product-list"),searchField:document.querySelector(".js-input"),categoryField:document.querySelector("#categoryField"),abcField:document.querySelector("#abcField"),form:document.querySelector(".form"),productList:document.querySelector(".product-list"),emailForm:document.querySelector(".subscribe-form"),emailInput:document.querySelector(".subscribe-input"),sendBtn:document.querySelector(".send-btn"),popularProductList:document.querySelector(".popular-products"),totalAmountDisplay:document.querySelector(".total-amount"),cartList:document.querySelector(".cart-product-list"),deleteAllButton:document.getElementById("deleteAllButton"),productsCount:document.getElementById("product-count"),dicsProd:document.querySelector(".discount-product-list"),discProdList:document.querySelector(".discount-product-list"),paginationContainer:document.getElementById("pagination-container"),popularProductList:document.querySelector(".popular_products_list"),productsCountHeader:document.querySelector("#product-count-header")},F=(t,s)=>{const e=a=>{a.code==="Escape"&&o.close()},o=h.create(s,{onShow:a=>{t.addEventListener("keydown",e),a.element().querySelector(".js-modal-close").onclick=()=>a.close()},onClose:a=>{t.removeEventListener("keydown",e)}});o.show()},A=`
+  `;async function L(t){try{return(await l({url:`${d.BASE_URL}/products`,method:"GET",header:{"Content-Type":"aplication/json"},params:t})).data}catch(s){return s}}async function C(t){try{return(await l({url:`${d.BASE_URL}/products/${t}`,method:"GET",header:{"Content-Type":"aplication/json"}})).data}catch(s){return s}}async function q(t){try{let s=null;return t&&(s={limit:t}),(await l({url:`${d.BASE_URL}/products/popular`,method:"GET",header:{"Content-Type":"aplication/json"},params:s})).data}catch(s){return s}}async function T(){try{return(await l({url:`${d.BASE_URL}/products/discount`,method:"GET",header:{"Content-Type":"aplication/json"}})).data}catch(t){return t}}async function O(){try{return(await l({url:`${d.BASE_URL}/products/categories`,method:"GET",header:{"Content-Type":"aplication/json"}})).data}catch(t){return t}}async function P(t,s){try{return await l({url:"https://food-boutique.b.goit.study/api/orders",method:"POST",headers:{"Content-Type":"application/json"},data:{email:t,products:s}})}catch(e){return e}}async function F(t){try{return(await l({url:`${d.BASE_URL}/subscription`,method:"POST",headers:{"Content-Type":"application/json"},data:{email:t}})).status}catch(s){return s.response.status}}const A={productList:document.querySelector(".product-list"),searchField:document.querySelector(".js-input"),categoryField:document.querySelector("#categoryField"),abcField:document.querySelector("#abcField"),form:document.querySelector(".form"),productList:document.querySelector(".product-list"),emailForm:document.querySelector(".subscribe-form"),emailInput:document.querySelector(".subscribe-input"),sendBtn:document.querySelector(".send-btn"),popularProductList:document.querySelector(".popular-products"),totalAmountDisplay:document.querySelector(".total-amount"),cartList:document.querySelector(".cart-product-list"),deleteAllButton:document.getElementById("deleteAllButton"),productsCount:document.getElementById("product-count"),dicsProd:document.querySelector(".discount-product-list"),discProdList:document.querySelector(".discount-product-list"),paginationContainer:document.getElementById("pagination-container"),popularProductList:document.querySelector(".popular_products_list"),productsCountHeader:document.querySelector("#product-count-header")},B=(t,s)=>{const e=a=>{a.code==="Escape"&&o.close()},o=g.create(s,{onShow:a=>{t.addEventListener("keydown",e),a.element().querySelector(".js-modal-close").onclick=()=>a.close()},onClose:a=>{t.removeEventListener("keydown",e)}});o.show()},v="/foodShop/assets/subscribing@1x-6a8ff382.png",h="/foodShop/assets/subscribing@2x-9debc6b5.png",R=`
                   <div class="modal">
 
                     <div class="container">
@@ -339,8 +339,8 @@ import{a as l,b as h}from"./vendor-85c19974.js";(function(){const s=document.cre
                         </div>
                         <img
                         class="modal-image"
-                        srcset="./img/subscribing@1x.png 1x, ./img/subscribing@2x.png 2x"
-                        src="./img/subscribing@1x.png"
+                        srcset="${v} 1x, ${h} 2x"
+                        src="${h}"
                         alt="basket of fresh vegetables"
                         width="490"
                         />
@@ -351,7 +351,7 @@ import{a as l,b as h}from"./vendor-85c19974.js";(function(){const s=document.cre
                     </div>
 
                   </div>
-`,B=`
+`,z=`
               <div class="modal">
 
                 <div class="container">
@@ -373,7 +373,7 @@ import{a as l,b as h}from"./vendor-85c19974.js";(function(){const s=document.cre
                 </div>
 
               </div>
-              `,R=t=>{const{img:s,name:e}=t[0];return`<div class="modal">
+              `,I=t=>{const{img:s,name:e}=t[0];return`<div class="modal">
             <div class="container">
               <div class="order-modal-box">
                 <button class="modal-close js-modal-close" type="button">
@@ -392,5 +392,5 @@ import{a as l,b as h}from"./vendor-85c19974.js";(function(){const s=document.cre
                 </p>
               </div>
             </div>
-          </div>`};export{T as a,R as b,d as c,b as d,g as e,c as f,E as g,x as h,f as i,q as j,w as k,y as l,S as m,$ as n,F as o,k as p,L as q,P as r,v as s,j as t,C as u,_ as v,O as w,B as x,A as y};
-//# sourceMappingURL=madalMarkups-718ca2de.js.map
+          </div>`};export{P as a,I as b,d as c,$ as d,m as e,c as f,C as g,L as h,w as i,O as j,j as k,f as l,_ as m,S as n,B as o,E as p,q,A as r,b as s,k as t,T as u,x as v,F as w,z as x,R as y};
+//# sourceMappingURL=modalMarkups-fe83d41b.js.map
