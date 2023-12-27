@@ -4,3 +4,112 @@
 @import url('./home/dscount_products.css');
 @import url('./home/products_list.css');
 @import url('./home/pagination.css');
+
+@media screen and (min-width: 1440px) {
+  .home-sections {
+    display: flex;
+    justify-content: space-between;
+    width: 1340px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .container-products {
+    max-width: 925px;
+    padding-bottom: 40px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .product-list {
+    row-gap: 40px;
+    column-gap: 20px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .card {
+    width: calc((100% - 40px) / 3);
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .prod-pagin {
+    display: flex;
+    flex-direction: column;
+    padding-top: 0;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .container-products {
+    padding-top: 0;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .popul-disc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .popular-products {
+    width: 275px;
+
+    padding-bottom: 20px;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .popular_products_list {
+    width: 275px;
+    flex-direction: column;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .popular-container {
+    width: 275px;
+    margin-left: 0;
+    justify-content: flex-start;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .popular-card {
+    width: 275px;
+  }
+  /* .popular-card:not(:last-child) {
+    margin-bottom: 0;
+  } */
+}
+
+@media screen and (min-width: 1440px) {
+  .discount-section {
+    width: 275px;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 20px;
+    padding-bottom: 140px;
+    padding-bottom: 0;
+  }
+}

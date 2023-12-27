@@ -50,7 +50,7 @@ const addToCartFromPopular = async evt => {
 
   evt.target.closest(
     '.js-cart'
-  ).innerHTML = `<button class="popular-card-btn" type="button">
+  ).innerHTML = `<button class="popular-btn-check" type="button">
                     <svg class="popular-icon-check" width="18" height="18">
                       <use href="${svg_sprite}#check"></use>
                     </svg>
