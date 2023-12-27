@@ -20,7 +20,7 @@ const refs = {
   paginationContainer: document.getElementById('pagination-container'),
   popularProductList: document.querySelector('.popular_products_list'),
   productsCountHeader: document.querySelector('#product-count-header'),
-
+  divHome: document.querySelector('.home-sections'),
   // modalCloseBtn: document.querySelector('.js-modal-close'),
 };
 

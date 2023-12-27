@@ -1,4 +1,5 @@
 import svg_sprite from '../img/sprite.svg';
+import empty_basket from '../img/yellow_shopping_basket.png';
 
 // products
 
@@ -6,6 +7,7 @@ const productMarkup = arrey => {
   if (!arrey.length) {
     return;
   }
+
   return arrey
     .map(
       ({
@@ -390,9 +392,10 @@ const createDiscountMarkup = arrey => {
 
 const producCartMarkup = arrey => {
   if (!arrey.length) {
-  deleteContainer.classList.add('visually-hidden');
-  orderContainer.classList.add('visually-hidden');
-  return `
+    deleteContainer.classList.add('visually-hidden');
+    orderContainer.classList.add('visually-hidden');
+    return `
+ 
   <img class="basket-img" src="${empty_basket}" alt="Yellow empty basket">
   <div class="basket-text">
       <p class="empty-text"> Your basket is <span>empty...</span></p>
@@ -401,18 +404,18 @@ const producCartMarkup = arrey => {
   `;
   }
   return arrey
-  .map(
+    .map(
       ({
-      _id,
-      name,
-      img,
-      category,
-      price,
-      size,
-      is10PercentOff,
-      popularity,
+        _id,
+        name,
+        img,
+        category,
+        price,
+        size,
+        is10PercentOff,
+        popularity,
       }) => {
-      if (!is10PercentOff) {
+        if (!is10PercentOff) {
           return `<li class="js-card product-card" data-id=${_id}>
                   <img class="product-card-img" src="${img}" alt="${name}">
                       <div class="product-container">
@@ -420,36 +423,22 @@ const producCartMarkup = arrey => {
                               <h2 class="product-name">${name}</h2>
                               <button type="button" id="test" class="btn-del-product js-close" data-product-id="${_id}">
                                   <svg class="delete-icon js-close" width="18" height="18">
-                                      <use href="${svg_sprite}#close"></use>
+                                      <use class="js-close" href="${svg_sprite}#close"></use>
                                   </svg>
                               </button>
                       </div>
                       <div class="product-category">
                           <p class="product-info"><span class="info-style">Category:</span> ${category.replace(
-                              '_',
-                              ' '
+                            '_',
+                            ' '
                           )} <span class="info-style info-space">Size:</span> ${size}</p>
                       </div>
                       <div class="cart-product-counter ">
                           <p class="product-price product-name m">$${price}</p>
-                          <div class="counter-pr" id="counter">
-                              <div class="btn-counter">
-                                  <button class="cart-counter-txt" type="button" data-action="decrement">
-                                      <svg width="14" height="14">
-                                          <use href="${svg_sprite}#minus"></use>
-                                      </svg>
-                                  </button>
-                                      <span class="cart-counter-txt" id="value">0</span>
-                                  <button class="cart-counter-txt" type="button" data-action="increment">
-                                      <svg  width="14" height="14">
-                                          <use href="${svg_sprite}#plus"></use>
-                                      </svg>
-                                  </button>
-                              </div>
-                          </div>
+                          
                       </div>
               </li>`;
-      } else {
+        } else {
           return `<li class="js-card product-card" data-id=${_id}>
                   <img class="product-card-img" src="${img}" alt="${name}">
                       <div class="product-container">
@@ -463,8 +452,8 @@ const producCartMarkup = arrey => {
                       </div>
                       <div class="product-category">
                           <p class="product-info"><span class="info-style">Category:</span> ${category.replace(
-                              '_',
-                              ' '
+                            '_',
+                            ' '
                           )} <span class="info-style info-space">Size:</span> ${size}</p>
                       </div>
                       <p class="product-price product-name m">$${price}</p>
@@ -474,12 +463,13 @@ const producCartMarkup = arrey => {
                           <button type="button" data-action="increment">+1</button>
                       </div>
               </li>
+
               `;
+        }
       }
-      }
-  )
-      .join('');
-  };
+    )
+    .join('');
+};
 
 export {
   productMarkup,

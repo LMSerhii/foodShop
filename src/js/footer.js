@@ -1,7 +1,7 @@
 import { createSubscription } from './api_service';
 import { openModalFooter } from './modal';
 import { refs } from './refs';
-import { success, error } from './helpers/madalMarkups';
+import { success, error } from './helpers/modalMarkups';
 
 const renderFooter = () => {
   refs.emailForm.addEventListener('submit', onEmailEnter);

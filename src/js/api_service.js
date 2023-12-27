@@ -1,9 +1,14 @@
 import axios from 'axios';
 import { common } from './common';
 
+import { refs } from './refs';
+
+
+
 // get a list of all products
 async function getData(query) {
   // return object {page, perPage, results[], totalPages}
+
   try {
     const response = await axios({
       url: `${common.BASE_URL}/products`,
@@ -14,6 +19,7 @@ async function getData(query) {
 
       params: query,
     });
+
     return response.data;
   } catch (error) {
     return error;
@@ -34,7 +40,6 @@ async function getDataId(id) {
     return response.data;
   } catch (error) {
     return error;
-
   }
 }
 
@@ -131,12 +136,12 @@ async function createSubscription(email) {
         email: email,
       },
     });
-
     return response.status;
   } catch (error) {
     return error.response.status;
   }
 }
+
 
 export {
   getData,
@@ -146,4 +151,5 @@ export {
   getCategories,
   createOrder,
   createSubscription,
+
 };

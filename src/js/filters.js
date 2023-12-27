@@ -31,6 +31,7 @@ const sortArrey = [
 ];
 
 const renderSelects = async () => {
+
   const data = await getCategories();
 
   categories = [...data, 'Show_all'];
@@ -38,7 +39,9 @@ const renderSelects = async () => {
   const markup = createCategoryMarkup(categories);
 
   refs.categoryField.insertAdjacentHTML('beforeend', markup);
+
   refs.abcField.innerHTML = createSortMarkup(sortArrey);
+
 
   new SlimSelect({
     select: '#categoryField',
@@ -66,11 +69,13 @@ const onCategoryField = async evt => {
   sortUrl = buildSortByQuery(sortUrl, query);
 
   const result = await get(sortUrl);
+
   renderProductsSort(result);
 };
 
 const onForm = async evt => {
   evt.preventDefault();
+
   const currentValue = refs.searchField.value;
   const currQuery = load(common.LOCAL_QUERY_KEY);
   currQuery.page = '1';
@@ -87,6 +92,7 @@ const onForm = async evt => {
   sortUrl = buildSortByQuery(sortUrl, query);
 
   const result = await get(sortUrl);
+
   renderProductsSort(result);
 };
 //2e1
@@ -143,6 +149,7 @@ const buildSortByQuery = (sortUrl, query) => {
 };
 
 const onAbcField = async evt => {
+
   const currentCategory = evt.target.value;
   save(common.LOCAL_SORT, currentCategory);
   const query = load(common.LOCAL_SORT);
@@ -152,7 +159,9 @@ const onAbcField = async evt => {
   sortUrl = buildSortByQuery(sortUrl, query);
 
   const result = await get(sortUrl);
+
   renderProductsSort(result);
+
 };
 
 //wfw
@@ -165,6 +174,7 @@ async function get(sortUrl) {
         'Content-Type': 'application/json',
       },
     });
+
     return response.data;
   } catch (error) {
     console.error('Error:', error);
