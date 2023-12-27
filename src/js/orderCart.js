@@ -2,6 +2,8 @@ import { load, save, remove } from './storage';
 import { common } from './common';
 import { createOrder } from './api_service';
 import { renderCart, onClose } from './cart';
+import { openModalFooter } from './modal';
+import { succesOrder } from './helpers/madalMarkups';
 
 const orderCart = load(common.LOCAL_CART_KEY) ?? [];
 orderCart.forEach(product => {
@@ -41,6 +43,10 @@ async function handleOrder() {
     console.log('Відповідь на замовлення:', orderResponse);
     console.log(userEmail, formattedOrderCart);
 
+    const markup = succesOrder(orderCart);
+
+    openModalFooter(orderBtn, markup);
+
     // Чекаємо, наприклад, 5 секунд перед очищенням сторінки
     setTimeout(() => {
       // Очистка сховища для cart і order
@@ -61,14 +67,15 @@ async function handleOrder() {
   
   const checkoutButton = document.getElementById('checkoutButton');
 
-  if (checkoutButton) {
-    // Обробник події для кнопки
-    checkoutButton.addEventListener('click', function (event) {
-      event.preventDefault();
-  
-      // Виклик функції для обробки замовлення
-      handleOrder();
-    });
-  }
+
+// Обробник події для кнопки
+const orderBtn = document.getElementById('checkoutButton');
+
+orderBtn.addEventListener('click', function (event) {
+  event.preventDefault();
+
+  // Виклик функції для обробки замовлення
+  handleOrder();
+});
 
 export { orderCart };

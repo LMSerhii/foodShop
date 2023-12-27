@@ -15,6 +15,9 @@
 }
 
 @media screen and (min-width: 375px) {
+  .container {
+    max-width: 375px;
+  }
   .logo-list {
     gap: 8px;
   }
@@ -35,12 +38,12 @@
     height: 28px;
   }
 }
-/* @media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) {
   .logo-item:first-child {
     width: 32px;
     height: 32px;
   }
-} */
+}
 
 .logo-link {
   display: flex;
@@ -52,22 +55,37 @@
   font-weight: 900;
   line-height: 1.11;
   letter-spacing: -0.02em;
+
+  transition-property: background-color;
+  transition-duration: 500ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+.logo-link:focus,
+.logo-link:hover {
+  transform: scale(1.05);
+}
+
 @media screen and (min-width: 375px) {
   .logo-link {
     font-size: 18px;
   }
 }
-/* @media screen and (min-width: 768px) {
+
+@media screen and (min-width: 768px) {
   .logo-link {
-    font-size: 22px;
+    font-size: 24px;
   }
-} */
+}
 
 .logo-icon {
   width: 12px;
   height: 12px;
   fill: var(--white);
+}
+.logo-icon:focus,
+.logo-icon:hover {
+  transform: scale(1.05);
 }
 @media screen and (min-width: 375px) {
   .logo-icon {
@@ -75,12 +93,12 @@
     height: 16px;
   }
 }
-/* @media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) {
   .logo-icon {
     width: 20px;
     height: 20px;
   }
-} */
+}
 
 .nav-cart {
   display: flex;
@@ -90,6 +108,10 @@
   height: 24px;
   border-radius: 30px;
   background-color: var(--lightGreen);
+}
+.nav-cart:focus,
+.nav-cart:hover {
+  background-color: var(--darkGreen);
 }
 @media screen and (min-width: 375px) {
   .nav-cart {
@@ -108,11 +130,6 @@
     gap: 16px;
   }
 }
-/* @media screen and (min-width: 768px) {
-  .nav-list {
-    gap: 24px;
-  }
-} */
 
 .nav-home {
   display: block;
@@ -126,28 +143,41 @@
   font-weight: 500;
   line-height: 1.28;
 }
+.nav-home:focus,
+.nav-home:hover {
+  background-color: var(--darkGreen);
+  border: 1px solid transparent;
+}
+
 @media screen and (min-width: 375px) {
   .nav-home {
     padding: 10px 20px;
     font-size: 14px;
   }
 }
-/* @media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) {
   .nav-home {
     padding: 12px 28px;
     font-size: 18px;
   }
-} */
+}
 
 .nav-icon {
   width: 10px;
   height: 10px;
   fill: var(--white);
 }
+
 @media screen and (min-width: 375px) {
   .nav-icon {
     width: 14px;
     height: 14px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .nav-con {
+    width: 18px;
+    height: 18px;
   }
 }
 
