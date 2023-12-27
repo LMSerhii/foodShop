@@ -32,6 +32,7 @@ const sortArrey = [
 
 const renderSelects = async () => {
   onLoaderVisible();
+
   const data = await getCategories();
 
   categories = [...data, 'Show_all'];
@@ -39,6 +40,7 @@ const renderSelects = async () => {
   const markup = createCategoryMarkup(categories);
 
   refs.categoryField.insertAdjacentHTML('beforeend', markup);
+
   refs.abcField.innerHTML = createSortMarkup(sortArrey);
 
   onLoaderHidden();
