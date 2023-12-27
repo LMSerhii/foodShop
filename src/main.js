@@ -4,6 +4,7 @@ import { common } from './js/common';
 import { renderSelects } from './js/filters';
 import { renderPopular } from './js/popular';
 import { dataDiscountProd } from './js/dicsount_products';
+import { renderFooter } from './js/footer';
 import { handleMediaChange } from './js/pagination';
 
 const mediaQuery = window.matchMedia('(min-width: 768px)');
@@ -19,3 +20,4 @@ handleMediaChange(mediaQuery);
 
 renderPopular();
 dataDiscountProd();
+renderFooter();
