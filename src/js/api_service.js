@@ -1,9 +1,20 @@
 import axios from 'axios';
 import { common } from './common';
+import '../css/home/loader.css';
+import { refs } from './refs';
+
+const loader = document.querySelector('.loader');
+console.dir(loader);
+// const divHome = document.querySelector('.home-sections');
+
+loader.addEventListener('click', onLoaderVisible);
+
+loader.style.display = 'none';
 
 // get a list of all products
 async function getData(query) {
   // return object {page, perPage, results[], totalPages}
+  onLoaderVisible();
   try {
     const response = await axios({
       url: `${common.BASE_URL}/products`,
@@ -14,6 +25,7 @@ async function getData(query) {
 
       params: query,
     });
+    onLoaderHidden();
     return response.data;
   } catch (error) {
     return error;
@@ -23,6 +35,7 @@ async function getData(query) {
 // get an object by ID
 async function getDataId(id) {
   // returns the card object
+  onLoaderVisible();
   try {
     const response = await axios({
       url: `${common.BASE_URL}/products/${id}`,
@@ -31,16 +44,17 @@ async function getDataId(id) {
         'Content-Type': 'aplication/json',
       },
     });
+    onLoaderHidden();
     return response.data;
   } catch (error) {
     return error;
-
   }
 }
 
 // get a list of popular products
 async function getPopular(limit) {
   // returns an array of data
+  onLoaderVisible();
   try {
     let query = null;
 
@@ -56,6 +70,7 @@ async function getPopular(limit) {
 
       params: query,
     });
+    onLoaderHidden();
     return response.data;
   } catch (error) {
     return error;
@@ -65,6 +80,7 @@ async function getPopular(limit) {
 // get a list of products with a discount
 async function getDiscount() {
   // returns an array of data
+  onLoaderVisible();
   try {
     const response = await axios({
       url: `${common.BASE_URL}/products/discount`,
@@ -73,6 +89,7 @@ async function getDiscount() {
         'Content-Type': 'aplication/json',
       },
     });
+    onLoaderHidden();
     return response.data;
   } catch (error) {
     return error;
@@ -82,6 +99,7 @@ async function getDiscount() {
 // get categories
 async function getCategories() {
   // returns an array of data
+  onLoaderVisible();
   try {
     const response = await axios({
       url: `${common.BASE_URL}/products/categories`,
@@ -90,6 +108,7 @@ async function getCategories() {
         'Content-Type': 'aplication/json',
       },
     });
+    onLoaderHidden();
     return response.data;
   } catch (error) {
     return error;
@@ -111,6 +130,7 @@ async function createOrder(email, productList) {
         products: productList,
       },
     });
+    onLoaderHidden();
     return response;
   } catch (error) {
     return error;
@@ -131,11 +151,22 @@ async function createSubscription(email) {
         email: email,
       },
     });
-
+    onLoaderHidden();
     return response.status;
   } catch (error) {
     return error.response.status;
   }
+}
+
+function onLoaderVisible() {
+  loader.style.display = 'flex';
+  loader.textContent = '';
+  refs.divHome.style.display = 'none';
+}
+
+function onLoaderHidden() {
+  loader.style.display = 'none';
+  refs.divHome.style.display = 'flex';
 }
 
 export {
@@ -146,4 +177,6 @@ export {
   getCategories,
   createOrder,
   createSubscription,
+  onLoaderVisible,
+  onLoaderHidden,
 };

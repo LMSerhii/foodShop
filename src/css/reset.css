@@ -21,10 +21,12 @@ ol {
   padding-left: 0;
   list-style: none;
 }
+
 a {
   text-decoration: none;
   color: currentColor;
 }
+
 button {
   cursor: pointer;
   font-family: inherit;

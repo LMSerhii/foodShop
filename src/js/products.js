@@ -1,6 +1,6 @@
 import { common } from './common';
 import { refs } from './refs';
-import { getData } from './api_service';
+import { getData, onLoaderHidden, onLoaderVisible } from './api_service';
 import { save, load } from './storage';
 import { addToCart } from './helpers/addToCart';
 import { productMarkup, notFoundMarkup } from './markupFunctions';
@@ -9,11 +9,11 @@ import { validChecked } from './helpers/validChecked';
 
 const renderProducts = async query => {
   const data = await getData(query);
-
   if (!data.results.length) {
     notFoundMarkup(refs.productList);
     return;
   }
+  // onLoaderVisible();
 
   save(common.PAGES, {
     page: data.page,
@@ -22,7 +22,9 @@ const renderProducts = async query => {
   });
 
   const result = validChecked(data.results);
+
   refs.productList.innerHTML = productMarkup(result);
+
   loadPaginationData();
 };
 
