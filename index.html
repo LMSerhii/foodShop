@@ -8,8 +8,8 @@
     
     <script type="module" crossorigin src="/foodShop/commonHelpers2.js"></script>
     <link rel="modulepreload" crossorigin href="/foodShop/assets/vendor-eaa4441d.js">
-    <link rel="modulepreload" crossorigin href="/foodShop/assets/refs-f5da4603.js">
-    <link rel="stylesheet" href="/foodShop/assets/refs-52411dba.css">
+    <link rel="modulepreload" crossorigin href="/foodShop/assets/refs-aa85e801.js">
+    <link rel="stylesheet" href="/foodShop/assets/refs-fe53b200.css">
     <link rel="stylesheet" href="/foodShop/assets/vendor-c2803487.css">
   </head>
   <body>
@@ -96,39 +96,51 @@
   <div class="container">
     <label class="form-label" for="filtersForm">Filters:</label>
     <form class="form" name="filters" id="filtersForm">
-
-      <form class="form" name="filters">
-        <!-- <label class="form-label" for="textInput">
+      <!-- <form class="form" name="filters"> -->
+      <!-- <label class="form-label" for="textInput">
         Filters:
       </label> -->
-
-        <div class="filter-input-wrapper">
-          <input class="filters-input js-input" type="text" id="textInput" name="search"
-            placeholder="Search for anything" />
-
-          <button class="search-btn" type="submit">
-
-            <svg class="search-btn-svg" width="20" height="20">
-              <use href="/foodShop/assets/sprite-10b57387.svg#search"></use>
-            </svg>
-          </button>
-        </div>
-        <select class="categories-select" id="categoryField" name="categories" aria-placeholder="Categories">
-          <option data-placeholder="true">Categories</option>
-        </select>
-        <select class="filters-select" id="abcField" name="alpabetSearch" aria-placeholder="A to Z">
-          <option data-placeholder="true">A to Z</option>
-          <option value="alphabetical">A to Z</option>
-          <option value="reverse-alphabetical">Z to A</option>
-          <option value="cheap">Cheap</option>
-          <option value="expensive">Expensive</option>
-          <option value="popular">Popular</option>
-          <option value="not-popular">Not popular</option>
-          <option value="">Show all</option>
-        </select>
-      </form>
+      <div class="filter-input-wrapper">
+        <input
+          class="filters-input js-input"
+          type="text"
+          id="textInput"
+          name="search"
+          placeholder="Search for anything"
+        />
+        <button class="search-btn" type="submit">
+          <svg class="search-btn-svg" width="20" height="20">
+            <use href="/foodShop/assets/sprite-10b57387.svg#search"></use>
+          </svg>
+        </button>
+      </div>
+      <select
+        class="categories-select"
+        id="categoryField"
+        name="categories"
+        aria-placeholder="Categories"
+      >
+        <option data-placeholder="true">Categories</option>
+      </select>
+      <select
+        class="filters-select"
+        id="abcField"
+        name="alpabetSearch"
+        aria-placeholder="A to Z"
+      >
+        <option data-placeholder="true">A to Z</option>
+        <option value="alphabetical">A to Z</option>
+        <option value="reverse-alphabetical">Z to A</option>
+        <option value="cheap">Cheap</option>
+        <option value="expensive">Expensive</option>
+        <option value="popular">Popular</option>
+        <option value="not-popular">Not popular</option>
+        <option value="">Show all</option>
+      </select>
+    </form>
   </div>
-</section>;
+</section>
+
   <div class="container">
 
   <h2 class="visually-hidden">Products</h2>
