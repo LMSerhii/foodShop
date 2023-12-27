@@ -432,21 +432,7 @@ const producCartMarkup = arrey => {
                       </div>
                       <div class="cart-product-counter ">
                           <p class="product-price product-name m">$${price}</p>
-                          <div class="counter-pr" id="counter">
-                              <div class="btn-counter">
-                                  <button class="cart-counter-txt" type="button" data-action="decrement">
-                                      <svg width="14" height="14">
-                                          <use href="${svg_sprite}#minus"></use>
-                                      </svg>
-                                  </button>
-                                      <span class="cart-counter-txt" id="value">0</span>
-                                  <button class="cart-counter-txt" type="button" data-action="increment">
-                                      <svg  width="14" height="14">
-                                          <use href="${svg_sprite}#plus"></use>
-                                      </svg>
-                                  </button>
-                              </div>
-                          </div>
+                          
                       </div>
               </li>`;
       } else {
@@ -469,21 +455,7 @@ const producCartMarkup = arrey => {
               </div>
               <div class="cart-product-counter">
                   <p class="product-price product-name m">$${price}</p>
-                  <div class="counter-pr" id="counter">
-                      <div class="btn-counter">
-                          <button class="cart-counter-txt" type="button" data-action="decrement">
-                              <svg width="14" height="14">
-                                  <use href="${svg_sprite}#minus"></use>
-                              </svg>
-                          </button>
-                              <span class="cart-counter-txt" id="value">0</span>
-                          <button class="cart-counter-txt" type="button" data-action="increment">
-                              <svg  width="14" height="14">
-                                  <use href="${svg_sprite}#plus"></use>
-                              </svg>
-                          </button>
-                      </div>
-                  </div>
+                  
               </div>
       </li>
               `;
