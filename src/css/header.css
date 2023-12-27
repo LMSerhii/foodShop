@@ -55,19 +55,44 @@
   font-weight: 900;
   line-height: 1.11;
   letter-spacing: -0.02em;
+
+  transition-property: background-color;
+  transition-duration: 500ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .logo-link:focus,
 .logo-link:hover {
   transform: scale(1.05);
+  background-color: #6d8434;
+  border-radius: 9px;
+  color: #e8e8e2;
+  width: 150px;
+  height: 45px;
+  flex-shrink: 0;
 }
+
 @media screen and (min-width: 375px) {
   .logo-link {
     font-size: 18px;
   }
+  .logo-link:focus,
+  .logo-link:hover {
+    color: #e8e8e2;
+    width: 190px;
+    height: 53px;
+  }
 }
+
 @media screen and (min-width: 768px) {
   .logo-link {
     font-size: 24px;
+  }
+  .logo-link:focus,
+  .logo-link:hover {
+    color: #e8e8e2;
+    width: 220px;
+    height: 60px;
   }
 }
 
