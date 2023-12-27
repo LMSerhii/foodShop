@@ -5,12 +5,15 @@
   padding-top: 40px;
   padding-bottom: 20px;
 }
+
 .footer-box {
   margin-bottom: 80px;
 }
+
 .footer-left-box {
   margin-bottom: 40px;
 }
+
 .footer-logo {
   color: var(--background);
   font-family: QuincyCF;
@@ -19,6 +22,7 @@
   line-height: 1.11;
   letter-spacing: -0.02em;
 }
+
 .with-logo-container {
   margin-bottom: 20px;
 }
@@ -27,6 +31,7 @@
   align-items: center;
   gap: 8px;
 }
+
 .cabbage-item {
   background-color: var(--background);
   width: 28px;
