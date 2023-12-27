@@ -49,7 +49,7 @@ const productMarkup = arrey => {
             <div class="card-bottom">
               <p class="card-producs-price">$${price}</p>
   
-              <button class="card-btn" type="button">
+              <button class="card-btn js-cart" type="button">
   
                   <svg class="card-btn-icon-check" width="18" height="18">
                       <use href="${svg_sprite}#check"></use>
@@ -121,7 +121,7 @@ const productMarkup = arrey => {
             <div class="card-bottom">
               <p class="card-producs-price">$${price}</p>
   
-              <button class="card-btn" type="button">
+              <button class="card-btn js-cart" type="button">
                   <svg class="card-btn-icon-check" width="18" height="18">
                       <use href="${svg_sprite}#check"></use>
                   </svg>
@@ -180,7 +180,7 @@ const errorMarkup = (element, status) => {
                                     Error<span>${status}</span>
                                 </p>
                                 <p class="error_text">
-                                    Ой, щось пішло не так ....
+                                  🤦‍♂️ Something has gone wrong ....
                                 </p>
                               </div>
   `;
@@ -256,7 +256,7 @@ const createMarkupPopular = arrey => {
 
         <div class="popular-card-bottom">
           
-          <button class="popular-card-btn" type="button">
+          <button class="popular-card-btn js-cart" type="button">
             <svg class="popular-icon-check" width="18" height="18">
               <use href="${svg_sprite}#check"></use>
             </svg>
@@ -327,7 +327,7 @@ const createDiscountMarkup = arrey => {
            <div class="discount-product-price-wrapper">
             <p class="discount-product-price">$${price}</p>
   
-            <button class="card-btn" type="button">
+            <button class="card-btn js-cart" type="button">
             <svg class="card-btn-icon-check" width="18" height="18">
                 <use href="${svg_sprite}#check"></use>
             </svg>

@@ -94,4 +94,71 @@ const succesOrder = arrey => {
           </div>`;
 };
 
-export { success, error, succesOrder };
+const modalProductMarkup = ({
+  name,
+  desc,
+  img,
+  category,
+  price,
+  size,
+  is10PercentOff,
+  popularity,
+}) => {
+  return `
+            <div class="modal">
+            <div class="container">
+              <div class="modal-box-product">
+                <button class="modal-product-close js-modal-close" type="button">
+                  <svg class="modal-icon" width="22" height="22">
+                    <use href="${svg_sprite}#close"></use>
+                  </svg>
+                </button>
+
+                <div class="modal-product-top">
+                  <div class="modal-product-img-box">
+                    <img
+                      class="modal-product-image"
+                      src="${img}"
+                      alt="${name}"
+                      width="160"
+                      height="160"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="modal-product-text-box">
+                    <p class="modal-product-name">${name}</p>
+                    <ul class="modal-product-list">
+                      <li class="modal-produt-item">Category:
+                        <span class="list-variables">${category}</span>
+                      </li>
+                      <li class="modal-produt-item">Size:
+                        <span class="list-variables">${size}</span>
+                      </li>
+                      <li class="modal-produt-item">Popularity:
+                        <span class="list-variables">${popularity}</span>
+                      </li>
+                    </ul>
+                    <p class="modal-product-desc">
+                      A round, orange vegetable with a thick shell and seeds inside. It is
+                      often used in cooking and baking for its sweet and earthy flavor.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="modal-product-bottom">
+                  <p class="modal-product-price">$${price}</p>
+                  <button class="modal-product-btn">
+                    Add to
+                    <svg class="modal-product-icon" width="18" height="18">
+                      <use href="${svg_sprite}#cart"></use>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+`;
+};
+
+export { success, error, succesOrder, modalProductMarkup };

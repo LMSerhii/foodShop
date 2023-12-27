@@ -14,15 +14,22 @@
 
 .modal-close {
   position: absolute;
-  top: 14px;
-  right: 14px;
+  top: 5px;
+  right: 5px;
   background-color: transparent;
   border: none;
 }
-.modal-icon {
+
+@media screen and (min-width: 375px) {
+  .modal-close {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    background-color: transparent;
+    border: none;
+  }
 }
-.modal-text-box {
-}
+
 .subscription-thanks {
   color: #010101;
   text-align: center;
@@ -86,4 +93,201 @@
   font-style: normal;
   font-weight: 400;
   line-height: 1.28;
+}
+
+/* product modal */
+
+.modal-product-close {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  background-color: transparent;
+  border: none;
+}
+
+@media screen and (min-width: 375px) {
+  .modal-product-close {
+    top: 14px;
+    right: 14px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .modal-product-close {
+    top: 24px;
+    right: 24px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .modal-product-close {
+    top: 30px;
+    right: 30px;
+  }
+}
+
+.modal-box-product {
+  position: relative;
+  padding: 30px 15px;
+  border-radius: 20px;
+  background-color: #fafafa;
+}
+
+@media screen and (min-width: 375px) {
+  .modal-box-product {
+    padding: 40px 20px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .modal-box-product {
+    padding: 40px 40px;
+  }
+}
+
+.modal-product-top {
+  margin-bottom: 40px;
+}
+
+@media screen and (min-width: 768px) {
+  .modal-product-top {
+    display: flex;
+    align-items: start;
+    gap: 24px;
+    margin-bottom: 48px;
+  }
+}
+
+.modal-product-img-box {
+  padding: 16px 36px;
+  border-radius: 10px;
+  background-color: #e8e8e2;
+  margin-bottom: 20px;
+}
+
+@media screen and (min-width: 375px) {
+  .modal-product-img-box {
+    padding: 26px 66px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .modal-product-img-box {
+    padding: 26px 40px;
+    margin-bottom: 0;
+  }
+}
+
+.modal-product-image {
+  width: 116px;
+  height: 116px;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 375px) {
+  .modal-product-image {
+    width: 160px;
+    height: 160px;
+  }
+}
+
+.modal-product-text-box {
+}
+.modal-product-name {
+  color: #010101;
+  font-family: Neue Montreal;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.11;
+  margin-bottom: 10px;
+}
+.modal-product-list {
+  margin-bottom: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .modal-product-list {
+    font-size: 20px;
+    line-height: 1.26;
+    max-width: 246px;
+  }
+}
+
+@media screen and (min-width: 375px) {
+  .modal-product-list {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+}
+
+.modal-produt-item {
+  color: rgba(1, 1, 1, 0.3);
+  font-family: Neue Montreal;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.16;
+  margin-bottom: 8px;
+}
+
+@media screen and (min-width: 375px) {
+  .modal-produt-item {
+    margin-bottom: 0;
+  }
+}
+
+.list-variables {
+  color: #010101;
+}
+.modal-product-desc {
+  color: rgba(1, 1, 1, 0.7);
+  font-family: Neue Montreal;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.28;
+}
+
+@media screen and (min-width: 768px) {
+  .modal-product-desc {
+    font-size: 16px;
+    max-width: 256px;
+  }
+}
+
+.modal-product-bottom {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+}
+.modal-product-price {
+  color: #010101;
+  font-family: Neue Montreal;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.11;
+}
+.modal-product-btn {
+  width: 116px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #e8e8e2;
+  font-family: Neue Montreal;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.28;
+  border-radius: 30px;
+  background-color: #6d8434;
+  border: none;
+}
+.modal-product-icon {
+  fill: #e8e8e2;
+  margin-left: 10px;
 }

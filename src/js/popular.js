@@ -5,6 +5,7 @@ import { save, load } from './storage';
 import { createMarkupPopular } from './markupFunctions';
 import { addToCartFromPopular } from './helpers/addToCart';
 import { validChecked } from './helpers/validChecked';
+import { openModal } from './helpers/openModal';
 
 const renderPopular = async () => {
   const response = await getPopular();
@@ -12,11 +13,6 @@ const renderPopular = async () => {
     notFoundMarkup(refs.popularProductList);
     return;
   }
-  // save(common.PAGES, {
-  //   page: results.page,
-  //   perPage: results.perPage,
-  //   totalPages: results.totalPages,
-  // });
 
   const results = validChecked(response);
 
@@ -29,11 +25,10 @@ const onPopularList = evt => {
 
   if (evt.target.closest('.js-cart')) {
     addToCartFromPopular(evt);
+    return;
   }
 
-  if (evt.target.classList.contains('js-info')) {
-    openModal(evt);
-  }
+  openModal(evt, refs.popularProductList);
 };
 
 refs.popularProductList.addEventListener('click', onPopularList);

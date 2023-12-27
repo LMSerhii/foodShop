@@ -4,6 +4,7 @@ import { createDiscountMarkup } from './markupFunctions';
 import { addToCart } from './helpers/addToCart';
 import { getRandomProduct } from './helpers/getRandomProduct';
 import { validChecked } from './helpers/validChecked';
+import { openModal } from './helpers/openModal';
 
 // fetch data
 const dataDiscountProd = async () => {
@@ -25,11 +26,10 @@ const clickOnDiscount = evt => {
 
   if (evt.target.closest('.js-cart')) {
     addToCart(evt);
+    return;
   }
 
-  if (evt.target.classList.contains('js-info')) {
-    openModal(evt);
-  }
+  openModal(evt, refs.discProdList);
 };
 
 refs.discProdList.addEventListener('click', clickOnDiscount);

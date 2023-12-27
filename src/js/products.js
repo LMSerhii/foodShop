@@ -6,6 +6,7 @@ import { addToCart } from './helpers/addToCart';
 import { productMarkup, notFoundMarkup } from './markupFunctions';
 import { loadPaginationData } from './pagination';
 import { validChecked } from './helpers/validChecked';
+import { openModal } from './helpers/openModal';
 
 const renderProducts = async query => {
   refs.productList.innerHTML = `<div class="loader-box"><span class="loader"></span></div>`;
@@ -33,13 +34,16 @@ const renderProducts = async query => {
 const onProductList = evt => {
   evt.preventDefault();
 
-  if (evt.target.closest('.js-cart')) {
-    addToCart(evt);
+  if (evt.currentTarget === evt.target) {
+    return;
   }
 
-  if (evt.target.classList.contains('js-info')) {
-    openModal(evt);
+  if (evt.target.closest('.js-cart')) {
+    addToCart(evt);
+    return;
   }
+
+  openModal(evt, refs.productList);
 };
 
 refs.productList.addEventListener('click', onProductList);
