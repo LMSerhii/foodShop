@@ -16,8 +16,11 @@ const storage_query = load(common.LOCAL_QUERY_KEY) ?? [];
 renderSelects();
 
 renderProducts(storage_query);
+
 handleMediaChange(mediaQuery);
 
 renderPopular();
 dataDiscountProd();
 renderFooter();
+
+

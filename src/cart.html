@@ -11,6 +11,7 @@
   </head>
   <body>
     <load src="partials/header.html" />
+    
     <section class="cart-section">
       <!-- Title -->
       <div class="container">
@@ -44,12 +45,13 @@
             </div>
           </div>
 
-          <form>
+          <form class="order-form">
             <input
               class="form-input"
               type="email"
               name="user-email"
               id="user-email"
+              pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
               placeholder="Mail:   Enter your email"
               title="Wrong email"
               required
@@ -63,6 +65,7 @@
       <!-- <p class="cart-value">Cart()</p> -->
       <!-- <ul class="cart-list"></ul> -->
     </section>
+    <load src="partials/footer.html" />
     <script type="module" src="./js/cart.js"></script>
   </body>
 </html>
