@@ -125,6 +125,14 @@
   border-bottom-right-radius: 15px;
 }
 
+.ss-content.ss-open-above {
+  padding: 14px 20px;
+
+  border-radius: 15px;
+  border-top-right-radius: 15px !important;
+  border-top-left-radius: 15px !important;
+}
+
 .ss-main .ss-arrow {
   margin-right: 20px !important;
 }
@@ -171,36 +179,92 @@
   background-color: transparent !important;
 }
 
-/* якщо закоментувати оце все внизу, то категорії випадають гарно */
+/* МЕДИАПРАВИЛА ДЛЯ ВЫПАДАЮЩИХ СПИСКОВ СЕЛЕКТА  */
 
-/* .ss-content.categories-select.ss-open-below {
-  top: 204.312px !important;
-} */
+.ss-content.categories-select.ss-open-below {
+  top: 806.312px !important;
+}
 
-/* @media screen and (min-width: 375px) {
+@media screen and (min-width: 375px) {
   .ss-content.categories-select.ss-open-below {
-    top: 217.512px !important;
+    top: 959.55px !important;
   }
-} */
-/* 
+}
+
 @media screen and (min-width: 768px) {
   .ss-content.categories-select.ss-open-below {
-    top: 166.55px !important;
+    top: 1172.83px !important;
   }
-} */
+}
 
-/* .ss-content.filters-select.ss-open-below {
-  top: 264.312px !important;
-} */
+@media screen and (min-width: 1440px) {
+  .ss-content.categories-select.ss-open-below {
+    top: 823.825px !important;
+  }
+}
 
-/* @media screen and (min-width: 375px) {
+.ss-content.filters-select.ss-open-below {
+  top: 866.238px !important;
+}
+
+@media screen and (min-width: 375px) {
   .ss-content.filters-select.ss-open-below {
-    top: 277.513px !important;
+    top: 1019.55px !important;
   }
-} */
+}
 
-/* @media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) {
   .ss-content.filters-select.ss-open-below {
-    top: 166.513px !important;
+    top: 1172.83px !important;
   }
-} */
+}
+
+@media screen and (min-width: 1440px) {
+  .ss-content.filters-select.ss-open-below {
+    top: 823.825px !important;
+  }
+}
+
+.ss-content.categories-select.ss-open-above {
+  top: 790.238px !important;
+}
+
+@media screen and (min-width: 375px) {
+  .ss-content.categories-select.ss-open-above {
+    top: 943.55px !important;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .ss-content.categories-select.ss-open-above {
+    top: 1156.83px !important;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .ss-content.categories-select.ss-open-above {
+    top: 807.825px !important;
+  }
+}
+
+.ss-content.filters-select.ss-open-above {
+  top: 850.238px !important;
+}
+
+@media screen and (min-width: 375px) {
+  .ss-content.filters-select.ss-open-above {
+    top: 1003.55px !important;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .ss-content.filters-select.ss-open-above {
+    top: 1156.83px !important;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .ss-content.filters-select.ss-open-above {
+    top: 807.825px !important;
+  }
+}
