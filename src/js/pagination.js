@@ -18,20 +18,12 @@ const handleMediaChange = event => {
     visPagesPag = 2;
     loadPaginationDataOnChangeViewport();
   }
-  console.log(visPagesPag);
 };
-
-handleMediaChange(mediaQuery);
 
 mediaQuery.addEventListener('change', handleMediaChange);
 
 //Функция создания и управления пагинацией при изменении вьюпорта
 function loadPaginationDataOnChangeViewport() {
-  const pages = load(common.PAGES) ?? {};
-
-  if (!pages.length) {
-    return;
-  }
 
   const currPage = load(common.PAGES).page;
   const currPerPage = load(common.PAGES).perPage;
