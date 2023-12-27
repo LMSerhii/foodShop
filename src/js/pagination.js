@@ -18,9 +18,10 @@ const handleMediaChange = event => {
     visPagesPag = 2;
     loadPaginationDataOnChangeViewport();
   }
+  console.log(visPagesPag);
 };
 
-// handleMediaChange(mediaQuery);
+handleMediaChange(mediaQuery);
 
 mediaQuery.addEventListener('change', handleMediaChange);
 

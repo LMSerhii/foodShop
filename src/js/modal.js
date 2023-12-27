@@ -1,5 +1,5 @@
-import * as basicLightbox from 'basiclightbox';
-import '../../node_modules/basiclightbox/dist/basicLightbox.min.css';
+// import * as basicLightbox from 'basiclightbox';
+// import '../../node_modules/basiclightbox/dist/basicLightbox.min.css';
 import { refs } from './refs';
 
 const openModalFooter = (element, markup) => {
