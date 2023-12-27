@@ -58,6 +58,9 @@
 @media screen and (min-width: 768px) {
   .card {
     width: calc((100% - 32px) / 2);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
   .card:not(:last-child) {
     margin-bottom: 0;
@@ -74,11 +77,11 @@
   }
 }
 
-@media screen and (min-width: 768px) {
+/* @media screen and (min-width: 768px) {
   .card-top {
     margin-bottom: 50px;
   }
-}
+}  */
 
 .card-img-wrapper {
   display: flex;
