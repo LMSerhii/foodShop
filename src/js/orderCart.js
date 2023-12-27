@@ -64,6 +64,9 @@ async function handleOrder() {
     console.error('Помилка при замовленні:', error);
   }
 }
+  
+  const checkoutButton = document.getElementById('checkoutButton');
+
 
 // Обробник події для кнопки
 const orderBtn = document.getElementById('checkoutButton');

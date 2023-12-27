@@ -1,4 +1,5 @@
 import svg_sprite from '../img/sprite.svg';
+import empty_basket from '../img/yellow_shopping_basket.png'
 
 // products
 
@@ -390,8 +391,7 @@ const createDiscountMarkup = arrey => {
 
 const producCartMarkup = arrey => {
   if (!arrey.length) {
-  deleteContainer.classList.add('visually-hidden');
-  orderContainer.classList.add('visually-hidden');
+ 
   return `
   <img class="basket-img" src="${empty_basket}" alt="Yellow empty basket">
   <div class="basket-text">
@@ -420,7 +420,7 @@ const producCartMarkup = arrey => {
                               <h2 class="product-name">${name}</h2>
                               <button type="button" id="test" class="btn-del-product js-close" data-product-id="${_id}">
                                   <svg class="delete-icon js-close" width="18" height="18">
-                                      <use href="${svg_sprite}#close"></use>
+                                      <use class="js-close" href="${svg_sprite}#close"></use>
                                   </svg>
                               </button>
                       </div>
@@ -432,48 +432,32 @@ const producCartMarkup = arrey => {
                       </div>
                       <div class="cart-product-counter ">
                           <p class="product-price product-name m">$${price}</p>
-                          <div class="counter-pr" id="counter">
-                              <div class="btn-counter">
-                                  <button class="cart-counter-txt" type="button" data-action="decrement">
-                                      <svg width="14" height="14">
-                                          <use href="${svg_sprite}#minus"></use>
-                                      </svg>
-                                  </button>
-                                      <span class="cart-counter-txt" id="value">0</span>
-                                  <button class="cart-counter-txt" type="button" data-action="increment">
-                                      <svg  width="14" height="14">
-                                          <use href="${svg_sprite}#plus"></use>
-                                      </svg>
-                                  </button>
-                              </div>
-                          </div>
+                          
                       </div>
               </li>`;
       } else {
           return `<li class="js-card product-card" data-id=${_id}>
-                  <img class="product-card-img" src="${img}" alt="${name}">
-                      <div class="product-container">
-                          <div class="product-title">
-                              <h2 class="product-name">${name}</h2>
-                              <button type="button" id="test" class="btn-del-product js-close" data-product-id="${_id}">
-                                  <svg class="delete-icon js-close" width="18" height="18">
-                                      <use href="${svg_sprite}#close"></use>
-                                  </svg>
-                              </button>
-                      </div>
-                      <div class="product-category">
-                          <p class="product-info"><span class="info-style">Category:</span> ${category.replace(
-                              '_',
-                              ' '
-                          )} <span class="info-style info-space">Size:</span> ${size}</p>
-                      </div>
-                      <p class="product-price product-name m">$${price}</p>
-                      <div id="counter">
-                          <button type="button" data-action="decrement">-1</button>
-                              <span id="value">0</span>
-                          <button type="button" data-action="increment">+1</button>
-                      </div>
-              </li>
+          <img class="product-card-img" src="${img}" alt="${name}">
+              <div class="product-container">
+                  <div class="product-title">
+                      <h2 class="product-name">${name}</h2>
+                      <button type="button" id="test" class="btn-del-product js-close" data-product-id="${_id}">
+                          <svg class="delete-icon js-close" width="18" height="18">
+                              <use class="js-close" href="${svg_sprite}#close"></use>
+                          </svg>
+                      </button>
+              </div>
+              <div class="product-category">
+                  <p class="product-info"><span class="info-style">Category:</span> ${category.replace(
+                      '_',
+                      ' '
+                  )} <span class="info-style info-space">Size:</span> ${size}</p>
+              </div>
+              <div class="cart-product-counter">
+                  <p class="product-price product-name m">$${price}</p>
+                  
+              </div>
+      </li>
               `;
       }
       }
