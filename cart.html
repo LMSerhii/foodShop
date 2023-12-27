@@ -10,9 +10,9 @@
     
     <script type="module" crossorigin src="/foodShop/commonHelpers.js"></script>
     <link rel="modulepreload" crossorigin href="/foodShop/assets/vendor-85c19974.js">
-    <link rel="modulepreload" crossorigin href="/foodShop/assets/madalMarkups-60818945.js">
+    <link rel="modulepreload" crossorigin href="/foodShop/assets/madalMarkups-718ca2de.js">
     <link rel="stylesheet" href="/foodShop/assets/vendor-dd4f2fd2.css">
-    <link rel="stylesheet" href="/foodShop/assets/madalMarkups-c3f2e93d.css">
+    <link rel="stylesheet" href="/foodShop/assets/madalMarkups-8f59449f.css">
   </head>
   <body>
     <header class="header">
@@ -48,6 +48,7 @@
   </div>
 </header>
 
+    
     <section class="cart-section">
       <!-- Title -->
       <div class="container">
@@ -81,12 +82,13 @@
             </div>
           </div>
 
-          <form>
+          <form class="order-form">
             <input
               class="form-input"
               type="email"
               name="user-email"
               id="user-email"
+              pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
               placeholder="Mail:   Enter your email"
               title="Wrong email"
               required
@@ -100,6 +102,100 @@
       <!-- <p class="cart-value">Cart()</p> -->
       <!-- <ul class="cart-list"></ul> -->
     </section>
+    <footer class="footer">
+  <div class="container footer-container">
+    <div class="footer-box">
+      <div class="footer-left-box">
+        <div class="with-logo-container">
+          <ul class="list logo-list">
+            <li class="cabbage-item">
+              <svg class="footer-cabbage-icon" width="20" height="20">
+                <use href="/foodShop/assets/sprite-10b57387.svg#cabbage"></use>
+              </svg>
+            </li>
+            <li class="logo-item">
+              <a href="" class="link logo-link footer-logo">Food Boutique</a>
+            </li>
+          </ul>
+        </div>
+        <div class="social-media-container">
+          <ul class="list social-media-list">
+            <li class="icon-box">
+              <a
+                class="footer-social-links"
+                href="https://www.facebook.com/goITclub/"
+                ><svg class="social-icon" width="28" height="28">
+                  <use href="/foodShop/assets/sprite-10b57387.svg#facebook"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="icon-box">
+              <a
+                href="https://www.instagram.com/goitclub/"
+                class="footer-social-links"
+                ><svg class="social-icon" width="28" height="28">
+                  <use href="/foodShop/assets/sprite-10b57387.svg#instagram"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="icon-box">
+              <a
+                href="https://www.youtube.com/c/GoIT"
+                class="footer-social-links"
+              >
+                <svg class="social-icon" width="28" height="28">
+                  <use href="/foodShop/assets/sprite-10b57387.svg#youtube"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="text-subscribe-box">
+        <div class="footer-text-box">
+          <h3 class="footer-text">
+            Discover the Variety of Flavors and Quality
+          </h3>
+          <p class="footer-paragraph">
+            An online store where you will find fresh, natural and delicious
+            products for a healthy life and unforgettable gastronomic
+            adventures.
+          </p>
+        </div>
+        <div class="subscribe-box">
+          <p class="subscribe-paragraph">
+            Subscribe and learn about new products!
+          </p>
+          <form class="subscribe-form">
+            <label class="subscribe-label">
+              <input
+                type="email"
+                name="user_address"
+                class="subscribe-input"
+                placeholder="E-mail"
+                pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
+              />
+            </label>
+            <button type="submit" class="button send-btn">Send</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="policy-box">
+      <ul class="policy-list">
+        <li class="policy-item">
+          <p class="policy-paragraph">Food Boutique. All rights reserved.</p>
+        </li>
+        <li class="policy-item">
+          <a href="" class="policy-paragraph link"
+            >Privacy Policy / Terms of Service</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
     
   </body>
 </html>

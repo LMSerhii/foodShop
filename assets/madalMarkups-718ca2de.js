@@ -1,4 +1,4 @@
-import{a as n,b as h}from"./vendor-85c19974.js";(function(){const s=document.createElement("link").relList;if(s&&s.supports&&s.supports("modulepreload"))return;for(const a of document.querySelectorAll('link[rel="modulepreload"]'))o(a);new MutationObserver(a=>{for(const r of a)if(r.type==="childList")for(const i of r.addedNodes)i.tagName==="LINK"&&i.rel==="modulepreload"&&o(i)}).observe(document,{childList:!0,subtree:!0});function e(a){const r={};return a.integrity&&(r.integrity=a.integrity),a.referrerpolicy&&(r.referrerPolicy=a.referrerpolicy),a.crossorigin==="use-credentials"?r.credentials="include":a.crossorigin==="anonymous"?r.credentials="omit":r.credentials="same-origin",r}function o(a){if(a.ep)return;a.ep=!0;const r=e(a);fetch(a.href,r)}})();const v=(t,s)=>{try{const e=JSON.stringify(s);localStorage.setItem(t,e)}catch(e){console.error("Set state error: ",e.message)}},m=t=>{try{const s=localStorage.getItem(t);return s===null?void 0:JSON.parse(s)}catch(s){console.error("Get state error: ",s.message)}},b=t=>{try{localStorage.removeItem(t)}catch(s){console.error("Get state error: ",s.message)}},d={BASE_URL:"https://food-boutique.b.goit.study/api",LOCAL_CART_KEY:"cart",LOCAL_QUERY_KEY:"query",LOCAL_SORT:"sort",INIT_QUERY:{keyword:null,category:null,page:1,limit:6},PAGES:"pages",ORDER:"order",NUMBER_OF_DISCOUNT:2},c="/foodShop/assets/sprite-10b57387.svg",y=t=>{if(t.length)return t.map(({_id:s,name:e,img:o,category:a,price:r,size:i,is10PercentOff:l,popularity:u,isChecked:p})=>l?p?`<li class="card js-card" data-id=${s}>
+import{a as l,b as h}from"./vendor-85c19974.js";(function(){const s=document.createElement("link").relList;if(s&&s.supports&&s.supports("modulepreload"))return;for(const a of document.querySelectorAll('link[rel="modulepreload"]'))o(a);new MutationObserver(a=>{for(const r of a)if(r.type==="childList")for(const i of r.addedNodes)i.tagName==="LINK"&&i.rel==="modulepreload"&&o(i)}).observe(document,{childList:!0,subtree:!0});function e(a){const r={};return a.integrity&&(r.integrity=a.integrity),a.referrerpolicy&&(r.referrerPolicy=a.referrerpolicy),a.crossorigin==="use-credentials"?r.credentials="include":a.crossorigin==="anonymous"?r.credentials="omit":r.credentials="same-origin",r}function o(a){if(a.ep)return;a.ep=!0;const r=e(a);fetch(a.href,r)}})();const v=(t,s)=>{try{const e=JSON.stringify(s);localStorage.setItem(t,e)}catch(e){console.error("Set state error: ",e.message)}},y=t=>{try{const s=localStorage.getItem(t);return s===null?void 0:JSON.parse(s)}catch(s){console.error("Get state error: ",s.message)}},b=t=>{try{localStorage.removeItem(t)}catch(s){console.error("Get state error: ",s.message)}},d={BASE_URL:"https://food-boutique.b.goit.study/api",LOCAL_CART_KEY:"cart",LOCAL_QUERY_KEY:"query",LOCAL_SORT:"sort",INIT_QUERY:{keyword:null,category:null,page:1,limit:6},PAGES:"pages",ORDER:"order",NUMBER_OF_DISCOUNT:2},c="/foodShop/assets/sprite-10b57387.svg",g="/foodShop/assets/yellow_shopping_basket-566aede4.png",f=t=>{if(t.length)return t.map(({_id:s,name:e,img:o,category:a,price:r,size:i,is10PercentOff:n,popularity:u,isChecked:p})=>n?p?`<li class="card js-card" data-id=${s}>
             <div class="card-top">
   
               <div class="card-img-wrapper">
@@ -127,7 +127,7 @@ import{a as n,b as h}from"./vendor-85c19974.js";(function(){const s=document.cre
               </button>
   
             </div>
-        </li>`).join("")},f=t=>{t.innerHTML=`<div class="notFound_box">
+        </li>`).join("")},$=t=>{t.innerHTML=`<div class="notFound_box">
                               <p class="notFound_title">
                                   Nothing was found for the selected <span>filters...</span>
                               </p>
@@ -136,7 +136,7 @@ import{a as n,b as h}from"./vendor-85c19974.js";(function(){const s=document.cre
                                 find the perfect product for you.
                               </p>
                               </div>
-                            `},$=t=>t.length?t.map(s=>`<option value="${s}">${s.replace("_"," ").replace("_"," ")}</option>`).join(""):'<option value="not_found_categories">Not found categories</option>',w=t=>t.map(s=>`<option value="${s.value}">${s.label}</option>`).join(""),S=t=>{if(!t.length){console.log("Sorry not data");return}return t.map(({_id:s,name:e,img:o,category:a,size:r,popularity:i,isChecked:l})=>l?`<li class="popular-card js-card" data-id=${s}>
+                            `},w=t=>t.length?t.map(s=>`<option value="${s}">${s.replace("_"," ").replace("_"," ")}</option>`).join(""):'<option value="not_found_categories">Not found categories</option>',S=t=>t.map(s=>`<option value="${s.value}">${s.label}</option>`).join(""),j=t=>{if(!t.length){console.log("Sorry not data");return}return t.map(({_id:s,name:e,img:o,category:a,size:r,popularity:i,isChecked:n})=>n?`<li class="popular-card js-card" data-id=${s}>
         <div class="popular-box">
           <div class="popular-wraper">
             <div class="popular-card-img-wrap">
@@ -197,7 +197,7 @@ import{a as n,b as h}from"./vendor-85c19974.js";(function(){const s=document.cre
           </button>
         </div>
         </div>
-    </li>`).join("")},j=t=>t.map(({img:s,name:e,price:o,_id:a,is10PercentOff:r,isChecked:i})=>r?i?`
+    </li>`).join("")},_=t=>t.map(({img:s,name:e,price:o,_id:a,is10PercentOff:r,isChecked:i})=>r?i?`
           <li class="discount-product-element js-card" data-id=${a}>
   
             <svg class="discount-label" width="60" height="60">
@@ -267,27 +267,25 @@ import{a as n,b as h}from"./vendor-85c19974.js";(function(){const s=document.cre
                     find the perfect product for you.
                   </p>
                 </div>
-      `).join(""),x=t=>t.length?t.map(({_id:s,name:e,img:o,category:a,price:r,size:i,is10PercentOff:l,popularity:u})=>l?`<li class="js-card product-card" data-id=${s}>
-                  <img class="product-card-img" src="${o}" alt="${e}">
-                      <div class="product-container">
-                          <div class="product-title">
-                              <h2 class="product-name">${e}</h2>
-                              <button type="button" id="test" class="btn-del-product js-close" data-product-id="${s}">
-                                  <svg class="delete-icon js-close" width="18" height="18">
-                                      <use href="${c}#close"></use>
-                                  </svg>
-                              </button>
-                      </div>
-                      <div class="product-category">
-                          <p class="product-info"><span class="info-style">Category:</span> ${a.replace("_"," ")} <span class="info-style info-space">Size:</span> ${i}</p>
-                      </div>
-                      <p class="product-price product-name m">$${r}</p>
-                      <div id="counter">
-                          <button type="button" data-action="decrement">-1</button>
-                              <span id="value">0</span>
-                          <button type="button" data-action="increment">+1</button>
-                      </div>
-              </li>
+      `).join(""),k=t=>t.length?t.map(({_id:s,name:e,img:o,category:a,price:r,size:i,is10PercentOff:n,popularity:u})=>n?`<li class="js-card product-card" data-id=${s}>
+          <img class="product-card-img" src="${o}" alt="${e}">
+              <div class="product-container">
+                  <div class="product-title">
+                      <h2 class="product-name">${e}</h2>
+                      <button type="button" id="test" class="btn-del-product js-close" data-product-id="${s}">
+                          <svg class="delete-icon js-close" width="18" height="18">
+                              <use class="js-close" href="${c}#close"></use>
+                          </svg>
+                      </button>
+              </div>
+              <div class="product-category">
+                  <p class="product-info"><span class="info-style">Category:</span> ${a.replace("_"," ")} <span class="info-style info-space">Size:</span> ${i}</p>
+              </div>
+              <div class="cart-product-counter">
+                  <p class="product-price product-name m">$${r}</p>
+                  
+              </div>
+      </li>
               `:`<li class="js-card product-card" data-id=${s}>
                   <img class="product-card-img" src="${o}" alt="${e}">
                       <div class="product-container">
@@ -295,7 +293,7 @@ import{a as n,b as h}from"./vendor-85c19974.js";(function(){const s=document.cre
                               <h2 class="product-name">${e}</h2>
                               <button type="button" id="test" class="btn-del-product js-close" data-product-id="${s}">
                                   <svg class="delete-icon js-close" width="18" height="18">
-                                      <use href="${c}#close"></use>
+                                      <use class="js-close" href="${c}#close"></use>
                                   </svg>
                               </button>
                       </div>
@@ -304,29 +302,15 @@ import{a as n,b as h}from"./vendor-85c19974.js";(function(){const s=document.cre
                       </div>
                       <div class="cart-product-counter ">
                           <p class="product-price product-name m">$${r}</p>
-                          <div class="counter-pr" id="counter">
-                              <div class="btn-counter">
-                                  <button class="cart-counter-txt" type="button" data-action="decrement">
-                                      <svg width="14" height="14">
-                                          <use href="${c}#minus"></use>
-                                      </svg>
-                                  </button>
-                                      <span class="cart-counter-txt" id="value">0</span>
-                                  <button class="cart-counter-txt" type="button" data-action="increment">
-                                      <svg  width="14" height="14">
-                                          <use href="${c}#plus"></use>
-                                      </svg>
-                                  </button>
-                              </div>
-                          </div>
+                          
                       </div>
-              </li>`).join(""):(deleteContainer.classList.add("visually-hidden"),orderContainer.classList.add("visually-hidden"),`
-  <img class="basket-img" src="${empty_basket}" alt="Yellow empty basket">
+              </li>`).join(""):`
+  <img class="basket-img" src="${g}" alt="Yellow empty basket">
   <div class="basket-text">
       <p class="empty-text"> Your basket is <span>empty...</span></p>
       <p class="empty-comment">Go to the main page to select your favorite products and add them to the cart.</p>
   </div>
-  `);async function L(t){try{return(await n({url:`${d.BASE_URL}/products`,method:"GET",header:{"Content-Type":"aplication/json"},params:t})).data}catch(s){return s}}async function _(t){try{return(await n({url:`${d.BASE_URL}/products/${t}`,method:"GET",header:{"Content-Type":"aplication/json"}})).data}catch(s){return s}}async function k(t){try{let s=null;return t&&(s={limit:t}),(await n({url:`${d.BASE_URL}/products/popular`,method:"GET",header:{"Content-Type":"aplication/json"},params:s})).data}catch(s){return s}}async function C(){try{return(await n({url:`${d.BASE_URL}/products/discount`,method:"GET",header:{"Content-Type":"aplication/json"}})).data}catch(t){return t}}async function E(){try{return(await n({url:`${d.BASE_URL}/products/categories`,method:"GET",header:{"Content-Type":"aplication/json"}})).data}catch(t){return t}}async function q(t,s){try{return await n({url:"https://food-boutique.b.goit.study/api/orders",method:"POST",headers:{"Content-Type":"application/json"},data:{email:t,products:s}})}catch(e){return e}}async function T(t){try{return(await n({url:`${d.BASE_URL}/subscription`,method:"POST",headers:{"Content-Type":"application/json"},data:{email:t}})).status}catch(s){return s.response.status}}const O={productList:document.querySelector(".product-list"),searchField:document.querySelector(".js-input"),categoryField:document.querySelector("#categoryField"),abcField:document.querySelector("#abcField"),form:document.querySelector(".form"),productList:document.querySelector(".product-list"),emailForm:document.querySelector(".subscribe-form"),emailInput:document.querySelector(".subscribe-input"),sendBtn:document.querySelector(".send-btn"),popularProductList:document.querySelector(".popular-products"),totalAmountDisplay:document.querySelector(".total-amount"),cartList:document.querySelector(".cart-product-list"),deleteAllButton:document.getElementById("deleteAllButton"),productsCount:document.getElementById("product-count"),dicsProd:document.querySelector(".discount-product-list"),discProdList:document.querySelector(".discount-product-list"),paginationContainer:document.getElementById("pagination-container"),popularProductList:document.querySelector(".popular_products_list"),productsCountHeader:document.querySelector("#product-count-header")},P=(t,s)=>{const e=a=>{a.code==="Escape"&&o.close()},o=h.create(s,{onShow:a=>{t.addEventListener("keydown",e),a.element().querySelector(".js-modal-close").onclick=()=>a.close()},onClose:a=>{t.removeEventListener("keydown",e)}});o.show()},F=`
+  `;async function x(t){try{return(await l({url:`${d.BASE_URL}/products`,method:"GET",header:{"Content-Type":"aplication/json"},params:t})).data}catch(s){return s}}async function E(t){try{return(await l({url:`${d.BASE_URL}/products/${t}`,method:"GET",header:{"Content-Type":"aplication/json"}})).data}catch(s){return s}}async function L(t){try{let s=null;return t&&(s={limit:t}),(await l({url:`${d.BASE_URL}/products/popular`,method:"GET",header:{"Content-Type":"aplication/json"},params:s})).data}catch(s){return s}}async function C(){try{return(await l({url:`${d.BASE_URL}/products/discount`,method:"GET",header:{"Content-Type":"aplication/json"}})).data}catch(t){return t}}async function q(){try{return(await l({url:`${d.BASE_URL}/products/categories`,method:"GET",header:{"Content-Type":"aplication/json"}})).data}catch(t){return t}}async function T(t,s){try{return await l({url:"https://food-boutique.b.goit.study/api/orders",method:"POST",headers:{"Content-Type":"application/json"},data:{email:t,products:s}})}catch(e){return e}}async function O(t){try{return(await l({url:`${d.BASE_URL}/subscription`,method:"POST",headers:{"Content-Type":"application/json"},data:{email:t}})).status}catch(s){return s.response.status}}const P={productList:document.querySelector(".product-list"),searchField:document.querySelector(".js-input"),categoryField:document.querySelector("#categoryField"),abcField:document.querySelector("#abcField"),form:document.querySelector(".form"),productList:document.querySelector(".product-list"),emailForm:document.querySelector(".subscribe-form"),emailInput:document.querySelector(".subscribe-input"),sendBtn:document.querySelector(".send-btn"),popularProductList:document.querySelector(".popular-products"),totalAmountDisplay:document.querySelector(".total-amount"),cartList:document.querySelector(".cart-product-list"),deleteAllButton:document.getElementById("deleteAllButton"),productsCount:document.getElementById("product-count"),dicsProd:document.querySelector(".discount-product-list"),discProdList:document.querySelector(".discount-product-list"),paginationContainer:document.getElementById("pagination-container"),popularProductList:document.querySelector(".popular_products_list"),productsCountHeader:document.querySelector("#product-count-header")},F=(t,s)=>{const e=a=>{a.code==="Escape"&&o.close()},o=h.create(s,{onShow:a=>{t.addEventListener("keydown",e),a.element().querySelector(".js-modal-close").onclick=()=>a.close()},onClose:a=>{t.removeEventListener("keydown",e)}});o.show()},A=`
                   <div class="modal">
 
                     <div class="container">
@@ -367,7 +351,7 @@ import{a as n,b as h}from"./vendor-85c19974.js";(function(){const s=document.cre
                     </div>
 
                   </div>
-`,A=`
+`,B=`
               <div class="modal">
 
                 <div class="container">
@@ -389,7 +373,7 @@ import{a as n,b as h}from"./vendor-85c19974.js";(function(){const s=document.cre
                 </div>
 
               </div>
-              `,B=t=>{const{img:s,name:e}=t[0];return`<div class="modal">
+              `,R=t=>{const{img:s,name:e}=t[0];return`<div class="modal">
             <div class="container">
               <div class="order-modal-box">
                 <button class="modal-close js-modal-close" type="button">
@@ -408,5 +392,5 @@ import{a as n,b as h}from"./vendor-85c19974.js";(function(){const s=document.cre
                 </p>
               </div>
             </div>
-          </div>`};export{q as a,B as b,d as c,b as d,c as e,L as f,_ as g,y as h,E as i,$ as j,w as k,m as l,k as m,f as n,P as o,x as p,S as q,O as r,v as s,C as t,j as u,T as v,A as w,F as x};
-//# sourceMappingURL=madalMarkups-60818945.js.map
+          </div>`};export{T as a,R as b,d as c,b as d,g as e,c as f,E as g,x as h,f as i,q as j,w as k,y as l,S as m,$ as n,F as o,k as p,L as q,P as r,v as s,j as t,C as u,_ as v,O as w,B as x,A as y};
+//# sourceMappingURL=madalMarkups-718ca2de.js.map
