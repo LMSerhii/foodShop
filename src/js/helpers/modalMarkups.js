@@ -1,4 +1,6 @@
 import svg_sprite from '../../img/sprite.svg';
+import sub1x from '../../img/subscribing@1x.png';
+import sub2x from '../../img/subscribing@2x.png';
 
 const success = `
                   <div class="modal">
@@ -29,8 +31,8 @@ const success = `
                         </div>
                         <img
                         class="modal-image"
-                        srcset="./img/subscribing@1x.png 1x, ./img/subscribing@2x.png 2x"
-                        src="./img/subscribing@1x.png"
+                        srcset="${sub1x} 1x, ${sub2x} 2x"
+                        src="${sub2x}"
                         alt="basket of fresh vegetables"
                         width="490"
                         />

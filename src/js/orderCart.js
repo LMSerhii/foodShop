@@ -55,7 +55,7 @@ async function handleOrder() {
 
       // Перезавантаження сторінки
       location.reload();
-    }, 2000);
+    }, 5000);
 
     console.log('Відповідь на замовлення:', orderResponse);
     // Очистити форму або виконати інші дії після успішного замовлення
@@ -64,9 +64,8 @@ async function handleOrder() {
     console.error('Помилка при замовленні:', error);
   }
 }
-  
-  const checkoutButton = document.getElementById('checkoutButton');
 
+const checkoutButton = document.getElementById('checkoutButton');
 
 // Обробник події для кнопки
 const orderBtn = document.getElementById('checkoutButton');
