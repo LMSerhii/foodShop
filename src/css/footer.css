@@ -42,7 +42,7 @@
   align-items: center;
 }
 .footer-cabbage-icon {
-  fill: var(--lightGeen);
+  fill: var(--lightGreen);
   align-items: center;
   justify-content: center;
 }
@@ -111,9 +111,11 @@
   color: rgba(232, 232, 226, 0.6);
   padding-left: 18px;
 }
-.subscribe-input:focus {
+.subscribe-input:focus,
+.subscribe-input:hover {
   outline: none;
-  border-color: rgb(146, 243, 146);
+  border-color: rgb(142, 222, 142);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 .subscribe-input::placeholder {
   color: rgba(232, 232, 226, 0.6);
@@ -127,6 +129,11 @@
   background-color: var(--background);
   color: #010101;
 }
+.send-btn:hover,
+.send-btn:focus {
+  color: var(--darkGreen);
+}
+
 .policy-list {
   display: flex;
   flex-direction: column;
@@ -141,6 +148,15 @@
   opacity: 0.9;
   line-height: 1.29;
 }
+
+.icon-box:hover,
+.icon-box:focus {
+  background-color: rgba(232, 232, 226, 0.2);
+  cursor: pointer;
+  border-radius: 10px;
+  transition: opacity 0.1s;
+}
+
 
 @media screen and (min-width: 375px) {
   .container {
@@ -198,6 +214,7 @@
   .subscribe-input {
     height: 48px;
     width: 336px;
+    font-size: 16px;
   }
   .subscribe-input::placeholder {
     font-size: 16px;
@@ -206,6 +223,7 @@
   .send-btn {
     height: 48px;
     width: 336px;
+    font-size: 16px;
   }
   .policy-list {
     display: flex;
