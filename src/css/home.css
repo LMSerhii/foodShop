@@ -4,3 +4,72 @@
 @import url('./home/dscount_products.css');
 @import url('./home/products_list.css');
 @import url('./home/pagination.css');
+
+.home-sections {
+  display: flex;
+  justify-content: space-between;
+  width: 1440px;
+  padding-left: 50px;
+  padding-right: 50px;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 1440px) {
+  .product-list {
+    row-gap: 40px;
+    column-gap: 20px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .card {
+    width: calc((100% - 40px) / 3);
+  }
+}
+
+.prod-pagin {
+  display: flex;
+  flex-direction: column;
+}
+
+.popul-disc {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 1440px) {
+  .popular-products {
+    width: 275px;
+    /* padding-top: 50px;
+    padding-bottom: 32px; */
+    /* padding-left: 32px;
+    padding-right: 32px; */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .popular_products_list {
+    width: 275px;
+    flex-direction: column;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .popular-container {
+    width: 275px;
+    margin-left: 0;
+    justify-content: flex-start;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .popular-card {
+    width: 275px;
+  }
+  /* .popular-card:not(:last-child) {
+    margin-bottom: 0;
+  } */
+}
