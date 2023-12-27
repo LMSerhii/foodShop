@@ -8,10 +8,22 @@
 .home-sections {
   display: flex;
   justify-content: space-between;
-  width: 1440px;
+  width: 1340px;
   padding-left: 50px;
   padding-right: 50px;
-  margin: 0 auto;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  margin-right: 0;
+  margin-left: 0;
+}
+
+@media screen and (min-width: 1440px) {
+  .container-products {
+    max-width: 925px;
+    padding-bottom: 40px;
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 @media screen and (min-width: 1440px) {
@@ -30,20 +42,31 @@
 .prod-pagin {
   display: flex;
   flex-direction: column;
+  padding-top: 0;
+}
+
+@media screen and (min-width: 1440px) {
+  .container-products {
+    padding-top: 0;
+  }
 }
 
 .popul-disc {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 @media screen and (min-width: 1440px) {
   .popular-products {
     width: 275px;
-    /* padding-top: 50px;
-    padding-bottom: 32px; */
-    /* padding-left: 32px;
-    padding-right: 32px; */
+
+    padding-bottom: 20px;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    margin-left: 0;
+    margin-right: 0;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -72,4 +95,15 @@
   /* .popular-card:not(:last-child) {
     margin-bottom: 0;
   } */
+}
+
+@media screen and (min-width: 1440px) {
+  .discount-section {
+    width: 275px;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 20px;
+    padding-bottom: 140px;
+    padding-bottom: 0;
+  }
 }
