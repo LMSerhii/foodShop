@@ -31,6 +31,7 @@ const sortArrey = [
 ];
 
 const renderSelects = async () => {
+  onLoaderVisible();
   const data = await getCategories();
 
   categories = [...data, 'Show_all'];
@@ -39,10 +40,8 @@ const renderSelects = async () => {
 
   refs.categoryField.insertAdjacentHTML('beforeend', markup);
   refs.abcField.innerHTML = createSortMarkup(sortArrey);
-  // onLoaderVisible();
 
-  // onLoaderVisible();
-  // onLoaderHidden();
+  onLoaderHidden();
 
   new SlimSelect({
     select: '#categoryField',
@@ -150,6 +149,7 @@ const buildSortByQuery = (sortUrl, query) => {
 };
 
 const onAbcField = async evt => {
+  onLoaderVisible();
   const currentCategory = evt.target.value;
   save(common.LOCAL_SORT, currentCategory);
   const query = load(common.LOCAL_SORT);
@@ -161,6 +161,7 @@ const onAbcField = async evt => {
   const result = await get(sortUrl);
 
   renderProductsSort(result);
+  onLoaderHidden();
 };
 
 //wfw
