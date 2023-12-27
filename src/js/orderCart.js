@@ -3,7 +3,7 @@ import { common } from './common';
 import { createOrder } from './api_service';
 import { renderCart, onClose } from './cart';
 import { openModalFooter } from './modal';
-import { succesOrder } from './helpers/madalMarkups';
+import { succesOrder } from './helpers/modalMarkups';
 
 const orderCart = load(common.LOCAL_CART_KEY) ?? [];
 orderCart.forEach(product => {
