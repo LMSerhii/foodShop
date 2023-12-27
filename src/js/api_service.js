@@ -1,9 +1,6 @@
 import axios from 'axios';
 import { common } from './common';
-
 import { refs } from './refs';
-
-
 
 // get a list of all products
 async function getData(query) {
@@ -142,7 +139,6 @@ async function createSubscription(email) {
   }
 }
 
-
 export {
   getData,
   getDataId,
@@ -151,5 +147,4 @@ export {
   getCategories,
   createOrder,
   createSubscription,
-
 };

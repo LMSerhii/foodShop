@@ -6,6 +6,7 @@ import { renderPopular } from './js/popular';
 import { dataDiscountProd } from './js/dicsount_products';
 import { renderFooter } from './js/footer';
 import { handleMediaChange } from './js/pagination';
+import { headerCount } from './js/header';
 
 const mediaQuery_min768 = window.matchMedia('(min-width: 768px)');
 const mediaQuery_min1440 = window.matchMedia('(min-width: 1440px)');
@@ -18,6 +19,8 @@ const mediaQuery_min768_max1440 = window.matchMedia(
 save(common.LOCAL_QUERY_KEY, common.INIT_QUERY);
 
 const storage_query = load(common.LOCAL_QUERY_KEY) ?? [];
+
+headerCount();
 
 renderSelects();
 

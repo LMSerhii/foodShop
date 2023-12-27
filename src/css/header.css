@@ -190,11 +190,11 @@
   line-height: 133%;
   text-transform: uppercase;
 }
-/* @media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) {
   .cartValue {
     display: block;
   }
-} */
+}
 
 .item-cart {
   display: flex;
