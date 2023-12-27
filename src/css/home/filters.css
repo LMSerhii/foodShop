@@ -19,14 +19,17 @@
 .mask {
   opacity: 0;
 }
-
-.loaderr {
+.loadNav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
-  right: -309px;
-  top: 97px;
 }
 
+
 .loaderr {
+  position: absolute;
+  top: 70px;
   width: 48px;
   height: 48px;
   border: 5px solid #6d8434;
