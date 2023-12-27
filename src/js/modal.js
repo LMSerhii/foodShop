@@ -16,6 +16,7 @@ const openModalFooter = (element, markup) => {
   const instance = basicLightbox.create(markup, {
     onShow: instance => {
       element.addEventListener('keydown', handleGalleryElement);
+      
       instance.element().querySelector('.js-modal-close').onclick = () =>
         instance.close();
     },
