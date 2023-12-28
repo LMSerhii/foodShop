@@ -113,8 +113,8 @@
 }
 .subscribe-input:focus,
 .subscribe-input:hover {
-  outline: none;
-  border-color: rgb(142, 222, 142);
+  outline: 2px solid #e8e8e24f;
+  border-radius: 2rem;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 .subscribe-input::placeholder {
@@ -156,7 +156,6 @@
   border-radius: 10px;
   transition: opacity 0.1s;
 }
-
 
 @media screen and (min-width: 375px) {
   .container {

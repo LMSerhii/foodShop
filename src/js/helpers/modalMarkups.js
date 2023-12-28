@@ -70,6 +70,9 @@ const error = `
               `;
 
 const succesOrder = arrey => {
+  if (!arrey.length) {
+    return `EMPTY`;
+  }
   const { img, name } = arrey[0];
 
   return `<div class="modal">
@@ -89,6 +92,29 @@ const succesOrder = arrey => {
                   nourishing goodness, delivered right to your doorstep. We're thrilled to
                   be part of your journey to better health and happiness.
                 </p>
+              </div>
+            </div>
+          </div>`;
+};
+
+const errorOrder = () => {
+  return `<div class="modal">
+            <div class="container">
+              <div class="order-modal-box">
+                <button class="modal-close js-modal-close" type="button">
+                  <svg class="modal-icon" width="22" height="22">
+                    <use href="${svg_sprite}#close"></use>
+                  </svg>
+                </button>
+                <div class="error_box">
+                <p class="error_title">
+                    Error<span>${status}</span>
+                </p>
+                <p class="error_text">
+                  🤦‍♂️ Something has gone wrong ....
+                </p>
+              </div>
+                
               </div>
             </div>
           </div>`;
@@ -170,4 +196,4 @@ const modalProductMarkup = ({
 `;
 };
 
-export { success, error, succesOrder, modalProductMarkup };
+export { success, error, succesOrder, modalProductMarkup, errorOrder };
