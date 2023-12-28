@@ -32,18 +32,20 @@
 /* order-box */
 
 .order-box {
-  padding: 80px 20px;
+  padding: 80px 0px;
+  margin: 0 auto;
 }
 
 @media screen and (min-width: 768px) {
   .order-box {
-    padding: 100px 32px;
+    padding: 100px 0;
   }
 }
 
 @media screen and (min-width: 1440px) {
   .order-box {
     padding: 0;
+    margin: 0;
   }
 }
 .order-box-title {
@@ -65,7 +67,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 210px;
+  width: 240px;
   height: 60px;
   border-radius: 8px;
   background: rgba(109, 132, 52, 0.05);
@@ -135,8 +137,11 @@
 }
 
 .order-box-input {
+  width: 240px;
+  font-size: 14px;
+  line-height: 1.29;
   display: inline-flex;
-  padding: 12px 183px 12px 20px;
+  padding: 12px 20px 12px 20px;
   justify-content: center;
   align-items: center;
   gap: 8px;
@@ -144,20 +149,45 @@
   border: 1px solid rgba(1, 1, 1, 0.3);
 }
 
+@media screen and (min-width: 375px) {
+  .order-box-input {
+    width: 335px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .order-box-input {
+    width: 359px;
+    font-size: 18px;
+    line-height: 1.33;
+
+    padding: 15px 20px 15px 20px;
+  }
+}
+
 .order-placeholder-var {
 }
 .order-submit {
+  width: 240px;
   display: inline-flex;
-  padding: 12px 138px;
+  padding: 12px 90px;
   justify-content: center;
   align-items: center;
   gap: 10px;
   border-radius: 30px;
+  border: none;
   background: #6d8434;
 }
 
+@media screen and (min-width: 375px) {
+  .order-submit {
+    width: 335px;
+    padding: 12px 138px;
+  }
+}
 @media screen and (min-width: 768px) {
   .order-submit {
+    width: 215px;
     padding: 15px 65px;
   }
 }
