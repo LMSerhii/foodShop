@@ -15,6 +15,7 @@ const onEmailEnter = event => {
     return;
   }
   onSendBtn(email);
+  refs.emailForm.reset();
 };
 
 async function onSendBtn(email) {

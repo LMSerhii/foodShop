@@ -2,7 +2,7 @@ import * as basicLightbox from 'basiclightbox';
 import '../../node_modules/basiclightbox/dist/basicLightbox.min.css';
 
 const openModalFooter = (element, markup) => {
-  const handleGalleryElement = event => {
+  const handleFooterElement = event => {
     if (event.code === 'Escape') {
       instance.close();
     }
@@ -10,14 +10,14 @@ const openModalFooter = (element, markup) => {
 
   const instance = basicLightbox.create(markup, {
     onShow: instance => {
-      element.addEventListener('keydown', handleGalleryElement);
+      element.addEventListener('keydown', handleFooterElement);
 
       instance.element().querySelector('.js-modal-close').onclick = () =>
         instance.close();
     },
 
     onClose: instance => {
-      element.removeEventListener('keydown', handleGalleryElement);
+      element.removeEventListener('keydown', handleFooterElement);
     },
   });
 
