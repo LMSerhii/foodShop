@@ -1,6 +1,6 @@
-import { load, save, remove } from './js/storage';
-import { common } from './js/common';
-import emty_cart from './img/yellow_shopping_basket.png';
+import { load, save, remove } from './storage';
+import { common } from './common';
+import emty_cart from '../img/yellow_shopping_basket.png';
 
 const refs = {
   cartList: document.querySelector('.cart-list'),
