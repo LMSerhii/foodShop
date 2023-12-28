@@ -163,13 +163,8 @@ span {
   background-color: #e8e8e2;
   border: none;
   transition-property: background-color;
-  transition-duration: 500ms;
+  transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.popular-card-btn:hover,
-.popular-card-btn:focus {
-  background-color: #6d8434;
 }
 
 .popular-icon {
@@ -179,13 +174,17 @@ span {
 
   fill: #6d8434;
   transition-property: fill;
-  transition-duration: 500ms;
+  transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.popular-icon:hover,
-.popular-icon:focus {
+.popular-card-btn:hover .popular-icon,
+.popular-card-btn:focus .popular-icon {
   fill: #e8e8e2;
+}
+.popular-card-btn:hover,
+.popular-card-btn:focus {
+  background-color: #6d8434;
 }
 
 .popular-icon-check {
