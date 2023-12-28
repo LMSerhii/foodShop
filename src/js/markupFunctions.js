@@ -1,5 +1,6 @@
 import svg_sprite from '../img/sprite.svg';
 import empty_basket from '../img/yellow_shopping_basket.png';
+import { refs } from './refs';
 
 // products
 
@@ -189,7 +190,7 @@ const errorMarkup = (element, status) => {
 const notFoundMarkup = element => {
   element.innerHTML = `<div class="notFound_box">
                               <p class="notFound_title">
-                                  Nothing was found for the selected <span>filters...</span>
+                                  Nothing was found for the selected <span class="notFound_title_span">filters...</span>
                               </p>
                               <p class="notFound_text">
                                 Try adjusting your search parameters or browse our range by other criteria to
@@ -197,6 +198,7 @@ const notFoundMarkup = element => {
                               </p>
                               </div>
                             `;
+  refs.paginationContainer.style.display = 'none';
 };
 
 // filters
