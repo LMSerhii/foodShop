@@ -139,16 +139,23 @@ const modalProductMarkup = ({
                       </li>
                     </ul>
                     <p class="modal-product-desc">
-                      A round, orange vegetable with a thick shell and seeds inside. It is
-                      often used in cooking and baking for its sweet and earthy flavor.
+                      ${desc}
                     </p>
                   </div>
                 </div>
 
                 <div class="modal-product-bottom">
                   <p class="modal-product-price">$${price}</p>
-                  <button class="modal-product-btn">
+
+                  <button class="modal-product-addBtn js-to-cart">
                     Add to
+                    <svg class="modal-product-icon" width="18" height="18">
+                      <use href="${svg_sprite}#cart"></use>
+                    </svg>
+                  </button>
+
+                  <button class="modal-product-removeBtn js-from-cart">
+                    Remove from
                     <svg class="modal-product-icon" width="18" height="18">
                       <use href="${svg_sprite}#cart"></use>
                     </svg>
