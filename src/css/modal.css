@@ -224,16 +224,22 @@
   padding: 30px 15px;
   border-radius: 20px;
   background-color: #fafafa;
+  width: 240px;
+  height: 535px;
 }
 
 @media screen and (min-width: 375px) {
   .modal-box-product {
+    width: 335px;
+    height: 535px;
     padding: 40px 20px;
   }
 }
 
 @media screen and (min-width: 768px) {
   .modal-box-product {
+    width: 600px;
+    height: 380px;
     padding: 40px 40px;
   }
 }
@@ -335,6 +341,26 @@
 
 .list-variables {
   color: #010101;
+}
+
+.scroll {
+  width: 200px;
+  height: 54px;
+  overflow: auto;
+}
+
+@media screen and (min-width: 375px) {
+  .scroll {
+    width: 256px;
+    height: 80px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .scroll {
+    width: 256px;
+    height: 80px;
+  }
 }
 .modal-product-desc {
   color: rgba(1, 1, 1, 0.7);
