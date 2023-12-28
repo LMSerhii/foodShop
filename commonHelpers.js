@@ -1,4 +1,4 @@
-import{l as n,c as r,s as d,r as L,e as C}from"./assets/yellow_shopping_basket-bc064f0a.js";const e={cartList:document.querySelector(".cart-list"),deleteAll:document.querySelector(".cart-delete-all"),orderBox:document.querySelector(".order-box")},i=t=>t.length?t.map(({_id:c,img:s,name:a,category:l,size:p,price:m})=>`<li class="cart-item js-card" data-id="${c}">
+import{l,c as r,s as d,r as L}from"./assets/common-8da94c95.js";const C="/foodShop/assets/yellow_shopping_basket-566aede4.png",e={cartList:document.querySelector(".cart-list"),deleteAll:document.querySelector(".cart-delete-all"),orderBox:document.querySelector(".order-box")},i=t=>t.length?t.map(({_id:c,img:s,name:a,category:n,size:u,price:m})=>`<li class="cart-item js-card" data-id="${c}">
                     <button class="cart-product-delete js-product-cart-delete">
                         <svg class="cart-product-delete-icon" width="18" height="18">
                             <use href="./img/sprite.svg#close"></use>
@@ -11,11 +11,11 @@ import{l as n,c as r,s as d,r as L,e as C}from"./assets/yellow_shopping_basket-b
                     <ul class="cart-content-list">
                         <li class="cart-content-item">
                         Category:
-                        <span class="cart-content-item-var">${l}</span>
+                        <span class="cart-content-item-var">${n}</span>
                         </li>
                         <li class="cart-content-item">
                         Size:
-                        <span class="cart-content-item-var">${p}</span>
+                        <span class="cart-content-item-var">${u}</span>
                         </li>
                     </ul>
                     <div class="cart-content-bottom">   
@@ -33,5 +33,5 @@ import{l as n,c as r,s as d,r as L,e as C}from"./assets/yellow_shopping_basket-b
                         Go to the main page to select your favorite products and add them to the
                         cart.
                     </p>
-            </li>`,o=()=>{const t=n(r.LOCAL_CART_KEY)??[];if(!t.length){e.deleteAll.style.display="none",e.orderBox.style.display="none";const s=i(t);e.cartList.innerHTML=s;return}e.deleteAll.style.display="flex",e.orderBox.style.display="block";const c=i(t);e.cartList.innerHTML=c},u=()=>{const t=document.querySelector("#product-count-cart"),c=n(r.LOCAL_CART_KEY)??[];t.innerHTML=`(${c.length})`},y=()=>{d(r.LOCAL_CART_KEY,[]),o()},g=t=>{if(t.currentTarget!==t.target&&t.target.closest(".js-product-cart-delete")){const{id:c}=t.target.closest(".js-card").dataset,s=n(r.LOCAL_CART_KEY)??[],a=s.findIndex(({_id:l})=>l===c);s.splice(a,1),L(r.LOCAL_CART_KEY),d(r.LOCAL_CART_KEY,s),u(),o()}};e.cartList.addEventListener("click",g);e.deleteAll.addEventListener("click",y);u();o();
+            </li>`,o=()=>{const t=l(r.LOCAL_CART_KEY)??[];if(!t.length){e.deleteAll.style.display="none",e.orderBox.style.display="none";const s=i(t);e.cartList.innerHTML=s;return}e.deleteAll.style.display="flex",e.orderBox.style.display="block";const c=i(t);e.cartList.innerHTML=c},p=()=>{const t=document.querySelector("#product-count-cart"),c=l(r.LOCAL_CART_KEY)??[];t.innerHTML=`(${c.length})`},g=()=>{d(r.LOCAL_CART_KEY,[]),o()},y=t=>{if(t.currentTarget!==t.target&&t.target.closest(".js-product-cart-delete")){const{id:c}=t.target.closest(".js-card").dataset,s=l(r.LOCAL_CART_KEY)??[],a=s.findIndex(({_id:n})=>n===c);s.splice(a,1),L(r.LOCAL_CART_KEY),d(r.LOCAL_CART_KEY,s),p(),o()}};e.cartList.addEventListener("click",y);e.deleteAll.addEventListener("click",g);p();o();
 //# sourceMappingURL=commonHelpers.js.map
