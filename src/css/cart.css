@@ -8,6 +8,9 @@ body {
   line-height: 1.17;
 }
 
+.wrapp {
+  display: block;
+}
 .container {
   max-width: 280px;
   padding: 0 20px;
@@ -673,5 +676,9 @@ body {
   .container {
     max-width: 1440px;
     padding: 0 100px;
+  }
+  .wrapp {
+    display: flex;
+    justify-content: space-between;
   }
 }

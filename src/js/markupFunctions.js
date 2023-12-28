@@ -394,8 +394,7 @@ const createDiscountMarkup = arrey => {
 
 const producCartMarkup = arrey => {
   if (!arrey.length) {
-    deleteContainer.classList.add('visually-hidden');
-    orderContainer.classList.add('visually-hidden');
+    
     return `
  
   <img class="basket-img" src="${empty_basket}" alt="Yellow empty basket">
@@ -459,11 +458,7 @@ const producCartMarkup = arrey => {
                           )} <span class="info-style info-space">Size:</span> ${size}</p>
                       </div>
                       <p class="product-price product-name m">$${price}</p>
-                      <div id="counter">
-                          <button type="button" data-action="decrement">-1</button>
-                              <span id="value">0</span>
-                          <button type="button" data-action="increment">+1</button>
-                      </div>
+                      
               </li>
 
               `;

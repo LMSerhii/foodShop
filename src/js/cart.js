@@ -39,7 +39,7 @@ const onClose = evt => {
 
   if (evt.target.classList.contains('js-close')) {
     validClose(id);
-    orderContainer.innerHTML = '';
+    // orderContainer.innerHTML = '';
     refs.deleteAllButton.innerHTML = '';
   }
 };
@@ -84,34 +84,6 @@ const renderCart = () => {
 };
 renderItemCount();
 renderCart();
-
-// Отримуємо всі елементи з класом .counter-pr
-const counters = document.querySelectorAll('.counter-pr');
-
-// Додаємо обробник подій до кожного елемента
-counters.forEach(counter => {
-  const counterValue = counter.querySelector('#value');
-  let value = 0; // Початкове значення лічильника
-
-  const decrementButton = counter.querySelector('[data-action="decrement"]');
-  const incrementButton = counter.querySelector('[data-action="increment"]');
-
-  decrementButton.addEventListener('click', () => {
-    if (value > 0) {
-      value -= 1; // Зменшення значення на 1 при кліку на кнопку "-", якщо воно більше 0
-      updateCounter(counterValue, value);
-    }
-  });
-
-  incrementButton.addEventListener('click', () => {
-    value += 1; // Збільшення значення на 1 при кліку на кнопку "+"
-    updateCounter(counterValue, value);
-  });
-});
-
-const updateCounter = (counterValue, value) => {
-  counterValue.textContent = value; // Оновлення значення лічильника в інтерфейсі
-};
 
 
 // Додавання обробника подій для кнопки "Delete all"

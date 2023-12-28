@@ -71,11 +71,13 @@ const checkoutButton = document.getElementById('checkoutButton');
 // Обробник події для кнопки
 const orderBtn = document.getElementById('checkoutButton');
 
-orderBtn.addEventListener('click', function (event) {
-  event.preventDefault();
+if (checkoutButton) {
+  checkoutButton.addEventListener('click', function (event) {
+    event.preventDefault();
 
-  // Виклик функції для обробки замовлення
-  handleOrder();
-});
+    // Виклик функції для обробки замовлення
+    handleOrder();
+  });
+}
 
 export { orderCart };
