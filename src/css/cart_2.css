@@ -1,6 +1,18 @@
 .cartValue {
 }
 .cart-icon {
+  width: 18px;
+  height: 18px;
+  fill: var(--white);
+}
+.logo-link-cart {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 30px;
+  background-color: var(--lightGreen);
+  padding: 10px;
+  margin-right: 14px;
 }
 
 .cart-delete-all-wrapper {
