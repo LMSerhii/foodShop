@@ -31,8 +31,11 @@ const sortArrey = [
 ];
 
 const renderSelects = async () => {
+  document.getElementById('loader').style.display = 'block';
 
   const data = await getCategories();
+
+  document.getElementById('loader').style.display = 'none';
 
   categories = [...data, 'Show_all'];
 
@@ -41,7 +44,7 @@ const renderSelects = async () => {
   refs.categoryField.insertAdjacentHTML('beforeend', markup);
 
   refs.abcField.innerHTML = createSortMarkup(sortArrey);
-
+  document.getElementById('filtersForm').classList.remove('hidden');
 
   new SlimSelect({
     select: '#categoryField',
@@ -52,12 +55,9 @@ const renderSelects = async () => {
   });
 };
 
-
-
 window.addEventListener('load', () => {
   let mask = document.querySelector('.mask');
   if (mask) {
-  
     setTimeout(() => {
       mask.style.opacity = '1';
     }, 600);
@@ -65,16 +65,11 @@ window.addEventListener('load', () => {
 
   const loaderr = document.querySelector('.loaderr');
   if (loaderr) {
-   
     setTimeout(() => {
       loaderr.parentNode.removeChild(loaderr);
     }, 300);
   }
-   
-  
 });
-
-
 
 const onCategoryField = async evt => {
   const currentCategory = evt.target.value;
@@ -173,7 +168,6 @@ const buildSortByQuery = (sortUrl, query) => {
 };
 
 const onAbcField = async evt => {
-
   const currentCategory = evt.target.value;
   save(common.LOCAL_SORT, currentCategory);
   const query = load(common.LOCAL_SORT);
@@ -185,7 +179,6 @@ const onAbcField = async evt => {
   const result = await get(sortUrl);
 
   renderProductsSort(result);
-
 };
 
 //wfw

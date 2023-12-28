@@ -6,6 +6,7 @@
 .cart-delete-all-wrapper {
   display: flex;
   justify-content: end;
+  margin-bottom: 46px;
 }
 .cart-delete-all {
   display: flex;
