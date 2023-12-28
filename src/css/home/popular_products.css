@@ -179,11 +179,13 @@ span {
 }
 
 .popular-card-btn:hover .popular-icon,
-.popular-card-btn:focus .popular-icon {
+.popular-card-btn:focus .popular-icon,
+.popular-card-btn:active .popular-icon {
   fill: #e8e8e2;
 }
 .popular-card-btn:hover,
-.popular-card-btn:focus {
+.popular-card-btn:focus,
+.popular-card-btn:active {
   background-color: #6d8434;
 }
 
@@ -204,6 +206,17 @@ span {
   border-radius: 30px;
   background: #6d8434;
   border: none;
+}
+
+.popular-btn-check:hover .popular-icon-check,
+.popular-btn-check:focus .popular-icon-check,
+.popular-btn-check:active .popular-icon-check {
+  stroke: #e8e8e2;
+}
+.popular-btn-check:hover,
+.popular-btn-check:focus,
+.popular-btn-check:active {
+  background-color: #6d8434;
 }
 
 /* transition-property: color;
