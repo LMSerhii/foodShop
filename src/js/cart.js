@@ -63,7 +63,7 @@ const notFound = () => {
       <p class="empty-text"> Your basket is <span>empty...</span></p>
       <p class="empty-comment">Go to the main page to select your favorite products and add them to the cart.</p>
   </div></li>`;
-  orderContainer.innerHTML = '';
+  // orderContainer.innerHTML = '';
   refs.deleteAllButton.innerHTML = '';
 };
 
