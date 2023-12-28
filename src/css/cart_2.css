@@ -210,6 +210,9 @@
     width: 215px;
     padding: 15px 65px;
   }
+  .valueText {
+    font-size: 32px;
+  }
 }
 
 @media screen and (min-width: 1440px) {
@@ -219,6 +222,7 @@
     padding: 46px 0;
     margin: 0 auto;
   }
+
 }
 
 /* cart item  */
