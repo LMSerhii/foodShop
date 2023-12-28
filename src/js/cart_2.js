@@ -7,6 +7,7 @@ import emty_cart from '../img/yellow_shopping_basket.png';
 import { createOrder } from './api_service';
 import svg_sprite from '../img/sprite.svg';
 import { onEmailEnter } from './footer';
+import { headerCount } from './header';
 
 const refs = {
   cartList: document.querySelector('.cart-list'),
@@ -15,6 +16,7 @@ const refs = {
   orderForm: document.querySelector('.order-form'),
   totalSum: document.querySelector('.order-box-total-price-var'),
   footerForm: document.querySelector('.subscribe-form'),
+  headerCount: document.querySelector('#product-count-header'),
 };
 
 const createCartListMarkup = arrey => {
@@ -122,6 +124,8 @@ const cartCount = () => {
 
 const onDeleteAll = () => {
   save(common.LOCAL_CART_KEY, []);
+  headerCount();
+  cartCount();
   renderCartList();
 };
 
@@ -143,7 +147,8 @@ const onCartListClick = evt => {
 
     save(common.LOCAL_CART_KEY, currentCart);
 
-    // headerCount();
+    headerCount();
+    console.log(refs.headerCount);
 
     cartCount();
     renderCartList();
@@ -190,5 +195,6 @@ refs.deleteAll.addEventListener('click', onDeleteAll);
 
 refs.footerForm.addEventListener('submit', onEmailEnter);
 
+headerCount();
 cartCount();
 renderCartList();
