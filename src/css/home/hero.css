@@ -175,8 +175,33 @@
 
 .hero-organic-food {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: -6px;
+  right: 6px;
+
+  width: 60px;
+  height: 60px;
 }
-.hero-picture {
+
+@media screen and (min-width: 375px) {
+  .hero-organic-food {
+    top: -8px;
+    right: 8px;
+
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .hero-organic-food {
+    top: -30px;
+    right: 10px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .hero-organic-food {
+    top: -50px;
+    right: 20px;
+  }
 }
