@@ -7,7 +7,14 @@ body {
   font-weight: 400;
   line-height: 1.17;
 }
+/*  */
 
+
+/*  */
+
+.wrapp {
+  display: block;
+}
 .container {
   max-width: 280px;
   padding: 0 20px;
@@ -308,6 +315,10 @@ body {
   border: 1px solid rgba(1, 1, 1, 0.1);
 }
 
+.c-order-title {
+  margin-bottom: 20px;
+}
+
 /**
     |============================
     | MOBILE
@@ -580,6 +591,9 @@ body {
     border-radius: 100px;
     border: 1px solid rgba(1, 1, 1, 0.10);
   } */
+  .c-order-title {
+    margin-bottom: 40px;
+  }
 }
 
 /**
@@ -667,11 +681,21 @@ body {
   .cart-product-list {
     margin-bottom: 100px;
   }
+  .c-order-title {
+    margin-bottom: 40px;
+  }
 }
 
 @media screen and (min-width: 1440px) {
   .container {
     max-width: 1440px;
     padding: 0 100px;
+  }
+  .wrapp {
+    display: flex;
+    justify-content: space-between;
+  }
+  .c-order-title {
+    margin-bottom: 40px;
   }
 }

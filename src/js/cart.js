@@ -22,27 +22,33 @@ const validClose = productId => {
   cart.splice(index, 1);
   remove(common.LOCAL_CART_KEY);
   save(common.LOCAL_CART_KEY, cart);
-
+  console.log(cart);
   refs.cartList.innerHTML = producCartMarkup(cart);
   renderTotalAmount(); // Оновлення суми при видаленні товару
   renderItemCount();
 };
 
+
 const onClose = evt => {
   const closeButton = evt.target.closest('.js-close');
+  // console.log(evt.target);
   if (!closeButton) {
     return;
   }
 
   const id = evt.target.closest('.js-card').dataset.id;
-  console.log(evt.target);
-
+  // console.log(evt.target);
+  // console.log(cart);
+  clearCartLocalStorage()
   if (evt.target.classList.contains('js-close')) {
-    validClose(id);
-    orderContainer.innerHTML = '';
-    refs.deleteAllButton.innerHTML = '';
+    validClose(id); 
+    // orderContainer.innerHTML = '';
+    // refs.deleteAllButton.innerHTML = '';
   }
 };
+
+
+
 
 const renderTotalAmount = () => {
   const totalAmount = cart
@@ -53,18 +59,23 @@ const renderTotalAmount = () => {
 
 // Функція для очищення значення ключа "cart" у локальному сховищі
 const clearCartLocalStorage = () => {
+  
   localStorage.setItem('cart', '[]');
-  location.reload();
+  notFound()
+  
+  // location.reload();
 };
 
 const notFound = () => {
+  
   refs.cartList.innerHTML = `<li><img class="basket-img" src="${empty_basket}" alt="Yellow empty basket">
   <div class="basket-text">
       <p class="empty-text"> Your basket is <span>empty...</span></p>
       <p class="empty-comment">Go to the main page to select your favorite products and add them to the cart.</p>
   </div></li>`;
-  orderContainer.innerHTML = '';
+  // orderContainer.innerHTML = '';
   refs.deleteAllButton.innerHTML = '';
+  
 };
 
 const renderCart = () => {
@@ -79,42 +90,34 @@ const renderCart = () => {
   }
 
   refs.cartList.innerHTML = producCartMarkup(cart);
-  refs.cartList.addEventListener('click', onClose);
+  
+
   renderTotalAmount();
 };
 renderItemCount();
 renderCart();
-
-// Отримуємо всі елементи з класом .counter-pr
-const counters = document.querySelectorAll('.counter-pr');
-
-// Додаємо обробник подій до кожного елемента
-counters.forEach(counter => {
-  const counterValue = counter.querySelector('#value');
-  let value = 0; // Початкове значення лічильника
-
-  const decrementButton = counter.querySelector('[data-action="decrement"]');
-  const incrementButton = counter.querySelector('[data-action="increment"]');
-
-  decrementButton.addEventListener('click', () => {
-    if (value > 0) {
-      value -= 1; // Зменшення значення на 1 при кліку на кнопку "-", якщо воно більше 0
-      updateCounter(counterValue, value);
-    }
-  });
-
-  incrementButton.addEventListener('click', () => {
-    value += 1; // Збільшення значення на 1 при кліку на кнопку "+"
-    updateCounter(counterValue, value);
-  });
-});
-
-const updateCounter = (counterValue, value) => {
-  counterValue.textContent = value; // Оновлення значення лічильника в інтерфейсі
-};
-
+refs.cartList.addEventListener('click', onClose);
 
 // Додавання обробника подій для кнопки "Delete all"
-refs.deleteAllButton.addEventListener('click', clearCartLocalStorage);
+refs.deleteAllButton.addEventListener('click', clearCartLocalStorage, renderTotalAmount, notFound, renderItemCount);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 export { clearCartLocalStorage, renderCart, onClose };
