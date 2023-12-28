@@ -43,4 +43,4 @@ async function onSendBtn(email) {
   return result;
 }
 
-export { renderFooter };
+export { renderFooter, onEmailEnter };

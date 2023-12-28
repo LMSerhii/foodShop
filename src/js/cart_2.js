@@ -6,6 +6,7 @@ import { common } from './common';
 import emty_cart from '../img/yellow_shopping_basket.png';
 import { createOrder } from './api_service';
 import svg_sprite from '../img/sprite.svg';
+import { onEmailEnter } from './footer';
 
 const refs = {
   cartList: document.querySelector('.cart-list'),
@@ -13,6 +14,7 @@ const refs = {
   orderBox: document.querySelector('.order-box'),
   orderForm: document.querySelector('.order-form'),
   totalSum: document.querySelector('.order-box-total-price-var'),
+  footerForm: document.querySelector('.subscribe-form'),
 };
 
 const createCartListMarkup = arrey => {
@@ -176,6 +178,7 @@ const onOrderForm = evt => {
     products: orderList,
   });
 
+  evt.target.reset();
   createOrder(data);
 };
 
@@ -184,6 +187,8 @@ refs.orderForm.addEventListener('submit', onOrderForm);
 refs.cartList.addEventListener('click', onCartListClick);
 
 refs.deleteAll.addEventListener('click', onDeleteAll);
+
+refs.footerForm.addEventListener('submit', onEmailEnter);
 
 cartCount();
 renderCartList();
