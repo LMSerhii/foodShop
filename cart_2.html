@@ -2,16 +2,18 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/foodShop/assets/favicon-599acd71.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Food Boutique</title>
+    <link
+      rel="shortcut icon"
+      href="/foodShop/assets/cartFavicon-e486fccc.svg"
+      type="image/x-icon"
+    />
+    <title>Cart</title>
     
-    <script type="module" crossorigin src="/foodShop/commonHelpers3.js"></script>
+    <link rel="stylesheet" href="./cart_2.css" />
+    <script type="module" crossorigin src="/foodShop/commonHelpers.js"></script>
     <link rel="modulepreload" crossorigin href="/foodShop/assets/yellow_shopping_basket-bc064f0a.js">
-    <link rel="modulepreload" crossorigin href="/foodShop/assets/markupFunctions-d1addfc4.js">
-    <link rel="modulepreload" crossorigin href="/foodShop/assets/vendor-4cc552dc.js">
     <link rel="stylesheet" href="/foodShop/assets/yellow_shopping_basket-6aa1e9b9.css">
-    <link rel="stylesheet" href="/foodShop/assets/vendor-b3ed7f9a.css">
   </head>
   <body>
     <header class="header">
@@ -47,108 +49,46 @@
 </header>
 
 
-    <main>
-  <section class="hero">
-  <div class="container container-hero">
-    <h1 class="h-one-hero">
-      Welcome to the <span class="hero-green-food"> Food </span> Boutique!
-    </h1>
-    <p class="p-two-hero">
-      With Food Boutique, you're not just subscribing to food, you're signing up
-      for a fresher, fitter, and happier you.
-    </p>
+    <div class="container">
+      <a href="./index.html">-----------HOME-----------</a>
+      <p class="cartValue">
+        <svg class="cart-icon" width="18" height="18">
+          <use href="/foodShop/assets/sprite-10b57387.svg#cart"></use>
+        </svg>
+        Cart <span id="product-count-cart">0</span>
+      </p>
 
-    <div class="hero-content">
-      <img
-        class="hero-organic-food"
-        src="/foodShop/assets/organic_food@1x-fc6c563f.png"
-        srcset="/foodShop/assets/organic_food@1x-fc6c563f.png 1x, /foodShop/assets/organic_food@2x-8582dceb.png 2x"
-        alt="text organic food"
-      />
-    </div>
-  </div>
-</section>
-
-  <section class="filters">
-  <div class="container">
-    <label class="form-label" for="filtersForm">Filters:</label>
-    <form class="form" name="filters" id="filtersForm">
-      <div class="filter-input-wrapper">
-        <input
-          class="filters-input js-input"
-          type="text"
-          id="textInput"
-          name="search"
-          placeholder="Search for anything"
-        />
-        <button class="search-btn" type="submit">
-          <svg class="search-btn-svg" width="20" height="20">
-            <use href="/foodShop/assets/sprite-10b57387.svg#search"></use>
+      <div class="cart-delete-all-wrapper">
+        <button class="cart-delete-all" type="button">
+          Delete all
+          <svg class="cart-delete-all-icon" width="24" height="24">
+            <use href="/foodShop/assets/sprite-10b57387.svg#close"></use>
           </svg>
         </button>
       </div>
-      <select
-        class="categories-select"
-        id="categoryField"
-        name="categories"
-        aria-placeholder="Categories"
-      >
-        <option data-placeholder="true">Categories</option>
-      </select>
-      <select
-        class="filters-select"
-        id="abcField"
-        name="alpabetSearch"
-        aria-placeholder="A to Z"
-      >
-        <option data-placeholder="true">A to Z</option>
-        <option value="alphabetical">A to Z</option>
-        <option value="reverse-alphabetical">Z to A</option>
-        <option value="cheap">Cheap</option>
-        <option value="expensive">Expensive</option>
-        <option value="popular">Popular</option>
-        <option value="not-popular">Not popular</option>
-        <option value="">Show all</option>
-      </select>
-    </form>
-  </div>
-</section>
 
-  <div class="home-sections">
-    <div class="prod-pagin">
-      <div class="container-products">
-  <h2 class="visually-hidden">Products</h2>
+      <ul class="cart-list"></ul>
 
-  <ul class="product-list"></ul>
-</div>
+      <div class="order-box">
+        <p class="order-box-title">Your Order</p>
 
-      <section class="pagination-section">
-    <div class="container">
-        <div class="tui-pagination" id="pagination-container"></div>
+        <div class="order-box-total-wrapper">
+          <p class="order-box-total-title">Total</p>
+          <p class="order-box-total-price">
+            Sum:
+            <span class="order-box-total-price-var">$</span>
+          </p>
+        </div>
+        <form class="order-form" name="order_form">
+          <label class="order-placeholder"
+            >Mail:
+            <span class="order-placeholder-var">Enter your email</span>
+          </label>
+          <input classs="order-box-input" type="email" />
+          <button class="order-submit">Checkout</button>
+        </form>
+      </div>
     </div>
-</section>
-    </div>
-    <div class="popul-disc">
-    <section class="popular-products">
-  <h2 class="title-popular-product">Popular products</h2>
-
-  <div class="container-popular">
-    <ul class="popular_products_list"></ul>
-  </div>
-</section>
-
-    <section class="discount-section">
-  <div class="discount-product-container">
-    <h2 class="discount-product-title">Discount products</h2>
-    <ul class="discount-product-list"></ul>
-  </div>
-</section>
-
-    </div>
-  </div>
-</main>
-
-
     <footer class="footer">
   <div class="container footer-container">
     <div class="footer-box">
@@ -243,13 +183,6 @@
   </div>
 </footer>
 
-    
-
-<!-- <button class="btn" type="button" data-modal-open>click</button> -->
-
-<div class="modal is-hidden" data-modal >
-  
-</div>
 
     
   </body>
