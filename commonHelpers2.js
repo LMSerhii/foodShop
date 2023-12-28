@@ -1,12 +1,12 @@
-import{l as o,c as s,g as w,s as d,b as p,d as c,e as K,r as B,m as J,f as G,h as V,i as Z,j as W}from"./assets/footer-f055743d.js";import{i as T,P as M,b as X,S as U,a as tt}from"./assets/vendor-f213eb09.js";const f=()=>{const t=document.querySelector("#product-count-header"),e=o(s.LOCAL_CART_KEY)??[];t.innerHTML=`(${e.length})`},L=o(s.LOCAL_CART_KEY)??[],x=async t=>{const{id:e}=t.target.closest(".js-card").dataset,a=await w(e);L.some(({_id:i})=>i===a._id)||(L.push(a),d(s.LOCAL_CART_KEY,L),t.target.closest(".js-cart").innerHTML=`<button class="card-btn" type="button">
+import{l as o,c as s,g as w,s as d,b as p,h as f,d as c,e as K,r as H,m as J,f as G,i as V,j as Z,k as W}from"./assets/header-83605e8e.js";import{i as T,P as U,b as X,S as x,a as tt}from"./assets/vendor-f213eb09.js";const _=o(s.LOCAL_CART_KEY)??[],M=async t=>{const{id:e}=t.target.closest(".js-card").dataset,a=await w(e);_.some(({_id:n})=>n===a._id)||(_.push(a),d(s.LOCAL_CART_KEY,_),t.target.closest(".js-cart").innerHTML=`<button class="card-btn" type="button">
                     <svg class="card-btn-icon-check" width="18" height="18">
                         <use href="${p}#check"></use>
                     </svg>
-                </button>`,f(),T.success({title:"OK",message:"Added to cart!"}))},et=async t=>{const{id:e}=t.target.closest(".js-card").dataset,a=await w(e);L.some(({_id:i})=>i===a._id)||(L.push(a),d(s.LOCAL_CART_KEY,L),t.target.closest(".js-cart").innerHTML=`<button class="popular-btn-check" type="button">
+                </button>`,f(),T.success({title:"OK",message:"Added to cart!"}))},et=async t=>{const{id:e}=t.target.closest(".js-card").dataset,a=await w(e);_.some(({_id:n})=>n===a._id)||(_.push(a),d(s.LOCAL_CART_KEY,_),t.target.closest(".js-cart").innerHTML=`<button class="popular-btn-check" type="button">
                     <svg class="popular-icon-check" width="18" height="18">
                       <use href="${p}#check"></use>
                     </svg>
-                </button>`,f(),T.success({title:"OK",message:"Added to cart!"}))},$=t=>{if(t.length)return t.map(({_id:e,name:a,img:r,category:i,price:n,size:l,is10PercentOff:u,popularity:m,isChecked:_})=>u?_?`<li class="card js-card" data-id=${e}>
+                </button>`,f(),T.success({title:"OK",message:"Added to cart!"}))},$=t=>{if(t.length)return t.map(({_id:e,name:a,img:r,category:n,price:i,size:l,is10PercentOff:u,popularity:m,isChecked:L})=>u?L?`<li class="card js-card" data-id=${e}>
             <div class="card-top">
   
               <div class="card-img-wrapper">
@@ -16,14 +16,14 @@ import{l as o,c as s,g as w,s as d,b as p,d as c,e as K,r as B,m as J,f as G,h a
               <h3 class="card-product-name">${a}</h3>
   
               <ul class="card-prodcuts-list">
-                  <li class="card-prodcuts-item">Category: <span>${i.replace("_"," ")}</span></li>
+                  <li class="card-prodcuts-item">Category: <span>${n.replace("_"," ")}</span></li>
                   <li class="card-prodcuts-item">Size: <span>${l}</span></li>
                   <li class="card-prodcuts-item">Popularity: <span>${m}</span></li>
               </ul>
             </div>
   
             <div class="card-bottom">
-              <p class="card-producs-price">$${n}</p>
+              <p class="card-producs-price">$${i}</p>
   
               <button class="card-btn js-cart" type="button">
                   <svg class="card-btn-icon-check" width="18" height="18">
@@ -46,14 +46,14 @@ import{l as o,c as s,g as w,s as d,b as p,d as c,e as K,r as B,m as J,f as G,h a
               <h3 class="card-product-name">${a}</h3>
   
               <ul class="card-prodcuts-list">
-                  <li class="card-prodcuts-item">Category: <span>${i.replace("_"," ")}</span></li>
+                  <li class="card-prodcuts-item">Category: <span>${n.replace("_"," ")}</span></li>
                   <li class="card-prodcuts-item">Size: <span>${l}</span></li>
                   <li class="card-prodcuts-item">Popularity: <span>${m}</span></li>
               </ul>
             </div>
   
             <div class="card-bottom">
-              <p class="card-producs-price">$${n}</p>
+              <p class="card-producs-price">$${i}</p>
   
               <button class="card-btn js-cart" type="button">
                   <svg class="card-btn-icon" width="18" height="18">
@@ -65,7 +65,7 @@ import{l as o,c as s,g as w,s as d,b as p,d as c,e as K,r as B,m as J,f as G,h a
               </svg>
               
             </div>
-        </li>`:_?`<li class="card js-card" data-id=${e}>
+        </li>`:L?`<li class="card js-card" data-id=${e}>
             <div class="card-top">
   
               <div class="card-img-wrapper">
@@ -76,7 +76,7 @@ import{l as o,c as s,g as w,s as d,b as p,d as c,e as K,r as B,m as J,f as G,h a
   
               <ul class="card-prodcuts-list">
                   <li class="card-prodcuts-item">Category:
-                    <span>${i.replace("_"," ")}</span>
+                    <span>${n.replace("_"," ")}</span>
                   </li>
                   <li class="card-prodcuts-item">Size:
                     <span>${l}</span>
@@ -89,7 +89,7 @@ import{l as o,c as s,g as w,s as d,b as p,d as c,e as K,r as B,m as J,f as G,h a
             </div>
   
             <div class="card-bottom">
-              <p class="card-producs-price">$${n}</p>
+              <p class="card-producs-price">$${i}</p>
   
               <button class="card-btn js-cart" type="button">
   
@@ -111,7 +111,7 @@ import{l as o,c as s,g as w,s as d,b as p,d as c,e as K,r as B,m as J,f as G,h a
   
               <ul class="card-prodcuts-list">
                   <li class="card-prodcuts-item">Category:
-                    <span>${i.replace("_"," ")}</span>
+                    <span>${n.replace("_"," ")}</span>
                   </li>
                   <li class="card-prodcuts-item">Size:
                     <span>${l}</span>
@@ -124,7 +124,7 @@ import{l as o,c as s,g as w,s as d,b as p,d as c,e as K,r as B,m as J,f as G,h a
             </div>
   
             <div class="card-bottom">
-              <p class="card-producs-price">$${n}</p>
+              <p class="card-producs-price">$${i}</p>
   
               <button class="card-btn js-cart" type="button">
   
@@ -135,7 +135,7 @@ import{l as o,c as s,g as w,s as d,b as p,d as c,e as K,r as B,m as J,f as G,h a
               </button>
   
             </div>
-        </li>`).join("")},q=t=>{t.innerHTML=`<div class="notFound_box">
+        </li>`).join("")},F=t=>{t.innerHTML=`<div class="notFound_box">
                               <p class="notFound_title">
                                   Nothing was found for the selected <span class="notFound_title_span">filters...</span>
                               </p>
@@ -144,7 +144,7 @@ import{l as o,c as s,g as w,s as d,b as p,d as c,e as K,r as B,m as J,f as G,h a
                                 find the perfect product for you.
                               </p>
                               </div>
-                            `,c.paginationContainer.style.display="none"},at=t=>t.length?t.map(e=>`<option value="${e}">${e.replace("_"," ").replace("_"," ")}</option>`).join(""):'<option value="not_found_categories">Not found categories</option>',st=t=>t.map(e=>`<option value="${e.value}">${e.label}</option>`).join(""),rt=t=>{if(!t.length){console.log("Sorry not data");return}return t.map(({_id:e,name:a,img:r,category:i,size:n,popularity:l,isChecked:u})=>u?`<li class="popular-card js-card" data-id=${e}>
+                            `,c.paginationContainer.style.display="none"},at=t=>t.length?t.map(e=>`<option value="${e}">${e.replace("_"," ").replace("_"," ")}</option>`).join(""):'<option value="not_found_categories">Not found categories</option>',st=t=>t.map(e=>`<option value="${e.value}">${e.label}</option>`).join(""),rt=t=>{if(!t.length){console.log("Sorry not data");return}return t.map(({_id:e,name:a,img:r,category:n,size:i,popularity:l,isChecked:u})=>u?`<li class="popular-card js-card" data-id=${e}>
         <div class="popular-box">
           <div class="popular-wraper">
             <div class="popular-card-img-wrap">
@@ -156,9 +156,9 @@ import{l as o,c as s,g as w,s as d,b as p,d as c,e as K,r as B,m as J,f as G,h a
             
             <ul class="popular-info-list">
                 <li class="popular-info-style">Category:
-                <span>${i.replace("_"," ")}</span></li>
+                <span>${n.replace("_"," ")}</span></li>
                 <div class="popular-info-wraper">
-                <li class="popular-info-style">Size: <span>${n}</span></li>
+                <li class="popular-info-style">Size: <span>${i}</span></li>
                 <li class="popular-info-style">Popularity: <span>${l}</span></li>
                 </div>
             </ul>
@@ -187,9 +187,9 @@ import{l as o,c as s,g as w,s as d,b as p,d as c,e as K,r as B,m as J,f as G,h a
             
             <ul class="popular-info-list">
                 <li class="popular-info-style">Category:
-                <span>${i.replace("_"," ")}</span></li>
+                <span>${n.replace("_"," ")}</span></li>
                 <div class="popular-info-wraper">
-                <li class="popular-info-style">Size: <span>${n}</span></li>
+                <li class="popular-info-style">Size: <span>${i}</span></li>
                 <li class="popular-info-style">Popularity: <span>${l}</span></li>
                 </div>
             </ul>
@@ -205,8 +205,8 @@ import{l as o,c as s,g as w,s as d,b as p,d as c,e as K,r as B,m as J,f as G,h a
           </button>
         </div>
         </div>
-    </li>`).join("")},ot=t=>t.map(({img:e,name:a,price:r,_id:i,is10PercentOff:n,isChecked:l})=>n?l?`
-          <li class="discount-product-element js-card" data-id=${i}>
+    </li>`).join("")},ot=t=>t.map(({img:e,name:a,price:r,_id:n,is10PercentOff:i,isChecked:l})=>i?l?`
+          <li class="discount-product-element js-card" data-id=${n}>
   
             <svg class="discount-label" width="60" height="60">
             <use href="${p}#discount"></use>
@@ -236,7 +236,7 @@ import{l as o,c as s,g as w,s as d,b as p,d as c,e as K,r as B,m as J,f as G,h a
           </div>
           
           </li>`:`
-          <li class="discount-product-element js-card" data-id=${i}>
+          <li class="discount-product-element js-card" data-id=${n}>
   
             <svg class="discount-label" width="60" height="60">
             <use href="${p}#discount"></use>
@@ -275,5 +275,5 @@ import{l as o,c as s,g as w,s as d,b as p,d as c,e as K,r as B,m as J,f as G,h a
                     find the perfect product for you.
                   </p>
                 </div>
-      `).join("");let v;const ct=window.matchMedia("(min-width: 768px)"),F=t=>{t.matches?(v=4,j()):(v=2,j())};ct.addEventListener("change",F);function j(){const t=o(s.PAGES).page,e=o(s.PAGES).perPage,a=o(s.PAGES).totalPages;new M(c.paginationContainer,{page:t,totalItems:e*a,itemsPerPage:e,visiblePages:v,centerAlign:!0,firstItemClassName:"tui-first-child",lastItemClassName:"tui-last-child"}).on("beforeMove",function(n){const l=JSON.parse(localStorage.getItem("pages"));l.page=n.page,localStorage.setItem("pages",JSON.stringify(l));const u=JSON.parse(localStorage.getItem("pages")),m=o(s.LOCAL_QUERY_KEY);m.page=u.page,d(s.LOCAL_QUERY_KEY,m);const _=o(s.LOCAL_QUERY_KEY);N(_)}),JSON.parse(localStorage.getItem("pages")).totalPages<=1?c.paginationContainer.style.display="none":c.paginationContainer.style.display="block"}function I(){new M(c.paginationContainer,{page:s.INIT_QUERY.page,totalItems:o("pages").perPage*o("pages").totalPages,itemsPerPage:o("pages").perPage,visiblePages:v,centerAlign:!0,firstItemClassName:"tui-first-child",lastItemClassName:"tui-last-child"}).on("beforeMove",function(a){const r=JSON.parse(localStorage.getItem("pages"));r.page=a.page,localStorage.setItem("pages",JSON.stringify(r));const i=JSON.parse(localStorage.getItem("pages")),n=o(s.LOCAL_QUERY_KEY);n.page=i.page,d(s.LOCAL_QUERY_KEY,n);const l=o(s.LOCAL_QUERY_KEY);N(l)}),JSON.parse(localStorage.getItem("pages")).totalPages<=1?c.paginationContainer.style.display="none":c.paginationContainer.style.display="block"}async function N(t){const e=await K(t);if(!e.results.length){notFoundMarkup(c.productList);return}c.productList.innerHTML=$(e.results)}const A=t=>{const e=o(s.LOCAL_CART_KEY)??[];return t.map(r=>e.some(({_id:n})=>n===r._id)?(r.isChecked=!0,r):(r.isChecked=!1,r))},Y=async(t,e)=>{const{id:a}=t.target.closest(".js-card").dataset,r=await w(a),i=J(r),n=X.create(i,{onShow:u=>{e.addEventListener("keydown",l),u.element().querySelector(".js-modal-close").onclick=()=>{u.close();const g=o(s.LOCAL_QUERY_KEY)??[];h(g)},(o(s.LOCAL_CART_KEY)??[]).some(({_id:g})=>g===a)?(u.element().querySelector(".js-to-cart").style.display="none",u.element().querySelector(".js-from-cart").style.display="flex"):(u.element().querySelector(".js-to-cart").style.display="flex",u.element().querySelector(".js-from-cart").style.display="none");const b=u.element().querySelector(".js-to-cart"),C=u.element().querySelector(".js-from-cart");b.addEventListener("click",()=>{const g=o(s.LOCAL_CART_KEY)??[];g.some(({_id:E})=>E===a)||(g.push(r),d(s.LOCAL_CART_KEY,g),f(),b.style.display="none",C.style.display="flex")}),C.addEventListener("click",()=>{const g=o(s.LOCAL_CART_KEY)??[],R=g.findIndex(({_id:E})=>E===a);g.splice(R,1),B(s.LOCAL_CART_KEY),d(s.LOCAL_CART_KEY,g),f(),C.style.display="none",b.style.display="flex"})},onClose:u=>{e.removeEventListener("keydown",l)}});function l(u){u.code==="Escape"&&n.close()}n.show()},h=async t=>{c.productList.innerHTML='<div class="loader-box"><span class="loader"></span></div>';const e=await K(t);if(!e.results.length){q(c.productList);return}d(s.PAGES,{page:e.page,perPage:e.perPage,totalPages:e.totalPages});const a=A(e.results);c.productList.innerHTML=$(a),I()},nt=t=>{if(t.preventDefault(),t.currentTarget!==t.target){if(t.target.closest(".js-cart")){x(t);return}Y(t,c.productList)}};c.productList.addEventListener("click",nt);new U({select:"#abcField",settings:{showSearch:!1}});let Q=[];const it=[{value:"alphabetical",label:"A to Z"},{value:"reverse-alphabetical",label:"Z to A"},{value:"cheap",label:"Cheap"},{value:"expensive",label:"Expensive"},{value:"popular",label:"Popular"},{value:"not-popular",label:"Not popular"},{value:"",label:"Show all"}],lt=async()=>{Q=[...await G(),"Show_all"];const e=at(Q);c.categoryField.insertAdjacentHTML("beforeend",e),c.abcField.innerHTML=st(it),new U({select:"#categoryField",settings:{placeholderText:"Categories",showSearch:!1}})};window.addEventListener("load",()=>{let t=document.querySelector(".mask");t&&setTimeout(()=>{t.style.opacity="1"},600);const e=document.querySelector(".loaderr");e&&setTimeout(()=>{e.parentNode.removeChild(e)},300)});const dt=async t=>{const e=t.target.value,a=o(s.LOCAL_QUERY_KEY);a.page="1",e==="Show_all"?a.category=null:a.category=e,d(s.LOCAL_QUERY_KEY,a);const r=o(s.LOCAL_SORT),i=o(s.LOCAL_QUERY_KEY);let n=O(s.BASE_URL,i);n=S(n,r);const l=await P(n);k(l)},ut=async t=>{t.preventDefault();const e=c.searchField.value,a=o(s.LOCAL_QUERY_KEY);a.page="1",e?a.keyword=e:a.keyword=null,d(s.LOCAL_QUERY_KEY,a);const r=o(s.LOCAL_SORT),i=o(s.LOCAL_QUERY_KEY);let n=O(s.BASE_URL,i);n=S(n,r);const l=await P(n);k(l)},O=(t,e)=>{let a=`${t}/products?page=${e.page}&limit=${e.limit}`;return e.keyword&&(a+=`&keyword=${e.keyword}`),e.category&&e.category!=="all"&&(a+=`&category=${pt(e.category)}`),a},pt=t=>{switch(t){case"Meat_&_Seafood":return"Meat_%26_Seafood";case"Breads_&_Bakery":return"Breads_%26_Bakery";default:return t}},S=(t,e)=>{if(e&&e!=="all")switch(e){case"alphabetical":t+="&byABC=true";break;case"reverse-alphabetical":t+="&byABC=false";break;case"cheap":t+="&byPrice=true";break;case"expensive":t+="&byPrice=false";break;case"popular":t+="&byPopularity=false";break;case"not-popular":t+="&byPopularity=true";break}return t},gt=async t=>{const e=t.target.value;d(s.LOCAL_SORT,e);const a=o(s.LOCAL_SORT),r=o(s.LOCAL_QUERY_KEY);let i=O(s.BASE_URL,r);i=S(i,a);const n=await P(i);k(n)};async function P(t){try{return(await tt({url:`${t}`,method:"GET",headers:{"Content-Type":"application/json"}})).data}catch(e){return console.error("Error:",e),e}}const k=async t=>{if(!t.results.length){q(c.productList);return}d(s.PAGES,{page:t.page,perPage:t.perPage,totalPages:t.totalPages}),c.productList.innerHTML=$(t.results),I()},ht=t=>{if(t.target.value===""){const e=o(s.LOCAL_QUERY_KEY);e.page="1",e.keyword=null,d(s.LOCAL_QUERY_KEY,e);const a=o(s.LOCAL_QUERY_KEY);h(a)}};c.form.addEventListener("submit",ut);c.categoryField.addEventListener("change",dt);c.abcField.addEventListener("change",gt);c.searchField.addEventListener("input",ht);const mt=async()=>{const t=await V();if(!t.length){notFoundMarkup(c.popularProductList);return}const e=A(t),a=rt(e);c.popularProductList.insertAdjacentHTML("beforeend",a)},yt=t=>{if(t.preventDefault(),t.target.closest(".js-cart")){et(t);return}Y(t,c.popularProductList)};c.popularProductList.addEventListener("click",yt);const Lt=t=>{const e=[],a=[];for(;e.length<s.NUMBER_OF_DISCOUNT;){const r=Math.floor(Math.random()*t.length);a.includes(r)||(a.push(r),e.push(t[r]))}return e},_t=async()=>{const t=await Z(),e=Lt(t),a=A(e),r=ot(a);c.dicsProd.innerHTML=r},ft=t=>{if(t.preventDefault(),t.target.closest(".js-cart")){x(t);return}Y(t,c.discProdList)};c.discProdList.addEventListener("click",ft);const D=window.matchMedia("(min-width: 768px)"),H=window.matchMedia("(min-width: 1440px)"),z=window.matchMedia("(max-width: 767.9px)"),vt=window.matchMedia("(max-width: 1439.9px)"),bt=window.matchMedia("(min-width: 768px) and (max-width: 1439.9px)");d(s.LOCAL_QUERY_KEY,s.INIT_QUERY);const y=o(s.LOCAL_QUERY_KEY)??[];f();lt();if(H.matches&&Object.keys(y).length){const t=o(s.LOCAL_QUERY_KEY)??[];t.limit=9,d(s.LOCAL_QUERY_KEY,t),h(t)}if(bt.matches&&Object.keys(y).length){const t=o(s.LOCAL_QUERY_KEY)??[];t.limit=8,d(s.LOCAL_QUERY_KEY,t),h(t)}if(z.matches&&Object.keys(y).length){const t=o(s.LOCAL_QUERY_KEY)??[];t.limit=6,d(s.LOCAL_QUERY_KEY,t),h(t)}F(D);mt();_t();W();D.addListener(t=>{if(t.matches&&Object.keys(y).length){const e=o(s.LOCAL_QUERY_KEY)??[];e.limit=8,d(s.LOCAL_QUERY_KEY,e),h(e)}});H.addListener(t=>{if(t.matches&&Object.keys(y).length){const e=o(s.LOCAL_QUERY_KEY)??[];e.limit=9,d(s.LOCAL_QUERY_KEY,e),h(e)}});vt.addListener(t=>{if(t.matches&&Object.keys(y).length){const e=o(s.LOCAL_QUERY_KEY)??[];e.limit=8,d(s.LOCAL_QUERY_KEY,e),h(e)}});z.addListener(t=>{if(t.matches&&Object.keys(y).length){const e=o(s.LOCAL_QUERY_KEY)??[];e.limit=6,d(s.LOCAL_QUERY_KEY,e),h(e)}});
+      `).join("");let v;const ct=window.matchMedia("(min-width: 768px)"),q=t=>{t.matches?(v=4,j()):(v=2,j())};ct.addEventListener("change",q);function j(){const t=o(s.PAGES).page,e=o(s.PAGES).perPage,a=o(s.PAGES).totalPages;new U(c.paginationContainer,{page:t,totalItems:e*a,itemsPerPage:e,visiblePages:v,centerAlign:!0,firstItemClassName:"tui-first-child",lastItemClassName:"tui-last-child"}).on("beforeMove",function(i){const l=JSON.parse(localStorage.getItem("pages"));l.page=i.page,localStorage.setItem("pages",JSON.stringify(l));const u=JSON.parse(localStorage.getItem("pages")),m=o(s.LOCAL_QUERY_KEY);m.page=u.page,d(s.LOCAL_QUERY_KEY,m);const L=o(s.LOCAL_QUERY_KEY);N(L)}),JSON.parse(localStorage.getItem("pages")).totalPages<=1?c.paginationContainer.style.display="none":c.paginationContainer.style.display="block"}function I(){new U(c.paginationContainer,{page:s.INIT_QUERY.page,totalItems:o("pages").perPage*o("pages").totalPages,itemsPerPage:o("pages").perPage,visiblePages:v,centerAlign:!0,firstItemClassName:"tui-first-child",lastItemClassName:"tui-last-child"}).on("beforeMove",function(a){const r=JSON.parse(localStorage.getItem("pages"));r.page=a.page,localStorage.setItem("pages",JSON.stringify(r));const n=JSON.parse(localStorage.getItem("pages")),i=o(s.LOCAL_QUERY_KEY);i.page=n.page,d(s.LOCAL_QUERY_KEY,i);const l=o(s.LOCAL_QUERY_KEY);N(l)}),JSON.parse(localStorage.getItem("pages")).totalPages<=1?c.paginationContainer.style.display="none":c.paginationContainer.style.display="block"}async function N(t){const e=await K(t);if(!e.results.length){notFoundMarkup(c.productList);return}c.productList.innerHTML=$(e.results)}const Y=t=>{const e=o(s.LOCAL_CART_KEY)??[];return t.map(r=>e.some(({_id:i})=>i===r._id)?(r.isChecked=!0,r):(r.isChecked=!1,r))},A=async(t,e)=>{const{id:a}=t.target.closest(".js-card").dataset,r=await w(a),n=J(r),i=X.create(n,{onShow:u=>{e.addEventListener("keydown",l),u.element().querySelector(".js-modal-close").onclick=()=>{u.close();const g=o(s.LOCAL_QUERY_KEY)??[];h(g)},(o(s.LOCAL_CART_KEY)??[]).some(({_id:g})=>g===a)?(u.element().querySelector(".js-to-cart").style.display="none",u.element().querySelector(".js-from-cart").style.display="flex"):(u.element().querySelector(".js-to-cart").style.display="flex",u.element().querySelector(".js-from-cart").style.display="none");const b=u.element().querySelector(".js-to-cart"),E=u.element().querySelector(".js-from-cart");b.addEventListener("click",()=>{const g=o(s.LOCAL_CART_KEY)??[];g.some(({_id:C})=>C===a)||(g.push(r),d(s.LOCAL_CART_KEY,g),f(),b.style.display="none",E.style.display="flex")}),E.addEventListener("click",()=>{const g=o(s.LOCAL_CART_KEY)??[],R=g.findIndex(({_id:C})=>C===a);g.splice(R,1),H(s.LOCAL_CART_KEY),d(s.LOCAL_CART_KEY,g),f(),E.style.display="none",b.style.display="flex"})},onClose:u=>{e.removeEventListener("keydown",l)}});function l(u){u.code==="Escape"&&i.close()}i.show()},h=async t=>{c.productList.innerHTML='<div class="loader-box"><span class="loader"></span></div>';const e=await K(t);if(!e.results.length){F(c.productList);return}d(s.PAGES,{page:e.page,perPage:e.perPage,totalPages:e.totalPages});const a=Y(e.results);c.productList.innerHTML=$(a),I()},it=t=>{if(t.preventDefault(),t.currentTarget!==t.target){if(t.target.closest(".js-cart")){M(t);return}A(t,c.productList)}};c.productList.addEventListener("click",it);new x({select:"#abcField",settings:{showSearch:!1}});let Q=[];const nt=[{value:"alphabetical",label:"A to Z"},{value:"reverse-alphabetical",label:"Z to A"},{value:"cheap",label:"Cheap"},{value:"expensive",label:"Expensive"},{value:"popular",label:"Popular"},{value:"not-popular",label:"Not popular"},{value:"",label:"Show all"}],lt=async()=>{Q=[...await G(),"Show_all"];const e=at(Q);c.categoryField.insertAdjacentHTML("beforeend",e),c.abcField.innerHTML=st(nt),new x({select:"#categoryField",settings:{placeholderText:"Categories",showSearch:!1}})};window.addEventListener("load",()=>{let t=document.querySelector(".mask");t&&setTimeout(()=>{t.style.opacity="1"},600);const e=document.querySelector(".loaderr");e&&setTimeout(()=>{e.parentNode.removeChild(e)},300)});const dt=async t=>{const e=t.target.value,a=o(s.LOCAL_QUERY_KEY);a.page="1",e==="Show_all"?a.category=null:a.category=e,d(s.LOCAL_QUERY_KEY,a);const r=o(s.LOCAL_SORT),n=o(s.LOCAL_QUERY_KEY);let i=O(s.BASE_URL,n);i=P(i,r);const l=await S(i);k(l)},ut=async t=>{t.preventDefault();const e=c.searchField.value,a=o(s.LOCAL_QUERY_KEY);a.page="1",e?a.keyword=e:a.keyword=null,d(s.LOCAL_QUERY_KEY,a);const r=o(s.LOCAL_SORT),n=o(s.LOCAL_QUERY_KEY);let i=O(s.BASE_URL,n);i=P(i,r);const l=await S(i);k(l)},O=(t,e)=>{let a=`${t}/products?page=${e.page}&limit=${e.limit}`;return e.keyword&&(a+=`&keyword=${e.keyword}`),e.category&&e.category!=="all"&&(a+=`&category=${pt(e.category)}`),a},pt=t=>{switch(t){case"Meat_&_Seafood":return"Meat_%26_Seafood";case"Breads_&_Bakery":return"Breads_%26_Bakery";default:return t}},P=(t,e)=>{if(e&&e!=="all")switch(e){case"alphabetical":t+="&byABC=true";break;case"reverse-alphabetical":t+="&byABC=false";break;case"cheap":t+="&byPrice=true";break;case"expensive":t+="&byPrice=false";break;case"popular":t+="&byPopularity=false";break;case"not-popular":t+="&byPopularity=true";break}return t},gt=async t=>{const e=t.target.value;d(s.LOCAL_SORT,e);const a=o(s.LOCAL_SORT),r=o(s.LOCAL_QUERY_KEY);let n=O(s.BASE_URL,r);n=P(n,a);const i=await S(n);k(i)};async function S(t){try{return(await tt({url:`${t}`,method:"GET",headers:{"Content-Type":"application/json"}})).data}catch(e){return console.error("Error:",e),e}}const k=async t=>{if(!t.results.length){F(c.productList);return}d(s.PAGES,{page:t.page,perPage:t.perPage,totalPages:t.totalPages}),c.productList.innerHTML=$(t.results),I()},ht=t=>{if(t.target.value===""){const e=o(s.LOCAL_QUERY_KEY);e.page="1",e.keyword=null,d(s.LOCAL_QUERY_KEY,e);const a=o(s.LOCAL_QUERY_KEY);h(a)}};c.form.addEventListener("submit",ut);c.categoryField.addEventListener("change",dt);c.abcField.addEventListener("change",gt);c.searchField.addEventListener("input",ht);const mt=async()=>{const t=await V();if(!t.length){notFoundMarkup(c.popularProductList);return}const e=Y(t),a=rt(e);c.popularProductList.insertAdjacentHTML("beforeend",a)},yt=t=>{if(t.preventDefault(),t.target.closest(".js-cart")){et(t);return}A(t,c.popularProductList)};c.popularProductList.addEventListener("click",yt);const _t=t=>{const e=[],a=[];for(;e.length<s.NUMBER_OF_DISCOUNT;){const r=Math.floor(Math.random()*t.length);a.includes(r)||(a.push(r),e.push(t[r]))}return e},Lt=async()=>{const t=await Z(),e=_t(t),a=Y(e),r=ot(a);c.dicsProd.innerHTML=r},ft=t=>{if(t.preventDefault(),t.target.closest(".js-cart")){M(t);return}A(t,c.discProdList)};c.discProdList.addEventListener("click",ft);const D=window.matchMedia("(min-width: 768px)"),z=window.matchMedia("(min-width: 1440px)"),B=window.matchMedia("(max-width: 767.9px)"),vt=window.matchMedia("(max-width: 1439.9px)"),bt=window.matchMedia("(min-width: 768px) and (max-width: 1439.9px)");d(s.LOCAL_QUERY_KEY,s.INIT_QUERY);const y=o(s.LOCAL_QUERY_KEY)??[];f();lt();if(z.matches&&Object.keys(y).length){const t=o(s.LOCAL_QUERY_KEY)??[];t.limit=9,d(s.LOCAL_QUERY_KEY,t),h(t)}if(bt.matches&&Object.keys(y).length){const t=o(s.LOCAL_QUERY_KEY)??[];t.limit=8,d(s.LOCAL_QUERY_KEY,t),h(t)}if(B.matches&&Object.keys(y).length){const t=o(s.LOCAL_QUERY_KEY)??[];t.limit=6,d(s.LOCAL_QUERY_KEY,t),h(t)}q(D);mt();Lt();W();D.addListener(t=>{if(t.matches&&Object.keys(y).length){const e=o(s.LOCAL_QUERY_KEY)??[];e.limit=8,d(s.LOCAL_QUERY_KEY,e),h(e)}});z.addListener(t=>{if(t.matches&&Object.keys(y).length){const e=o(s.LOCAL_QUERY_KEY)??[];e.limit=9,d(s.LOCAL_QUERY_KEY,e),h(e)}});vt.addListener(t=>{if(t.matches&&Object.keys(y).length){const e=o(s.LOCAL_QUERY_KEY)??[];e.limit=8,d(s.LOCAL_QUERY_KEY,e),h(e)}});B.addListener(t=>{if(t.matches&&Object.keys(y).length){const e=o(s.LOCAL_QUERY_KEY)??[];e.limit=6,d(s.LOCAL_QUERY_KEY,e),h(e)}});
 //# sourceMappingURL=commonHelpers2.js.map
