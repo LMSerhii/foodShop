@@ -7,6 +7,19 @@ body {
   font-weight: 400;
   line-height: 1.17;
 }
+/*  */
+/* Validation */
+input:invalid:not(:placeholder-shown),
+textarea:invalid:not(:placeholder-shown) {
+  border-color: #dc143c;
+}
+input:valid:not(:placeholder-shown),
+textarea:valid:not(:placeholder-shown) {
+  border-color: #008000;
+}
+
+
+/*  */
 
 .wrapp {
   display: block;

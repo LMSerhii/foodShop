@@ -35,12 +35,13 @@ const onClose = evt => {
   }
 
   const id = evt.target.closest('.js-card').dataset.id;
-  console.log(evt.target);
-
+  // console.log(evt.target);
+  console.log(cart);
+  clearCartLocalStorage()
   if (evt.target.classList.contains('js-close')) {
     validClose(id);
     // orderContainer.innerHTML = '';
-    refs.deleteAllButton.innerHTML = '';
+    // refs.deleteAllButton.innerHTML = '';
   }
 };
 
@@ -54,6 +55,7 @@ const renderTotalAmount = () => {
 // Функція для очищення значення ключа "cart" у локальному сховищі
 const clearCartLocalStorage = () => {
   localStorage.setItem('cart', '[]');
+  notFound()
   location.reload();
 };
 
@@ -88,5 +90,24 @@ renderCart();
 
 // Додавання обробника подій для кнопки "Delete all"
 refs.deleteAllButton.addEventListener('click', clearCartLocalStorage);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 export { clearCartLocalStorage, renderCart, onClose };
