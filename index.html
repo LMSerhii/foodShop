@@ -8,8 +8,8 @@
     
     <script type="module" crossorigin src="/foodShop/commonHelpers2.js"></script>
     <link rel="modulepreload" crossorigin href="/foodShop/assets/vendor-f213eb09.js">
-    <link rel="modulepreload" crossorigin href="/foodShop/assets/header-83605e8e.js">
-    <link rel="stylesheet" href="/foodShop/assets/header-0e913ff5.css">
+    <link rel="modulepreload" crossorigin href="/foodShop/assets/header-fc852dda.js">
+    <link rel="stylesheet" href="/foodShop/assets/header-70329922.css">
     <link rel="stylesheet" href="/foodShop/assets/vendor-ee8849a6.css">
   </head>
   <body>
@@ -69,12 +69,11 @@
 </section>
 
   <section class="filters">
-  <div class="loadNav">
-    <span class="loaderr"></span>
-  </div>
-  <div class="container mask">
+  <div class="container">
+    <div id="loader" class="loader"></div>
+
     <label class="form-label" for="filtersForm">Filters:</label>
-    <form class="form" name="filters" id="filtersForm">
+    <form class="form hidden" name="filters" id="filtersForm">
       <div class="filter-input-wrapper">
         <input
           class="filters-input js-input"
@@ -83,6 +82,7 @@
           name="search"
           placeholder="Search for anything"
         />
+
         <button class="search-btn" type="submit">
           <svg class="search-btn-svg" width="20" height="20">
             <use href="/foodShop/assets/sprite-10b57387.svg#search"></use>
