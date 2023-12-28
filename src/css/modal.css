@@ -226,7 +226,6 @@
   background-color: #fafafa;
   width: 240px;
   height: 535px;
-  overflow: auto;
 }
 
 @media screen and (min-width: 375px) {
@@ -344,6 +343,25 @@
   color: #010101;
 }
 
+.scroll {
+  width: 200px;
+  height: 54px;
+  overflow: auto;
+}
+
+@media screen and (min-width: 375px) {
+  .scroll {
+    width: 256px;
+    height: 80px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .scroll {
+    width: 256px;
+    height: 80px;
+  }
+}
 .modal-product-desc {
   color: rgba(1, 1, 1, 0.7);
   font-family: Neue Montreal;

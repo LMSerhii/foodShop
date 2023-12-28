@@ -138,11 +138,11 @@ const modalProductMarkup = ({
                         <span class="list-variables">${popularity}</span>
                       </li>
                     </ul>
-                    
+                    <div class="scroll">
                     <p class="modal-product-desc">
                       ${desc}
                     </p>
-                    
+                    </div>
                   </div>
                 </div>
 
