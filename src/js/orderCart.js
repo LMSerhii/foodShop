@@ -76,8 +76,13 @@ if (checkoutButton) {
     event.preventDefault();
 
     // Виклик функції для обробки замовлення
+
     handleOrder();
   });
 }
+
+
+
+
 
 export { orderCart };
