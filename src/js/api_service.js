@@ -1,6 +1,10 @@
 import axios from 'axios';
 import { common } from './common';
 import { refs } from './refs';
+import { openModalFooter } from './modal';
+import { succesOrder } from './helpers/modalMarkups';
+import { errorOrder } from './helpers/modalMarkups';
+import { load } from './storage';
 
 // get a list of all products
 async function getData(query) {
@@ -99,7 +103,7 @@ async function getCategories() {
 }
 
 // request to create a new order
-async function createOrder(email, productList) {
+async function createOrder(orderData) {
   // returns an object
   try {
     const response = await axios({
@@ -108,14 +112,19 @@ async function createOrder(email, productList) {
       headers: {
         'Content-Type': 'application/json',
       },
-      data: {
-        email: email,
-        products: productList,
-      },
+      data: orderData,
     });
-    return response;
+
+    const form = document.querySelector('.order-form');
+    const currCart = load(common.LOCAL_CART_KEY) ?? [];
+    const markup = succesOrder(currCart);
+
+    openModalFooter(form, markup);
   } catch (error) {
-    return error;
+    const form = document.querySelector('.order-form');
+
+    const markup = errorOrder();
+    openModalFooter(form, markup);
   }
 }
 

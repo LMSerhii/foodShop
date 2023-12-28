@@ -1,11 +1,13 @@
 import { load, save, remove } from './storage';
 import { common } from './common';
 import emty_cart from '../img/yellow_shopping_basket.png';
+import { createOrder } from './api_service';
 
 const refs = {
   cartList: document.querySelector('.cart-list'),
   deleteAll: document.querySelector('.cart-delete-all'),
   orderBox: document.querySelector('.order-box'),
+  orderForm: document.querySelector('.order-form'),
 };
 
 const createCartListMarkup = arrey => {
@@ -107,6 +109,54 @@ const onCartListClick = evt => {
     renderCartList();
   }
 };
+
+const totalAmount = () => {
+  const currCart = load(common.LOCAL_CART_KEY) ?? [];
+
+  if (!currCart.length) {
+    return;
+  }
+
+  const count = 1;
+
+  return currCart
+    .reduce((acc, product) => acc + product.price * count, 0)
+    .toFixed(2);
+};
+
+console.log(totalAmount());
+
+const onOrderForm = evt => {
+  evt.preventDefault();
+  const email = document.querySelector('.order-box-input').value;
+
+  if (!email) {
+    alert('blank space');
+    return;
+  }
+
+  const testEmail = 'goodemail@gmail.com';
+
+  const currCart = load(common.LOCAL_CART_KEY) ?? [];
+
+  let orderList = [];
+
+  currCart.map(element => {
+    orderList.push({
+      productId: element._id,
+      amount: 1,
+    });
+  });
+
+  const data = JSON.stringify({
+    email: testEmail,
+    products: orderList,
+  });
+
+  createOrder(data);
+};
+
+refs.orderForm.addEventListener('submit', onOrderForm);
 
 refs.cartList.addEventListener('click', onCartListClick);
 
