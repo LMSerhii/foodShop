@@ -32,40 +32,125 @@
 /* order-box */
 
 .order-box {
+  padding: 80px 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .order-box {
+    padding: 100px 32px;
+  }
 }
 .order-box-title {
   color: #010101;
   font-size: 24px;
-  font-style: normal;
+
   font-weight: 500;
   line-height: 1.16;
   text-transform: uppercase;
   margin-bottom: 40px;
 }
+
+@media screen and (min-width: 768px) {
+  .order-box-title {
+    font-size: 32px;
+  }
+}
 .order-box-total-wrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 44px;
+  width: 210px;
+  height: 60px;
+  border-radius: 8px;
+  background: rgba(109, 132, 52, 0.05);
+  margin-bottom: 30px;
+}
+
+@media screen and (min-width: 375px) {
+  .order-box-total-wrapper {
+    width: 335px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .order-box-total-wrapper {
+    width: 590px;
+  }
 }
 .order-box-total-title {
+  color: #010101;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.11; /* 111.111% */
+}
+
+@media screen and (min-width: 768px) {
+  .order-box-total-title {
+    font-size: 20px;
+    line-height: 1.2;
+  }
 }
 .order-box-total-price {
+  color: rgba(1, 1, 1, 0.2);
+  font-size: 12px;
+  line-height: 1.17; /* 116.667% */
 }
 .order-box-total-price-var {
+  color: #010101;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.17;
 }
+
+@media screen and (min-width: 768px) {
+  .order-box-total-price-var {
+    font-size: 32px;
+    line-height: 1;
+  }
+}
+
 .order-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
 }
+
+@media screen and (min-width: 768px) {
+  .order-form {
+    flex-direction: row;
+    gap: 16px;
+  }
+}
+
 .order-placeholder {
 }
 
 .order-box-input {
-  margin-bottom: 14px;
+  display: inline-flex;
+  padding: 12px 183px 12px 20px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 30px;
+  border: 1px solid rgba(1, 1, 1, 0.3);
 }
 
 .order-placeholder-var {
 }
 .order-submit {
+  display: inline-flex;
+  padding: 12px 138px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 30px;
+  background: #6d8434;
+}
+
+@media screen and (min-width: 768px) {
+  .order-submit {
+    padding: 15px 65px;
+  }
 }
 
 /* cart item  */

@@ -46,11 +46,15 @@
           </p>
         </div>
         <form class="order-form" name="order_form">
-          <label class="order-placeholder"
-            >Mail:
-            <span class="order-placeholder-var">Enter your email</span>
+          <label class="order-placeholder">
+            <!-- <span class="order-placeholder-var">Enter your email</span> -->
           </label>
-          <input classs="order-box-input" type="email" />
+          <input
+            classs="order-box-input"
+            type="email"
+            placeholder="Mail: Enter your email"
+            pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
+          />
           <button class="order-submit">Checkout</button>
         </form>
       </div>
