@@ -33,30 +33,30 @@
         </button>
       </div>
 
-      <ul class="cart-list"></ul>
-
-      <div class="order-box">
-        <p class="order-box-title">Your Order</p>
-
-        <div class="order-box-total-wrapper">
-          <p class="order-box-total-title">Total</p>
-          <p class="order-box-total-price">
-            Sum:
-            <span class="order-box-total-price-var">$</span>
-          </p>
+      <div class="wraper-order-cart">
+        <ul class="cart-list"></ul>
+        <div class="order-box">
+          <p class="order-box-title">Your Order</p>
+          <div class="order-box-total-wrapper">
+            <p class="order-box-total-title">Total</p>
+            <p class="order-box-total-price">
+              Sum:
+              <span class="order-box-total-price-var">$</span>
+            </p>
+          </div>
+          <form class="order-form" name="order_form">
+            <label class="order-placeholder">
+              <!-- <span class="order-placeholder-var">Enter your email</span> -->
+            </label>
+            <input
+              classs="order-box-input"
+              type="email"
+              placeholder="Mail: Enter your email"
+              pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
+            />
+            <button class="order-submit">Checkout</button>
+          </form>
         </div>
-        <form class="order-form" name="order_form">
-          <label class="order-placeholder">
-            <!-- <span class="order-placeholder-var">Enter your email</span> -->
-          </label>
-          <input
-            classs="order-box-input"
-            type="email"
-            placeholder="Mail: Enter your email"
-            pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
-          />
-          <button class="order-submit">Checkout</button>
-        </form>
       </div>
     </div>
     <load src="./partials/footer.html" />
