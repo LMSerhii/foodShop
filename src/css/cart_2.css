@@ -231,7 +231,37 @@
 .cart-content-price {
 }
 .cart-content-bottom-addition {
+  border-radius: 100px;
+  border: 1px solid rgba(1, 1, 1, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
+
+.cart-content-bottom  {
+  padding: 6px 4px;
+  border: none;
+  background-color: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.plus-icon,
+.minus-icon {
+
+  
+}
+
+.quantity {
+font-size: 20px;
+
+}
+
+
+
+
 
 /* emty cart  */
 .emty-cart {
