@@ -45,7 +45,21 @@ const createCartListMarkup = arrey => {
                     </ul>
                     <div class="cart-content-bottom">   
                         <p class="cart-content-price">$${price}</p>
-                        <div class="cart-content-bottom-addition"></div>
+                      
+
+                        <div class="cart-content-bottom-addition">
+                        <button class="cart-content-bottom" type="button" aria-label="subtraction"><svg class="minus-icon" width="18" height="18" aria-label="minus">
+                            <use class="cart-minus-svg" xlink:href="./img/sprite.svg#minus"></use>
+                          </svg></button>
+
+                        <span class="quantity">1</span>
+
+                        <button class="cart-content-bottom" type="button" aria-label="addition"><svg class="plus-icon" width="18" height="18" aria-label="plus">
+                            <use class="cart-plus-svg" xlink:href="./img/sprite.svg#plus"></use>
+                          </svg></button>
+                      </div>
+
+                        
                     </div>
                 </div>
             </li>
