@@ -16,7 +16,7 @@
     <link rel="modulepreload" crossorigin href="/foodShop/assets/header-fc852dda.js">
     <link rel="stylesheet" href="/foodShop/assets/vendor-ee8849a6.css">
     <link rel="stylesheet" href="/foodShop/assets/header-70329922.css">
-    <link rel="stylesheet" href="/foodShop/assets/cart_2-6cc5fd77.css">
+    <link rel="stylesheet" href="/foodShop/assets/cart_2-fd61ad79.css">
   </head>
   <body>
     <header class="header">
@@ -60,38 +60,44 @@
         Cart <span id="product-count-cart">0</span>
       </p>
 
-      <div class="cart-delete-all-wrapper">
-        <button class="cart-delete-all" type="button">
-          Delete all
-          <svg class="cart-delete-all-icon" width="24" height="24">
-            <use href="/foodShop/assets/sprite-10b57387.svg#close"></use>
-          </svg>
-        </button>
-      </div>
-      <div class="cart-list-scroll"><ul class="cart-list"></ul></div>
-
-      <div class="wraper-order-cart">
-        <ul class="cart-list"></ul>
-        <div class="order-box">
-          <p class="order-box-title">Your Order</p>
-          <div class="order-box-total-wrapper">
-            <p class="order-box-total-title">Total</p>
-            <p class="order-box-total-price">
-              Sum:
-              <span class="order-box-total-price-var">$</span>
-            </p>
+      <div class="cart-wrapper">
+        <div class="cart-product-box">
+          <div class="cart-delete-all-wrapper">
+            <button class="cart-delete-all" type="button">
+              Delete all
+              <svg class="cart-delete-all-icon" width="24" height="24">
+                <use href="/foodShop/assets/sprite-10b57387.svg#close"></use>
+              </svg>
+            </button>
           </div>
+          <div class="cart-list-scroll">
+            <ul class="cart-list"></ul>
+          </div>
+        </div>
 
-          <form class="order-form" name="order_form">
-            <label class="order-placeholder"
-              >Mail:
-              <span class="order-placeholder-var">Enter your email</span>
-            </label>
-            <!-- <input class="order-box-input" type="email" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"/> -->
-            <input class="order-box-input" type="text" />
-
-            <button class="order-submit">Checkout</button>
-          </form>
+        <div class="wraper-order-cart">
+          <ul class="cart-list"></ul>
+          <div class="order-box">
+            <p class="order-box-title">Your Order</p>
+            <div class="order-box-total-wrapper">
+              <p class="order-box-total-title">Total</p>
+              <p class="order-box-total-price">
+                Sum:
+                <span class="order-box-total-price-var">$</span>
+              </p>
+            </div>
+            <form class="order-form" name="order_form">
+              <div class="input-wrapper">
+                <label class="order-placeholder"
+                  >Mail:
+                  <span class="order-placeholder-var">Enter your email</span>
+                </label>
+                <!-- <input class="order-box-input" type="email" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"/> -->
+                <input class="order-box-input" type="text" />
+              </div>
+              <button class="order-submit">Checkout</button>
+            </form>
+          </div>
         </div>
       </div>
     </div>
