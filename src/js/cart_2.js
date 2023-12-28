@@ -17,11 +17,12 @@ const refs = {
   totalSum: document.querySelector('.order-box-total-price-var'),
   footerForm: document.querySelector('.subscribe-form'),
   headerCount: document.querySelector('#product-count-header'),
+  cartWrapper: document.querySelector('.cart-wrapper'),
 };
 
 const createCartListMarkup = arrey => {
   if (!arrey.length) {
-    return `<li class="emty-cart">
+    return `<div class="emty-cart">
                     <img src="${emty_cart}" alt="Emty Cart" class="emty-cart-img" width="132" height="114" />
                     <p class="emty-cart-title">
                         Your basket is <span class="accent">empty...</span>
@@ -30,15 +31,22 @@ const createCartListMarkup = arrey => {
                         Go to the main page to select your favorite products and add them to the
                         cart.
                     </p>
-            </li>`;
+            </div>`;
   }
 
   return arrey
     .map(({ _id, img, name, category, size, price }) => {
       return `<li class="cart-item js-card" data-id="${_id}">
-      <div class="cart-product-container">
-       <div class="cart-product-img-box"><img src="${img}" alt="${name}" class="cart-img" /></div>             
-<div class="cart-content">
+                  <button class="cart-product-delete js-product-cart-delete">
+                      <svg class="cart-product-delete-icon" width="18" height="18">
+                          <use href="./img/sprite.svg#close"></use>
+                      </svg>
+                    </button>
+                <div class="cart-product-container">
+                    <div class="cart-product-img-box">
+                        <img src="${img}" alt="${name}" class="cart-img" width="64" height="64" />
+                      </div>             
+                <div class="cart-content">
                     <p class="cart-content-title">${name}</p>                    
 
                     <ul class="cart-content-list">
@@ -58,7 +66,7 @@ const createCartListMarkup = arrey => {
                         
                         
 
-<div class="cart-content-bottom-addition">
+                      <div class="cart-content-bottom-addition">
                         <button class="cart-content-bottom" type="button" aria-label="subtraction">
                           <svg class="minus-icon" width="18" height="18" aria-label="minus">
                             <use class="cart-minus-svg" href="${svg_sprite}#minus"></use>
@@ -72,20 +80,7 @@ const createCartListMarkup = arrey => {
                             <use class="cart-plus-svg" href="${svg_sprite}#plus"></use>
                           </svg>
                         </button>
-                      </div>
-      
-                    <div class="cart-close-btn">
-                      <button class="cart-product-delete js-product-cart-delete">
-                        <svg class="cart-product-delete-icon" width="18" height="18">
-                            <use href="./img/sprite.svg#close"></use>
-                        </svg>
-                    </button>
-                    </div>
-                      
-
-                        
-
-                        
+                      </div>       
                     </div>
                        
                 </li>`;
@@ -114,7 +109,8 @@ const renderCartList = () => {
     refs.deleteAll.style.display = 'none';
     refs.orderBox.style.display = 'none';
     const markup = createCartListMarkup(currentCartList);
-    refs.cartList.innerHTML = markup;
+    // refs.cartList.innerHTML = markup;
+    refs.cartWrapper.innerHTML = markup;
     return;
   }
 
