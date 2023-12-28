@@ -136,7 +136,7 @@ import{a as l,b as m}from"./vendor-85c19974.js";(function(){const s=document.cre
                                 find the perfect product for you.
                               </p>
                               </div>
-                            `,g.paginationContainer.style.display="none"},k=t=>t.length?t.map(s=>`<option value="${s}">${s.replace("_"," ").replace("_"," ")}</option>`).join(""):'<option value="not_found_categories">Not found categories</option>',x=t=>t.map(s=>`<option value="${s.value}">${s.label}</option>`).join(""),_=t=>{if(!t.length){console.log("Sorry not data");return}return t.map(({_id:s,name:e,img:r,category:a,size:o,popularity:i,isChecked:d})=>d?`<li class="popular-card js-card" data-id=${s}>
+                            `,g.paginationContainer.style.display="none"},x=t=>t.length?t.map(s=>`<option value="${s}">${s.replace("_"," ").replace("_"," ")}</option>`).join(""):'<option value="not_found_categories">Not found categories</option>',_=t=>t.map(s=>`<option value="${s.value}">${s.label}</option>`).join(""),k=t=>{if(!t.length){console.log("Sorry not data");return}return t.map(({_id:s,name:e,img:r,category:a,size:o,popularity:i,isChecked:d})=>d?`<li class="popular-card js-card" data-id=${s}>
         <div class="popular-box">
           <div class="popular-wraper">
             <div class="popular-card-img-wrap">
@@ -314,7 +314,7 @@ import{a as l,b as m}from"./vendor-85c19974.js";(function(){const s=document.cre
       <p class="empty-text"> Your basket is <span>empty...</span></p>
       <p class="empty-comment">Go to the main page to select your favorite products and add them to the cart.</p>
   </div>
-  `);async function E(t){try{return(await l({url:`${n.BASE_URL}/products`,method:"GET",header:{"Content-Type":"aplication/json"},params:t})).data}catch(s){return s}}async function q(t){try{return(await l({url:`${n.BASE_URL}/products/${t}`,method:"GET",header:{"Content-Type":"aplication/json"}})).data}catch(s){return s}}async function T(t){try{let s=null;return t&&(s={limit:t}),(await l({url:`${n.BASE_URL}/products/popular`,method:"GET",header:{"Content-Type":"aplication/json"},params:s})).data}catch(s){return s}}async function P(){try{return(await l({url:`${n.BASE_URL}/products/discount`,method:"GET",header:{"Content-Type":"aplication/json"}})).data}catch(t){return t}}async function F(){try{return(await l({url:`${n.BASE_URL}/products/categories`,method:"GET",header:{"Content-Type":"aplication/json"}})).data}catch(t){return t}}async function O(t,s){try{return await l({url:"https://food-boutique.b.goit.study/api/orders",method:"POST",headers:{"Content-Type":"application/json"},data:{email:t,products:s}})}catch(e){return e}}async function A(t){try{return(await l({url:`${n.BASE_URL}/subscription`,method:"POST",headers:{"Content-Type":"application/json"},data:{email:t}})).status}catch(s){return s.response.status}}const z=(t,s)=>{const e=a=>{a.code==="Escape"&&r.close()},r=m.create(s,{onShow:a=>{t.addEventListener("keydown",e),a.element().querySelector(".js-modal-close").onclick=()=>a.close()},onClose:a=>{t.removeEventListener("keydown",e)}});r.show()},b="/foodShop/assets/subscribing@1x-6a8ff382.png",h="/foodShop/assets/subscribing@2x-9debc6b5.png",B=`
+  `);async function E(t){try{return(await l({url:`${n.BASE_URL}/products`,method:"GET",header:{"Content-Type":"aplication/json"},params:t})).data}catch(s){return s}}async function q(t){try{return(await l({url:`${n.BASE_URL}/products/${t}`,method:"GET",header:{"Content-Type":"aplication/json"}})).data}catch(s){return s}}async function T(t){try{let s=null;return t&&(s={limit:t}),(await l({url:`${n.BASE_URL}/products/popular`,method:"GET",header:{"Content-Type":"aplication/json"},params:s})).data}catch(s){return s}}async function P(){try{return(await l({url:`${n.BASE_URL}/products/discount`,method:"GET",header:{"Content-Type":"aplication/json"}})).data}catch(t){return t}}async function F(){try{return(await l({url:`${n.BASE_URL}/products/categories`,method:"GET",header:{"Content-Type":"aplication/json"}})).data}catch(t){return t}}async function O(t,s){try{return await l({url:"https://food-boutique.b.goit.study/api/orders",method:"POST",headers:{"Content-Type":"application/json"},data:{email:t,products:s}})}catch(e){return e}}async function A(t){try{return(await l({url:`${n.BASE_URL}/subscription`,method:"POST",headers:{"Content-Type":"application/json"},data:{email:t}})).status}catch(s){return s.response.status}}const B=(t,s)=>{const e=a=>{a.code==="Escape"&&r.close()},r=m.create(s,{onShow:a=>{t.addEventListener("keydown",e),a.element().querySelector(".js-modal-close").onclick=()=>a.close()},onClose:a=>{t.removeEventListener("keydown",e)}});r.show()},b="/foodShop/assets/subscribing@1x-6a8ff382.png",h="/foodShop/assets/subscribing@2x-9debc6b5.png",z=`
                   <div class="modal">
 
                     <div class="container">
@@ -431,16 +431,23 @@ import{a as l,b as m}from"./vendor-85c19974.js";(function(){const s=document.cre
                       </li>
                     </ul>
                     <p class="modal-product-desc">
-                      A round, orange vegetable with a thick shell and seeds inside. It is
-                      often used in cooking and baking for its sweet and earthy flavor.
+                      ${s}
                     </p>
                   </div>
                 </div>
 
                 <div class="modal-product-bottom">
                   <p class="modal-product-price">$${a}</p>
-                  <button class="modal-product-btn">
+
+                  <button class="modal-product-addBtn js-to-cart">
                     Add to
+                    <svg class="modal-product-icon" width="18" height="18">
+                      <use href="${c}#cart"></use>
+                    </svg>
+                  </button>
+
+                  <button class="modal-product-removeBtn js-from-cart">
+                    Remove from
                     <svg class="modal-product-icon" width="18" height="18">
                       <use href="${c}#cart"></use>
                     </svg>
@@ -450,5 +457,5 @@ import{a as l,b as m}from"./vendor-85c19974.js";(function(){const s=document.cre
             </div>
           </div>
 
-`;export{O as a,I as b,n as c,w as d,v as e,c as f,q as g,E as h,S as i,F as j,k,$ as l,M as m,j as n,z as o,L as p,x as q,g as r,f as s,T as t,_ as u,P as v,C as w,A as x,R as y,B as z};
-//# sourceMappingURL=modalMarkups-a149f7cd.js.map
+`;export{O as a,I as b,n as c,w as d,v as e,c as f,q as g,E as h,S as i,F as j,x as k,$ as l,M as m,j as n,B as o,L as p,_ as q,g as r,f as s,T as t,k as u,P as v,C as w,A as x,R as y,z};
+//# sourceMappingURL=modalMarkups-077b3968.js.map
