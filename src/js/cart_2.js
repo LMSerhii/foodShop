@@ -22,35 +22,40 @@ const createCartListMarkup = arrey => {
             </li>`;
   }
 
-  return arrey.map(({ _id, img, name, category, size, price }) => {
-    return `<li class="cart-item js-card" data-id="${_id}">
-                    <button class="cart-product-delete js-product-cart-delete">
-                        <svg class="cart-product-delete-icon" width="18" height="18">
-                            <use href="./img/sprite.svg#close"></use>
-                        </svg>
-                    </button>
-
-                <img src="${img}" alt="${name}" class="cart-img" />
-                <div class="cart-content">
-                    <p class="cart-content-title">${name}</p>
+  return arrey
+    .map(({ _id, img, name, category, size, price }) => {
+      return `<li class="cart-item js-card" data-id="${_id}">
+      <div class="cart-product-container">
+       <div class="cart-product-img-box"><img src="${img}" alt="${name}" class="cart-img" /></div>             
+<div class="cart-content">
+                    <p class="cart-content-title">${name}</p>                    
                     <ul class="cart-content-list">
                         <li class="cart-content-item">
                         Category:
-                        <span class="cart-content-item-var">${category}</span>
+                        <span class="cart-content-item-var">${category.replace(
+                          '_',
+                          ' '
+                        )}</span>
                         </li>
-                        <li class="cart-content-item">
-                        Size:
+                        <li class="cart-content-item">Size:
                         <span class="cart-content-item-var">${size}</span>
                         </li>
-                    </ul>
+                    </ul>                    
                     <div class="cart-content-bottom">   
                         <p class="cart-content-price">$${price}</p>
-                        <div class="cart-content-bottom-addition"></div>
+                        <div class="cart-content-bottom-addition"></div>                        
+                    </div></div>
+      
+                    <div class="cart-close-btn"><button class="cart-product-delete js-product-cart-delete">
+                        <svg class="cart-product-delete-icon" width="18" height="18">
+                            <use href="./img/sprite.svg#close"></use>
+                        </svg>
+                    </button></div>
                     </div>
-                </div>
-            </li>
-        `;
-  });
+                       
+                </li>`;
+    })
+    .join(' ');
 };
 
 const renderCartList = () => {
