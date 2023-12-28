@@ -1,7 +1,7 @@
 import { load, save, remove } from './storage';
 import { common } from './common';
 import { producCartMarkup } from './markupFunctions';
-import { orderCart } from './orderCart';
+
 import { refs } from './refs';
 import empty_basket from '../img/yellow_shopping_basket.png';
 
