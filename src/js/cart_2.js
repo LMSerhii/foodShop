@@ -1,3 +1,6 @@
+import * as EmailValidator from 'email-validator';
+import iziToast from 'izitoast';
+import '../../node_modules/izitoast/dist/css/iziToast.min.css';
 import { load, save, remove } from './storage';
 import { common } from './common';
 import emty_cart from '../img/yellow_shopping_basket.png';
@@ -149,12 +152,13 @@ const onOrderForm = evt => {
   evt.preventDefault();
   const email = document.querySelector('.order-box-input').value;
 
-  if (!email) {
-    alert('blank space');
+  if (!EmailValidator.validate(email)) {
+    iziToast.warning({
+      title: 'Caution',
+      message: 'Check your email address',
+    });
     return;
   }
-
-  const testEmail = 'goodemail@gmail.com';
 
   const currCart = load(common.LOCAL_CART_KEY) ?? [];
 
@@ -168,7 +172,7 @@ const onOrderForm = evt => {
   });
 
   const data = JSON.stringify({
-    email: testEmail,
+    email: email,
     products: orderList,
   });
 

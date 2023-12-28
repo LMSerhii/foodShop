@@ -1,3 +1,6 @@
+import * as EmailValidator from 'email-validator';
+import iziToast from 'izitoast';
+import '../../node_modules/izitoast/dist/css/iziToast.min.css';
 import { createSubscription } from './api_service';
 import { openModalFooter } from './modal';
 import { refs } from './refs';
@@ -11,10 +14,16 @@ const onEmailEnter = event => {
   event.preventDefault();
 
   const email = refs.emailInput.value.trim();
-  if (!email) {
+
+  if (!EmailValidator.validate(email)) {
+    iziToast.warning({
+      title: 'Caution',
+      message: 'Check your email address',
+    });
     return;
   }
   onSendBtn(email);
+
   refs.emailForm.reset();
 };
 
