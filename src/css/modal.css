@@ -21,8 +21,9 @@
 
 .modal-box-success {
   width: 240px;
+  height: 400px;
   position: relative;
-  padding: 100px 44px 120px;
+  padding: 90px 44px;
   border-radius: 20px;
   background-color: #e8e8e2;
 }
@@ -59,17 +60,27 @@
 }
 
 .subscription-thanks {
+  width: 150px;
   color: #010101;
   text-align: center;
   font-size: 20px;
   font-weight: 500;
   line-height: 1.2;
+  margin: 0 auto;
   margin-bottom: 14px;
+}
+
+@media screen and (min-width: 375px) {
+  .subscription-thanks {
+    width: 248px;
+  }
 }
 
 @media screen and (min-width: 768px) {
   .subscription-thanks {
+    width: 245px;
     font-size: 24px;
+    margin: 0 auto;
     margin-bottom: 20px;
   }
 }
@@ -78,11 +89,29 @@
   color: #6d8434;
 }
 .subscription-promise {
+  width: 150px;
+
   color: rgba(1, 1, 1, 0.7);
   text-align: center;
   font-size: 14px;
   font-weight: 400;
   line-height: 1.28;
+  margin: 0 auto;
+  margin-bottom: 22px;
+}
+
+@media screen and (min-width: 375px) {
+  .subscription-promise {
+    width: 248px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .subscription-promise {
+    width: 328px;
+
+    margin-bottom: 3px;
+  }
 }
 
 .modal-image {
