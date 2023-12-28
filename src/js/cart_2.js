@@ -2,12 +2,14 @@ import { load, save, remove } from './storage';
 import { common } from './common';
 import emty_cart from '../img/yellow_shopping_basket.png';
 import { createOrder } from './api_service';
+import svg_sprite from '../img/sprite.svg';
 
 const refs = {
   cartList: document.querySelector('.cart-list'),
   deleteAll: document.querySelector('.cart-delete-all'),
   orderBox: document.querySelector('.order-box'),
   orderForm: document.querySelector('.order-form'),
+  totalSum: document.querySelector('.order-box-total-price-var'),
 };
 
 const createCartListMarkup = arrey => {
@@ -28,7 +30,7 @@ const createCartListMarkup = arrey => {
     return `<li class="cart-item js-card" data-id="${_id}">
                     <button class="cart-product-delete js-product-cart-delete">
                         <svg class="cart-product-delete-icon" width="18" height="18">
-                            <use href="./img/sprite.svg#close"></use>
+                            <use href="${svg_sprite}#close"></use>
                         </svg>
                     </button>
 
@@ -50,15 +52,19 @@ const createCartListMarkup = arrey => {
                       
 
                         <div class="cart-content-bottom-addition">
-                        <button class="cart-content-bottom" type="button" aria-label="subtraction"><svg class="minus-icon" width="18" height="18" aria-label="minus">
-                            <use class="cart-minus-svg" xlink:href="./img/sprite.svg#minus"></use>
-                          </svg></button>
+                        <button class="cart-content-bottom" type="button" aria-label="subtraction">
+                          <svg class="minus-icon" width="18" height="18" aria-label="minus">
+                            <use class="cart-minus-svg" href="${svg_sprite}#minus"></use>
+                          </svg>
+                        </button>
 
                         <span class="quantity">1</span>
 
-                        <button class="cart-content-bottom" type="button" aria-label="addition"><svg class="plus-icon" width="18" height="18" aria-label="plus">
-                            <use class="cart-plus-svg" xlink:href="./img/sprite.svg#plus"></use>
-                          </svg></button>
+                        <button class="cart-content-bottom" type="button" aria-label="addition">
+                          <svg class="plus-icon" width="18" height="18" aria-label="plus">
+                            <use class="cart-plus-svg" href="${svg_sprite}#plus"></use>
+                          </svg>
+                        </button>
                       </div>
 
                         
@@ -67,6 +73,20 @@ const createCartListMarkup = arrey => {
             </li>
         `;
   });
+};
+
+const totalAmount = () => {
+  const currCart = load(common.LOCAL_CART_KEY) ?? [];
+
+  if (!currCart.length) {
+    return;
+  }
+
+  const count = 1;
+
+  return currCart
+    .reduce((acc, product) => acc + product.price * count, 0)
+    .toFixed(2);
 };
 
 const renderCartList = () => {
@@ -84,8 +104,9 @@ const renderCartList = () => {
   refs.orderBox.style.display = 'block';
 
   const markup = createCartListMarkup(currentCartList);
-
+  const total = totalAmount();
   refs.cartList.innerHTML = markup;
+  refs.totalSum.innerHTML = `$${total}`;
 };
 
 const cartCount = () => {
@@ -123,22 +144,6 @@ const onCartListClick = evt => {
     renderCartList();
   }
 };
-
-const totalAmount = () => {
-  const currCart = load(common.LOCAL_CART_KEY) ?? [];
-
-  if (!currCart.length) {
-    return;
-  }
-
-  const count = 1;
-
-  return currCart
-    .reduce((acc, product) => acc + product.price * count, 0)
-    .toFixed(2);
-};
-
-console.log(totalAmount());
 
 const onOrderForm = evt => {
   evt.preventDefault();
