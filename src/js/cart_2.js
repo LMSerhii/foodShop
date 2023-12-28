@@ -2,7 +2,7 @@ import { load, save, remove } from './storage';
 import { common } from './common';
 import emty_cart from '../img/yellow_shopping_basket.png';
 import { createOrder } from './api_service';
-import svg_sprite from './img/sprite.svg';
+import svg_sprite from '../img/sprite.svg';
 
 const refs = {
   cartList: document.querySelector('.cart-list'),
