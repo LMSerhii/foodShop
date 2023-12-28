@@ -177,6 +177,7 @@
   border-radius: 30px;
   border: none;
   background: #6d8434;
+  color: white;
 }
 
 @media screen and (min-width: 375px) {
