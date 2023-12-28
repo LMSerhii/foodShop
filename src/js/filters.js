@@ -52,6 +52,30 @@ const renderSelects = async () => {
   });
 };
 
+
+
+window.addEventListener('load', () => {
+  let mask = document.querySelector('.mask');
+  if (mask) {
+  
+    setTimeout(() => {
+      mask.style.opacity = '1';
+    }, 600);
+  }
+
+  const loaderr = document.querySelector('.loaderr');
+  if (loaderr) {
+   
+    setTimeout(() => {
+      loaderr.parentNode.removeChild(loaderr);
+    }, 300);
+  }
+   
+  
+});
+
+
+
 const onCategoryField = async evt => {
   const currentCategory = evt.target.value;
   const currQuery = load(common.LOCAL_QUERY_KEY);
