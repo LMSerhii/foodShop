@@ -2,12 +2,13 @@
 .mask {
   opacity: 0;
 }
-.loadNav {
+
+ .loadNav {
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
-}
+} 
 
 
 .loaderr {
@@ -21,7 +22,7 @@
   display: inline-block;
   box-sizing: border-box;
   animation: rotation 1s linear infinite;
-  }
+  } 
 
   @keyframes rotation {
   0% {

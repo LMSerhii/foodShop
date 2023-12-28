@@ -30,49 +30,85 @@ const sortArrey = [
   { value: '', label: 'Show all' },
 ];
 
+
+
+// const renderSelects = async () => {
+
+//   const data = await getCategories();
+
+//   categories = [...data, 'Show_all'];
+
+//   const markup = createCategoryMarkup(categories);
+
+//   refs.categoryField.insertAdjacentHTML('beforeend', markup);
+
+//   refs.abcField.innerHTML = createSortMarkup(sortArrey);
+
+
+//   new SlimSelect({
+//     select: '#categoryField',
+//     settings: {
+//       placeholderText: 'Categories',
+//       showSearch: false,
+//     },
+//   });
+// };
+
+
+
+let mask = document.querySelector('.mask');
+
 const renderSelects = async () => {
 
-  const data = await getCategories();
-
-  categories = [...data, 'Show_all'];
-
-  const markup = createCategoryMarkup(categories);
-
-  refs.categoryField.insertAdjacentHTML('beforeend', markup);
-
-  refs.abcField.innerHTML = createSortMarkup(sortArrey);
-
-
-  new SlimSelect({
-    select: '#categoryField',
-    settings: {
-      placeholderText: 'Categories',
-      showSearch: false,
-    },
-  });
+  document.querySelector('.loaderr').style.display = 'flex';
+  
+  try {
+    const data = await getCategories();
+    categories = [...data, 'Show_all'];
+  
+    const markup = createCategoryMarkup(categories);
+    refs.categoryField.insertAdjacentHTML('beforeend', markup);
+  
+    refs.abcField.innerHTML = createSortMarkup(sortArrey);
+  
+    new SlimSelect({
+      select: '#categoryField',
+      settings: {
+        placeholderText: 'Categories',
+        showSearch: false,
+      },
+    });
+  } catch (error) {
+   
+    console.error('Error:', error);
+  } finally {
+   
+    mask.style.opacity = '1';
+    document.querySelector('.loaderr').style.display = 'none';
+    
+  }
 };
 
 
-
-window.addEventListener('load', () => {
-  let mask = document.querySelector('.mask');
-  if (mask) {
+// window.addEventListener('load', () => {
+//   let mask = document.querySelector('.mask');
+//   if (mask) {
   
-    setTimeout(() => {
-      mask.style.opacity = '1';
-    }, 600);
-  }
+//     setTimeout(() => {
+//       mask.style.opacity = '1';
+//     }, 600);
+//   }
 
-  const loaderr = document.querySelector('.loaderr');
-  if (loaderr) {
+//   const loaderr = document.querySelector('.loaderr');
+//   if (loaderr) {
    
-    setTimeout(() => {
-      loaderr.parentNode.removeChild(loaderr);
-    }, 300);
-  }
+//     setTimeout(() => {
+//       loaderr.parentNode.removeChild(loaderr);
+//     }, 300);
+//   }
    
   
-});
+// });
 
 
 
