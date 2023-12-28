@@ -191,7 +191,10 @@ span {
 
 .popular-icon-check {
   stroke: #e8e8e2;
-  fill: transparent;
+  fill: none;
+  background-color: #6d8434;
+  border-radius: 20px;
+  border: solid #6d8434;
 }
 
 .popular-btn-check {
@@ -218,13 +221,3 @@ span {
 .popular-btn-check:active {
   background-color: #6d8434;
 }
-
-/* transition-property: color;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.link-mobile-menu:hover,
-.link-mobile-menu:focus {
-  color: var(--color-button-nav);
-} */
