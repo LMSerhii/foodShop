@@ -12,11 +12,11 @@
     
     
     <script type="module" crossorigin src="/foodShop/commonHelpers.js"></script>
-    <link rel="modulepreload" crossorigin href="/foodShop/assets/vendor-85c19974.js">
-    <link rel="modulepreload" crossorigin href="/foodShop/assets/api_service-36df922c.js">
-    <link rel="stylesheet" href="/foodShop/assets/vendor-dd4f2fd2.css">
-    <link rel="stylesheet" href="/foodShop/assets/api_service-ba7c361e.css">
-    <link rel="stylesheet" href="/foodShop/assets/cart_2-2b55399e.css">
+    <link rel="modulepreload" crossorigin href="/foodShop/assets/vendor-f213eb09.js">
+    <link rel="modulepreload" crossorigin href="/foodShop/assets/api_service-90f6c88c.js">
+    <link rel="stylesheet" href="/foodShop/assets/vendor-ee8849a6.css">
+    <link rel="stylesheet" href="/foodShop/assets/api_service-0e913ff5.css">
+    <link rel="stylesheet" href="/foodShop/assets/cart_2-62a3ae9f.css">
   </head>
   <body>
     <header class="header">
@@ -86,7 +86,9 @@
             >Mail:
             <span class="order-placeholder-var">Enter your email</span>
           </label>
-          <input class="order-box-input" type="email" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"/>
+          <!-- <input class="order-box-input" type="email" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"/> -->
+          <input class="order-box-input" type="text"/>
+
           <button class="order-submit">Checkout</button>
         </form>
       </div>
@@ -157,13 +159,19 @@
           </p>
           <form class="subscribe-form">
             <label class="subscribe-label">
-              <input
+              <!-- <input
                 type="email"
                 name="user_address"
                 class="subscribe-input"
                 placeholder="E-mail"
                 pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
-              />
+              /> -->
+              <input
+              type="text"
+              name="user_address"
+              class="subscribe-input"
+              placeholder="E-mail"
+            />
             </label>
             <button type="submit" class="button send-btn">Send</button>
           </form>
