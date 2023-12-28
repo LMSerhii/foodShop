@@ -17,6 +17,7 @@ const refs = {
   totalSum: document.querySelector('.order-box-total-price-var'),
   footerForm: document.querySelector('.subscribe-form'),
   headerCount: document.querySelector('#product-count-header'),
+  wrapper: document.querySelector('.wraper-order-cart'),
 };
 
 const createCartListMarkup = arrey => {
@@ -102,6 +103,7 @@ const renderCartList = () => {
   if (!currentCartList.length) {
     refs.deleteAll.style.display = 'none';
     refs.orderBox.style.display = 'none';
+    refs.wrapper.style.display = 'block';
     const markup = createCartListMarkup(currentCartList);
     refs.cartList.innerHTML = markup;
     return;
