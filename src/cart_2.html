@@ -32,24 +32,24 @@
         </button>
       </div>
 
-      <ul class="cart-list"></ul>
+      <div class="wraper-order-cart">
+        <ul class="cart-list"></ul>
+        <div class="order-box">
+          <p class="order-box-title">Your Order</p>
+          <div class="order-box-total-wrapper">
+            <p class="order-box-total-title">Total</p>
+            <p class="order-box-total-price">
+              Sum:
+              <span class="order-box-total-price-var">$</span>
+            </p>
+          </div>
 
-      <div class="order-box">
-        <p class="order-box-title">Your Order</p>
-
-        <div class="order-box-total-wrapper">
-          <p class="order-box-total-title">Total</p>
-          <p class="order-box-total-price">
-            Sum:
-            <span class="order-box-total-price-var">$</span>
-          </p>
-        </div>
         <form class="order-form" name="order_form">
           <label class="order-placeholder"
             >Mail:
             <span class="order-placeholder-var">Enter your email</span>
           </label>
-          <input class="order-box-input" type="email" />
+          <input class="order-box-input" type="email" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"/>
           <button class="order-submit">Checkout</button>
         </form>
       </div>
