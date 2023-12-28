@@ -22,28 +22,33 @@ const validClose = productId => {
   cart.splice(index, 1);
   remove(common.LOCAL_CART_KEY);
   save(common.LOCAL_CART_KEY, cart);
-
+  console.log(cart);
   refs.cartList.innerHTML = producCartMarkup(cart);
   renderTotalAmount(); // Оновлення суми при видаленні товару
   renderItemCount();
 };
 
+
 const onClose = evt => {
   const closeButton = evt.target.closest('.js-close');
+  // console.log(evt.target);
   if (!closeButton) {
     return;
   }
 
   const id = evt.target.closest('.js-card').dataset.id;
   // console.log(evt.target);
-  console.log(cart);
+  // console.log(cart);
   clearCartLocalStorage()
   if (evt.target.classList.contains('js-close')) {
-    validClose(id);
+    validClose(id); 
     // orderContainer.innerHTML = '';
     // refs.deleteAllButton.innerHTML = '';
   }
 };
+
+
+
 
 const renderTotalAmount = () => {
   const totalAmount = cart
@@ -54,12 +59,15 @@ const renderTotalAmount = () => {
 
 // Функція для очищення значення ключа "cart" у локальному сховищі
 const clearCartLocalStorage = () => {
+  
   localStorage.setItem('cart', '[]');
   notFound()
-  location.reload();
+  
+  // location.reload();
 };
 
 const notFound = () => {
+  
   refs.cartList.innerHTML = `<li><img class="basket-img" src="${empty_basket}" alt="Yellow empty basket">
   <div class="basket-text">
       <p class="empty-text"> Your basket is <span>empty...</span></p>
@@ -67,6 +75,7 @@ const notFound = () => {
   </div></li>`;
   // orderContainer.innerHTML = '';
   refs.deleteAllButton.innerHTML = '';
+  
 };
 
 const renderCart = () => {
@@ -81,15 +90,16 @@ const renderCart = () => {
   }
 
   refs.cartList.innerHTML = producCartMarkup(cart);
-  refs.cartList.addEventListener('click', onClose);
+  
+
   renderTotalAmount();
 };
 renderItemCount();
 renderCart();
-
+refs.cartList.addEventListener('click', onClose);
 
 // Додавання обробника подій для кнопки "Delete all"
-refs.deleteAllButton.addEventListener('click', clearCartLocalStorage);
+refs.deleteAllButton.addEventListener('click', clearCartLocalStorage, renderTotalAmount, notFound, renderItemCount);
 
 
 
