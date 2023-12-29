@@ -229,7 +229,6 @@ const createSortMarkup = array => {
 
 const createMarkupPopular = arrey => {
   if (!arrey.length) {
-    console.log('Sorry not data');
     return;
   }
   return arrey
@@ -258,7 +257,7 @@ const createMarkupPopular = arrey => {
 
         <div class="popular-card-bottom">
           
-          <button class="popular-card-btn js-cart" type="button">
+          <button class="popular-btn-check js-cart" type="button">
             <svg class="popular-icon-check" width="18" height="18">
               <use href="${svg_sprite}#check"></use>
             </svg>
@@ -394,7 +393,6 @@ const createDiscountMarkup = arrey => {
 
 const producCartMarkup = arrey => {
   if (!arrey.length) {
-    
     return `
  
   <img class="basket-img" src="${empty_basket}" alt="Yellow empty basket">

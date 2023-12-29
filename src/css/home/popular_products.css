@@ -153,7 +153,7 @@ span {
 .popular-card-btn {
   width: 20px;
   height: 20px;
-  display: inline-flex;
+  display: flex;
   padding: 4px;
   justify-content: center;
   align-items: center;
@@ -189,12 +189,20 @@ span {
   background-color: #6d8434;
 }
 
+/* .popular-card-btn-check {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 50%;
+  background-color: #6d8434;
+} */
+
 .popular-icon-check {
   stroke: #e8e8e2;
-  fill: none;
-  background-color: #6d8434;
-  border-radius: 20px;
-  border: solid #6d8434;
+  fill: transparent;
 }
 
 .popular-btn-check {
