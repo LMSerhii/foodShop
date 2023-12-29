@@ -22,7 +22,7 @@
             <use href="./img/sprite.svg#cart"></use>
           </svg>
         </button>
-        <p class="cartValue">Cart <span id="product-count-cart">0</span></p>
+        <p class="cart-value">Cart <span id="product-count-cart">0</span></p>
       </div>
 
       <div class="cart-wrapper">
@@ -55,10 +55,12 @@
               <div class="input-wrapper">
                 <label class="order-placeholder"
                   >Mail:
-                  <span class="order-placeholder-var">Enter your email</span>
+                  <span class="order-placeholder-var" for="orderInput"
+                    >Enter your email</span
+                  >
                 </label>
                 <!-- <input class="order-box-input" type="email" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"/> -->
-                <input class="order-box-input" type="text" />
+                <input class="order-box-input" id="orderInput" type="text" />
               </div>
               <button class="order-submit">Checkout</button>
             </form>
