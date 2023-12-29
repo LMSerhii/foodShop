@@ -146,7 +146,7 @@
 .nav-home:focus,
 .nav-home:hover {
   background-color: var(--darkGreen);
-  border: 1px solid transparent;
+  /* border: 1px solid transparent; */
 }
 
 @media screen and (min-width: 375px) {
