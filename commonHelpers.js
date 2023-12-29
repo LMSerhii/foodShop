@@ -1,4 +1,4 @@
-import{o as C,h as d,l as n,c,s as g,r as y,a as L,b as i}from"./assets/header-be924cb4.js";import{v as b,i as v}from"./assets/vendor-f213eb09.js";const _="/foodShop/assets/yellow_shopping_basket-566aede4.png",r={cartList:document.querySelector(".cart-list"),deleteAll:document.querySelector(".cart-delete-all"),orderBox:document.querySelector(".order-box"),orderForm:document.querySelector(".order-form"),totalSum:document.querySelector(".order-box-total-price-var"),footerForm:document.querySelector(".subscribe-form"),headerCount:document.querySelector("#product-count-header"),cartWrapper:document.querySelector(".cart-wrapper")},m=t=>t.length?t.map(({_id:e,img:a,name:s,category:o,size:l,price:h})=>`<li class="cart-item js-card" data-id="${e}">
+import{o as v,h as u,l as n,c as o,s as g,r as C,a as b,b as i}from"./assets/header-be924cb4.js";import{v as f,i as _}from"./assets/vendor-f213eb09.js";const A="/foodShop/assets/yellow_shopping_basket-566aede4.png",r={cartList:document.querySelector(".cart-list"),deleteAll:document.querySelector(".cart-delete-all"),orderBox:document.querySelector(".order-box"),orderForm:document.querySelector(".order-form"),totalSum:document.querySelector(".order-box-total-price-var"),footerForm:document.querySelector(".subscribe-form"),headerCount:document.querySelector("#product-count-header"),cartWrapper:document.querySelector(".cart-wrapper")},h=t=>t.length?t.map(({_id:e,img:s,name:a,category:c,size:l,price:L})=>`<li class="cart-item js-card" data-id="${e}">
 
                   <button class="cart-product-delete js-product-cart-delete">
                       <svg class="cart-product-delete-icon" width="18" height="18">
@@ -8,22 +8,22 @@ import{o as C,h as d,l as n,c,s as g,r as y,a as L,b as i}from"./assets/header-b
                     
                 <div class="cart-product-container">
                     <div class="cart-product-img-box">
-                        <img src="${a}" alt="${s}" class="cart-img" width="64" height="64" />
+                        <img src="${s}" alt="${a}" class="cart-img" width="64" height="64" />
                       </div>             
                 <div class="cart-content">
-                    <p class="cart-content-title">${s}</p>                    
+                    <p class="cart-content-title">${a}</p>                    
 
                     <ul class="cart-content-list">
                         <li class="cart-content-item">
                         Category:
-                        <span class="cart-content-item-var">${o.replace("_"," ")}</span>
+                        <span class="cart-content-item-var">${c.replace("_"," ")}</span>
                         </li>
                         <li class="cart-content-item">Size:
                         <span class="cart-content-item-var">${l}</span>
                         </li>
                     </ul>                    
                     <div class="cart-content-bottom">   
-                        <p class="cart-content-price">$${h}</p>
+                        <p class="cart-content-price">$${L}</p>
                         
                         
 
@@ -45,7 +45,7 @@ import{o as C,h as d,l as n,c,s as g,r as y,a as L,b as i}from"./assets/header-b
                     </div>
                        
                 </li>`).join(" "):`<div class="emty-cart">
-                    <img src="${_}" alt="Emty Cart" class="emty-cart-img" width="132" height="114" />
+                    <img src="${A}" alt="Emty Cart" class="emty-cart-img" width="132" height="114" />
                     <p class="emty-cart-title">
                         Your basket is <span class="accent">empty...</span>
                     </p>
@@ -53,5 +53,5 @@ import{o as C,h as d,l as n,c,s as g,r as y,a as L,b as i}from"./assets/header-b
                         Go to the main page to select your favorite products and add them to the
                         cart.
                     </p>
-            </div>`,f=()=>{const t=n(c.LOCAL_CART_KEY)??[];if(!t.length)return;const e=1;return t.reduce((a,s)=>a+s.price*e,0).toFixed(2)},u=()=>{const t=n(c.LOCAL_CART_KEY)??[];if(!t.length){r.deleteAll.style.display="none",r.orderBox.style.display="none";const s=m(t);r.cartWrapper.innerHTML=s;return}r.deleteAll.style.display="flex",r.orderBox.style.display="block";const e=m(t),a=f();r.cartList.innerHTML=e,r.totalSum.innerHTML=`$${a}`},p=()=>{const t=document.querySelector("#product-count-cart"),e=n(c.LOCAL_CART_KEY)??[];t.innerHTML=`(${e.length})`},A=()=>{g(c.LOCAL_CART_KEY,[]),d(),p(),u()},E=t=>{if(t.currentTarget!==t.target&&t.target.closest(".js-product-cart-delete")){const{id:e}=t.target.closest(".js-card").dataset,a=n(c.LOCAL_CART_KEY)??[],s=a.findIndex(({_id:o})=>o===e);a.splice(s,1),y(c.LOCAL_CART_KEY),g(c.LOCAL_CART_KEY,a),d(),console.log(r.headerCount),p(),u()}},S=t=>{t.preventDefault();const e=document.querySelector(".order-box-input").value;if(!b(e)){v.warning({title:"Caution",message:"Check your email address"});return}const a=n(c.LOCAL_CART_KEY)??[];let s=[];a.map(l=>{s.push({productId:l._id,amount:1})});const o=JSON.stringify({email:e,products:s});t.target.reset(),L(o)};r.orderForm.addEventListener("submit",S);r.cartList.addEventListener("click",E);r.deleteAll.addEventListener("click",A);r.footerForm.addEventListener("submit",C);d();p();u();
+            </div>`,E=()=>{const t=n(o.LOCAL_CART_KEY)??[];if(!t.length)return;const e=1;return t.reduce((s,a)=>s+a.price*e,0).toFixed(2)},p=()=>{const t=n(o.LOCAL_CART_KEY)??[];if(!t.length){r.deleteAll.style.display="none",r.orderBox.style.display="none";const a=h(t);r.cartWrapper.innerHTML=a;return}r.deleteAll.style.display="flex",r.orderBox.style.display="block";const e=h(t),s=E();r.cartList.innerHTML=e,r.totalSum.innerHTML=`$${s}`},m=()=>{const t=document.querySelector("#product-count-cart"),e=n(o.LOCAL_CART_KEY)??[];t.innerHTML=`(${e.length})`},S=()=>{g(o.LOCAL_CART_KEY,[]),u(),m(),p()},$=t=>{if(t.currentTarget!==t.target&&t.target.closest(".js-product-cart-delete")){const{id:e}=t.target.closest(".js-card").dataset,s=n(o.LOCAL_CART_KEY)??[],a=s.findIndex(({_id:c})=>c===e);s.splice(a,1),C(o.LOCAL_CART_KEY),g(o.LOCAL_CART_KEY,s),u(),console.log(r.headerCount),m(),p()}},T=t=>{t.preventDefault();const e=document.querySelector(".order-box-input").value;if(!f(e)){_.warning({title:"Caution",message:"Check your email address"});return}const s=n(o.LOCAL_CART_KEY)??[];let a=[];s.map(l=>{a.push({productId:l._id,amount:1})});const c=JSON.stringify({email:e,products:a});t.target.reset(),b(c)},y=document.getElementById("orderInput"),d=document.querySelector(".order-placeholder-var"),q=()=>{y.value.trim()!==""?d.style.display="none":d.style.display="inline"},x=()=>{d.style.display="none"};y.addEventListener("input",q);y.addEventListener("focus",x);r.orderForm.addEventListener("submit",T);r.cartList.addEventListener("click",$);r.deleteAll.addEventListener("click",S);r.footerForm.addEventListener("submit",v);u();m();p();
 //# sourceMappingURL=commonHelpers.js.map
