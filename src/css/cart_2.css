@@ -239,13 +239,16 @@
   gap: 10px;
 }
 
-.cart-content-bottom  {
+.cart-content-bottom-minus,
+.cart-content-bottom-plus {
+ 
   padding: 6px 4px;
   border: none;
   background-color: inherit;
   display: flex;
   align-items: center;
   justify-content: center;
+  
 }
 
 .plus-icon,

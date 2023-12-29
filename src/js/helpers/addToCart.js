@@ -6,6 +6,7 @@ import { save, load } from '../storage';
 import { common } from '../common';
 import { headerCount } from '../header';
 
+
 const cart = load(common.LOCAL_CART_KEY) ?? [];
 
 const addToCart = async evt => {
@@ -14,8 +15,9 @@ const addToCart = async evt => {
   const product = await getDataId(id);
 
   const inStorage = cart.some(({ _id }) => _id === product._id);
-
+  
   if (inStorage) {
+    
     return;
   }
 

@@ -10,6 +10,7 @@ import { openModal } from './helpers/openModal';
 
 const renderProducts = async query => {
   refs.productList.innerHTML = `<div class="loader-box"><span class="loader"></span></div>`;
+  
 
   const data = await getData(query);
 

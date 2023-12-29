@@ -10,7 +10,13 @@ const refs = {
   orderBox: document.querySelector('.order-box'),
   orderForm: document.querySelector('.order-form'),
   totalSum: document.querySelector('.order-box-total-price-var'),
+
+
+
 };
+
+
+
 
 const createCartListMarkup = arrey => {
   if (!arrey.length) {
@@ -26,7 +32,7 @@ const createCartListMarkup = arrey => {
             </li>`;
   }
 
-  return arrey.map(({ _id, img, name, category, size, price }) => {
+  return arrey.map(({ _id, img, name, category, size, price, quantity }) => {
     return `<li class="cart-item js-card" data-id="${_id}">
                     <button class="cart-product-delete js-product-cart-delete">
                         <svg class="cart-product-delete-icon" width="18" height="18">
@@ -52,15 +58,15 @@ const createCartListMarkup = arrey => {
                       
 
                         <div class="cart-content-bottom-addition">
-                        <button class="cart-content-bottom" type="button" aria-label="subtraction">
+                        <button class="cart-content-bottom-minus" type="button" aria-label="subtraction">
                           <svg class="minus-icon" width="18" height="18" aria-label="minus">
                             <use class="cart-minus-svg" href="${svg_sprite}#minus"></use>
                           </svg>
                         </button>
 
-                        <span class="quantity">1</span>
+                        <span class="quantity">${quantity}</span>
 
-                        <button class="cart-content-bottom" type="button" aria-label="addition">
+                        <button class="cart-content-bottom-plus" type="button" aria-label="addition">
                           <svg class="plus-icon" width="18" height="18" aria-label="plus">
                             <use class="cart-plus-svg" href="${svg_sprite}#plus"></use>
                           </svg>
@@ -74,6 +80,11 @@ const createCartListMarkup = arrey => {
         `;
   });
 };
+
+// const btnMinus = document.querySelector('.cart-content-bottom');
+// console.log(btnMinus);
+
+
 
 const totalAmount = () => {
   const currCart = load(common.LOCAL_CART_KEY) ?? [];
@@ -91,6 +102,28 @@ const totalAmount = () => {
 
 const renderCartList = () => {
   const currentCartList = load(common.LOCAL_CART_KEY) ?? [];
+  const updatedCartList = currentCartList.map(item => {
+
+    const itemId = item._id;
+
+    const storedItem = currentCartList.find(item => item._id === itemId);
+
+
+    let quantity = 1;
+
+    if (storedItem && storedItem.quantity !== null && storedItem.quantity !== undefined) {
+
+      quantity = storedItem.quantity > 0 ? storedItem.quantity : 1;
+    }
+
+    return {
+      ...item,
+      quantity: quantity,
+    };
+  });
+
+  save(common.LOCAL_CART_KEY, updatedCartList);
+
 
   if (!currentCartList.length) {
     refs.deleteAll.style.display = 'none';
@@ -183,3 +216,86 @@ refs.deleteAll.addEventListener('click', onDeleteAll);
 
 cartCount();
 renderCartList();
+
+
+const buttonElementMinus = document.querySelector('.cart-content-bottom-minus');
+const buttonElementPlus = document.querySelector('.cart-content-bottom-plus');
+const quantity = document.querySelector('.quantity');
+const cartItem = document.querySelector('.cart-item');
+const cartList = document.querySelector('.cart-list');
+
+let cart = load(common.LOCAL_CART_KEY) ?? [];
+console.log(cart);
+
+function updateCartQuantity(itemId, delta) {
+  const currentCartList = load(common.LOCAL_CART_KEY) || [];
+  const listItem = document.querySelector(`.cart-item[data-id="${itemId}"]`);
+
+  const itemToUpdate = currentCartList.find(item => item._id === itemId);
+
+  if (itemToUpdate) {
+
+    itemToUpdate.quantity = Math.max(1, itemToUpdate.quantity + delta);
+
+
+    const newPrice = itemToUpdate.quantity * itemToUpdate.price;
+
+    if (listItem) {
+
+      const quantitySpan = listItem.querySelector('.quantity');
+      if (quantitySpan) {
+        quantitySpan.textContent = itemToUpdate.quantity;
+      }
+
+
+      const priceElement = listItem.querySelector('.cart-content-price');
+      if (priceElement) {
+        priceElement.textContent = `$${newPrice.toFixed(2)}`;
+      }
+
+
+      const totalPriceElement = document.querySelector('.order-box-total-price-var');
+      if (totalPriceElement) {
+
+        const totalCartPrice = currentCartList.reduce((total, item) => total + item.quantity * item.price, 0);
+        totalPriceElement.textContent = `$${totalCartPrice.toFixed(2)}`;
+      }
+    }
+
+    save(common.LOCAL_CART_KEY, currentCartList);
+  }
+}
+
+
+
+function plus() {
+  const buttonElementsPlus = document.querySelectorAll('.cart-content-bottom-plus');
+
+  buttonElementsPlus.forEach(buttonElementPlus => {
+    buttonElementPlus.addEventListener('click', (event) => {
+      const listItem = event.target.closest('.cart-item');
+      const itemId = listItem ? listItem.dataset.id : null;
+      updateCartQuantity(itemId, 1);
+    });
+  });
+}
+
+function minus() {
+  const buttonElementsMinus = document.querySelectorAll('.cart-content-bottom-minus');
+
+  buttonElementsMinus.forEach(buttonElementMinus => {
+    buttonElementMinus.addEventListener('click', (event) => {
+      const listItem = event.target.closest('.cart-item');
+      const itemId = listItem ? listItem.dataset.id : null;
+      updateCartQuantity(itemId, -1);
+    });
+  });
+}
+
+plus();
+minus();
+
+
+
+
+
