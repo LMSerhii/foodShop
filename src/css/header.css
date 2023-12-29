@@ -63,6 +63,7 @@
 
 .logo-link:focus,
 .logo-link:hover {
+  transition: var(--animation);
   transform: scale(1.05);
 }
 
@@ -86,6 +87,8 @@
 .logo-icon:focus,
 .logo-icon:hover {
   transform: scale(1.05);
+  transition: var(--animation);
+
 }
 @media screen and (min-width: 375px) {
   .logo-icon {
@@ -112,6 +115,8 @@
 .nav-cart:focus,
 .nav-cart:hover {
   background-color: var(--darkGreen);
+  transition: var(--animation);
+
 }
 @media screen and (min-width: 375px) {
   .nav-cart {
@@ -146,7 +151,8 @@
 .nav-home:focus,
 .nav-home:hover {
   background-color: var(--darkGreen);
-  /* border: 1px solid transparent; */
+  transition: var(--animation);
+
 }
 
 @media screen and (min-width: 375px) {
