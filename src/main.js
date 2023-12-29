@@ -8,6 +8,8 @@ import { renderFooter } from './js/footer';
 import { handleMediaChange } from './js/pagination';
 import { headerCount } from './js/header';
 
+import { refs } from './js/refs';
+
 const mediaQuery_min768 = window.matchMedia('(min-width: 768px)');
 
 const mediaQuery_min1440 = window.matchMedia('(min-width: 1440px)');
@@ -17,9 +19,17 @@ const mediaQuery_min768_max1440 = window.matchMedia(
   '(min-width: 768px) and (max-width: 1439.9px)'
 );
 
-save(common.LOCAL_QUERY_KEY, common.INIT_QUERY);
-
 const storage_query = load(common.LOCAL_QUERY_KEY) ?? [];
+
+if (Array.isArray(storage_query)) {
+  save(common.LOCAL_QUERY_KEY, common.INIT_QUERY);
+} else {
+  const currentQuery = load(common.LOCAL_QUERY_KEY);
+  save(common.LOCAL_QUERY_KEY, currentQuery);
+
+  refs.searchField.value = currentQuery.keyword;
+  refs.categoryField.value = currentQuery.category;
+}
 
 headerCount();
 
