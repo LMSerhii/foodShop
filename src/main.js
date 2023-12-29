@@ -9,6 +9,7 @@ import { handleMediaChange } from './js/pagination';
 import { headerCount } from './js/header';
 
 import { refs } from './js/refs';
+import { getData } from './js/api_service';
 
 const mediaQuery_min768 = window.matchMedia('(min-width: 768px)');
 
@@ -21,24 +22,38 @@ const mediaQuery_min768_max1440 = window.matchMedia(
 
 const storage_query = load(common.LOCAL_QUERY_KEY) ?? [];
 
-if (Array.isArray(storage_query)) {
-  save(common.LOCAL_QUERY_KEY, common.INIT_QUERY);
-} else {
-  const currentQuery = load(common.LOCAL_QUERY_KEY);
-  save(common.LOCAL_QUERY_KEY, currentQuery);
+async function check() {
+  if (Array.isArray(storage_query)) {
+    save(common.LOCAL_QUERY_KEY, common.INIT_QUERY);
 
-  refs.searchField.value = currentQuery.keyword;
-  refs.categoryField.value = currentQuery.category;
+    const data = await getData();
+
+    save(common.PAGES, {
+      page: data.page,
+      perPage: data.perPage,
+      totalPages: data.totalPages,
+    });
+
+    handleMediaChange(mediaQuery_min768);
+  } else {
+    const currentQuery = load(common.LOCAL_QUERY_KEY);
+    save(common.LOCAL_QUERY_KEY, currentQuery);
+
+    refs.searchField.value = currentQuery.keyword;
+    refs.categoryField.value = currentQuery.category;
+    handleMediaChange(mediaQuery_min768);
+  }
 }
+
+check();
 
 headerCount();
 
 renderSelects();
 
 if (mediaQuery_min1440.matches) {
+  const storage_query = load(common.LOCAL_QUERY_KEY) ?? [];
   if (Object.keys(storage_query).length) {
-    const storage_query = load(common.LOCAL_QUERY_KEY) ?? [];
-
     storage_query.limit = 9;
     save(common.LOCAL_QUERY_KEY, storage_query);
     renderProducts(storage_query);
@@ -46,9 +61,8 @@ if (mediaQuery_min1440.matches) {
 }
 
 if (mediaQuery_min768_max1440.matches) {
+  const storage_query = load(common.LOCAL_QUERY_KEY) ?? [];
   if (Object.keys(storage_query).length) {
-    const storage_query = load(common.LOCAL_QUERY_KEY) ?? [];
-
     storage_query.limit = 8;
     save(common.LOCAL_QUERY_KEY, storage_query);
     renderProducts(storage_query);
@@ -56,16 +70,13 @@ if (mediaQuery_min768_max1440.matches) {
 }
 
 if (mediaQuery_max768.matches) {
+  const storage_query = load(common.LOCAL_QUERY_KEY) ?? [];
   if (Object.keys(storage_query).length) {
-    const storage_query = load(common.LOCAL_QUERY_KEY) ?? [];
-
     storage_query.limit = 6;
     save(common.LOCAL_QUERY_KEY, storage_query);
     renderProducts(storage_query);
   }
 }
-
-handleMediaChange(mediaQuery_min768);
 
 renderPopular();
 dataDiscountProd();
