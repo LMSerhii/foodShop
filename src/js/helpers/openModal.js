@@ -20,9 +20,6 @@ const openModal = async (evt, element) => {
 
       instance.element().querySelector('.js-modal-close').onclick = () => {
         instance.close();
-
-        const storage_query = load(common.LOCAL_QUERY_KEY) ?? [];
-        renderProducts(storage_query);
       };
 
       const currentCart = load(common.LOCAL_CART_KEY) ?? [];
