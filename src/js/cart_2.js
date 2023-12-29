@@ -294,7 +294,7 @@ function minus() {
 
 plus();
 minus();
-
+export {renderCartList};
 
 
 
