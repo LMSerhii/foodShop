@@ -290,7 +290,6 @@
     display: inline-flex;
     justify-content: center;
     align-items: center;
-
   }
 }
 
@@ -583,4 +582,8 @@
 
 .input-wrapper {
   position: relative;
+}
+
+.order-box-input {
+  background: inherit;
 }
