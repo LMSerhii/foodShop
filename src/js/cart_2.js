@@ -196,6 +196,29 @@ const onOrderForm = evt => {
   createOrder(data);
 };
 
+const orderInput = document.getElementById('orderInput');
+const orderPlaceholderVar = document.querySelector('.order-placeholder-var');
+
+
+const handleInput = () => {
+  
+  if (orderInput.value.trim() !== '') {
+    orderPlaceholderVar.style.display = 'none';
+  } else {
+    orderPlaceholderVar.style.display = 'inline';
+  }
+};
+
+
+const handleFocus = () => {
+  orderPlaceholderVar.style.display = 'none';
+};
+
+
+orderInput.addEventListener('input', handleInput);
+
+orderInput.addEventListener('focus', handleFocus);
+
 refs.orderForm.addEventListener('submit', onOrderForm);
 
 refs.cartList.addEventListener('click', onCartListClick);
