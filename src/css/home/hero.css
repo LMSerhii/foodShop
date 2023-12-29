@@ -89,23 +89,14 @@
 .hero-content {
     margin-top: 30px;
     background-color: #E8E8E2;
-    position: relative;
-}
-
-@media screen and (min-width: 768px) {
-    .hero-content {
-     
-    }
-}
-
-@media screen and (min-width: 1150px) {
-    .hero-content {
-       
-    }
+    position: sticky;
+    
 }
 
 .hero-picture {
     border-radius: 20px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .hero-organic-food {
@@ -113,20 +104,20 @@
     position: absolute;
     max-width: 100px;
     max-height: 100px;
-    margin-top: -25px;
-    margin-left: 227px;
+    top: -25px;
+    right: 8px;
 }
 
 @media screen and (min-width: 768px) {
     .hero-organic-food {
-        margin-top: -10px;
-        margin-left: 550px;
+        top: -10px;
+        right: 10px;
     }
 }
 
 @media screen and (min-width: 1150px) {
     .hero-organic-food {
-        margin-top: -38px;
-        margin-left: 930px;
+        top: -38px;
+        right: 20px;
     }
 }
