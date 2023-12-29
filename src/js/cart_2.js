@@ -37,11 +37,13 @@ const createCartListMarkup = arrey => {
   return arrey
     .map(({ _id, img, name, category, size, price }) => {
       return `<li class="cart-item js-card" data-id="${_id}">
+
                   <button class="cart-product-delete js-product-cart-delete">
                       <svg class="cart-product-delete-icon" width="18" height="18">
                           <use href="${svg_sprite}#close"></use>
                       </svg>
                     </button>
+                    
                 <div class="cart-product-container">
                     <div class="cart-product-img-box">
                         <img src="${img}" alt="${name}" class="cart-img" width="64" height="64" />
