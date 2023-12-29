@@ -241,7 +241,7 @@
   font-size: 14px;
   line-height: 1.29;
   display: inline-flex;
-  padding: 12px 20px 12px 60px;
+  padding: 12px 20px 12px 20px;
   justify-content: center;
   align-items: center;
   gap: 8px;
@@ -276,7 +276,7 @@
     justify-content: center;
     align-items: center;
     gap: 8px;
-    padding: 12px 20px 12px 65px;
+    padding: 12px 20px 12px 20px;
   }
 }
 
@@ -286,7 +286,7 @@
   }
 
   .order-box-input {
-    padding: 12px 20px 12px 77px;
+    padding: 12px 20px 12px 20px;
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -580,7 +580,7 @@
   }
 }
 
-.input-wrapper {
+/* .input-wrapper {
   position: relative;
 }
 

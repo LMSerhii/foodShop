@@ -203,6 +203,7 @@
 .card-btn:hover,
 .card-btn:focus {
   background-color: #586f1f;
+  transition: var(--animation);
 }
 
 @media screen and (min-width: 375px) {
