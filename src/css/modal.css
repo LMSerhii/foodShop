@@ -440,6 +440,7 @@
 .modal-product-removeBtn:hover,
 .modal-product-removeBtn:focus {
   background-color: #586f1f;
+  transition: var(--animation);
 }
 
 .modal-product-addBtn {
@@ -470,4 +471,5 @@
 .modal-product-addBtn:hover,
 .modal-product-addBtn:focus {
   background-color: #586f1f;
+  transition: var(--animation);
 }

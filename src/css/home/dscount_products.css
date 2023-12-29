@@ -161,6 +161,7 @@ body {
 .discount-product-btn:hover,
 .discount-product-btn:focus {
   background-color: #586f1f;
+  transition: var(--animation);
 }
 
 .discount-product-icon {

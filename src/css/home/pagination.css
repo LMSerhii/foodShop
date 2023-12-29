@@ -37,6 +37,7 @@
 .tui-page-btn:focus {
   background: #6D8434 !important;
   color: #E8E8E2 !important;
+  transition: var(--animation);
 }
 
 .tui-pagination .tui-is-selected, .tui-pagination strong {

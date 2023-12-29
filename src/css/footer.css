@@ -69,6 +69,7 @@
   background-color: rgba(232, 232, 226, 0.2);
   cursor: pointer;
   border-radius: 10px;
+  transition: var(--animation);
 }
 
 .social-icon {
@@ -116,6 +117,7 @@
   outline: 2px solid #e8e8e24f;
   border-radius: 2rem;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  transition: var(--animation);
 }
 .subscribe-input::placeholder {
   color: rgba(232, 232, 226, 0.6);
@@ -132,6 +134,8 @@
 .send-btn:hover,
 .send-btn:focus {
   color: var(--darkGreen);
+  transition: var(--animation);
+  
 }
 
 .policy-list {
@@ -155,6 +159,7 @@
   cursor: pointer;
   border-radius: 10px;
   transition: opacity 0.1s;
+  
 }
 
 @media screen and (min-width: 375px) {
