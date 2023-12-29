@@ -199,7 +199,7 @@ const onOrderForm = evt => {
 const orderInput = document.getElementById('orderInput');
 const orderPlaceholderVar = document.querySelector('.order-placeholder-var');
 
-// Функція для обробки події введення тексту
+
 const handleInput = () => {
   
   if (orderInput.value.trim() !== '') {
@@ -210,7 +210,14 @@ const handleInput = () => {
 };
 
 
+const handleFocus = () => {
+  orderPlaceholderVar.style.display = 'none';
+};
+
+
 orderInput.addEventListener('input', handleInput);
+
+orderInput.addEventListener('focus', handleFocus);
 
 refs.orderForm.addEventListener('submit', onOrderForm);
 
