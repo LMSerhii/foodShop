@@ -44,7 +44,7 @@ const renderSelects = async () => {
   refs.categoryField.insertAdjacentHTML('beforeend', markup);
 
   refs.abcField.innerHTML = createSortMarkup(sortArrey);
-  document.getElementById('filtersForm').classList.remove('hidden');
+  // document.getElementById('filtersForm').classList.remove('hidden');
 
   new SlimSelect({
     select: '#categoryField',
