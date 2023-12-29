@@ -196,6 +196,22 @@ const onOrderForm = evt => {
   createOrder(data);
 };
 
+const orderInput = document.getElementById('orderInput');
+const orderPlaceholderVar = document.querySelector('.order-placeholder-var');
+
+// Функція для обробки події введення тексту
+const handleInput = () => {
+  
+  if (orderInput.value.trim() !== '') {
+    orderPlaceholderVar.style.display = 'none';
+  } else {
+    orderPlaceholderVar.style.display = 'inline';
+  }
+};
+
+
+orderInput.addEventListener('input', handleInput);
+
 refs.orderForm.addEventListener('submit', onOrderForm);
 
 refs.cartList.addEventListener('click', onCartListClick);
